@@ -106,7 +106,7 @@
 <body>
 <header>
   <div class="wrap">
-    <div class="eyebrow">In-house AI training rig · Build plan · Rev 2</div>
+    <div class="eyebrow">In-house AI training rig · Build plan · Rev 3</div>
     <h1>Running the RTX&nbsp;PRO&nbsp;6000 + RTX&nbsp;5090 in one case</h1>
     <p class="sub">Case, cooling, power and desk-clearance plan for a dual-GPU AI workstation. Written to be handed straight to your cabinet vendor, electrician and AC installer.</p>
     <div class="rig">
@@ -114,7 +114,7 @@
       <span class="chip"><b>Board</b> MSI X870E Carbon WiFi</span>
       <span class="chip"><b>RAM</b> 64GB DDR5</span>
       <span class="chip"><b>GPU 1</b> RTX PRO 6000 Blackwell 96GB</span>
-      <span class="chip"><b>GPU 2</b> RTX 5090 (liquid-cooled)</span>
+      <span class="chip"><b>GPU 2</b> RTX 5090 ROG Astral LC</span>
       <span class="chip"><b>PSU</b> Corsair AX1600i 1600W</span>
       <span class="chip"><b>Cooler</b> DeepCool LT720</span>
       <span class="chip"><b>Desk</b> Ergosphere PRO 340 L (frame-only)</span>
@@ -140,9 +140,9 @@
 <section id="tldr">
   <div class="card tldr">
     <h2>The short version</h2>
-    <div class="verdict"><div class="ic">🏆</div><div><b>Buy the Antec FLUX PRO.</b> ₹20,865 (black), in stock at Antec India's own store. It is <b>545&nbsp;mm tall with feet</b> — it fits under your desk, which the 9000D (664&nbsp;mm) never could. It is the only case with a <b>dedicated fresh-air fan bank in the PSU shroud blowing straight up into the GPU</b>, which is exactly what the RTX&nbsp;PRO&nbsp;6000 needs, and it is GamersNexus's noise-normalised thermal chart leader.</div></div>
+    <div class="verdict"><div class="ic">🏆</div><div><b>Buy the Lian Li O11 Dynamic EVO XL.</b> ₹22,995 (black), in stock. It's the roomy full-tower you're picturing — 304&nbsp;mm wide with a separate PSU chamber — and at <b>531.9&nbsp;mm</b> it still fits under your desk. It feeds the flow-through PRO&nbsp;6000 correctly (<b>3× 140&nbsp;mm floor fans blow fresh air straight up into it</b>), and its roof swallows the Astral&nbsp;LC's fat 65&nbsp;mm radiator with room to spare. The <b>Antec Flux Pro</b> is the tighter #2. Add Lian&nbsp;Li's <b>mesh side panel</b> so the CPU radiator breathes.</div></div>
     <div class="verdict alert"><div class="ic">🔴</div><div><b>The old plan was built on a wrong fact.</b> The RTX&nbsp;PRO&nbsp;6000 Blackwell is <b>not</b> a rear-exhaust blower. NVIDIA's datasheet calls it <b>double-flow-through</b>: it pulls air in from under the card and vents it <em>up into the case</em>. All 600&nbsp;W stays inside the chassis. Only the 300&nbsp;W Max-Q is a blower.</div></div>
-    <div class="verdict"><div class="ic">🌬️</div><div><b>The config that buys you "100% performance":</b> put the <b>PRO 6000 in the lower slot</b> so it sits right over the shroud's fresh-air fans; CPU rad in the <b>front as intake</b>, the 5090's rad in the <b>roof as exhaust</b>, rear fan exhausting. Never put a radiator upstream of the PRO 6000 — GamersNexus measured that mistake at <b>7–9°C</b> on the GPU.</div></div>
+    <div class="verdict"><div class="ic">🌬️</div><div><b>The config that buys you "100% performance":</b> PRO&nbsp;6000 in the <b>lower slot</b>, fed by <b>3× 140&nbsp;mm fresh-air fans on the floor</b>; the Astral&nbsp;LC's radiator on <b>top as exhaust</b>; the CPU radiator on the <b>side as intake</b>. The two GPUs go in the slots; the two radiators bolt flat to the panels — nothing fights for space. Never put a radiator on the floor under the PRO&nbsp;6000.</div></div>
     <div class="verdict"><div class="ic">🔧</div><div><b>Drop the vertical mount and the riser.</b> Both were bought to solve problems you don't have. The two cards are 2-slot and 2.5-slot, they sit <b>4 slot-pitches apart</b> natively, and vertical-mounting the PRO 6000 would face its intake into glass and choke it. Saves ~₹15,000 and cools better.</div></div>
     <div class="verdict"><div class="ic">🌡️</div><div><b>Write a fan-curve script before the first training run.</b> NVIDIA's stock VBIOS runs these cards at ~30% fan speed at 85–90°C. Every owner running them hard discovered this the same way. Full fan = 66–67°C; stock curve = 85°C.</div></div>
   </div>
@@ -183,32 +183,44 @@
 
 <section id="case">
   <h2><span class="n">1</span> The case</h2>
-  <p>Hard constraint: it must be <b>≤ 560 mm tall</b> to live under the Ergosphere desk, take <b>two 360 mm radiators</b>, have <b>8 expansion slots</b>, swallow a <b>200 mm AX1600i</b>, and above all feed cold air to the underside of a 600 W flow-through card.</p>
+  <p>Hard constraints: <b>≤ 560 mm tall</b> (under the desk), room for <b>two 360 mm radiators</b> — one of them the Astral LC's fat 65 mm rad — <b>8 slots</b>, a <b>200 mm AX1600i</b>, and above all <b>fresh air fed to the underside of the 600 W flow-through PRO 6000</b>.</p>
+  <div class="verdict"><div class="ic">🧩</div><div><b>First, the thing that's worrying you.</b> You're not fitting <em>three</em> bulky objects into the GPU area. You're fitting <b>two cards in the PCIe slots</b> (6000 + 5090, stacked with a gap) plus <b>two flat radiators that bolt to the panels</b> — the Astral LC's rad on the top, the CPU rad on the side. A radiator is a thin panel on hoses, not a third box competing for card space. Every case below is designed for exactly this 2-cards-+-2-rads load. With "room to build in" now a real requirement, the pick moves from the Flux Pro to the roomier Lian Li.</div></div>
 
   <div class="opt best">
     <div class="tag">★ Buy this</div>
-    <h3>Antec FLUX PRO — ₹20,865 black, in stock</h3>
-    <p class="note">Antec India official store · MRP ₹25,999 · also on Amazon.in · white ₹28,750</p>
+    <h3>Lian Li O11 Dynamic EVO XL — ₹22,995 black, in stock (Computech)</h3>
+    <p class="note">Also at MD Computers / PC Studio / Vedant / Amazon.in · this is the roomy pick, and the right one for your exact parts</p>
     <ul>
-      <li><span class="pro">＋</span> <b>545 mm tall with feet</b> (523 mm without). Fits under the desk with room for an air gap. <span class="note">Noctua publishes both figures; the 70.77 L volume cross-checks.</span></li>
-      <li><span class="pro">＋</span> <b>The PSU-shroud fan bank.</b> This is the whole reason it wins. Antec's F-LUX platform puts reverse-flow fans on top of the PSU shroud that draw ambient air through the floor and blow it <b>straight up into the underside of the graphics card</b> — which is precisely where the PRO 6000 takes its air. It's a 360-capable plane, so 3× 120 mm fit.</li>
-      <li><span class="pro">＋</span> <b>Three independent 360-capable planes</b> (front 420 / top 420 / shroud 360) — so both radiators can live somewhere that isn't upstream of the GPU.</li>
-      <li><span class="pro">＋</span> <b>GamersNexus's noise-normalised thermal chart leader</b> — 41°C CPU / 41°C GPU delta, and quieter than the Fractal Torrent doing it.</li>
-      <li><span class="pro">＋</span> <b>8 expansion slots</b> — roomy for a 2-slot and a 2.5-slot card sitting four positions apart, with neither jammed against the case floor. GPU <em>length</em> limit is 455 mm; your longest card is 304 mm, so length is a non-issue.</li>
-      <li><span class="con">－</span> <b>PSU gotcha:</b> the "iShift" 90° side PSU mount caps at 180 mm. The AX1600i is 200 mm — <b>use the conventional PSU bracket from the accessory box</b>, and pull the under-shroud drive cage.</li>
-      <li><span class="con">－</span> <b>Height clearance — a 30-second confirm on arrival, not a risk:</b> the PRO 6000 is an <b>extended-height</b> card (137 mm vs a normal 112 mm), and no source publishes a GPU height/thickness clearance for this case — only <em>length</em> (455 mm, vs your 304 mm card). But a <em>taller</em> card, the 150 mm MSI RTX 5090 SUPRIM, is routinely spec'd into the Flux Pro, so a 137 mm card sits comfortably inside it. Nobody has documented this exact card in this exact case, so just measure it once when it lands.</li>
+      <li><span class="pro">＋</span> <b>531.9 mm tall</b> — under the desk limit with ~28 mm of margin (more headroom than the Flux Pro), so it slides under with an air gap to spare.</li>
+      <li><span class="pro">＋</span> <b>The room you're asking for.</b> 304 mm wide, full-tower, with a <b>separate chamber</b> for the PSU and cables — so the main chamber is wide open for two cards and two radiators. Reviewers describe test builds looking "lost in the space." This is the direct fix for the "will it all fit?" worry.</li>
+      <li><span class="pro">＋</span> <b>It feeds the flow-through PRO 6000 correctly.</b> A bank of <b>3× 140 mm intake fans on the floor</b> blows a full-width column of fresh air straight up — and the PRO 6000 draws its air from below, so this is exactly the right direction. GamersNexus measured this floor-intake as genuinely effective.</li>
+      <li><span class="pro">＋</span> <b>Your thick radiator is a non-issue here.</b> The roof allows an <b>81 mm</b> rad+fan stack; the ASUS Astral LC's fat 65 mm radiator drops in with 16 mm to spare. Top (5090 rad) + side (CPU rad) + floor (GPU intake fans) all coexist within spec — nothing is a puzzle.</li>
+      <li><span class="pro">＋</span> <b>8 slots</b>, tool-free panels, easy 200 mm PSU (separate chamber, no bracket games). Both tall cards clear (the 154 mm Astral card is well inside the ~190 mm cooler clearance).</li>
+      <li><span class="con">－</span> <b>Add the mesh side panel</b> (Lian Li's EVO XL mesh kit) so the side-mounted CPU radiator pulls fresh outside air instead of breathing against glass. The GPU's floor-intake path needs nothing extra. <span class="note">Cheap add-on — confirm the exact SKU + price at purchase.</span></li>
+      <li><span class="con">－</span> Priciest of the three (~₹2k over the Flux Pro), and the CPU rad's side feed is slightly less ideal than a front mount — irrelevant, since the CPU is only ~180 W.</li>
     </ul>
+    <p class="note"><b>Isn't this case a "hotbox"?</b> That reputation is real — but only for <em>conventional</em> air GPUs that pull from the front, which the sealed glass starves. Your PRO 6000 pulls from <b>below</b>, so you feed it from the floor and the glass front is irrelevant. Run the top rad as exhaust and the case breathes fine. This is a genuine change from my earlier "avoid the EVO XL" call: I hadn't credited that a bottom-ingesting card sidesteps the exact weakness that gives this case its reputation.</p>
   </div>
 
   <div class="opt">
-    <div class="tag">Runner-up · cheaper &amp; shorter</div>
-    <h3>Corsair 6500D Airflow — ~₹17,000, MD Computers</h3>
+    <div class="tag">#2 · the most direct GPU feed, but tighter</div>
+    <h3>Antec FLUX PRO — ₹20,865 black, in stock</h3>
     <ul>
-      <li><span class="pro">＋</span> <b>496 mm</b> — 49 mm shorter than the Flux Pro, so even more air gap under the desk. 8 slots. 225 mm PSU bay, no fiddling. Cheaper.</li>
-      <li><span class="pro">＋</span> Dual-chamber: the PSU lives behind the motherboard tray, which frees the <b>entire floor</b> for 3× 120/140 mm intake fans directly under the GPU — drawing pure ambient air, not air that has been through a radiator.</li>
-      <li><span class="con">－</span> Measured airflow is mid-pack, not chart-topping. You give up a few °C versus the Flux Pro.</li>
+      <li><span class="pro">＋</span> <b>The single most direct fresh-air feed made:</b> reverse-flow fans on the PSU shroud sit <em>right under</em> the lower GPU. GamersNexus's noise-normalised thermal chart leader. If absolute GPU temperature were the only thing that mattered, this would win.</li>
+      <li><span class="pro">＋</span> Holds the whole load in spec — ~70 mm roof clearance takes the 65 mm Astral rad, front takes the CPU rad, shroud feeds the GPU. 545 mm tall (fits), 8 slots.</li>
+      <li><span class="con">－</span> <b>245 mm wide — the tightest build of the three.</b> This is the "feels small" you sensed: everything fits, but there's little elbow room and cable work is fiddlier.</li>
+      <li><span class="con">－</span> 200 mm PSU needs the conventional bracket (the iShift side mount caps at 180 mm); the 15 mm height margin is the slimmest of the three.</li>
     </ul>
-    <p class="note">Take this one if the Flux Pro's 15 mm of height margin makes you nervous, or if you want to spend ₹4k less.</p>
+    <p class="note">Pick this over the EVO XL only if you want the maximum-cooling option and don't mind a snug build.</p>
+  </div>
+
+  <div class="opt">
+    <div class="tag">#3 · cheapest, but a mid-tower doing a full-tower job</div>
+    <h3>Corsair 6500D Airflow — ~₹17,000, in stock</h3>
+    <ul>
+      <li><span class="pro">＋</span> Roomy dual-chamber, 496 mm (most desk clearance of all), 225 mm PSU bay, cheapest.</li>
+      <li><span class="con">－</span> <b>Its front and floor radiator mounts overlap.</b> Since the floor <em>must</em> hold the GPU's intake fans, you can't also run a front radiator — both rads get forced to roof + side, and a 65 mm rad in a mid-tower roof risks fouling the top of the motherboard. That's exactly the cramped, compromise-laden puzzle you're trying to get away from.</li>
+    </ul>
   </div>
 
   <div class="opt dead">
@@ -216,7 +228,6 @@
     <h3>Everything else, and why</h3>
     <ul>
       <li><b>Corsair 9000D</b> — 664 mm. 104 mm too tall. Also ₹37,831. <span class="note">It is a genuinely good case and the only one with a documented dual-PRO-6000 build; it simply cannot go under this desk.</span></li>
-      <li><b>Lian Li O11 Dynamic EVO XL</b> — sealed glass front, no front intake without a paid mesh kit. Repeatedly called a "hotbox" for air-cooled cards. It is a <em>watercooling</em> case and is actively hostile to a 600 W flow-through GPU.</li>
       <li><b>Fractal Torrent</b> — best GPU air-feed in the business, but it has <b>no top radiator mount at all</b>. You need two rads. Dead.</li>
       <li><b>Fractal North XL</b> — spec sheet reads "Bottom radiator: N/A" and it has no floor fan mount. The PRO 6000 would have nothing feeding it from below.</li>
       <li><b>Phanteks NV7 / NV9 / Enthoo Pro 2</b> — out of stock at every Indian retailer, and NV9 is 615 mm anyway.</li>
@@ -228,33 +239,32 @@
 
 <section id="airflow">
   <h2><span class="n">2</span> Fan &amp; radiator layout — this is where the performance is</h2>
-  <p>The case is only half the answer. The PRO 6000 is a 600 W air-cooled card living in the same box as 775 W of radiator. Where you put those radiators decides whether it throttles.</p>
+  <p>The case is only half the answer. The PRO 6000 is a 600 W air-cooled card living in the same box as ~755 W of radiator. Where you put those radiators decides whether it throttles.</p>
 
-  <div class="diagram">                 ROOF radiator — 5090's 360 AIO  ══►  EXHAUST
-   ┌──────────────────────────────────────────────────┐
-   │   ▓▓  RTX 5090  (liquid · TOP slot · PCI_E1)  ▓▓  │
- F │                                                  │ R
- R │                                                  │ E
- O │  ▓▓▓ RTX PRO 6000 (600W · LOWER slot · PCI_E2) ▓ │ A ══► EXHAUST
- N │       ▲   ▲   ▲    draws air from below          │ R
- T │    ═══╧═══╧═══╧═══                               │
- ▼ │    3× 120mm fresh-air fans ON the PSU shroud     │
-360│  ┌──────────── PSU shroud ────────────┐          │
-LT │  floor vents  ▲ ambient air pulled in            │
-720└──────────────────────────────────────────────────┘
-   front rad (LT720) = intake · rads never sit under the 6000</div>
+  <div class="diagram">      ═══ TOP: RTX 5090 Astral LC's 360 rad → EXHAUST out ═══
+     ┌────────────────────────────────────────────────────┐
+   S │  ▓▓  RTX 5090 card ........ TOP slot (PCI_E1)       │
+   I │                                                    │
+   D │  ▓▓▓ RTX PRO 6000 (600W) .. LOWER slot (PCI_E2) ▓▓ │
+   E │        ▲   ▲   ▲   ← draws its air from below       │
+     │  ┌──────────────────────────────────────────────┐  │
+   L │  │  3× 140mm FRESH-AIR intake fans on the floor  │  │
+   T │  └──────────────────────────────────────────────┘  │
+ 720  │              ▲  ambient air pulled up             │
+     └────────────────────────────────────────────────────┘
+   LT720 CPU 360 rad = SIDE panel, intake (through the mesh)
+   Only fresh-air fans ever sit under the PRO 6000 — never a rad.</div>
 
   <div class="twrap"><table>
     <thead><tr><th>Position</th><th>What goes there</th><th>Direction</th><th>Why</th></tr></thead>
     <tbody>
-      <tr><td><b>PSU shroud</b></td><td>3× 120 mm fans — <b>no radiator</b></td><td><span class="pill p-good">Intake</span></td><td>The single most important fan bank in the build. Pure ambient air, straight up into the PRO 6000's intake — which only works if the <b>PRO 6000 is the lower card</b>, sitting over this bank.</td></tr>
-      <tr><td><b>Roof</b></td><td>RTX 5090's 360 mm AIO</td><td><span class="pill p-good">Exhaust</span></td><td>Its 575 W leaves the chassis immediately instead of circulating, and it pulls the PRO 6000's rising exhaust straight out the top.</td></tr>
-      <tr><td><b>Front</b></td><td>DeepCool LT720 360 mm</td><td><span class="pill p-good">Intake</span></td><td>The CPU is only ~200 W, so this warms the incoming air by roughly 2–3°C. Negligible — and it's the cheapest place to spend that penalty.</td></tr>
-      <tr><td><b>Rear</b></td><td>1× 120/140 mm fan</td><td><span class="pill p-good">Exhaust</span></td><td>Clears the pocket behind the cards.</td></tr>
+      <tr><td><b>Floor</b></td><td>3× 140 mm fans — <b>no radiator</b></td><td><span class="pill p-good">Intake</span></td><td>The most important fan bank in the build. A full-width column of fresh ambient air straight up into the PRO 6000's underside — which is why the <b>PRO 6000 must be the lower card</b>, right above this floor bank.</td></tr>
+      <tr><td><b>Top</b></td><td>RTX 5090 Astral LC's 360 mm rad</td><td><span class="pill p-good">Exhaust</span></td><td>Its ~575 W leaves the chassis immediately, and it pulls the PRO 6000's rising exhaust straight out the top. The 81 mm roof budget swallows this rad's fat 65 mm stack.</td></tr>
+      <tr><td><b>Side</b></td><td>DeepCool LT720 360 mm</td><td><span class="pill p-good">Intake</span></td><td>Through the mesh side panel. The CPU is only ~180 W, so its exact feed barely matters — the point is to keep it off the floor, which belongs to the GPU.</td></tr>
     </tbody>
   </table></div>
 
-  <div class="verdict alert"><div class="ic">⛔</div><div><b>Never put a radiator in the PRO 6000's intake path</b> — not in the front-bottom, not on the shroud. GamersNexus measured a front-mounted rad costing an air-cooled GPU <b>7–9°C</b> versus roof-exhaust. A builder with two PRO 6000s on Reddit hit exactly this and called it <em>"a disaster."</em></div></div>
+  <div class="verdict alert"><div class="ic">⛔</div><div><b>Never put a radiator on the floor under the PRO 6000</b> — that spot is for fresh-air fans only. GamersNexus measured a radiator in an air-cooled GPU's intake path costing <b>7–9°C</b>. A builder with two PRO 6000s on Reddit did exactly this and called it <em>"a disaster."</em></div></div>
 
   <p class="note"><b>The honest trade-off:</b> the roof radiator is being fed case air that the PRO 6000 has already warmed, so the 5090's coolant will run a few degrees hotter than it would in a single-GPU build. That is the correct direction to lose: liquid cooling has enormous thermal headroom, and the air-cooled card has none. Protect the card that can actually throttle.</p>
 
@@ -274,7 +284,7 @@ LT │  floor vents  ▲ ambient air pulled in            │
 
   <div class="kpi">
     <div class="b"><div class="v">~610 mm</div><div class="l">Desk frame's lowest point (underside)</div></div>
-    <div class="b"><div class="v">545 mm</div><div class="l">Antec Flux Pro, with feet</div></div>
+    <div class="b"><div class="v">531.9 mm</div><div class="l">Lian Li O11 EVO XL, with feet</div></div>
     <div class="b"><div class="v">664 mm</div><div class="l">Corsair 9000D — taller than the desk's floor. Guaranteed collision.</div></div>
   </div>
 
@@ -287,7 +297,7 @@ LT │  floor vents  ▲ ambient air pulled in            │
     <li><b>3. Never run a desk reset with the PC underneath.</b> Pull it out first, every single time. Any error code or power cut can force one.</li>
   </ul>
 
-  <div class="verdict"><div class="ic">📐</div><div><b>What that gets you:</b> a 700 mm stop over a 545 mm case leaves <b>155 mm of air above the PC</b> for its roof exhaust — close to the 200 mm rule of thumb, and enough that it isn't re-breathing its own heat. With a 25 mm top, your desk still sits at 725 mm — a textbook sitting height — and the full standing range above it is untouched. You lose nothing.</div></div>
+  <div class="verdict"><div class="ic">📐</div><div><b>What that gets you:</b> a 700 mm stop over the 532 mm EVO XL leaves <b>~168 mm of air above the PC</b> for its roof exhaust — near the 200 mm rule of thumb, and enough that it isn't re-breathing its own heat. With a 25 mm top, your desk still sits at 725 mm — a textbook sitting height — and the full standing range above it is untouched. You lose nothing.</div></div>
 </section>
 
 <section id="mount">
@@ -296,10 +306,10 @@ LT │  floor vents  ▲ ambient air pulled in            │
 
   <div class="twrap"><table>
     <tbody>
-      <tr><td><b>Slot order <span class="pill p-good">do this</span></b></td><td><b>Put the PRO 6000 in the LOWER slot (PCI_E2), 5090 in the TOP slot (PCI_E1).</b> The lower slot sits over the shroud fans, so the flow-through PRO 6000 gets the fresh-air feed. The liquid 5090 is water-cooled and doesn't need it. <span class="note">This is the opposite of the "big card up top" habit — and it's correct here, because the shroud fans are the whole reason for this case.</span></td></tr>
+      <tr><td><b>Slot order <span class="pill p-good">do this</span></b></td><td><b>Put the PRO 6000 in the LOWER slot (PCI_E2), 5090 in the TOP slot (PCI_E1).</b> The lower slot sits right over the floor intake fans, so the flow-through PRO 6000 gets the fresh-air feed. The liquid 5090 is water-cooled and doesn't need it. <span class="note">This is the opposite of the "big card up top" habit — and it's correct here, because feeding fresh air to the flow-through card is the whole game.</span></td></tr>
       <tr><td><b>Link speeds</b></td><td>PRO 6000 in PCI_E2 → <b>PCIe 5.0 ×4</b>. 5090 in PCI_E1 → <b>PCIe 5.0 ×8</b>. Both CPU-attached; no M.2 or SATA lost. <span class="note">The ×4 on the PRO 6000 is the price of the better air feed — and it's the right trade: a 96 GB card that keeps its whole job in its own memory barely touches the PCIe link, while a starved 600 W air card throttles around the clock. <b>Only</b> reconsider if your PRO 6000 jobs constantly stream from system RAM / NVMe offload — then keep it up top on ×8 and feed it with a side intake fan instead.</span></td></tr>
       <tr><td><b>Slot spacing</b></td><td>PCI_E1 and PCI_E2 sit <b>4 slot-pitches apart</b> (~81 mm centre-to-centre) — about two empty slot positions of clear air between the cards, better separation than most riser setups achieve.</td></tr>
-      <tr><td><b>No vertical mount</b></td><td>Vertical-mounting the PRO 6000 turns its intake face toward the glass panel and starves it. It is a flow-through card; it needs a clear path from the shroud fans below. <span class="note">Also: the Lian Li VG4-4 V2 isn't buyable in India — one retailer lists it out of stock, and the only reachable copy is a grey-market import at ~2.3× MSRP.</span></td></tr>
+      <tr><td><b>No vertical mount</b></td><td>Vertical-mounting the PRO 6000 turns its intake face toward the glass panel and starves it. It is a flow-through card; it needs a clear path from the floor fans below. <span class="note">Also: the Lian Li VG4-4 V2 isn't buyable in India — one retailer lists it out of stock, and the only reachable copy is a grey-market import at ~2.3× MSRP.</span></td></tr>
       <tr><td><b>No riser</b></td><td>Both cards seat natively. A riser adds a failure point and buys nothing.</td></tr>
       <tr><td><b>Sag</b></td><td>Real but minor at 2 slots. A plain adjustable GPU support stick under the PRO 6000 is enough.</td></tr>
       <tr><td><b>Power cable</b></td><td>The PRO 6000's 12V-2×6 connector is on the <b>top middle edge</b> of the card. Budget for an <b>angled 12V-2×6 adapter</b> or you will fight the side panel.</td></tr>
@@ -365,7 +375,7 @@ nvidia-smi -q -d TEMPERATURE
   </div>
   <p>A 180 sq ft room normally wants ~1.5 ton of AC for its own load (walls, sun, people). The PC adds only ~0.4 ton on top. <b>Go 2-ton, 5-star inverter</b> — inverter is essential, because it modulates for continuous duty instead of hammering on/off.</p>
 
-  <div class="verdict"><div class="ic">💡</div><div><b>The real comfort issue is recirculation, not total BTU.</b> Point the PC's exhaust — now the <b>roof</b> radiator and the rear fan — toward the AC's return, and sit upstream so cold air reaches you before it crosses the PC. A hot pocket at your chair is an airflow-direction problem, not a bigger-AC problem.</div></div>
+  <div class="verdict"><div class="ic">💡</div><div><b>The real comfort issue is recirculation, not total BTU.</b> Point the PC's exhaust — the <b>roof</b> radiator — toward the AC's return, and sit upstream so cold air reaches you before it crosses the PC. A hot pocket at your chair is an airflow-direction problem, not a bigger-AC problem.</div></div>
 
   <div class="card">
     <h3 style="margin-top:0">💸 Budget the running cost (it's real)</h3>
@@ -379,21 +389,21 @@ nvidia-smi -q -d TEMPERATURE
   <h2><span class="n">7</span> Shopping list</h2>
   <div class="code">
     <div class="bar"><span class="ttl">give this to your vendor</span><button class="copy" onclick="cp(this)">Copy</button></div>
-<pre>CASE       1x Antec FLUX PRO (Black)  --  Rs 20,865, Antec India store
-           alt: Corsair 6500D Airflow (~Rs 17,000, MD Computers)
+<pre>CASE       1x Lian Li O11 Dynamic EVO XL (Black) -- ~Rs 22,995, Computech
+           + 1x Lian Li EVO XL mesh side panel (so the CPU rad breathes)
+           alt: Antec Flux Pro (Rs 20,865) if you want a smaller/cheaper box
            DO NOT BUY the Corsair 9000D -- 664mm, too tall for the desk
 
-FANS       3x 120mm for the PSU-SHROUD position (fresh-air intake, under the GPU)
-           1x 120/140mm rear exhaust
-           (case ships with 6 PWM fans -- reuse what fits, top up from these)
+GPUs       PRO 6000        -> LOWER slot (PCI_E2), over the floor intake fans
+           5090 Astral LC  -> TOP slot (PCI_E1)
 
-RADS       reuse DeepCool LT720 360  -> FRONT, as INTAKE
-           reuse RTX 5090's 360 AIO  -> ROOF,  as EXHAUST
-           NEVER mount a radiator below or in front of the RTX PRO 6000
+RADS/FANS  reuse RTX 5090 Astral LC's 360 rad -> TOP,  as EXHAUST
+           reuse DeepCool LT720 360           -> SIDE, as INTAKE (via mesh)
+           3x 140mm fresh-air fans            -> FLOOR, feeding the PRO 6000
+           NEVER put a radiator on the floor under the PRO 6000
 
 PSU        reuse Corsair AX1600i (200mm)
-           -- MUST use the conventional PSU bracket, NOT the iShift 90-degree
-              side mount (that one caps at 180mm). Remove the drive cage.
+           -- drops straight into the separate PSU chamber, no bracket games
 
 CABLE      1x ANGLED 12V-2x6 adapter for the RTX PRO 6000
            (its connector sits on the top middle edge of the card)
@@ -414,11 +424,11 @@ SOFTWARE   fan-curve daemon (LACT) + power-limit script on startup</pre>
 <section id="steps">
   <h2><span class="n">8</span> Order of operations</h2>
   <ul class="check">
-    <li>Buy the Antec Flux Pro. Measure its height with feet on arrival — you're relying on 545 mm.</li>
+    <li>Buy the Lian Li O11 Dynamic EVO XL + its mesh side panel.</li>
     <li>Read the label on the desk's control box: LOGICDATA or JieCang. Set the container stop to 700 mm.</li>
     <li>Fit the two steel hard-stop posts under the desk frame. Test by holding the down button.</li>
     <li>Get the dedicated 16A circuit + 2-ton inverter AC installed.</li>
-    <li>Build: <b>PRO 6000 in the LOWER slot (PCI_E2)</b> over the shroud fans, <b>5090 in the top slot (PCI_E1)</b>. LT720 front-intake, 5090 rad roof-exhaust, 3 fans in the PSU shroud.</li>
+    <li>Build: <b>PRO 6000 in the LOWER slot (PCI_E2)</b> over the floor fans, <b>5090 Astral LC in the top slot (PCI_E1)</b>. 5090 rad on top (exhaust), LT720 on the side (intake, via mesh), 3× 140 mm fresh-air fans on the floor.</li>
     <li>BIOS: Above 4G Decoding on, Resizable BAR on, PCIE_PWR1 connected.</li>
     <li>Verify link widths with GPU-Z — expect <b>×4 on the PRO 6000</b> (lower slot) and <b>×8 on the 5090</b> (top slot).</li>
     <li>Install the fan-curve daemon and the power-limit script <em>before</em> the first sustained load.</li>
@@ -428,7 +438,7 @@ SOFTWARE   fan-curve daemon (LACT) + power-limit script on startup</pre>
 </section>
 
 </div>
-<footer><div class="wrap">Rev 2 · Case decision reopened after the RTX PRO 6000 was confirmed to be a double-flow-through card, not a rear-exhaust blower · Prices verified 11 Jul 2026 — confirm at checkout.</div></footer>
+<footer><div class="wrap">Rev 3 · Case switched to the roomier Lian Li O11 EVO XL after confirming the ROG Astral LC's fat 65 mm radiator + the need for build room; PRO 6000 confirmed double-flow-through (fed from the floor) · Prices verified 11 Jul 2026 — confirm at checkout.</div></footer>
 
 <script>
 function cp(btn){
