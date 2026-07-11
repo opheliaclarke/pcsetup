@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dual-GPU AI Workstation — Case, Cooling & Desk Plan</title>
+<meta name="robots" content="noindex">
+<style>
+  :root{
+    --bg:#0a0c10; --bg2:#0f131a; --card:#141923; --card2:#1a212d;
+    --line:#222b3a; --ink:#e7ecf3; --mut:#9aa7b8; --dim:#6f7d90;
+    --acc:#ff7a2f; --acc2:#19d3c5; --good:#39d98a; --warn:#ffcc4d; --bad:#ff5d6c;
+    --r:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#16202e 0,transparent 60%),var(--bg);
+    color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  a{color:var(--acc2);text-decoration:none}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  header{padding:54px 0 30px;border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,rgba(255,122,47,.06),transparent)}
+  .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--acc);font-weight:700}
+  h1{font-size:clamp(26px,4.2vw,40px);line-height:1.12;margin:.35em 0 .25em;letter-spacing:-.02em}
+  .sub{color:var(--mut);font-size:17px;max-width:680px}
+  .rig{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .chip{background:var(--card2);border:1px solid var(--line);border-radius:999px;
+    padding:5px 12px;font-size:12.5px;color:var(--mut)}
+  .chip b{color:var(--ink);font-weight:600}
+
+  nav.toc{position:sticky;top:0;z-index:5;background:rgba(10,12,16,.85);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);margin-top:0}
+  nav.toc .wrap{display:flex;gap:18px;flex-wrap:wrap;padding:13px 20px;font-size:13.5px}
+  nav.toc a{color:var(--mut)}
+  nav.toc a:hover{color:var(--acc)}
+
+  section{padding:40px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:24px;letter-spacing:-.01em;margin:0 0 6px;display:flex;align-items:center;gap:10px}
+  h2 .n{font-size:13px;color:var(--acc);border:1px solid var(--acc);border-radius:8px;
+    padding:2px 8px;font-weight:700;flex:none}
+  h3{font-size:17px;margin:26px 0 8px;color:var(--ink)}
+  p{color:#cdd6e2}
+  ul{padding-left:20px}li{margin:6px 0;color:#cdd6e2}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;margin:18px 0}
+  .tldr{background:linear-gradient(135deg,rgba(255,122,47,.12),rgba(25,211,197,.08));
+    border:1px solid #2b3647}
+  .tldr h2{margin-bottom:10px}
+  .verdict{display:flex;gap:14px;align-items:flex-start;margin:14px 0;padding:14px 16px;border-radius:12px;
+    background:var(--card2);border:1px solid var(--line)}
+  .verdict .ic{font-size:22px;line-height:1.2;flex:none}
+  .verdict b{color:#fff}
+  .verdict.alert{border-color:var(--bad);background:rgba(255,93,108,.08)}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}.rig{gap:6px}}
+
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+  th{color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:11.5px}
+  td b{color:#fff}
+  tr:last-child td{border-bottom:none}
+  .num{text-align:right;font-variant-numeric:tabular-nums}
+  .tot td{border-top:2px solid var(--acc);font-weight:700;color:#fff}
+
+  .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:600}
+  .p-good{background:rgba(57,217,138,.15);color:var(--good)}
+  .p-warn{background:rgba(255,204,77,.15);color:var(--warn)}
+  .p-bad{background:rgba(255,93,108,.15);color:var(--bad)}
+
+  .opt{border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:14px 0;background:var(--card)}
+  .opt.best{border-color:var(--good);box-shadow:0 0 0 1px rgba(57,217,138,.25) inset}
+  .opt.dead{opacity:.72}
+  .opt .tag{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+  .opt.best .tag{color:var(--good)}
+  .opt.dead .tag{color:var(--bad)}
+  .opt h3{margin-top:4px}
+  .pro{color:var(--good)}.con{color:var(--bad)}
+
+  .code{position:relative;background:#0c1017;border:1px solid var(--line);border-radius:12px;margin:14px 0}
+  .code .bar{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid var(--line)}
+  .code .ttl{font-size:12px;color:var(--dim);letter-spacing:.05em}
+  .code pre{margin:0;padding:14px 16px;overflow-x:auto;font:13.5px/1.7 "SF Mono",ui-monospace,Menlo,Consolas,monospace;color:#d6e0ee}
+  .code .cm{color:#5f6f84}
+  .copy{background:var(--acc);color:#1a0d04;border:none;border-radius:8px;padding:5px 12px;font-size:12px;
+    font-weight:700;cursor:pointer;font-family:inherit}
+  .copy:hover{filter:brightness(1.1)}
+  .copy.ok{background:var(--good)}
+
+  .diagram{font-family:"SF Mono",ui-monospace,monospace;font-size:12.5px;line-height:1.55;color:#bcd;
+    background:#0c1017;border:1px solid var(--line);border-radius:12px;padding:18px;overflow-x:auto;white-space:pre}
+
+  .note{font-size:14px;color:var(--mut)}
+  .twrap{overflow-x:auto}
+  .kpi{display:flex;gap:14px;flex-wrap:wrap;margin:14px 0}
+  .kpi .b{flex:1;min-width:150px;background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .kpi .v{font-size:26px;font-weight:700;color:#fff}
+  .kpi .l{font-size:12.5px;color:var(--mut)}
+  footer{padding:40px 0 70px;color:var(--dim);font-size:13px}
+  .check li{list-style:none;position:relative;padding-left:8px}
+  .check{padding-left:8px}
+  .check li::before{content:"☐";color:var(--acc);margin-right:8px;font-weight:700}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">In-house AI training rig · Build plan · Rev 2</div>
+    <h1>Running the RTX&nbsp;PRO&nbsp;6000 + RTX&nbsp;5090 in one case</h1>
+    <p class="sub">Case, cooling, power and desk-clearance plan for a dual-GPU AI workstation. Written to be handed straight to your cabinet vendor, electrician and AC installer.</p>
+    <div class="rig">
+      <span class="chip"><b>CPU</b> Ryzen 9 9950X3D</span>
+      <span class="chip"><b>Board</b> MSI X870E Carbon WiFi</span>
+      <span class="chip"><b>RAM</b> 64GB DDR5</span>
+      <span class="chip"><b>GPU 1</b> RTX PRO 6000 Blackwell 96GB</span>
+      <span class="chip"><b>GPU 2</b> RTX 5090 (liquid-cooled)</span>
+      <span class="chip"><b>PSU</b> Corsair AX1600i 1600W</span>
+      <span class="chip"><b>Cooler</b> DeepCool LT720</span>
+      <span class="chip"><b>Desk</b> Ergosphere PRO 340 L (frame-only)</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc"><div class="wrap">
+  <a href="#tldr">TL;DR</a>
+  <a href="#correction">The Big Correction</a>
+  <a href="#case">The Case</a>
+  <a href="#airflow">Fan &amp; Rad Layout</a>
+  <a href="#desk">Desk Clearance</a>
+  <a href="#mount">Mounting the Cards</a>
+  <a href="#power">Power &amp; Heat</a>
+  <a href="#room">Room Cooling</a>
+  <a href="#shop">Shopping List</a>
+  <a href="#steps">Checklist</a>
+</div></nav>
+
+<div class="wrap">
+
+<section id="tldr">
+  <div class="card tldr">
+    <h2>The short version</h2>
+    <div class="verdict"><div class="ic">🏆</div><div><b>Buy the Antec FLUX PRO.</b> ₹20,865 (black), in stock at Antec India's own store. It is <b>545&nbsp;mm tall with feet</b> — it fits under your desk, which the 9000D (664&nbsp;mm) never could. It is the only case with a <b>dedicated fresh-air fan bank in the PSU shroud blowing straight up into the GPU</b>, which is exactly what the RTX&nbsp;PRO&nbsp;6000 needs, and it is GamersNexus's noise-normalised thermal chart leader.</div></div>
+    <div class="verdict alert"><div class="ic">🔴</div><div><b>The old plan was built on a wrong fact.</b> The RTX&nbsp;PRO&nbsp;6000 Blackwell is <b>not</b> a rear-exhaust blower. NVIDIA's datasheet calls it <b>double-flow-through</b>: it pulls air in from under the card and vents it <em>up into the case</em>. All 600&nbsp;W stays inside the chassis. Only the 300&nbsp;W Max-Q is a blower.</div></div>
+    <div class="verdict"><div class="ic">🌬️</div><div><b>The config that buys you "100% performance":</b> CPU rad in the <b>front as intake</b>, the 5090's rad in the <b>roof as exhaust</b>, PSU shroud packed with <b>fresh-air intake fans under the PRO 6000</b>, rear fan exhausting. Never put a radiator upstream of the PRO 6000 — GamersNexus measured that mistake at <b>7–9°C</b> on the GPU.</div></div>
+    <div class="verdict"><div class="ic">🔧</div><div><b>Drop the vertical mount and the riser.</b> Both were bought to solve problems you don't have. The two cards are 2-slot and 2.5-slot, they sit <b>4 slot-pitches apart</b> natively, and vertical-mounting the PRO 6000 would face its intake into glass and choke it. Saves ~₹15,000 and cools better.</div></div>
+    <div class="verdict"><div class="ic">🌡️</div><div><b>Write a fan-curve script before the first training run.</b> NVIDIA's stock VBIOS runs these cards at ~30% fan speed at 85–90°C. Every owner running them hard discovered this the same way. Full fan = 66–67°C; stock curve = 85°C.</div></div>
+  </div>
+</section>
+
+<section id="correction">
+  <h2><span class="n">0</span> The big correction</h2>
+  <p>Rev 1 of this document said the PRO 6000 "exhausts out the back — a good citizen." That is wrong, and it was the load-bearing assumption under the whole case choice. Here is what is actually true.</p>
+
+  <div class="twrap"><table>
+    <thead><tr><th>What Rev 1 assumed</th><th>What is actually true</th><th>What it changes</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>PRO 6000 is a rear-exhaust blower; its heat leaves the case on its own.</td>
+        <td><b>Double-flow-through.</b> NVIDIA's own datasheet. Air in from beneath the card, out the top, <b>into the case</b>. AEC Magazine: it <em>"raises internal chassis temperatures."</em></td>
+        <td>The case must <b>evacuate</b> 600 W, not merely house it. Bottom intake + roof exhaust becomes mandatory.</td>
+      </tr>
+      <tr>
+        <td>The 5090 is a 4-slot card; sag is the main risk.</td>
+        <td>Every liquid 5090 is a <b>2.5-slot</b> card. The PRO 6000 is <b>2-slot</b> — but <b>extended height, 137 mm</b> vs the standard 112 mm.</td>
+        <td>Sag is a minor problem, not a major one. Card <em>height</em> clearance becomes something to check.</td>
+      </tr>
+      <tr>
+        <td>2nd PCIe slot is ~Gen4 ×4.</td>
+        <td><b>PCI_E2 is PCIe 5.0 ×4</b>, CPU-attached. And populating it drops PCI_E1 from ×16 to <b>PCIe 5.0 ×8</b>.</td>
+        <td>Twice the bandwidth you planned for. Also: don't buy a Gen4 riser "because the slot is slow."</td>
+      </tr>
+      <tr>
+        <td>Corsair 9000D is the winner.</td>
+        <td>It is <b>664 mm tall</b> — 104 mm too tall to ever go under the desk, and ₹37,831 on Amazon with 2 units left.</td>
+        <td>Eliminated on height alone.</td>
+      </tr>
+    </tbody>
+  </table></div>
+
+  <div class="verdict"><div class="ic">📉</div><div><b>The one thing Rev 1 got right and is worth repeating:</b> no NVLink, mismatched VRAM (96 GB vs 32 GB) and mismatched clocks. Use the cards as <b>two independent workers</b> — heavy fine-tuning on the 96 GB PRO 6000, inference / second job on the 5090. Not one merged 128 GB trainer.</div></div>
+</section>
+
+<section id="case">
+  <h2><span class="n">1</span> The case</h2>
+  <p>Hard constraint: it must be <b>≤ 560 mm tall</b> to live under the Ergosphere desk, take <b>two 360 mm radiators</b>, have <b>8 expansion slots</b>, swallow a <b>200 mm AX1600i</b>, and above all feed cold air to the underside of a 600 W flow-through card.</p>
+
+  <div class="opt best">
+    <div class="tag">★ Buy this</div>
+    <h3>Antec FLUX PRO — ₹20,865 black, in stock</h3>
+    <p class="note">Antec India official store · MRP ₹25,999 · also on Amazon.in · white ₹28,750</p>
+    <ul>
+      <li><span class="pro">＋</span> <b>545 mm tall with feet</b> (523 mm without). Fits under the desk with room for an air gap. <span class="note">Noctua publishes both figures; the 70.77 L volume cross-checks.</span></li>
+      <li><span class="pro">＋</span> <b>The PSU-shroud fan bank.</b> This is the whole reason it wins. Antec's F-LUX platform puts reverse-flow fans on top of the PSU shroud that draw ambient air through the floor and blow it <b>straight up into the underside of the graphics card</b> — which is precisely where the PRO 6000 takes its air. It's a 360-capable plane, so 3× 120 mm fit.</li>
+      <li><span class="pro">＋</span> <b>Three independent 360-capable planes</b> (front 420 / top 420 / shroud 360) — so both radiators can live somewhere that isn't upstream of the GPU.</li>
+      <li><span class="pro">＋</span> <b>GamersNexus's noise-normalised thermal chart leader</b> — 41°C CPU / 41°C GPU delta, and quieter than the Fractal Torrent doing it.</li>
+      <li><span class="pro">＋</span> <b>8 expansion slots</b> — needed, because the 2.5-slot 5090 sits at bracket position 6 of 7 and overhangs. 455 mm GPU length. ~198 mm motherboard-to-panel, so the 137 mm PRO 6000 clears with ~58 mm spare.</li>
+      <li><span class="con">－</span> <b>PSU gotcha:</b> the "iShift" 90° side PSU mount caps at 180 mm. The AX1600i is 200 mm — <b>use the conventional PSU bracket from the accessory box</b>, and pull the under-shroud drive cage.</li>
+    </ul>
+  </div>
+
+  <div class="opt">
+    <div class="tag">Runner-up · cheaper &amp; shorter</div>
+    <h3>Corsair 6500D Airflow — ~₹17,000, MD Computers</h3>
+    <ul>
+      <li><span class="pro">＋</span> <b>496 mm</b> — 49 mm shorter than the Flux Pro, so even more air gap under the desk. 8 slots. 225 mm PSU bay, no fiddling. Cheaper.</li>
+      <li><span class="pro">＋</span> Dual-chamber: the PSU lives behind the motherboard tray, which frees the <b>entire floor</b> for 3× 120/140 mm intake fans directly under the GPU — drawing pure ambient air, not air that has been through a radiator.</li>
+      <li><span class="con">－</span> Measured airflow is mid-pack, not chart-topping. You give up a few °C versus the Flux Pro.</li>
+    </ul>
+    <p class="note">Take this one if the Flux Pro's 15 mm of height margin makes you nervous, or if you want to spend ₹4k less.</p>
+  </div>
+
+  <div class="opt dead">
+    <div class="tag">✗ Eliminated</div>
+    <h3>Everything else, and why</h3>
+    <ul>
+      <li><b>Corsair 9000D</b> — 664 mm. 104 mm too tall. Also ₹37,831. <span class="note">It is a genuinely good case and the only one with a documented dual-PRO-6000 build; it simply cannot go under this desk.</span></li>
+      <li><b>Lian Li O11 Dynamic EVO XL</b> — sealed glass front, no front intake without a paid mesh kit. Repeatedly called a "hotbox" for air-cooled cards. It is a <em>watercooling</em> case and is actively hostile to a 600 W flow-through GPU.</li>
+      <li><b>Fractal Torrent</b> — best GPU air-feed in the business, but it has <b>no top radiator mount at all</b>. You need two rads. Dead.</li>
+      <li><b>Fractal North XL</b> — spec sheet reads "Bottom radiator: N/A" and it has no floor fan mount. The PRO 6000 would have nothing feeding it from below.</li>
+      <li><b>Phanteks NV7 / NV9 / Enthoo Pro 2</b> — out of stock at every Indian retailer, and NV9 is 615 mm anyway.</li>
+      <li><b>Lian Li Lancool III</b> — 523 mm and otherwise excellent, but <b>out of stock at all ten Indian retailers</b>. Not buyable.</li>
+      <li><b>Corsair 7000D</b> (600 mm), <b>Cooler Master HAF 700</b> (626 mm), <b>Thermaltake CTE C700/C750</b> (566 mm) — all over the height cap.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="airflow">
+  <h2><span class="n">2</span> Fan &amp; radiator layout — this is where the performance is</h2>
+  <p>The case is only half the answer. The PRO 6000 is a 600 W air-cooled card living in the same box as 775 W of radiator. Where you put those radiators decides whether it throttles.</p>
+
+  <div class="diagram">                    ROOF — 5090's 360 AIO  ══► EXHAUST
+                    ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+   ┌────────────────────────────────────────────────┐
+   │                                                │
+ F │        ░░░ RTX PRO 6000 (600W) ░░░             │  R
+ R │         ▲  ▲  ▲   draws from below             │  E
+ O │         │  │  │                                │  A  ══► EXHAUST
+ N │      ═══╧══╧══╧═══  PSU SHROUD                 │  R
+ T │      3× 120mm FRESH-AIR INTAKE FANS            │
+   │      (pure ambient, straight up into the GPU)  │
+ ▼ │                                                │
+360│        ░░ RTX 5090 (liquid, 2.5-slot) ░░       │
+LT │                                                │
+720│   floor vents ─────────────────────────────    │
+IN └────────────────────────────────────────────────┘
+      ▲ ambient air drawn in through the floor</div>
+
+  <div class="twrap"><table>
+    <thead><tr><th>Position</th><th>What goes there</th><th>Direction</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td><b>PSU shroud</b></td><td>3× 120 mm fans — <b>no radiator</b></td><td><span class="pill p-good">Intake</span></td><td>The single most important fan bank in the build. Pure ambient air, straight up into the PRO 6000's intake.</td></tr>
+      <tr><td><b>Roof</b></td><td>RTX 5090's 360 mm AIO</td><td><span class="pill p-good">Exhaust</span></td><td>Its 575 W leaves the chassis immediately instead of circulating. Also sits directly above the PRO 6000's upward vent.</td></tr>
+      <tr><td><b>Front</b></td><td>DeepCool LT720 360 mm</td><td><span class="pill p-good">Intake</span></td><td>The CPU is only ~200 W, so this warms the incoming air by roughly 2–3°C. Negligible — and it's the cheapest place to spend that penalty.</td></tr>
+      <tr><td><b>Rear</b></td><td>1× 120/140 mm fan</td><td><span class="pill p-good">Exhaust</span></td><td>Clears the pocket behind the cards.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="verdict alert"><div class="ic">⛔</div><div><b>Never put a radiator in the PRO 6000's intake path</b> — not in the front-bottom, not on the shroud. GamersNexus measured a front-mounted rad costing an air-cooled GPU <b>7–9°C</b> versus roof-exhaust. A builder with two PRO 6000s on Reddit hit exactly this and called it <em>"a disaster."</em></div></div>
+
+  <p class="note"><b>The honest trade-off:</b> the roof radiator is being fed case air that the PRO 6000 has already warmed, so the 5090's coolant will run a few degrees hotter than it would in a single-GPU build. That is the correct direction to lose: liquid cooling has enormous thermal headroom, and the air-cooled card has none. Protect the card that can actually throttle.</p>
+
+  <h3>The fan curve is not optional</h3>
+  <p>This is the most consistently reported finding across every owner running these cards hard: <b>NVIDIA's stock VBIOS fan curve leaves the card at ~30% fan speed while it sits at 85–90°C</b>, and it begins throttling around there. Measured on a 450 W-limited PRO 6000 under sustained LLM load:</p>
+  <div class="kpi">
+    <div class="b"><div class="v">85°C</div><div class="l">Stock fan curve</div></div>
+    <div class="b"><div class="v">75–79°C</div><div class="l">Fan pinned to 80%</div></div>
+    <div class="b"><div class="v">66–67°C</div><div class="l">Fan at 100%</div></div>
+  </div>
+  <p>Fix it with <a href="https://github.com/ilya-zlobintsev/LACT">LACT</a> on Linux, or a small <code>pynvml</code> daemon. Set it up before the first real training run, not after.</p>
+</section>
+
+<section id="desk">
+  <h2><span class="n">3</span> Desk clearance — the crush problem</h2>
+  <p>The desk is an <b>Ergosphere Balanced Desk PRO 340 L-Shape Corner</b>, triple-motor, bought frame-only. Its published "63 cm minimum" is measured to the <em>top of the desktop</em> — so the underside, the part that would hit your PC, bottoms out at roughly <b>605–615 mm</b>.</p>
+
+  <div class="kpi">
+    <div class="b"><div class="v">~610 mm</div><div class="l">Desk frame's lowest point (underside)</div></div>
+    <div class="b"><div class="v">545 mm</div><div class="l">Antec Flux Pro, with feet</div></div>
+    <div class="b"><div class="v">664 mm</div><div class="l">Corsair 9000D — taller than the desk's floor. Guaranteed collision.</div></div>
+  </div>
+
+  <div class="verdict alert"><div class="ic">⚠️</div><div><b>Anti-collision will not save the PC.</b> Your frame is a LOGICDATA/Bosch stack, and LOGICDATA's manual states the downward trip force is <b>~40 kg plus the desk's own load</b> before it reacts — enough to crush a radiator or crack glass first. Worse, the manual warns three times that <b>anti-collision is disabled during any reset or calibration</b>, and a reset drives the desk <em>below</em> its normal lowest point, past any limit you programmed.</div></div>
+
+  <h3>Do all three of these</h3>
+  <ul>
+    <li><b>1. Set a container stop at 700 mm.</b> On LOGICDATA: drive the desk to the height you want, <b>hold the "S" button for 10 seconds</b>, listen for <b>two clicks</b>. That becomes the new lower limit. <span class="note">Check the label on your control box first — Ergosphere ships both LOGICDATA and JieCang controllers and the procedure differs.</span></li>
+    <li><b>2. Fit physical steel hard-stops</b> under the frame, cut to 700 mm. Two posts, one under each leg-end — never one in the middle of the span. Size them for ~2,500 N: the motors push down as hard as they lift, and your frame is rated 120–150 kg. Rigid steel or hardwood only — <b>never foam or a rolled towel</b>, because LOGICDATA explicitly lists "soft object over a long time" as a case where anti-collision fails to trigger at all.</li>
+    <li><b>3. Never run a desk reset with the PC underneath.</b> Pull it out first, every single time. Any error code or power cut can force one.</li>
+  </ul>
+
+  <div class="verdict"><div class="ic">📐</div><div><b>What that gets you:</b> a 700 mm stop over a 545 mm case leaves <b>155 mm of air above the PC</b> for its roof exhaust — close to the 200 mm rule of thumb, and enough that it isn't re-breathing its own heat. With a 25 mm top, your desk still sits at 725 mm — a textbook sitting height — and the full standing range above it is untouched. You lose nothing.</div></div>
+</section>
+
+<section id="mount">
+  <h2><span class="n">4</span> Mounting the two cards</h2>
+  <p>Rev 1 planned a vertical GPU kit plus a riser cable. <b>Scrap both.</b> They were sized for a 4-slot, 2 kg card that you are not buying, and the vertical mount would actively hurt you.</p>
+
+  <div class="twrap"><table>
+    <tbody>
+      <tr><td><b>Slot spacing</b></td><td>On the X870E Carbon, <b>PCI_E1 and PCI_E2 sit 4 slot-pitches apart</b> (~81 mm centre-to-centre). A 2-slot PRO 6000 up top leaves <b>two empty slot positions</b> — about 40 mm of clear air — before the 5090. That is better separation than most riser setups achieve.</td></tr>
+      <tr><td><b>Link speeds</b></td><td>PRO 6000 in PCI_E1 → <b>PCIe 5.0 ×8</b>. 5090 in PCI_E2 → <b>PCIe 5.0 ×4</b>, CPU-attached. No M.2 or SATA port is lost. <span class="note">Populating PCI_E2 is what drops PCI_E1 from ×16 to ×8 — unavoidable on this board, and fine for two independent workers.</span></td></tr>
+      <tr><td><b>No vertical mount</b></td><td>Vertical-mounting the PRO 6000 turns its intake face toward the glass panel and starves it. It is a flow-through card; it needs a clear path from the shroud fans below. <span class="note">Also: the Lian Li VG4-4 V2 isn't buyable in India — one retailer lists it out of stock, and the only reachable copy is a grey-market import at ~2.3× MSRP.</span></td></tr>
+      <tr><td><b>No riser</b></td><td>Both cards seat natively. A riser adds a failure point and buys nothing.</td></tr>
+      <tr><td><b>Sag</b></td><td>Real but minor at 2 slots. A plain adjustable GPU support stick under the PRO 6000 is enough.</td></tr>
+      <tr><td><b>Power cable</b></td><td>The PRO 6000's 12V-2×6 connector is on the <b>top middle edge</b> of the card. Budget for an <b>angled 12V-2×6 adapter</b> or you will fight the side panel.</td></tr>
+      <tr><td><b>BIOS</b></td><td>Enable <b>Above 4G Decoding</b> (mandatory for the 96 GB card's BAR) and <b>Resizable BAR</b>. Connect the board's <b>PCIE_PWR1</b> supplemental 8-pin when running two GPUs.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="verdict alert"><div class="ic">🩺</div><div><b>Watch the motherboard, not just the GPUs.</b> The best-documented failure in multi-GPU AI rigs is not a cooked card — it's the board. One builder chased daily hard lockups for weeks: the <b>PCIe retimer chips hit their 90°C alarm and crashed the PCIe fabric</b>, while the GPUs, which don't throttle until ~95°C, reported themselves perfectly happy. Another lost his onboard NIC to heat. Monitor board/VRM temps from day one.</div></div>
+</section>
+
+<section id="power">
+  <h2><span class="n">5</span> Power &amp; heat budget</h2>
+  <p>Almost 100% of the watts a PC draws turn into heat in the room. So your power budget <em>is</em> your heat budget.</p>
+  <table>
+    <thead><tr><th>Component</th><th class="num">Peak draw</th><th class="num">Power-limited ~80%</th></tr></thead>
+    <tbody>
+      <tr><td><b>RTX PRO 6000 Blackwell</b> <span class="note">(600W TDP)</span></td><td class="num">600 W</td><td class="num">~480 W</td></tr>
+      <tr><td><b>RTX 5090</b> <span class="note">(575W TDP)</span></td><td class="num">575 W</td><td class="num">~460 W</td></tr>
+      <tr><td>Ryzen 9 9950X3D</td><td class="num">~180 W</td><td class="num">~150 W</td></tr>
+      <tr><td>Board, 64GB RAM, 2× NVMe, fans, pump</td><td class="num">~100 W</td><td class="num">~100 W</td></tr>
+      <tr class="tot"><td>System total</td><td class="num">~1,455 W</td><td class="num">~1,190 W</td></tr>
+    </tbody>
+  </table>
+  <div class="kpi">
+    <div class="b"><div class="v">~91%</div><div class="l">PSU load at peak (1455 / 1600W) — tight on transients</div></div>
+    <div class="b"><div class="v">~74%</div><div class="l">PSU load if power-limited — the efficiency sweet spot</div></div>
+    <div class="b"><div class="v">~6.3 A</div><div class="l">Wall current @ 230V — needs a dedicated 16A circuit</div></div>
+  </div>
+
+  <h3>Power-limit both GPUs (do this on day one)</h3>
+  <p>For AI training, capping power barely dents throughput but slashes heat. Run after every reboot (or add to a startup script). Tune the wattages to taste.</p>
+  <div class="code">
+    <div class="bar"><span class="ttl">power-limit.sh · run as admin/sudo</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<pre><span class="cm"># See current limits &amp; live draw</span>
+nvidia-smi -q -d POWER
+
+<span class="cm"># Cap each GPU (index 0 and 1). Adjust watts to your cards.</span>
+nvidia-smi -i 0 -pl 480   <span class="cm"># RTX PRO 6000  (from 600W)</span>
+nvidia-smi -i 1 -pl 460   <span class="cm"># RTX 5090      (from 575W)</span>
+
+<span class="cm"># Watch temps under sustained load — target &lt;80°C</span>
+nvidia-smi -q -d TEMPERATURE
+
+<span class="cm"># The stock fan curve idles at ~30% even at 85-90C. Override it.</span>
+<span class="cm"># Linux: use LACT (github.com/ilya-zlobintsev/LACT) or a pynvml daemon.</span></pre>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">🔌 Two power things people forget in India</h3>
+    <ul>
+      <li><b>Dedicated 16A circuit</b> straight from the DB for the PC + AC. Don't share with the rest of the room. ~1.4kW PC + ~1.8kW (2-ton AC) ≈ 3.2kW continuous.</li>
+      <li><b>An online (double-conversion) UPS, ~3kVA.</b> Training runs for hours — one power cut = lost progress + a hard yank on two ₹-heavy GPUs. Non-negotiable for a 24×7 training goal.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="room">
+  <h2><span class="n">6</span> The room: will it cook? (No.)</h2>
+  <div class="kpi">
+    <div class="b"><div class="v">~4,900</div><div class="l">BTU/hr the PC dumps at peak (1,455W)</div></div>
+    <div class="b"><div class="v">24,000</div><div class="l">BTU/hr a 2-ton AC removes</div></div>
+    <div class="b"><div class="v">~5×</div><div class="l">Cooling headroom over the PC's heat</div></div>
+  </div>
+  <p>A 180 sq ft room normally wants ~1.5 ton of AC for its own load (walls, sun, people). The PC adds only ~0.4 ton on top. <b>Go 2-ton, 5-star inverter</b> — inverter is essential, because it modulates for continuous duty instead of hammering on/off.</p>
+
+  <div class="verdict"><div class="ic">💡</div><div><b>The real comfort issue is recirculation, not total BTU.</b> Point the PC's exhaust — now the <b>roof</b> radiator and the rear fan — toward the AC's return, and sit upstream so cold air reaches you before it crosses the PC. A hot pocket at your chair is an airflow-direction problem, not a bigger-AC problem.</div></div>
+
+  <div class="card">
+    <h3 style="margin-top:0">💸 Budget the running cost (it's real)</h3>
+    <p>PC (~1.4kW) + 2-ton AC (~1.8kW) running 24×7 ≈ <b>~3.2 kW continuous ≈ ~77 units/day</b>. At ₹8/unit that's roughly <b>₹600/day ≈ ₹18,000/month</b>. Power-limiting, and only running training jobs when you need them, cuts this meaningfully.</p>
+  </div>
+
+  <div class="verdict"><div class="ic">🔊</div><div><b>Noise, honestly.</b> Owners of these cards report significant coil whine — <em>"I'd lose my mind if I had to work next to it all day."</em> Two flagship GPUs at full fan, plus a pump, plus an AC, is loud. Worth knowing before it lives under your desk.</div></div>
+</section>
+
+<section id="shop">
+  <h2><span class="n">7</span> Shopping list</h2>
+  <div class="code">
+    <div class="bar"><span class="ttl">give this to your vendor</span><button class="copy" onclick="cp(this)">Copy</button></div>
+<pre>CASE       1x Antec FLUX PRO (Black)  --  Rs 20,865, Antec India store
+           alt: Corsair 6500D Airflow (~Rs 17,000, MD Computers)
+           DO NOT BUY the Corsair 9000D -- 664mm, too tall for the desk
+
+FANS       3x 120mm for the PSU-SHROUD position (fresh-air intake, under the GPU)
+           1x 120/140mm rear exhaust
+           (case ships with 6 PWM fans -- reuse what fits, top up from these)
+
+RADS       reuse DeepCool LT720 360  -> FRONT, as INTAKE
+           reuse RTX 5090's 360 AIO  -> ROOF,  as EXHAUST
+           NEVER mount a radiator below or in front of the RTX PRO 6000
+
+PSU        reuse Corsair AX1600i (200mm)
+           -- MUST use the conventional PSU bracket, NOT the iShift 90-degree
+              side mount (that one caps at 180mm). Remove the drive cage.
+
+CABLE      1x ANGLED 12V-2x6 adapter for the RTX PRO 6000
+           (its connector sits on the top middle edge of the card)
+
+SUPPORT    1x adjustable GPU support stick for the PRO 6000
+           NO vertical GPU kit. NO riser cable. Both cards seat natively.
+
+DESK       2x steel hard-stop posts, cut to 700mm, rated >2500N
+           + set the LOGICDATA container stop to 700mm (hold "S" 10 sec)
+
+POWER      1x dedicated 16A wall circuit from the DB
+UPS        1x online double-conversion UPS, ~3 kVA
+AC         1x 2-ton 5-star INVERTER split
+SOFTWARE   fan-curve daemon (LACT) + power-limit script on startup</pre>
+  </div>
+</section>
+
+<section id="steps">
+  <h2><span class="n">8</span> Order of operations</h2>
+  <ul class="check">
+    <li>Buy the Antec Flux Pro. Measure its height with feet on arrival — you're relying on 545 mm.</li>
+    <li>Read the label on the desk's control box: LOGICDATA or JieCang. Set the container stop to 700 mm.</li>
+    <li>Fit the two steel hard-stop posts under the desk frame. Test by holding the down button.</li>
+    <li>Get the dedicated 16A circuit + 2-ton inverter AC installed.</li>
+    <li>Build: PRO 6000 in PCI_E1, 5090 in PCI_E2. LT720 front-intake, 5090 rad roof-exhaust, 3 fans in the PSU shroud.</li>
+    <li>BIOS: Above 4G Decoding on, Resizable BAR on, PCIE_PWR1 connected.</li>
+    <li>Verify link widths with GPU-Z — expect ×8 on the PRO 6000, ×4 on the 5090.</li>
+    <li>Install the fan-curve daemon and the power-limit script <em>before</em> the first sustained load.</li>
+    <li>Run a 2-hour training job. Watch GPU temps (&lt;80°C) <em>and</em> motherboard/VRM temps.</li>
+    <li>Slide the PC under the desk. Position so the roof exhaust vents toward the AC return, not your chair.</li>
+  </ul>
+</section>
+
+</div>
+<footer><div class="wrap">Rev 2 · Case decision reopened after the RTX PRO 6000 was confirmed to be a double-flow-through card, not a rear-exhaust blower · Prices verified 11 Jul 2026 — confirm at checkout.</div></footer>
+
+<script>
+function cp(btn){
+  var pre=btn.closest('.code').querySelector('pre');
+  var text=pre.innerText;
+  function done(){var o=btn.textContent;btn.textContent='Copied ✓';btn.classList.add('ok');
+    setTimeout(function(){btn.textContent=o;btn.classList.remove('ok');},1600);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(fallback);
+  } else {fallback();}
+  function fallback(){
+    var ta=document.createElement('textarea');ta.value=text;
+    ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);
+    ta.focus();ta.select();
+    try{document.execCommand('copy');done();}catch(e){}
+    document.body.removeChild(ta);
+  }
+}
+</script>
+</body>
+</html>
