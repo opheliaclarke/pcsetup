@@ -142,7 +142,7 @@
     <h2>The short version</h2>
     <div class="verdict"><div class="ic">🏆</div><div><b>Buy the Antec FLUX PRO.</b> ₹20,865 (black), in stock at Antec India's own store. It is <b>545&nbsp;mm tall with feet</b> — it fits under your desk, which the 9000D (664&nbsp;mm) never could. It is the only case with a <b>dedicated fresh-air fan bank in the PSU shroud blowing straight up into the GPU</b>, which is exactly what the RTX&nbsp;PRO&nbsp;6000 needs, and it is GamersNexus's noise-normalised thermal chart leader.</div></div>
     <div class="verdict alert"><div class="ic">🔴</div><div><b>The old plan was built on a wrong fact.</b> The RTX&nbsp;PRO&nbsp;6000 Blackwell is <b>not</b> a rear-exhaust blower. NVIDIA's datasheet calls it <b>double-flow-through</b>: it pulls air in from under the card and vents it <em>up into the case</em>. All 600&nbsp;W stays inside the chassis. Only the 300&nbsp;W Max-Q is a blower.</div></div>
-    <div class="verdict"><div class="ic">🌬️</div><div><b>The config that buys you "100% performance":</b> CPU rad in the <b>front as intake</b>, the 5090's rad in the <b>roof as exhaust</b>, PSU shroud packed with <b>fresh-air intake fans under the PRO 6000</b>, rear fan exhausting. Never put a radiator upstream of the PRO 6000 — GamersNexus measured that mistake at <b>7–9°C</b> on the GPU.</div></div>
+    <div class="verdict"><div class="ic">🌬️</div><div><b>The config that buys you "100% performance":</b> put the <b>PRO 6000 in the lower slot</b> so it sits right over the shroud's fresh-air fans; CPU rad in the <b>front as intake</b>, the 5090's rad in the <b>roof as exhaust</b>, rear fan exhausting. Never put a radiator upstream of the PRO 6000 — GamersNexus measured that mistake at <b>7–9°C</b> on the GPU.</div></div>
     <div class="verdict"><div class="ic">🔧</div><div><b>Drop the vertical mount and the riser.</b> Both were bought to solve problems you don't have. The two cards are 2-slot and 2.5-slot, they sit <b>4 slot-pitches apart</b> natively, and vertical-mounting the PRO 6000 would face its intake into glass and choke it. Saves ~₹15,000 and cools better.</div></div>
     <div class="verdict"><div class="ic">🌡️</div><div><b>Write a fan-curve script before the first training run.</b> NVIDIA's stock VBIOS runs these cards at ~30% fan speed at 85–90°C. Every owner running them hard discovered this the same way. Full fan = 66–67°C; stock curve = 85°C.</div></div>
   </div>
@@ -194,8 +194,9 @@
       <li><span class="pro">＋</span> <b>The PSU-shroud fan bank.</b> This is the whole reason it wins. Antec's F-LUX platform puts reverse-flow fans on top of the PSU shroud that draw ambient air through the floor and blow it <b>straight up into the underside of the graphics card</b> — which is precisely where the PRO 6000 takes its air. It's a 360-capable plane, so 3× 120 mm fit.</li>
       <li><span class="pro">＋</span> <b>Three independent 360-capable planes</b> (front 420 / top 420 / shroud 360) — so both radiators can live somewhere that isn't upstream of the GPU.</li>
       <li><span class="pro">＋</span> <b>GamersNexus's noise-normalised thermal chart leader</b> — 41°C CPU / 41°C GPU delta, and quieter than the Fractal Torrent doing it.</li>
-      <li><span class="pro">＋</span> <b>8 expansion slots</b> — needed, because the 2.5-slot 5090 sits at bracket position 6 of 7 and overhangs. 455 mm GPU length. ~198 mm motherboard-to-panel, so the 137 mm PRO 6000 clears with ~58 mm spare.</li>
+      <li><span class="pro">＋</span> <b>8 expansion slots</b> — roomy for a 2-slot and a 2.5-slot card sitting four positions apart, with neither jammed against the case floor. GPU <em>length</em> limit is 455 mm; your longest card is 304 mm, so length is a non-issue.</li>
       <li><span class="con">－</span> <b>PSU gotcha:</b> the "iShift" 90° side PSU mount caps at 180 mm. The AX1600i is 200 mm — <b>use the conventional PSU bracket from the accessory box</b>, and pull the under-shroud drive cage.</li>
+      <li><span class="con">－</span> <b>Height clearance — a 30-second confirm on arrival, not a risk:</b> the PRO 6000 is an <b>extended-height</b> card (137 mm vs a normal 112 mm), and no source publishes a GPU height/thickness clearance for this case — only <em>length</em> (455 mm, vs your 304 mm card). But a <em>taller</em> card, the 150 mm MSI RTX 5090 SUPRIM, is routinely spec'd into the Flux Pro, so a 137 mm card sits comfortably inside it. Nobody has documented this exact card in this exact case, so just measure it once when it lands.</li>
     </ul>
   </div>
 
@@ -229,28 +230,25 @@
   <h2><span class="n">2</span> Fan &amp; radiator layout — this is where the performance is</h2>
   <p>The case is only half the answer. The PRO 6000 is a 600 W air-cooled card living in the same box as 775 W of radiator. Where you put those radiators decides whether it throttles.</p>
 
-  <div class="diagram">                    ROOF — 5090's 360 AIO  ══► EXHAUST
-                    ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
-   ┌────────────────────────────────────────────────┐
-   │                                                │
- F │        ░░░ RTX PRO 6000 (600W) ░░░             │  R
- R │         ▲  ▲  ▲   draws from below             │  E
- O │         │  │  │                                │  A  ══► EXHAUST
- N │      ═══╧══╧══╧═══  PSU SHROUD                 │  R
- T │      3× 120mm FRESH-AIR INTAKE FANS            │
-   │      (pure ambient, straight up into the GPU)  │
- ▼ │                                                │
-360│        ░░ RTX 5090 (liquid, 2.5-slot) ░░       │
-LT │                                                │
-720│   floor vents ─────────────────────────────    │
-IN └────────────────────────────────────────────────┘
-      ▲ ambient air drawn in through the floor</div>
+  <div class="diagram">                 ROOF radiator — 5090's 360 AIO  ══►  EXHAUST
+   ┌──────────────────────────────────────────────────┐
+   │   ▓▓  RTX 5090  (liquid · TOP slot · PCI_E1)  ▓▓  │
+ F │                                                  │ R
+ R │                                                  │ E
+ O │  ▓▓▓ RTX PRO 6000 (600W · LOWER slot · PCI_E2) ▓ │ A ══► EXHAUST
+ N │       ▲   ▲   ▲    draws air from below          │ R
+ T │    ═══╧═══╧═══╧═══                               │
+ ▼ │    3× 120mm fresh-air fans ON the PSU shroud     │
+360│  ┌──────────── PSU shroud ────────────┐          │
+LT │  floor vents  ▲ ambient air pulled in            │
+720└──────────────────────────────────────────────────┘
+   front rad (LT720) = intake · rads never sit under the 6000</div>
 
   <div class="twrap"><table>
     <thead><tr><th>Position</th><th>What goes there</th><th>Direction</th><th>Why</th></tr></thead>
     <tbody>
-      <tr><td><b>PSU shroud</b></td><td>3× 120 mm fans — <b>no radiator</b></td><td><span class="pill p-good">Intake</span></td><td>The single most important fan bank in the build. Pure ambient air, straight up into the PRO 6000's intake.</td></tr>
-      <tr><td><b>Roof</b></td><td>RTX 5090's 360 mm AIO</td><td><span class="pill p-good">Exhaust</span></td><td>Its 575 W leaves the chassis immediately instead of circulating. Also sits directly above the PRO 6000's upward vent.</td></tr>
+      <tr><td><b>PSU shroud</b></td><td>3× 120 mm fans — <b>no radiator</b></td><td><span class="pill p-good">Intake</span></td><td>The single most important fan bank in the build. Pure ambient air, straight up into the PRO 6000's intake — which only works if the <b>PRO 6000 is the lower card</b>, sitting over this bank.</td></tr>
+      <tr><td><b>Roof</b></td><td>RTX 5090's 360 mm AIO</td><td><span class="pill p-good">Exhaust</span></td><td>Its 575 W leaves the chassis immediately instead of circulating, and it pulls the PRO 6000's rising exhaust straight out the top.</td></tr>
       <tr><td><b>Front</b></td><td>DeepCool LT720 360 mm</td><td><span class="pill p-good">Intake</span></td><td>The CPU is only ~200 W, so this warms the incoming air by roughly 2–3°C. Negligible — and it's the cheapest place to spend that penalty.</td></tr>
       <tr><td><b>Rear</b></td><td>1× 120/140 mm fan</td><td><span class="pill p-good">Exhaust</span></td><td>Clears the pocket behind the cards.</td></tr>
     </tbody>
@@ -298,8 +296,9 @@ IN └────────────────────────�
 
   <div class="twrap"><table>
     <tbody>
-      <tr><td><b>Slot spacing</b></td><td>On the X870E Carbon, <b>PCI_E1 and PCI_E2 sit 4 slot-pitches apart</b> (~81 mm centre-to-centre). A 2-slot PRO 6000 up top leaves <b>two empty slot positions</b> — about 40 mm of clear air — before the 5090. That is better separation than most riser setups achieve.</td></tr>
-      <tr><td><b>Link speeds</b></td><td>PRO 6000 in PCI_E1 → <b>PCIe 5.0 ×8</b>. 5090 in PCI_E2 → <b>PCIe 5.0 ×4</b>, CPU-attached. No M.2 or SATA port is lost. <span class="note">Populating PCI_E2 is what drops PCI_E1 from ×16 to ×8 — unavoidable on this board, and fine for two independent workers.</span></td></tr>
+      <tr><td><b>Slot order <span class="pill p-good">do this</span></b></td><td><b>Put the PRO 6000 in the LOWER slot (PCI_E2), 5090 in the TOP slot (PCI_E1).</b> The lower slot sits over the shroud fans, so the flow-through PRO 6000 gets the fresh-air feed. The liquid 5090 is water-cooled and doesn't need it. <span class="note">This is the opposite of the "big card up top" habit — and it's correct here, because the shroud fans are the whole reason for this case.</span></td></tr>
+      <tr><td><b>Link speeds</b></td><td>PRO 6000 in PCI_E2 → <b>PCIe 5.0 ×4</b>. 5090 in PCI_E1 → <b>PCIe 5.0 ×8</b>. Both CPU-attached; no M.2 or SATA lost. <span class="note">The ×4 on the PRO 6000 is the price of the better air feed — and it's the right trade: a 96 GB card that keeps its whole job in its own memory barely touches the PCIe link, while a starved 600 W air card throttles around the clock. <b>Only</b> reconsider if your PRO 6000 jobs constantly stream from system RAM / NVMe offload — then keep it up top on ×8 and feed it with a side intake fan instead.</span></td></tr>
+      <tr><td><b>Slot spacing</b></td><td>PCI_E1 and PCI_E2 sit <b>4 slot-pitches apart</b> (~81 mm centre-to-centre) — about two empty slot positions of clear air between the cards, better separation than most riser setups achieve.</td></tr>
       <tr><td><b>No vertical mount</b></td><td>Vertical-mounting the PRO 6000 turns its intake face toward the glass panel and starves it. It is a flow-through card; it needs a clear path from the shroud fans below. <span class="note">Also: the Lian Li VG4-4 V2 isn't buyable in India — one retailer lists it out of stock, and the only reachable copy is a grey-market import at ~2.3× MSRP.</span></td></tr>
       <tr><td><b>No riser</b></td><td>Both cards seat natively. A riser adds a failure point and buys nothing.</td></tr>
       <tr><td><b>Sag</b></td><td>Real but minor at 2 slots. A plain adjustable GPU support stick under the PRO 6000 is enough.</td></tr>
@@ -419,9 +418,9 @@ SOFTWARE   fan-curve daemon (LACT) + power-limit script on startup</pre>
     <li>Read the label on the desk's control box: LOGICDATA or JieCang. Set the container stop to 700 mm.</li>
     <li>Fit the two steel hard-stop posts under the desk frame. Test by holding the down button.</li>
     <li>Get the dedicated 16A circuit + 2-ton inverter AC installed.</li>
-    <li>Build: PRO 6000 in PCI_E1, 5090 in PCI_E2. LT720 front-intake, 5090 rad roof-exhaust, 3 fans in the PSU shroud.</li>
+    <li>Build: <b>PRO 6000 in the LOWER slot (PCI_E2)</b> over the shroud fans, <b>5090 in the top slot (PCI_E1)</b>. LT720 front-intake, 5090 rad roof-exhaust, 3 fans in the PSU shroud.</li>
     <li>BIOS: Above 4G Decoding on, Resizable BAR on, PCIE_PWR1 connected.</li>
-    <li>Verify link widths with GPU-Z — expect ×8 on the PRO 6000, ×4 on the 5090.</li>
+    <li>Verify link widths with GPU-Z — expect <b>×4 on the PRO 6000</b> (lower slot) and <b>×8 on the 5090</b> (top slot).</li>
     <li>Install the fan-curve daemon and the power-limit script <em>before</em> the first sustained load.</li>
     <li>Run a 2-hour training job. Watch GPU temps (&lt;80°C) <em>and</em> motherboard/VRM temps.</li>
     <li>Slide the PC under the desk. Position so the roof exhaust vents toward the AC return, not your chair.</li>
