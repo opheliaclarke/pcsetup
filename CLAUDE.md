@@ -1,7 +1,7 @@
 # Dual-GPU AI Workstation (pcsetup)
 
 **What it is:** A single self-contained HTML build-plan document (case / cooling / power / desk-clearance) for Dominic's in-house 24×7 dual-GPU AI training workstation.
-**Status:** **Rev 3 — LIVE.** Case switched to Lian Li O11 EVO XL (roomier) after user confirmed the 5090 is a ROG Astral LC with a fat 65mm radiator + wants build room. Published 2026-07-11.
+**Status:** **Rev 3 — LIVE, QA-verified.** Case switched to Lian Li O11 EVO XL (roomier) after user confirmed the 5090 is a ROG Astral LC with a fat 65mm radiator + wants build room. Published 2026-07-11. Independent sub-agent QA read the final page (no contradictions); CPU figure reconciled to ~180W throughout, stale "rear fan" removed, airflow diagram redrawn.
 
 ## Live assets
 - **Repo:** `opheliaclarke/pcsetup` (PUBLIC — user approved public visibility for Pages). Collaborators SilentAurora245 + mary3862jon added.
