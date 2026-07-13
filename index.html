@@ -106,7 +106,7 @@
 <body>
 <header>
   <div class="wrap">
-    <div class="eyebrow">In-house AI training rig · Build plan · Rev 3</div>
+    <div class="eyebrow">In-house AI training rig · Build plan · Rev 4</div>
     <h1>Running the RTX&nbsp;PRO&nbsp;6000 + RTX&nbsp;5090 in one case</h1>
     <p class="sub">Case, cooling, power and desk-clearance plan for a dual-GPU AI workstation. Written to be handed straight to your cabinet vendor, electrician and AC installer.</p>
     <div class="rig">
@@ -131,6 +131,7 @@
   <a href="#mount">Mounting the Cards</a>
   <a href="#power">Power &amp; Heat</a>
   <a href="#room">Room Cooling</a>
+  <a href="#underdesk">Under the Desk</a>
   <a href="#shop">Shopping List</a>
   <a href="#steps">Checklist</a>
 </div></nav>
@@ -227,7 +228,9 @@
     <div class="tag">✗ Eliminated</div>
     <h3>Everything else, and why</h3>
     <ul>
-      <li><b>Corsair 9000D</b> — 664 mm. 104 mm too tall. Also ₹37,831. <span class="note">It is a genuinely good case and the only one with a documented dual-PRO-6000 build; it simply cannot go under this desk.</span></li>
+      <li><b>Lian Li V3000 Plus</b> — <b>674 mm tall</b>, a super-tower 114 mm over the limit. For the parts it would be near-ideal (filtered floor-intake straight up into the flow-through 6000, 8 slots, easily holds both rads), but it simply cannot go under the desk — and it's <b>out of stock at every Indian retailer</b> (end-of-life) anyway.</li>
+      <li><b>ASUS ROG Hyperion GR701</b> ("the 701") — <b>~659 mm tall</b>, ~100 mm over. Fails twice: too tall, <em>and</em> it has <b>no floor fan mount</b> (solid PSU cover under the card), so it can't feed the flow-through 6000 from below. In stock India ~₹39k, but wrong case for this build.</li>
+      <li><b>Corsair 9000D</b> — 664 mm. 104 mm too tall. Also ₹37,831. <span class="note">A genuinely good case and the only one with a documented dual-PRO-6000 build; it simply cannot go under this desk.</span></li>
       <li><b>Fractal Torrent</b> — best GPU air-feed in the business, but it has <b>no top radiator mount at all</b>. You need two rads. Dead.</li>
       <li><b>Fractal North XL</b> — spec sheet reads "Bottom radiator: N/A" and it has no floor fan mount. The PRO 6000 would have nothing feeding it from below.</li>
       <li><b>Phanteks NV7 / NV9 / Enthoo Pro 2</b> — out of stock at every Indian retailer, and NV9 is 615 mm anyway.</li>
@@ -360,7 +363,7 @@ nvidia-smi -q -d TEMPERATURE
   <div class="card">
     <h3 style="margin-top:0">🔌 Two power things people forget in India</h3>
     <ul>
-      <li><b>Dedicated 16A circuit</b> straight from the DB for the PC + AC. Don't share with the rest of the room. ~1.4kW PC + ~1.8kW (2-ton AC) ≈ 3.2kW continuous.</li>
+      <li><b>Dedicated 16A circuit</b> straight from the DB for the PC + AC. Don't share with the rest of the room. ~1.4kW PC + ~1.7kW (1.8-ton AC) ≈ 3.1kW continuous.</li>
       <li><b>An online (double-conversion) UPS, ~3kVA.</b> Training runs for hours — one power cut = lost progress + a hard yank on two ₹-heavy GPUs. Non-negotiable for a 24×7 training goal.</li>
     </ul>
   </div>
@@ -369,24 +372,52 @@ nvidia-smi -q -d TEMPERATURE
 <section id="room">
   <h2><span class="n">6</span> The room: will it cook? (No.)</h2>
   <div class="kpi">
-    <div class="b"><div class="v">~4,900</div><div class="l">BTU/hr the PC dumps at peak (1,455W)</div></div>
-    <div class="b"><div class="v">24,000</div><div class="l">BTU/hr a 2-ton AC removes</div></div>
-    <div class="b"><div class="v">~5×</div><div class="l">Cooling headroom over the PC's heat</div></div>
+    <div class="b"><div class="v">~1.5 ton</div><div class="l">the room itself needs (180 sq ft, hot climate, walls, you)</div></div>
+    <div class="b"><div class="v">~0.4 ton</div><div class="l">the PC adds (~1.45 kW → ~4,900 BTU/hr)</div></div>
+    <div class="b"><div class="v">~1.9 ton</div><div class="l">total at full tilt — vs your 1.8-ton unit</div></div>
   </div>
-  <p>A 180 sq ft room normally wants ~1.5 ton of AC for its own load (walls, sun, people). The PC adds only ~0.4 ton on top. <b>Go 2-ton, 5-star inverter</b> — inverter is essential, because it modulates for continuous duty instead of hammering on/off.</p>
+  <div class="verdict"><div class="ic">❄️</div><div><b>Your 1.8-ton O General inverter is the right call — with one condition.</b> At full unthrottled power the room asks for ~1.9 ton, a touch over the unit's ~1.83-ton rating, so in peak summer it would run at high duty. <b>The day-one GPU power-limit (~80%) drops the total to ~1.83 ton — right at its rating.</b> Since you're power-limiting anyway (for heat + PSU headroom), the 1.8-ton is comfortably enough. O General is one of the best brands for 24×7 duty — its tropical-rated compressor holds temperature at 50°C+ ambient without throttling. Being an inverter, it modulates up under sustained load instead of short-cycling.</div></div>
 
   <div class="verdict"><div class="ic">💡</div><div><b>The real comfort issue is recirculation, not total BTU.</b> Point the PC's exhaust — the <b>roof</b> radiator — toward the AC's return, and sit upstream so cold air reaches you before it crosses the PC. A hot pocket at your chair is an airflow-direction problem, not a bigger-AC problem.</div></div>
 
   <div class="card">
     <h3 style="margin-top:0">💸 Budget the running cost (it's real)</h3>
-    <p>PC (~1.4kW) + 2-ton AC (~1.8kW) running 24×7 ≈ <b>~3.2 kW continuous ≈ ~77 units/day</b>. At ₹8/unit that's roughly <b>₹600/day ≈ ₹18,000/month</b>. Power-limiting, and only running training jobs when you need them, cuts this meaningfully.</p>
+    <p>PC (~1.4kW) + 1.8-ton AC (~1.7kW) running 24×7 ≈ <b>~3.1 kW continuous ≈ ~75 units/day</b>. At ₹8/unit that's roughly <b>₹600/day ≈ ₹18,000/month</b>. Power-limiting, and only running training jobs when you need them, cuts this meaningfully.</p>
   </div>
 
   <div class="verdict"><div class="ic">🔊</div><div><b>Noise, honestly.</b> Owners of these cards report significant coil whine — <em>"I'd lose my mind if I had to work next to it all day."</em> Two flagship GPUs at full fan, plus a pump, plus an AC, is loud. Worth knowing before it lives under your desk.</div></div>
 </section>
 
+<section id="underdesk">
+  <h2><span class="n">7</span> Under the desk: will it become a hotbox? (No.)</h2>
+  <p>You're right to ask — a hot PC <em>can</em> cook itself in the wrong spot. But the "hotbox" failure mode is caused by <b>enclosure</b>, not by being under a desk. It happens inside a <b>closed cabinet cubby</b> where the exhaust has nowhere to go and gets re-breathed (that can raise the intake air by ~20°C). Your situation is the opposite of that, and here's why it's fine.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">✅ Why your setup is the good case</h3>
+      <ul>
+        <li><b>An open L-corner ≈ open air.</b> Open on two sides, the exhaust vents freely into the room. The forum consensus is unambiguous: open back/sides is fine; only closed cubbies trap heat.</li>
+        <li><b>Intake and exhaust are far apart.</b> Fresh air enters at the <b>floor</b>; heat leaves at the <b>top</b> — ~53 cm apart. Hot air would have to travel all the way back down, against its own rising plume, to be re-breathed. It won't.</li>
+        <li><b>The floor is the coolest air in the room</b> — the best possible feed for the flow-through 6000.</li>
+        <li><b>You have an air gap above.</b> ~168 mm between the case top and the desk lets the exhaust plume spread sideways instead of bouncing straight back down.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">🛠️ Five things to actually do</h3>
+      <ul>
+        <li><b>Keep the two L-corner sides open</b> and the desk a few inches off the wall — the free exit path matters more than any gap number.</li>
+        <li><b>Aim the exhaust toward the AC's return</b> (the indoor unit's intake face). The AC then scavenges the heat before it can pool. Single most useful placement trick.</li>
+        <li><b>Sit on the upstream/cool side</b> so cold air reaches you before it crosses the PC.</li>
+        <li><b>Stand the case on a hard riser</b> off the floor/carpet, and keep the floor dust filter clean — a clogged filter starves the GPU that depends on that floor feed.</li>
+        <li><b>Insurance only:</b> if you ever feel a hot pocket, a small clip fan nudging the plume toward the AC fixes it. You almost certainly won't need it.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="verdict"><div class="ic">📌</div><div><b>Net:</b> floor-intake + top-exhaust in an open L-corner with an air gap above is the <em>recommended</em> layout for a PC under a desk — not a risky one. The real lever for room heat is the AC, and the power-limit lands that squarely inside your 1.8-ton O General's capacity. No hotbox.</div></div>
+</section>
+
 <section id="shop">
-  <h2><span class="n">7</span> Shopping list</h2>
+  <h2><span class="n">8</span> Shopping list</h2>
   <div class="code">
     <div class="bar"><span class="ttl">give this to your vendor</span><button class="copy" onclick="cp(this)">Copy</button></div>
 <pre>CASE       1x Lian Li O11 Dynamic EVO XL (Black) -- ~Rs 22,995, Computech
@@ -416,18 +447,18 @@ DESK       2x steel hard-stop posts, cut to 700mm, rated >2500N
 
 POWER      1x dedicated 16A wall circuit from the DB
 UPS        1x online double-conversion UPS, ~3 kVA
-AC         1x 2-ton 5-star INVERTER split
+AC         1x 1.8-ton O General inverter split  (already chosen -- good pick)
 SOFTWARE   fan-curve daemon (LACT) + power-limit script on startup</pre>
   </div>
 </section>
 
 <section id="steps">
-  <h2><span class="n">8</span> Order of operations</h2>
+  <h2><span class="n">9</span> Order of operations</h2>
   <ul class="check">
     <li>Buy the Lian Li O11 Dynamic EVO XL + its mesh side panel.</li>
     <li>Read the label on the desk's control box: LOGICDATA or JieCang. Set the container stop to 700 mm.</li>
     <li>Fit the two steel hard-stop posts under the desk frame. Test by holding the down button.</li>
-    <li>Get the dedicated 16A circuit + 2-ton inverter AC installed.</li>
+    <li>Get the dedicated 16A circuit + 1.8-ton O General inverter AC installed.</li>
     <li>Build: <b>PRO 6000 in the LOWER slot (PCI_E2)</b> over the floor fans, <b>5090 Astral LC in the top slot (PCI_E1)</b>. 5090 rad on top (exhaust), LT720 on the side (intake, via mesh), 3× 140 mm fresh-air fans on the floor.</li>
     <li>BIOS: Above 4G Decoding on, Resizable BAR on, PCIE_PWR1 connected.</li>
     <li>Verify link widths with GPU-Z — expect <b>×4 on the PRO 6000</b> (lower slot) and <b>×8 on the 5090</b> (top slot).</li>
@@ -438,7 +469,7 @@ SOFTWARE   fan-curve daemon (LACT) + power-limit script on startup</pre>
 </section>
 
 </div>
-<footer><div class="wrap">Rev 3 · Case switched to the roomier Lian Li O11 EVO XL after confirming the ROG Astral LC's fat 65 mm radiator + the need for build room; PRO 6000 confirmed double-flow-through (fed from the floor) · Prices verified 11 Jul 2026 — confirm at checkout.</div></footer>
+<footer><div class="wrap">Rev 4 · Super-towers (V3000 Plus 674 mm, ROG Hyperion GR701 ~659 mm) ruled out on desk height; under-desk placement + hotbox concern researched and cleared; AC set to the chosen 1.8-ton O General · EVO XL stands · Prices verified 11–13 Jul 2026 — confirm at checkout.</div></footer>
 
 <script>
 function cp(btn){

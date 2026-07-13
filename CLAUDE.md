@@ -1,7 +1,8 @@
 # Dual-GPU AI Workstation (pcsetup)
 
 **What it is:** A single self-contained HTML build-plan document (case / cooling / power / desk-clearance) for Dominic's in-house 24×7 dual-GPU AI training workstation.
-**Status:** **Rev 3 — LIVE, QA-verified.** Case switched to Lian Li O11 EVO XL (roomier) after user confirmed the 5090 is a ROG Astral LC with a fat 65mm radiator + wants build room. Published 2026-07-11. Independent sub-agent QA read the final page (no contradictions); CPU figure reconciled to ~180W throughout, stale "rear fan" removed, airflow diagram redrawn.
+**Status:** **Rev 4 — LIVE.** EVO XL still the pick. Rev 4 (2026-07-13) added: two super-towers researched + ELIMINATED on desk height (V3000 Plus, ROG Hyperion GR701); new "Under the desk / hotbox" section (§7); AC updated to the user's chosen 1.8-ton O General. User CONFIRMED the PC must go UNDER the desk (beside = wire mess + wastes their 6ft span) → the ≤560mm height limit is now ABSOLUTE, no "put it beside instead" escape hatch.
+(Rev 3: switched to EVO XL after user confirmed 5090 = ROG Astral LC + wants room. Rev 2: reopened case after PRO 6000 confirmed double-flow-through.)
 
 ## Live assets
 - **Repo:** `opheliaclarke/pcsetup` (PUBLIC — user approved public visibility for Pages). Collaborators SilentAurora245 + mary3862jon added.
@@ -30,10 +31,15 @@
 - **Fan-curve daemon is MANDATORY.** Stock NVIDIA VBIOS sits at ~30% fan at 85–90°C. Power-limited PRO 6000 under sustained LLM load: **85°C stock / 75–79°C at 80% / 66–67°C at 100%.** Use LACT or a pynvml daemon.
 - **Angled 12V-2×6 adapter required** — the PRO 6000's connector is on the top middle edge.
 - **DESK:** container stop at **700mm** (LOGICDATA: hold **"S" 10 s**, two clicks) + **2× steel hard-stop posts rated >2500N**. Gives 155mm air above the 545mm case; desk surface still 725mm. **Never reset the desk with the PC underneath** — reset drives BELOW the programmed limit and DISABLES anti-collision.
-- Power-limit both GPUs ~80% on day one. Dedicated 16A circuit. ~3kVA online UPS. 2-ton 5-star inverter AC.
+- Power-limit both GPUs ~80% on day one. Dedicated 16A circuit. ~3kVA online UPS.
+- **AC = 1.8-ton O General inverter (user's chosen unit, GOOD pick).** Load math: room ~1.5 ton + PC ~0.4 ton = ~1.9 ton at full tilt (a hair over the unit's ~1.83-ton rating); the day-one ~80% power-limit drops total to ~1.83 ton = right at capacity. So 1.8-ton is adequate BECAUSE we power-limit (which we do anyway). O General = excellent 24×7/tropical-compressor brand. (Was 2-ton generic; now matched to their unit.)
+- **UNDER-DESK HOTBOX = NOT A RISK (researched, §7 in doc).** Hotbox happens in CLOSED cubbies, not open L-corners. Floor-intake + top-exhaust is the RECOMMENDED under-desk layout: intake (cool floor air) and exhaust (top) are ~53cm apart → no short-circuit; ~168mm air gap above lets the plume spread. Do: keep L-corner sides open, desk off wall, aim exhaust at the AC return, sit upstream, case on a hard riser off carpet, keep floor filter clean. Optional clip fan as insurance.
 
 ## Dead ends — do NOT redo
 - **Corsair 9000D: DEAD.** 664mm — 104mm taller than the desk's lowest point. (Good case otherwise; the only documented dual-PRO-6000 build uses it. Just cannot go under this desk.)
+- **Lian Li V3000 Plus: DEAD.** 674mm (114mm over the 560 cap) — super-tower, won't fit under desk. Also OUT OF STOCK everywhere in India (EOL). Would've been near-ideal for the parts (filtered floor-intake + shroud fans straight up into the flow-through 6000, 8 slots, holds both rads). Height kills it.
+- **ASUS ROG Hyperion GR701: DEAD.** ~659mm (verify: ASUS unlabeled "268×639×659"), ~100mm over. TWO fails: too tall AND no floor fan mount (solid PSU cover under card) → can't feed the flow-through 6000. In stock India ~₹39k but wrong case. Don't reconsider.
+- **PC-BESIDE-DESK is OFF THE TABLE** (user 2026-07-13: wire problems + wastes the 6ft desk span). Under-desk is mandatory → never suggest a taller case by offering "put it beside instead".
 - **Lian Li O11 EVO XL: was flagged DEAD in Rev 2, REINSTATED as WINNER in Rev 3.** The "hotbox" reputation is real ONLY for front-fed conventional air cards starved by the glass front. A bottom-ingesting flow-through card (PRO 6000) is fed from the FLOOR, so the glass front is irrelevant; run the top rad as exhaust and it breathes fine. Needs the mesh SIDE panel for the CPU rad only. Do NOT re-disqualify it on the generic hotbox reasoning.
 - **Fractal Torrent: DEAD.** No top radiator mount at all (spec sheet confirms). Needs two rads.
 - **Fractal North XL: DEAD.** "Bottom radiator: N/A", no floor fan mount → nothing feeds the PRO 6000 from below.
