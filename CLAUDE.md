@@ -7,7 +7,8 @@
 ## Live assets
 - **Repo:** `opheliaclarke/pcsetup` (PUBLIC — user approved public visibility for Pages). Collaborators SilentAurora245 + mary3862jon added.
 - **Pages:** https://opheliaclarke.github.io/pcsetup/ — verified HTTP 200.
-- `index.html` carries `<meta robots noindex>`.
+- **Visual diagram:** https://opheliaclarke.github.io/pcsetup/layout.html — labelled SVG side-cutaway of the V3000 Plus (all parts + airflow + desk + pedestal), linked from index.html. Rendered/verified via headless Chrome. Editing tip: it's a hand-authored SVG (viewBox 0 0 960 880); re-render with `google-chrome --headless=new --screenshot` to visually check after edits.
+- Both `index.html` + `layout.html` carry `<meta robots noindex>`.
 - SEPARATE related projects (NOT this folder): AC buying guide at https://opheliaclarke.github.io/ac-guide/ · desk research at https://opheliaclarke.github.io/standing-desk-india/
 
 ## Key facts
