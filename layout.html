@@ -3,213 +3,375 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>V3000 Plus — Build Layout Diagram</title>
+<title>V3000 Plus — Build Layout (both sides)</title>
 <meta name="robots" content="noindex">
 <style>
   :root{
     --bg:#0a0c10; --card:#141923; --card2:#1a212d; --line:#222b3a;
     --ink:#e7ecf3; --mut:#9aa7b8; --dim:#6f7d90;
-    --acc:#ff7a2f; --cool:#35b8ff; --hot:#ff6a3d; --good:#39d98a; --warn:#ffcc4d;
+    --acc:#ff7a2f; --cool:#35b8ff; --hot:#ff6a3d; --good:#39d98a; --warn:#ffcc4d; --wire:#c8a24b;
   }
   *{box-sizing:border-box}
   body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#16202e 0,transparent 60%),var(--bg);
     color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     -webkit-font-smoothing:antialiased}
   a{color:#19d3c5;text-decoration:none}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
   header{padding:44px 0 22px;border-bottom:1px solid var(--line)}
   .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--acc);font-weight:700}
   h1{font-size:clamp(24px,4vw,34px);margin:.35em 0 .2em;letter-spacing:-.02em}
-  .sub{color:var(--mut);max-width:720px}
-  h2{font-size:20px;margin:34px 0 6px}
+  .sub{color:var(--mut);max-width:760px}
+  h2{font-size:20px;margin:40px 0 4px;display:flex;align-items:center;gap:10px}
+  h2 .badge{font-size:13px;color:#1a0d04;background:var(--acc);border-radius:7px;padding:2px 9px;font-weight:800}
+  .cap{color:var(--mut);font-size:14.5px;margin:2px 0 6px}
   h3{font-size:15px;margin:18px 0 6px}
   p{color:#cdd6e2}
-  .figwrap{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin:22px 0}
+  .figwrap{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;margin:14px 0}
   svg{width:100%;height:auto;display:block}
-  .legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin:14px 2px 2px;font-size:13.5px;color:var(--mut)}
+  .legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin:12px 4px 2px;font-size:13.5px;color:var(--mut)}
   .legend .k{display:flex;align-items:center;gap:8px}
-  .sw{width:26px;height:12px;border-radius:3px;flex:none}
-  .dot{width:14px;height:14px;border-radius:50%;flex:none}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
-  @media(max-width:760px){.grid{grid-template-columns:1fr}}
-  .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .sw{width:24px;height:12px;border-radius:3px;flex:none}
+  .parts{display:grid;grid-template-columns:1fr 1fr;gap:10px 26px;margin:14px 0}
+  @media(max-width:760px){.parts{grid-template-columns:1fr}}
+  .parts .p{display:flex;gap:10px;align-items:flex-start;font-size:14.5px}
+  .parts .n{flex:none;width:22px;height:22px;border-radius:50%;background:var(--acc);color:#1a0d04;
+    font-weight:800;font-size:12.5px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .parts b{color:#fff}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
   .box h3{margin-top:0;color:#fff}
   ul{padding-left:18px}li{margin:6px 0;color:#cdd6e2}
-  .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;margin-right:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;margin-right:6px}
   .t-cool{background:rgba(53,184,255,.16);color:var(--cool)}
   .t-hot{background:rgba(255,106,61,.16);color:var(--hot)}
+  .t-warn{background:rgba(255,204,77,.16);color:var(--warn)}
   .note{color:var(--mut);font-size:14px}
   .back{display:inline-block;margin:26px 0 60px;padding:9px 16px;border:1px solid var(--line);border-radius:10px;color:var(--ink)}
   .back:hover{border-color:var(--acc)}
   footer{color:var(--dim);font-size:13px;padding-bottom:50px}
+  /* shared svg text */
+  .lbl{fill:#e7ecf3;font:700 13px -apple-system,"Segoe UI",Roboto,sans-serif}
+  .lbls{fill:#aeb9c9;font:600 11.5px -apple-system,"Segoe UI",Roboto,sans-serif}
+  .cmp{fill:#6f7d90;font:700 11px -apple-system,"Segoe UI",Roboto,sans-serif}
+  .nb{fill:#1a0d04;font:800 12px -apple-system,sans-serif;text-anchor:middle}
 </style>
 </head>
 <body>
 <header><div class="wrap">
-  <div class="eyebrow">Build plan · visual</div>
-  <h1>Lian Li V3000 Plus — how it all fits</h1>
-  <p class="sub">A side cutaway (side panel removed) of the finished build: where each card, radiator and fan bank sits, and how cool air flows in from the floor and hot air leaves out the top. Front of the case is on the left, rear on the right.</p>
+  <div class="eyebrow">Build plan · visual · both sides</div>
+  <h1>Lian Li V3000 Plus — where everything goes</h1>
+  <p class="sub">The case shown from <b>both</b> open sides: the <b>build side</b> (cards, radiators, cooling) and the <b>cable side</b> (power, wiring, storage). Then how it sits under your desk. Front of the case is on the left in every view; the numbered parts match the list under each diagram.</p>
 </div></header>
 
 <div class="wrap">
 
+<!-- =================== SHARED DEFS =================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <marker id="ac" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#35b8ff"/></marker>
+  <marker id="ah" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff6a3d"/></marker>
+  <marker id="agap" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#9aa7b8"/></marker>
+  <g id="fan">
+    <circle r="16" fill="#0c141d" stroke="currentColor" stroke-width="1.7"/>
+    <g stroke="currentColor" stroke-width="1.25" fill="none" opacity=".6">
+      <path d="M0,-4.5 Q10,-10.5 14,-3"/>
+      <path d="M0,-4.5 Q10,-10.5 14,-3" transform="rotate(51)"/>
+      <path d="M0,-4.5 Q10,-10.5 14,-3" transform="rotate(102)"/>
+      <path d="M0,-4.5 Q10,-10.5 14,-3" transform="rotate(153)"/>
+      <path d="M0,-4.5 Q10,-10.5 14,-3" transform="rotate(204)"/>
+      <path d="M0,-4.5 Q10,-10.5 14,-3" transform="rotate(255)"/>
+      <path d="M0,-4.5 Q10,-10.5 14,-3" transform="rotate(306)"/>
+    </g>
+    <circle r="3.6" fill="currentColor"/>
+  </g>
+</defs></svg>
+
+
+<!-- =================== PANEL 1 — BUILD SIDE =================== -->
+<h2><span class="badge">1</span> The build side <span class="cmp" style="color:#6f7d90">&nbsp;— left glass panel off</span></h2>
+<p class="cap">The components and the cooling. Blue = fresh air in, red = hot air out. The one rule: the PRO 6000 breathes from below and vents up.</p>
 <div class="figwrap">
-<svg viewBox="0 0 960 880" role="img" aria-label="Cutaway diagram of the Lian Li V3000 Plus build">
-  <defs>
-    <marker id="ac" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#35b8ff"/></marker>
-    <marker id="ah" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff6a3d"/></marker>
-    <marker id="agap" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#9aa7b8"/></marker>
-  </defs>
+<svg viewBox="0 0 720 700" role="img" aria-label="V3000 Plus build side cutaway">
+  <!-- case shell -->
+  <rect x="48" y="52" width="606" height="596" rx="14" fill="#0e131b" stroke="#33405a" stroke-width="3"/>
+  <rect x="60" y="64" width="582" height="572" rx="8" fill="none" stroke="#1c2534" stroke-width="1"/>
+  <!-- feet -->
+  <rect x="95" y="648" width="70" height="12" rx="3" fill="#1a212d"/>
+  <rect x="537" y="648" width="70" height="12" rx="3" fill="#1a212d"/>
+  <!-- compass -->
+  <text x="351" y="46" class="cmp" text-anchor="middle">TOP</text>
+  <text x="351" y="678" class="cmp" text-anchor="middle">FLOOR</text>
+  <text x="40" y="356" class="cmp" text-anchor="middle" transform="rotate(-90 40 356)">◀ FRONT</text>
+  <text x="666" y="356" class="cmp" text-anchor="middle" transform="rotate(90 666 356)">REAR ▶</text>
 
-  <!-- ground -->
-  <line x1="60" y1="792" x2="900" y2="792" stroke="#2a3446" stroke-width="2"/>
-  <text x="66" y="786" fill="#6f7d90" font-size="12">floor</text>
+  <!-- ===== TOP radiator (LT720, exhaust) ===== -->
+  <g>
+    <rect x="150" y="74" width="360" height="26" rx="3" fill="#171d27" stroke="#ff6a3d" stroke-width="1.5"/>
+    <g stroke="#3a2a24" stroke-width="1">
+      <line x1="165" y1="76" x2="165" y2="98"/><line x1="180" y1="76" x2="180" y2="98"/><line x1="195" y1="76" x2="195" y2="98"/><line x1="210" y1="76" x2="210" y2="98"/><line x1="225" y1="76" x2="225" y2="98"/><line x1="240" y1="76" x2="240" y2="98"/><line x1="255" y1="76" x2="255" y2="98"/><line x1="270" y1="76" x2="270" y2="98"/><line x1="285" y1="76" x2="285" y2="98"/><line x1="300" y1="76" x2="300" y2="98"/><line x1="315" y1="76" x2="315" y2="98"/><line x1="330" y1="76" x2="330" y2="98"/><line x1="345" y1="76" x2="345" y2="98"/><line x1="360" y1="76" x2="360" y2="98"/><line x1="375" y1="76" x2="375" y2="98"/><line x1="390" y1="76" x2="390" y2="98"/><line x1="405" y1="76" x2="405" y2="98"/><line x1="420" y1="76" x2="420" y2="98"/><line x1="435" y1="76" x2="435" y2="98"/><line x1="450" y1="76" x2="450" y2="98"/><line x1="465" y1="76" x2="465" y2="98"/><line x1="480" y1="76" x2="480" y2="98"/><line x1="495" y1="76" x2="495" y2="98"/>
+    </g>
+    <use href="#fan" transform="translate(210,120)" style="color:#ff6a3d"/>
+    <use href="#fan" transform="translate(285,120)" style="color:#ff6a3d"/>
+    <use href="#fan" transform="translate(360,120)" style="color:#ff6a3d"/>
+    <use href="#fan" transform="translate(435,120)" style="color:#ff6a3d"/>
+    <circle cx="163" cy="87" r="10" fill="#ff7a2f"/><text x="163" y="91" class="nb">1</text>
+    <text x="330" y="60" class="lbl" text-anchor="middle" fill="#ffb99e">TOP RAD · EXHAUST ↑</text>
+  </g>
 
-  <!-- desk -->
-  <rect x="110" y="92" width="740" height="24" rx="3" fill="#3a2c1c" stroke="#5a3f22" stroke-width="1.5"/>
-  <text x="480" y="108" fill="#ffcc9a" font-size="13" font-weight="700" text-anchor="middle">DESKTOP — locked minimum height (≈30.5&quot; for a 1&quot; pedestal)</text>
-  <rect x="150" y="116" width="10" height="676" fill="#1a212d" stroke="#2a3446"/>
-  <rect x="800" y="116" width="10" height="676" fill="#1a212d" stroke="#2a3446"/>
+  <!-- ===== FRONT radiator (5090 Astral, intake) ===== -->
+  <g>
+    <rect x="72" y="180" width="26" height="300" rx="3" fill="#171d27" stroke="#35b8ff" stroke-width="1.5"/>
+    <g stroke="#1d2f3d" stroke-width="1">
+      <line x1="74" y1="195" x2="96" y2="195"/><line x1="74" y1="210" x2="96" y2="210"/><line x1="74" y1="225" x2="96" y2="225"/><line x1="74" y1="240" x2="96" y2="240"/><line x1="74" y1="255" x2="96" y2="255"/><line x1="74" y1="270" x2="96" y2="270"/><line x1="74" y1="285" x2="96" y2="285"/><line x1="74" y1="300" x2="96" y2="300"/><line x1="74" y1="315" x2="96" y2="315"/><line x1="74" y1="330" x2="96" y2="330"/><line x1="74" y1="345" x2="96" y2="345"/><line x1="74" y1="360" x2="96" y2="360"/><line x1="74" y1="375" x2="96" y2="375"/><line x1="74" y1="390" x2="96" y2="390"/><line x1="74" y1="405" x2="96" y2="405"/><line x1="74" y1="420" x2="96" y2="420"/><line x1="74" y1="435" x2="96" y2="435"/><line x1="74" y1="450" x2="96" y2="450"/><line x1="74" y1="465" x2="96" y2="465"/>
+    </g>
+    <use href="#fan" transform="translate(118,225)" style="color:#35b8ff"/>
+    <use href="#fan" transform="translate(118,300)" style="color:#35b8ff"/>
+    <use href="#fan" transform="translate(118,375)" style="color:#35b8ff"/>
+    <use href="#fan" transform="translate(118,445)" style="color:#35b8ff"/>
+    <circle cx="85" cy="193" r="10" fill="#ff7a2f"/><text x="85" y="197" class="nb">4</text>
+    <text x="85" y="170" class="lbls" text-anchor="middle" fill="#a9def9">FRONT RAD</text>
+    <text x="85" y="500" class="lbls" text-anchor="middle" fill="#a9def9">INTAKE ▶</text>
+  </g>
 
-  <!-- air gap -->
-  <line x1="768" y1="118" x2="768" y2="163" stroke="#9aa7b8" stroke-width="1.5" marker-start="url(#agap)" marker-end="url(#agap)"/>
-  <text x="778" y="145" fill="#9aa7b8" font-size="12">air gap ~50–90 mm</text>
+  <!-- ===== motherboard (right / rear wall) ===== -->
+  <g>
+    <rect x="512" y="150" width="118" height="392" rx="4" fill="#122019" stroke="#2c5a3f" stroke-width="1.4"/>
+    <!-- CPU block -->
+    <rect x="528" y="168" width="56" height="52" rx="4" fill="#1d2636" stroke="#5a6c86" stroke-width="1.3"/>
+    <text x="556" y="198" class="lbls" text-anchor="middle" fill="#cdd6e2">CPU</text>
+    <!-- RAM -->
+    <rect x="596" y="166" width="7" height="70" rx="2" fill="#26304a"/><rect x="606" y="166" width="7" height="70" rx="2" fill="#26304a"/><rect x="616" y="166" width="7" height="70" rx="2" fill="#26304a"/>
+    <!-- chipset -->
+    <rect x="560" y="250" width="34" height="34" rx="3" fill="#1a2431"/>
+    <!-- PCIe slots (left edge) -->
+    <rect x="500" y="228" width="20" height="12" rx="2" fill="#2a3550"/>
+    <rect x="500" y="330" width="20" height="12" rx="2" fill="#2a3550"/>
+    <text x="571" y="530" class="cmp" text-anchor="middle">MOTHERBOARD</text>
+  </g>
 
-  <!-- case body -->
-  <rect x="232" y="163" width="500" height="527" rx="10" fill="#0f131a" stroke="#33405a" stroke-width="2.5"/>
-  <text x="240" y="182" fill="#6f7d90" font-size="11.5">◀ FRONT</text>
-  <text x="686" y="182" fill="#6f7d90" font-size="11.5" text-anchor="end">REAR ▶</text>
+  <!-- CPU loop tubes to top rad -->
+  <path d="M544,168 C544,140 470,120 430,102" fill="none" stroke="#5b6b7e" stroke-width="4" stroke-linecap="round" opacity=".85"/>
+  <path d="M566,168 C566,145 500,124 452,102" fill="none" stroke="#5b6b7e" stroke-width="4" stroke-linecap="round" opacity=".85"/>
 
-  <!-- TOP radiator (LT720, exhaust) -->
-  <rect x="258" y="192" width="452" height="34" rx="5" fill="rgba(255,106,61,.14)" stroke="#ff6a3d" stroke-width="1.5"/>
-  <text x="484" y="214" fill="#ffb99e" font-size="13.5" font-weight="700" text-anchor="middle">TOP · DeepCool LT720 (CPU) radiator — EXHAUST ↑</text>
+  <!-- ===== 5090 card (top slot) + loop to front rad ===== -->
+  <g>
+    <rect x="250" y="218" width="258" height="34" rx="4" fill="#1a2334" stroke="#4a5a78" stroke-width="1.6"/>
+    <rect x="250" y="218" width="258" height="9" rx="4" fill="#222d42"/>
+    <use href="#fan" transform="translate(300,235) scale(.55)" style="color:#6f7d90"/>
+    <circle cx="503" cy="235" r="9" fill="#ff7a2f"/><text x="503" y="239" class="nb">2</text>
+    <text x="379" y="240" class="lbl" text-anchor="middle">RTX 5090 Astral LC</text>
+  </g>
+  <path d="M250,228 C210,228 150,210 118,208" fill="none" stroke="#3f7fa0" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+  <path d="M250,242 C205,244 150,250 118,255" fill="none" stroke="#3f7fa0" stroke-width="4" stroke-linecap="round" opacity=".8"/>
 
-  <!-- motherboard (thin, right) -->
-  <rect x="698" y="250" width="12" height="330" fill="#25304a"/>
-  <text x="704" y="600" fill="#6f7d90" font-size="10.5" text-anchor="middle" transform="rotate(90 704 600)"></text>
+  <!-- ===== 6000 card (lower slot) — highlighted ===== -->
+  <g>
+    <rect x="236" y="312" width="272" height="46" rx="5" fill="rgba(57,217,138,.10)" stroke="#39d98a" stroke-width="2.2"/>
+    <use href="#fan" transform="translate(300,350) scale(.5)" style="color:#39d98a"/>
+    <use href="#fan" transform="translate(360,350) scale(.5)" style="color:#39d98a"/>
+    <use href="#fan" transform="translate(420,350) scale(.5)" style="color:#39d98a"/>
+    <circle cx="503" cy="322" r="9" fill="#ff7a2f"/><text x="503" y="326" class="nb">3</text>
+    <text x="345" y="330" class="lbl" text-anchor="middle" fill="#c7f4dd">RTX PRO 6000 · 600W</text>
+    <text x="345" y="344" class="lbls" text-anchor="middle" fill="#8fd9b6">flow-through — breathes ↓ vents ↑</text>
+  </g>
 
-  <!-- FRONT radiator (5090 Astral, intake) -->
-  <rect x="250" y="250" width="42" height="252" rx="5" fill="rgba(53,184,255,.14)" stroke="#35b8ff" stroke-width="1.5"/>
-  <text x="271" y="376" fill="#a9def9" font-size="12.5" font-weight="700" text-anchor="middle" transform="rotate(-90 271 376)">FRONT · 5090 ASTRAL LC RAD — INTAKE</text>
+  <!-- ===== above-PSU shelf fans (intake) ===== -->
+  <g>
+    <line x1="150" y1="400" x2="500" y2="400" stroke="#2a3446" stroke-width="1.4"/>
+    <use href="#fan" transform="translate(200,420)" style="color:#35b8ff"/>
+    <use href="#fan" transform="translate(280,420)" style="color:#35b8ff"/>
+    <use href="#fan" transform="translate(360,420)" style="color:#35b8ff"/>
+    <circle cx="450" cy="420" r="10" fill="#ff7a2f"/><text x="450" y="424" class="nb">5</text>
+    <text x="474" y="424" class="lbls" fill="#a9def9">ABOVE-PSU FANS · IN ↑</text>
+  </g>
 
-  <!-- 5090 card (top slot) -->
-  <rect x="392" y="262" width="308" height="34" rx="4" fill="#1d2636" stroke="#4a5a78" stroke-width="1.5"/>
-  <text x="546" y="284" fill="#dfe8f4" font-size="13" font-weight="700" text-anchor="middle">RTX 5090 Astral LC · TOP slot (×8)</text>
+  <!-- ===== PSU basement ===== -->
+  <g>
+    <rect x="150" y="452" width="360" height="70" rx="5" fill="#10151d" stroke="#2a3446" stroke-width="1.4"/>
+    <rect x="172" y="466" width="150" height="44" rx="4" fill="#1a2334" stroke="#4a5a78" stroke-width="1.3"/>
+    <circle cx="210" cy="488" r="15" fill="none" stroke="#5a6c86" stroke-width="1.3"/>
+    <g stroke="#5a6c86" stroke-width="1" opacity=".7"><line x1="210" y1="475" x2="210" y2="501"/><line x1="197" y1="488" x2="223" y2="488"/><line x1="201" y1="479" x2="219" y2="497"/><line x1="201" y1="497" x2="219" y2="479"/></g>
+    <text x="285" y="492" class="lbls" text-anchor="middle" fill="#cdd6e2">PSU · AX1600i</text>
+    <circle cx="352" cy="466" r="9" fill="#ff7a2f"/><text x="352" y="470" class="nb">6</text>
+  </g>
 
-  <!-- 6000 card (lower slot) — highlighted -->
-  <rect x="378" y="344" width="322" height="42" rx="4" fill="rgba(57,217,138,.10)" stroke="#39d98a" stroke-width="2"/>
-  <text x="539" y="363" fill="#c7f4dd" font-size="13" font-weight="700" text-anchor="middle">RTX PRO 6000 96GB · 600 W</text>
-  <text x="539" y="379" fill="#8fd9b6" font-size="11.5" text-anchor="middle">LOWER slot (×4) — the flow-through card</text>
+  <!-- ===== floor fans + filter (intake) ===== -->
+  <g>
+    <rect x="140" y="536" width="372" height="8" rx="2" fill="#12202e" stroke="#35b8ff" stroke-width="1" stroke-dasharray="3 3"/>
+    <use href="#fan" transform="translate(190,566)" style="color:#35b8ff"/>
+    <use href="#fan" transform="translate(268,566)" style="color:#35b8ff"/>
+    <use href="#fan" transform="translate(346,566)" style="color:#35b8ff"/>
+    <use href="#fan" transform="translate(424,566)" style="color:#35b8ff"/>
+    <circle cx="478" cy="548" r="10" fill="#ff7a2f"/><text x="478" y="552" class="nb">7</text>
+    <text x="326" y="598" class="lbls" text-anchor="middle" fill="#a9def9">FLOOR FANS + DUST FILTER — INTAKE ↑</text>
+  </g>
 
-  <!-- above-PSU shelf fans (intake) -->
-  <rect x="322" y="408" width="378" height="30" rx="4" fill="rgba(53,184,255,.10)" stroke="#35b8ff" stroke-width="1.5" stroke-dasharray="1 0"/>
-  <circle cx="360" cy="423" r="9" fill="none" stroke="#35b8ff" stroke-width="1.3"/>
-  <circle cx="430" cy="423" r="9" fill="none" stroke="#35b8ff" stroke-width="1.3"/>
-  <circle cx="500" cy="423" r="9" fill="none" stroke="#35b8ff" stroke-width="1.3"/>
-  <text x="620" y="427" fill="#a9def9" font-size="12" font-weight="700" text-anchor="middle">ABOVE-PSU FANS ↑</text>
+  <!-- ===== rear exhaust ===== -->
+  <use href="#fan" transform="translate(605,190) scale(.8)" style="color:#ff6a3d"/>
+  <circle cx="628" cy="168" r="9" fill="#ff7a2f"/><text x="628" y="172" class="nb">8</text>
 
-  <!-- PSU basement -->
-  <rect x="300" y="470" width="410" height="96" rx="5" fill="#11161f" stroke="#2a3446" stroke-width="1.5"/>
-  <rect x="330" y="498" width="184" height="46" rx="4" fill="#1d2636" stroke="#4a5a78" stroke-width="1.4"/>
-  <text x="422" y="526" fill="#dfe8f4" font-size="12.5" font-weight="700" text-anchor="middle">PSU · AX1600i</text>
-  <text x="612" y="522" fill="#6f7d90" font-size="11.5" text-anchor="middle">basement +</text>
-  <text x="612" y="537" fill="#6f7d90" font-size="11.5" text-anchor="middle">cable chamber</text>
-
-  <!-- floor fans + filter (intake) -->
-  <rect x="300" y="582" width="410" height="30" rx="4" fill="rgba(53,184,255,.14)" stroke="#35b8ff" stroke-width="1.5"/>
-  <circle cx="345" cy="597" r="9" fill="none" stroke="#35b8ff" stroke-width="1.3"/>
-  <circle cx="410" cy="597" r="9" fill="none" stroke="#35b8ff" stroke-width="1.3"/>
-  <circle cx="475" cy="597" r="9" fill="none" stroke="#35b8ff" stroke-width="1.3"/>
-  <circle cx="540" cy="597" r="9" fill="none" stroke="#35b8ff" stroke-width="1.3"/>
-  <text x="628" y="601" fill="#a9def9" font-size="12" font-weight="700" text-anchor="middle">FLOOR FANS + FILTER ↑</text>
-
-  <!-- ================= AIRFLOW ================= -->
-  <!-- intake: below case up through floor -->
-  <line x1="360" y1="700" x2="360" y2="616" stroke="#35b8ff" stroke-width="3" marker-end="url(#ac)"/>
-  <line x1="470" y1="700" x2="470" y2="616" stroke="#35b8ff" stroke-width="3" marker-end="url(#ac)"/>
-  <line x1="580" y1="700" x2="580" y2="616" stroke="#35b8ff" stroke-width="3" marker-end="url(#ac)"/>
-  <!-- above-PSU shelf up into the 6000 underside -->
-  <line x1="430" y1="406" x2="430" y2="390" stroke="#35b8ff" stroke-width="3" marker-end="url(#ac)"/>
-  <line x1="520" y1="406" x2="520" y2="390" stroke="#35b8ff" stroke-width="3" marker-end="url(#ac)"/>
-  <line x1="610" y1="406" x2="610" y2="390" stroke="#35b8ff" stroke-width="3" marker-end="url(#ac)"/>
-  <!-- front rad intake into case -->
-  <line x1="296" y1="312" x2="374" y2="312" stroke="#35b8ff" stroke-width="3" marker-end="url(#ac)"/>
-  <line x1="296" y1="452" x2="360" y2="452" stroke="#35b8ff" stroke-width="3" marker-end="url(#ac)"/>
-
-  <!-- exhaust: 6000 vents up -->
-  <line x1="455" y1="342" x2="455" y2="300" stroke="#ff6a3d" stroke-width="3" marker-end="url(#ah)"/>
-  <line x1="545" y1="342" x2="545" y2="300" stroke="#ff6a3d" stroke-width="3" marker-end="url(#ah)"/>
-  <line x1="630" y1="342" x2="630" y2="300" stroke="#ff6a3d" stroke-width="3" marker-end="url(#ah)"/>
-  <!-- out the top rad -->
-  <line x1="330" y1="190" x2="330" y2="150" stroke="#ff6a3d" stroke-width="3" marker-end="url(#ah)"/>
-  <line x1="450" y1="190" x2="450" y2="150" stroke="#ff6a3d" stroke-width="3" marker-end="url(#ah)"/>
-  <line x1="560" y1="190" x2="560" y2="150" stroke="#ff6a3d" stroke-width="3" marker-end="url(#ah)"/>
-  <line x1="660" y1="190" x2="660" y2="150" stroke="#ff6a3d" stroke-width="3" marker-end="url(#ah)"/>
+  <!-- ============ AIRFLOW ============ -->
+  <!-- intake up from floor -->
+  <line x1="230" y1="640" x2="230" y2="590" stroke="#35b8ff" stroke-width="3.4" marker-end="url(#ac)"/>
+  <line x1="326" y1="640" x2="326" y2="590" stroke="#35b8ff" stroke-width="3.4" marker-end="url(#ac)"/>
+  <line x1="422" y1="640" x2="422" y2="590" stroke="#35b8ff" stroke-width="3.4" marker-end="url(#ac)"/>
+  <!-- above-PSU into 6000 -->
+  <line x1="300" y1="398" x2="300" y2="362" stroke="#35b8ff" stroke-width="3.4" marker-end="url(#ac)"/>
+  <line x1="360" y1="398" x2="360" y2="362" stroke="#35b8ff" stroke-width="3.4" marker-end="url(#ac)"/>
+  <line x1="420" y1="398" x2="420" y2="362" stroke="#35b8ff" stroke-width="3.4" marker-end="url(#ac)"/>
+  <!-- exhaust: 6000 up (stops in the gap below the 5090) -->
+  <line x1="300" y1="308" x2="300" y2="272" stroke="#ff6a3d" stroke-width="3.4" marker-end="url(#ah)"/>
+  <line x1="405" y1="308" x2="405" y2="272" stroke="#ff6a3d" stroke-width="3.4" marker-end="url(#ah)"/>
+  <!-- exhaust out top (clear of the label) -->
+  <line x1="180" y1="118" x2="180" y2="46" stroke="#ff6a3d" stroke-width="3.4" marker-end="url(#ah)"/>
+  <line x1="475" y1="118" x2="475" y2="46" stroke="#ff6a3d" stroke-width="3.4" marker-end="url(#ah)"/>
   <!-- rear exhaust -->
-  <line x1="712" y1="250" x2="750" y2="250" stroke="#ff6a3d" stroke-width="3" marker-end="url(#ah)"/>
-  <text x="726" y="243" fill="#ff9d7d" font-size="10.5" font-weight="700">exhaust</text>
+  <line x1="622" y1="190" x2="662" y2="190" stroke="#ff6a3d" stroke-width="3.4" marker-end="url(#ah)"/>
 
-  <!-- pedestal -->
-  <rect x="256" y="700" width="452" height="40" rx="6" fill="none" stroke="#8a94a6" stroke-width="2" stroke-dasharray="6 5"/>
-  <text x="482" y="725" fill="#9aa7b8" font-size="12.5" font-weight="700" text-anchor="middle">WHEELED OPEN-FRAME PEDESTAL (1–2&quot;, open middle — air passes up)</text>
-  <circle cx="300" cy="760" r="14" fill="#1a212d" stroke="#8a94a6" stroke-width="2"/>
-  <circle cx="420" cy="760" r="14" fill="#1a212d" stroke="#8a94a6" stroke-width="2"/>
-  <circle cx="540" cy="760" r="14" fill="#1a212d" stroke="#8a94a6" stroke-width="2"/>
-  <circle cx="664" cy="760" r="14" fill="#1a212d" stroke="#8a94a6" stroke-width="2"/>
-
-  <!-- airflow captions -->
-  <text x="150" y="640" fill="#35b8ff" font-size="13" font-weight="700">COOL air in ▲</text>
-  <text x="150" y="150" fill="#ff6a3d" font-size="13" font-weight="700">HOT air out ▲</text>
+  <text x="150" y="628" class="lbl" fill="#35b8ff">COOL air ▲</text>
+  <text x="470" y="34" class="lbl" fill="#ff6a3d">HOT air ▲</text>
 </svg>
 <div class="legend">
   <div class="k"><span class="sw" style="background:rgba(53,184,255,.5);border:1px solid #35b8ff"></span> intake (cool, fresh)</div>
   <div class="k"><span class="sw" style="background:rgba(255,106,61,.5);border:1px solid #ff6a3d"></span> exhaust (hot)</div>
-  <div class="k"><span class="dot" style="background:rgba(57,217,138,.2);border:2px solid #39d98a"></span> RTX PRO 6000 (the flow-through card)</div>
-  <div class="k"><span class="sw" style="background:#1d2636;border:1px solid #4a5a78"></span> cards / PSU</div>
+  <div class="k"><span class="sw" style="background:rgba(57,217,138,.2);border:2px solid #39d98a"></span> PRO 6000 (flow-through)</div>
+  <div class="k"><span class="sw" style="background:#5b6b7e"></span> liquid-cooling tubes</div>
 </div>
 </div>
 
-<h2>Reading the diagram</h2>
-<p>The one rule that drives everything: <b>the PRO 6000 breathes from below and vents up.</b> So the bottom of the case is fresh-air fans only, and the heat is pushed out the top.</p>
+<div class="parts">
+  <div class="p"><span class="n">1</span><div><b>Top radiator — DeepCool LT720 (CPU).</b> Runs as <b>exhaust</b>; sits above the 6000 and carries its rising heat out the top.</div></div>
+  <div class="p"><span class="n">2</span><div><b>RTX 5090 Astral LC</b> in the <b>top slot</b> (PCIe 5.0 ×8). Liquid card — its tubes run to the front radiator.</div></div>
+  <div class="p"><span class="n">3</span><div><b>RTX PRO 6000 96GB, 600W</b> in the <b>lower slot</b> (×4). The flow-through card — sits right over the intake fans.</div></div>
+  <div class="p"><span class="n">4</span><div><b>Front radiator — the 5090 Astral LC's rad</b> (thick 65mm). Runs as <b>intake</b>; the deep front swallows it and the 5090 gets fresh coolant temps.</div></div>
+  <div class="p"><span class="n">5</span><div><b>Above-PSU fans</b> — intake, blowing <b>straight up into the 6000's underside</b>. The direct feed.</div></div>
+  <div class="p"><span class="n">6</span><div><b>PSU — Corsair AX1600i</b> in the basement (200mm; the bay takes 220mm).</div></div>
+  <div class="p"><span class="n">7</span><div><b>Floor fans + dust filter</b> — intake, pulling the coolest, cleanest air in the room up through the filtered floor.</div></div>
+  <div class="p"><span class="n">8</span><div><b>Rear fan</b> — exhaust, clearing the pocket behind the cards.</div></div>
+</div>
 
-<div class="grid">
-  <div class="box">
-    <h3><span class="tag t-cool">IN</span> The cool side (bottom &amp; front)</h3>
-    <ul>
-      <li><b>Floor fans + dust filter</b> — pull the coolest, cleanest air in the room up through the filtered floor. The pedestal lifts this off the ground so it breathes freely.</li>
-      <li><b>Above-PSU shelf fans</b> — sit directly under the 6000 and lift that fresh air <b>straight up into the card's underside</b>. This is the money shot for a flow-through GPU.</li>
-      <li><b>Front radiator = the 5090 Astral LC's rad</b> — its thick 65 mm body fits easily in the deep front, and the 5090's coolant gets fresh outside air (its best temps).</li>
-    </ul>
-  </div>
-  <div class="box">
-    <h3><span class="tag t-hot">OUT</span> The hot side (top &amp; rear)</h3>
-    <ul>
-      <li><b>The 6000 vents upward</b> into the case — that 600 W has to leave.</li>
-      <li><b>Top radiator = the DeepCool LT720 (CPU)</b>, running as exhaust — it sits right above the 6000 and carries its rising heat straight out the top.</li>
-      <li><b>Rear fan</b> clears the pocket behind the cards.</li>
-      <li>Net: air enters low and cool, leaves high and hot — the two never short-circuit.</li>
-    </ul>
-  </div>
+
+<!-- =================== PANEL 2 — CABLE SIDE =================== -->
+<h2><span class="badge">2</span> The cable &amp; power side <span class="cmp" style="color:#6f7d90">&nbsp;— right glass panel off</span></h2>
+<p class="cap">The back of the motherboard tray, where power, wiring and storage live. Nothing here blocks airflow — it's the tidy side.</p>
+<div class="figwrap">
+<svg viewBox="0 0 720 700" role="img" aria-label="V3000 Plus cable side cutaway">
+  <!-- case shell -->
+  <rect x="48" y="52" width="606" height="596" rx="14" fill="#0e131b" stroke="#33405a" stroke-width="3"/>
+  <rect x="60" y="64" width="582" height="572" rx="8" fill="none" stroke="#1c2534" stroke-width="1"/>
+  <rect x="95" y="648" width="70" height="12" rx="3" fill="#1a212d"/>
+  <rect x="537" y="648" width="70" height="12" rx="3" fill="#1a212d"/>
+  <text x="351" y="46" class="cmp" text-anchor="middle">TOP</text>
+  <text x="351" y="678" class="cmp" text-anchor="middle">FLOOR</text>
+  <text x="40" y="356" class="cmp" text-anchor="middle" transform="rotate(-90 40 356)">◀ FRONT</text>
+  <text x="666" y="356" class="cmp" text-anchor="middle" transform="rotate(90 666 356)">REAR ▶</text>
+
+  <!-- back of motherboard tray -->
+  <rect x="150" y="90" width="460" height="440" rx="6" fill="#0f1620" stroke="#25304a" stroke-width="1.4"/>
+  <text x="380" y="112" class="cmp" text-anchor="middle">BACK OF MOTHERBOARD TRAY</text>
+  <!-- routing cutouts with grommets -->
+  <rect x="158" y="150" width="20" height="120" rx="8" fill="#0a0f16" stroke="#3a4a63" stroke-width="1.4"/>
+  <rect x="158" y="300" width="20" height="90" rx="8" fill="#0a0f16" stroke="#3a4a63" stroke-width="1.4"/>
+  <text x="196" y="146" class="lbls" fill="#9aa7b8">grommeted cutouts</text>
+
+  <!-- SSDs on the tray -->
+  <g>
+    <rect x="470" y="150" width="110" height="34" rx="3" fill="#1a2334" stroke="#4a5a78" stroke-width="1.3"/>
+    <rect x="470" y="196" width="110" height="34" rx="3" fill="#1a2334" stroke="#4a5a78" stroke-width="1.3"/>
+    <text x="525" y="171" class="lbls" text-anchor="middle" fill="#cdd6e2">SSD</text>
+    <text x="525" y="217" class="lbls" text-anchor="middle" fill="#cdd6e2">SSD</text>
+    <circle cx="592" cy="150" r="10" fill="#ff7a2f"/><text x="592" y="154" class="nb">d</text>
+  </g>
+
+  <!-- fan / ARGB hub -->
+  <g>
+    <rect x="470" y="270" width="110" height="60" rx="4" fill="#141b26" stroke="#3a4a63" stroke-width="1.3"/>
+    <g fill="#39d98a"><circle cx="486" cy="288" r="2.6"/><circle cx="500" cy="288" r="2.6"/><circle cx="514" cy="288" r="2.6"/><circle cx="486" cy="304" r="2.6"/><circle cx="500" cy="304" r="2.6"/><circle cx="514" cy="304" r="2.6"/><circle cx="486" cy="318" r="2.6"/><circle cx="500" cy="318" r="2.6"/><circle cx="514" cy="318" r="2.6"/></g>
+    <text x="548" y="304" class="lbls" text-anchor="middle" fill="#cdd6e2">fan /</text>
+    <text x="548" y="318" class="lbls" text-anchor="middle" fill="#cdd6e2">ARGB hub</text>
+    <circle cx="592" cy="270" r="10" fill="#ff7a2f"/><text x="592" y="274" class="nb">e</text>
+  </g>
+
+  <!-- cable bundles from PSU -->
+  <path d="M300,470 C250,420 190,360 172,300" fill="none" stroke="#c8a24b" stroke-width="7" stroke-linecap="round" opacity=".85"/>
+  <path d="M320,470 C300,400 250,320 200,250 C185,225 172,200 170,175" fill="none" stroke="#8b93a3" stroke-width="7" stroke-linecap="round" opacity=".85"/>
+  <path d="M345,470 C360,410 340,330 300,300 C255,268 200,250 172,240" fill="none" stroke="#c86a4b" stroke-width="7" stroke-linecap="round" opacity=".85"/>
+  <!-- velcro ticks -->
+  <g stroke="#0e131b" stroke-width="6" opacity=".9"><line x1="205" y1="322" x2="221" y2="322"/><line x1="243" y1="286" x2="259" y2="286"/></g>
+
+  <!-- PSU (from behind) -->
+  <g>
+    <rect x="150" y="470" width="360" height="70" rx="5" fill="#10151d" stroke="#2a3446" stroke-width="1.4"/>
+    <rect x="300" y="482" width="196" height="46" rx="4" fill="#1a2334" stroke="#4a5a78" stroke-width="1.3"/>
+    <!-- connector sockets -->
+    <g fill="#0a0f16" stroke="#3a4a63" stroke-width="1"><rect x="312" y="492" width="26" height="10" rx="2"/><rect x="312" y="506" width="26" height="10" rx="2"/><rect x="344" y="492" width="26" height="10" rx="2"/><rect x="344" y="506" width="26" height="10" rx="2"/><rect x="376" y="492" width="26" height="10" rx="2"/><rect x="376" y="506" width="26" height="10" rx="2"/></g>
+    <text x="440" y="510" class="lbls" text-anchor="middle" fill="#cdd6e2">PSU (modular sockets)</text>
+    <circle cx="300" cy="470" r="10" fill="#ff7a2f"/><text x="300" y="474" class="nb">a</text>
+  </g>
+
+  <!-- labels for cables -->
+  <circle cx="196" cy="188" r="10" fill="#ff7a2f"/><text x="196" y="192" class="nb">b</text>
+  <text x="214" y="192" class="lbls" fill="#e7ecf3">24-pin + EPS → board</text>
+  <circle cx="196" cy="248" r="10" fill="#ff7a2f"/><text x="196" y="252" class="nb">c</text>
+  <text x="214" y="252" class="lbls" fill="#e7ecf3">12V-2×6 → GPUs (angled adapter)</text>
+
+  <text x="380" y="580" class="lbls" text-anchor="middle" fill="#9aa7b8">This chamber = power + cables + storage only. Nothing here restricts airflow.</text>
+</svg>
+</div>
+
+<div class="parts">
+  <div class="p"><span class="n">a</span><div><b>PSU, cable side</b> — the modular sockets face this chamber, so every cable is routed out of sight of the build side.</div></div>
+  <div class="p"><span class="n">b</span><div><b>24-pin + EPS</b> — motherboard and CPU power, routed up through the grommeted cutouts to the board.</div></div>
+  <div class="p"><span class="n">c</span><div><b>12V-2×6 to the GPUs</b> — use the <b>angled adapter</b> on the PRO 6000 (its connector is on the top edge) so it clears the panel.</div></div>
+  <div class="p"><span class="n">d</span><div><b>SSDs</b> mount on the back of the tray — off the airflow path entirely.</div></div>
+  <div class="p"><span class="n">e</span><div><b>Fan / ARGB hub</b> — one tidy place to land all the case-fan and lighting cables.</div></div>
+</div>
+
+
+<!-- =================== PANEL 3 — UNDER THE DESK =================== -->
+<h2><span class="badge">3</span> Under the desk <span class="cmp" style="color:#6f7d90">&nbsp;— how it sits</span></h2>
+<p class="cap">On a wheeled pedestal, with the desk's minimum height locked so it can never come down onto the case.</p>
+<div class="figwrap">
+<svg viewBox="0 0 900 420" role="img" aria-label="V3000 Plus under the desk, on a pedestal">
+  <line x1="40" y1="392" x2="860" y2="392" stroke="#2a3446" stroke-width="2"/>
+  <text x="46" y="386" class="cmp">floor</text>
+  <!-- desk -->
+  <rect x="120" y="24" width="660" height="22" rx="3" fill="#3a2c1c" stroke="#5a3f22" stroke-width="1.5"/>
+  <text x="450" y="39" class="lbl" text-anchor="middle" fill="#ffcc9a">DESKTOP — minimum locked at ≈30.5&quot; (survives a reset)</text>
+  <rect x="150" y="46" width="10" height="346" fill="#1a212d" stroke="#2a3446"/>
+  <rect x="740" y="46" width="10" height="346" fill="#1a212d" stroke="#2a3446"/>
+  <!-- air gap -->
+  <line x1="700" y1="48" x2="700" y2="96" stroke="#9aa7b8" stroke-width="1.5" marker-start="url(#agap)" marker-end="url(#agap)"/>
+  <text x="712" y="76" class="lbls" fill="#9aa7b8">air gap ~50–90 mm</text>
+  <!-- case -->
+  <rect x="300" y="96" width="300" height="260" rx="10" fill="#0e131b" stroke="#33405a" stroke-width="2.5"/>
+  <text x="450" y="150" class="lbl" text-anchor="middle" fill="#dfe8f4">Lian Li V3000 Plus</text>
+  <text x="450" y="172" class="lbls" text-anchor="middle" fill="#8fd9b6">6000 lower · 5090 top</text>
+  <text x="450" y="300" class="lbls" text-anchor="middle">floor intake ▲   ·   top exhaust ▲</text>
+  <!-- airflow -->
+  <line x1="360" y1="352" x2="360" y2="316" stroke="#35b8ff" stroke-width="3.4" marker-end="url(#ac)"/>
+  <line x1="450" y1="352" x2="450" y2="316" stroke="#35b8ff" stroke-width="3.4" marker-end="url(#ac)"/>
+  <line x1="360" y1="96" x2="360" y2="60" stroke="#ff6a3d" stroke-width="3.4" marker-end="url(#ah)"/>
+  <line x1="540" y1="96" x2="540" y2="60" stroke="#ff6a3d" stroke-width="3.4" marker-end="url(#ah)"/>
+  <!-- pedestal -->
+  <rect x="316" y="356" width="268" height="26" rx="6" fill="none" stroke="#8a94a6" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="450" y="373" class="lbls" text-anchor="middle" fill="#9aa7b8">wheeled open-frame pedestal (open middle)</text>
+  <circle cx="345" cy="392" r="10" fill="#1a212d" stroke="#8a94a6" stroke-width="2"/>
+  <circle cx="425" cy="392" r="10" fill="#1a212d" stroke="#8a94a6" stroke-width="2"/>
+  <circle cx="505" cy="392" r="10" fill="#1a212d" stroke="#8a94a6" stroke-width="2"/>
+  <circle cx="560" cy="392" r="10" fill="#1a212d" stroke="#8a94a6" stroke-width="2"/>
+  <!-- annotations -->
+  <text x="640" y="230" class="lbls" fill="#a9def9">cool room air ▲</text>
+  <text x="120" y="120" class="lbls" fill="#ff9d7d">heat ▲ toward AC return</text>
+</svg>
 </div>
 
 <div class="box">
-  <h3>Card placement (why the 6000 is the lower card)</h3>
-  <ul>
-    <li><b>PRO 6000 → lower slot (PCI_E2, PCIe 5.0 ×4)</b> so it sits right over the floor + above-PSU intake and drinks fresh air. The ×4 link is a non-issue for a 96 GB card that keeps its job in its own memory.</li>
-    <li><b>5090 Astral LC → top slot (PCI_E1, ×8).</b> It's liquid-cooled, so it doesn't need the floor feed — its heat goes to the front radiator.</li>
-    <li>They sit ~4 slot-positions apart, so there's clear air between them. Held by the case's built-in anti-sag GPU bracket — no vertical kit, no riser.</li>
-  </ul>
+  <h3><span class="tag t-warn">THE ONE RULE</span> Never a radiator under the 6000</h3>
+  <p style="margin:4px 0 0">The floor and the above-PSU shelf (⑤ and ⑦ on the build side) are <b>fresh-air fans only</b>. A radiator there would pre-heat the 6000's intake and cost it 7–9 °C — the difference between "runs cool" and "throttles." Radiators go on the <b>front</b> (④) and <b>top</b> (①); fresh air goes <b>under the GPU</b>.</p>
 </div>
 
-<div class="box">
-  <h3><span class="tag" style="background:rgba(255,204,77,.16);color:#ffcc4d">NEVER</span> The one mistake to avoid</h3>
-  <p style="margin:4px 0 0">Do <b>not</b> put a radiator on the floor or the above-PSU shelf. Those two banks are fresh-air fans only. A radiator there would pre-heat the 6000's intake and cost it 7–9 °C — the difference between "runs cool" and "throttles." Radiators go on the <b>front</b> and <b>top</b>; fresh air goes <b>under the GPU</b>.</p>
-</div>
-
-<p class="note" style="margin-top:22px">Schematic, not to scale — it shows placement and airflow, not exact millimetres. The V3000 Plus ships with no fans, so you supply the floor, above-PSU and rear fans (~7–8× 140 mm); the two radiators bring their own.</p>
+<p class="note" style="margin-top:18px">Diagrams are schematic — they show placement and airflow, not exact millimetres. The V3000 Plus ships with no fans, so you supply the floor, above-PSU and rear fans (~7–8× 140 mm); the two radiators bring their own.</p>
 
 <a class="back" href="./index.html">← Back to the full build plan</a>
-
 <footer>Companion visual to the dual-GPU workstation build plan · Rev 5.</footer>
 </div>
 </body>
