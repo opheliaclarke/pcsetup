@@ -148,6 +148,7 @@
     <div class="verdict"><div class="ic">🛞</div><div><b>On a wheeled, open-frame pedestal.</b> It rolls out for cleaning and lifts the floor intake up off the dust. Its height adds to the case, so the desk lock rises to match (1&nbsp;in pedestal → lock ~30.5&nbsp;in; 2&nbsp;in → ~31.5&nbsp;in).</div></div>
     <div class="verdict"><div class="ic">🌬️</div><div><b>The layout:</b> PRO&nbsp;6000 in the <b>lower slot</b>, fed by <b>floor + above-PSU intake fans</b>; the 5090 Astral&nbsp;LC's radiator on the <b>front</b> (fresh air); the CPU radiator on <b>top as exhaust</b> to carry the 6000's heat out. Two cards in the slots, two radiators on the panels — nothing fights for space.</div></div>
     <div class="verdict"><div class="ic">🌡️</div><div><b>Write a fan-curve script before the first training run.</b> NVIDIA's stock VBIOS idles these cards at ~30% fan while they sit at 85–90°C. Full fan = 66–67°C; stock curve = 85°C. Do it on day one.</div></div>
+    <div class="verdict"><div class="ic">🖼️</div><div><b>Want the picture?</b> <a href="./layout.html">Open the visual build diagram</a> — a labelled cutaway of the V3000 Plus showing where every part goes and how the air flows.</div></div>
   </div>
 </section>
 
@@ -222,6 +223,8 @@
 <section id="airflow">
   <h2><span class="n">2</span> Fan &amp; radiator layout — where the performance is</h2>
   <p>The PRO 6000 is a 600&nbsp;W air-cooled card sharing a box with ~755&nbsp;W of radiator. Where those radiators go decides whether it throttles. The rule is simple: <b>fresh air below the 6000, radiators everywhere else.</b></p>
+
+  <div class="verdict win"><div class="ic">🖼️</div><div><b>Visual build diagram →</b> <a href="./layout.html">Open the full cutaway of the V3000 Plus</a> — every card, radiator and fan bank in place, with the airflow drawn in. Best way to hand the build to your assembler.</div></div>
 
   <div class="diagram">   ══ TOP: DeepCool LT720 CPU rad  →  EXHAUST (carries the 6000's heat out) ══
    ┌──────────────────────────────────────────────────────────┐
