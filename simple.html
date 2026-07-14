@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The PC build — in simple words</title>
+<meta name="robots" content="noindex">
+<style>
+  :root{--bg:#0a0c10;--card:#141923;--card2:#1a212d;--line:#222b3a;--ink:#e7ecf3;--mut:#9aa7b8;
+    --acc:#ff7a2f;--cool:#35b8ff;--hot:#ff6a3d;--good:#39d98a;--warn:#ffcc4d}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:#19d3c5}
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px}
+  header{padding:44px 0 20px;border-bottom:1px solid var(--line)}
+  .eyebrow{letter-spacing:.16em;text-transform:uppercase;font-size:12px;color:var(--acc);font-weight:700}
+  h1{font-size:clamp(24px,4vw,34px);margin:.3em 0 .2em}
+  .sub{color:var(--mut);font-size:17px}
+  h2{font-size:21px;margin:36px 0 8px}
+  p{color:#dbe3ee}
+  .fig{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin:20px 0}
+  svg{width:100%;height:auto;display:block}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:16px 0}
+  .rule{background:linear-gradient(135deg,rgba(255,204,77,.14),rgba(255,122,47,.06));border:1px solid #4a3f22}
+  .rule h2{margin-top:0}
+  ul{padding-left:22px}li{margin:9px 0}
+  b{color:#fff}
+  .small{color:var(--mut);font-size:14.5px}
+  .where{width:100%;border-collapse:collapse;margin:8px 0;font-size:16px}
+  .where td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  .where td:first-child{color:#fff;font-weight:600;white-space:nowrap;width:44%}
+  .btnrow{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0}
+  .btn{display:inline-block;padding:11px 18px;border-radius:10px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:600}
+  .btn.p{background:var(--acc);color:#1a0d04;border-color:var(--acc)}
+  .btn:hover{border-color:var(--acc)}
+  footer{color:#6f7d90;font-size:13px;padding:30px 0 60px}
+  .lbl{fill:#e7ecf3;font:700 14px -apple-system,"Segoe UI",Roboto,sans-serif}
+  .lbls{fill:#c2ccd9;font:600 12.5px -apple-system,"Segoe UI",Roboto,sans-serif}
+  .cmp{fill:#7f8da0;font:700 12px -apple-system,sans-serif}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="eyebrow">The build · in plain words</div>
+  <h1>Your PC build — explained simply</h1>
+  <p class="sub">The whole plan in easy, everyday language — so it's simple to read and simple to explain to the person building it. (The detailed technical version with exact sizes is linked at the bottom.)</p>
+</div></header>
+
+<div class="wrap">
+
+<!-- ============ SIMPLE PICTURE ============ -->
+<div class="fig">
+<svg viewBox="0 0 780 560" role="img" aria-label="Simple picture of where parts go inside the case">
+  <defs>
+    <marker id="ac" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#35b8ff"/></marker>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff6a3d"/></marker>
+    <g id="f">
+      <circle r="14" fill="#0c141d" stroke="currentColor" stroke-width="1.6"/>
+      <g stroke="currentColor" stroke-width="1.2" fill="none" opacity=".6">
+        <path d="M0,-4 Q9,-9 12,-3"/><path d="M0,-4 Q9,-9 12,-3" transform="rotate(60)"/><path d="M0,-4 Q9,-9 12,-3" transform="rotate(120)"/><path d="M0,-4 Q9,-9 12,-3" transform="rotate(180)"/><path d="M0,-4 Q9,-9 12,-3" transform="rotate(240)"/><path d="M0,-4 Q9,-9 12,-3" transform="rotate(300)"/>
+      </g>
+      <circle r="3.2" fill="currentColor"/>
+    </g>
+  </defs>
+
+  <!-- case -->
+  <rect x="70" y="60" width="640" height="452" rx="14" fill="#0e131b" stroke="#33405a" stroke-width="3"/>
+  <rect x="120" y="512" width="70" height="12" rx="3" fill="#1a212d"/>
+  <rect x="590" y="512" width="70" height="12" rx="3" fill="#1a212d"/>
+
+  <!-- TOP: CPU radiator (hot out) -->
+  <rect x="150" y="76" width="420" height="30" rx="4" fill="#171d27" stroke="#ff6a3d" stroke-width="1.6"/>
+  <use href="#f" transform="translate(230,120)" style="color:#ff6a3d"/>
+  <use href="#f" transform="translate(320,120)" style="color:#ff6a3d"/>
+  <use href="#f" transform="translate(410,120)" style="color:#ff6a3d"/>
+  <use href="#f" transform="translate(500,120)" style="color:#ff6a3d"/>
+  <text x="360" y="62" class="lbl" text-anchor="middle" fill="#ffb99e">CPU radiator — hot air OUT ↑</text>
+
+  <!-- FRONT: 5090 radiator (cool in) -->
+  <rect x="86" y="165" width="30" height="215" rx="4" fill="#171d27" stroke="#35b8ff" stroke-width="1.6"/>
+  <text x="101" y="155" class="lbls" text-anchor="middle" fill="#a9def9">5090's</text>
+  <text x="101" y="398" class="lbls" text-anchor="middle" fill="#a9def9">radiator</text>
+
+  <!-- 5090 card -->
+  <rect x="270" y="176" width="290" height="34" rx="5" fill="#1a2334" stroke="#4a5a78" stroke-width="1.6"/>
+  <text x="415" y="198" class="lbl" text-anchor="middle">Graphics card 2 — the RTX 5090</text>
+
+  <!-- BIG AI card -->
+  <rect x="250" y="240" width="310" height="52" rx="6" fill="rgba(57,217,138,.10)" stroke="#39d98a" stroke-width="2.3"/>
+  <text x="405" y="262" class="lbl" text-anchor="middle" fill="#c7f4dd">The BIG AI card — RTX PRO 6000</text>
+  <text x="405" y="281" class="lbls" text-anchor="middle" fill="#8fd9b6">it pulls cool air from below, pushes hot air up</text>
+
+  <!-- FANS ONLY under the big card -->
+  <rect x="190" y="322" width="380" height="34" rx="5" fill="rgba(53,184,255,.10)" stroke="#35b8ff" stroke-width="1.6"/>
+  <use href="#f" transform="translate(240,339)" style="color:#35b8ff"/>
+  <use href="#f" transform="translate(320,339)" style="color:#35b8ff"/>
+  <use href="#f" transform="translate(400,339)" style="color:#35b8ff"/>
+  <text x="500" y="343" class="lbls" fill="#a9def9">FANS ONLY ↑</text>
+  <text x="380" y="378" class="lbls" text-anchor="middle" fill="#ffd98a">Only fans go under the big card — never a radiator here</text>
+
+  <!-- PSU -->
+  <rect x="180" y="392" width="380" height="46" rx="5" fill="#10151d" stroke="#2a3446" stroke-width="1.5"/>
+  <text x="370" y="420" class="lbls" text-anchor="middle" fill="#c2ccd9">The power box (power supply)</text>
+
+  <!-- FLOOR fans -->
+  <rect x="180" y="452" width="380" height="10" rx="2" fill="#12202e" stroke="#35b8ff" stroke-width="1" stroke-dasharray="3 3"/>
+  <use href="#f" transform="translate(240,482)" style="color:#35b8ff"/>
+  <use href="#f" transform="translate(320,482)" style="color:#35b8ff"/>
+  <use href="#f" transform="translate(400,482)" style="color:#35b8ff"/>
+  <use href="#f" transform="translate(480,482)" style="color:#35b8ff"/>
+  <text x="360" y="504" class="lbls" text-anchor="middle" fill="#a9def9">Fans at the bottom pull cool air IN ↑ (through a dust filter)</text>
+
+  <!-- airflow -->
+  <line x1="320" y1="320" x2="320" y2="294" stroke="#35b8ff" stroke-width="3.4" marker-end="url(#ac)"/>
+  <line x1="400" y1="320" x2="400" y2="294" stroke="#35b8ff" stroke-width="3.4" marker-end="url(#ac)"/>
+  <line x1="200" y1="106" x2="200" y2="52" stroke="#ff6a3d" stroke-width="3.4" marker-end="url(#ah)"/>
+  <line x1="540" y1="106" x2="540" y2="52" stroke="#ff6a3d" stroke-width="3.4" marker-end="url(#ah)"/>
+
+  <text x="150" y="536" class="lbl" fill="#35b8ff">Cool air in ▲</text>
+  <text x="500" y="40" class="lbl" fill="#ff6a3d">Hot air out ▲</text>
+</svg>
+<p class="small" style="margin:8px 4px 0">Blue = cool air coming in. Red = hot air going out. The front of the case is on the left.</p>
+</div>
+
+<p><b>The big idea in one line:</b> cool air comes in low, travels up through the powerful card, and hot air leaves at the top. Nothing is squeezed — every part has its own spot.</p>
+
+
+<h2>What's going inside</h2>
+<ul>
+  <li><b>A very powerful main card for the AI work</b> — this is the "RTX PRO 6000". It's the important one.</li>
+  <li><b>A second graphics card</b> — the "RTX 5090". It is water-cooled: it comes with a <b>separate cooling part</b> (like a small car radiator) joined to it by two soft pipes.</li>
+  <li><b>The brain of the PC (the processor / "CPU")</b> — it also has a water-cooling radiator, joined by pipes.</li>
+  <li><b>The power box</b> that runs everything (the "power supply").</li>
+  <li>All of it inside one <b>very large case</b> — the "Lian Li V3000 Plus".</li>
+</ul>
+
+
+<div class="card rule">
+  <h2>⭐ The one thing to get right — please tell the builder</h2>
+  <p style="margin-bottom:0"><b>The big AI card breathes air from underneath itself.</b> So under that card we put <b>only fans</b>, to blow cool air up into it. We must <b>never put a radiator under this card</b> — a radiator there would feed it warm air and make it run hot and slow. Radiators go on the <b>front</b> and the <b>top</b>; fans go <b>under the big card</b>.</p>
+</div>
+
+
+<h2>Where each part goes</h2>
+<table class="where"><tbody>
+  <tr><td>The big AI card (RTX PRO 6000)</td><td>In the <b>lower slot</b> — sits low, just above the cool-air fans.</td></tr>
+  <tr><td>The second card (RTX 5090)</td><td>In the <b>upper slot</b>, just above the big card.</td></tr>
+  <tr><td>The 5090's radiator</td><td>On the <b>front</b> of the case.</td></tr>
+  <tr><td>The CPU's radiator</td><td>On the <b>top</b> of the case — it blows hot air out the top.</td></tr>
+  <tr><td>Fans</td><td>On the <b>floor</b> and on the <b>shelf just under the big card</b> — they push cool air up.</td></tr>
+  <tr><td>The power box</td><td>At the <b>bottom</b>, in its own compartment.</td></tr>
+  <tr><td>Cables + the small storage drives</td><td>Hidden on the <b>back side</b> of the case, out of the way.</td></tr>
+</tbody></table>
+
+
+<h2>How the air moves</h2>
+<ul>
+  <li>Cool air comes <b>in at the bottom</b> (through a dust filter) and the front.</li>
+  <li>It rises <b>up through the big card</b>.</li>
+  <li>Hot air goes <b>out the top</b>.</li>
+  <li>So: cool in low, hot out high — the two never mix. That's the whole idea.</li>
+</ul>
+
+
+<h2>How it sits under the desk</h2>
+<ul>
+  <li>The PC stands on a <b>small stand with wheels</b>, so you can roll it out easily to dust it.</li>
+  <li>The desk's <b>lowest height is locked</b>, so the desk can never come down and press on top of the PC. There's always a gap above it.</li>
+</ul>
+
+
+<div class="btnrow">
+  <a class="btn p" href="./build-picture.png" download>⬇ Download the picture (to print or share)</a>
+  <a class="btn" href="./layout.html">See the detailed diagram (both sides)</a>
+  <a class="btn" href="./index.html">The full technical plan</a>
+</div>
+
+<footer>Plain-words companion to the dual-GPU workstation build plan.</footer>
+</div>
+</body>
+</html>
