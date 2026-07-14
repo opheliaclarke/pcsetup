@@ -8,7 +8,10 @@
 - **Repo:** `opheliaclarke/pcsetup` (PUBLIC — user approved public visibility for Pages). Collaborators SilentAurora245 + mary3862jon added.
 - **Pages:** https://opheliaclarke.github.io/pcsetup/ — verified HTTP 200.
 - **Visual diagram:** https://opheliaclarke.github.io/pcsetup/layout.html — REALISTIC both-sides cutaway (user asked for both sides + more realism, 2026-07-14): Panel 1 BUILD side (cards/rads/fans/liquid-loops/motherboard, numbered 1-8), Panel 2 CABLE side (PSU/wiring/SSDs/hub, lettered a-e), Panel 3 under-the-desk context. Hand-authored SVGs with a reusable `#fan` symbol (blades), rad fins, colour-coded airflow. Linked from index.html. Editing tip: re-render with `google-chrome --headless=new --screenshot` + Read the PNG to visually verify after any edit (watch for label/arrow overlaps).
-- Both `index.html` + `layout.html` carry `<meta robots noindex>`.
+- **Plain-English version:** https://opheliaclarke.github.io/pcsetup/simple.html — the whole build in simple, non-technical words (user is non-technical, needs to explain to the assembler; 2026-07-14). Simplified plain-label diagram + "tell the builder" rule box + where-each-part-goes table. Linked from index.html + layout.html.
+- **Downloadable picture:** https://opheliaclarke.github.io/pcsetup/build-picture.png — a clean PNG of the simple diagram (rendered from simple.html's SVG via headless Chrome + `convert -trim`), for print/WhatsApp/Canva-import. Regenerate: extract the SVG → minimal wrapper → chrome --screenshot → `convert -trim`.
+- **CANNOT use Canva / no AI image-gen tool.** Images = hand-authored SVG → rendered to PNG. Told user not to share Canva login (can't use it + security). Layout verified against Lian Li's official V3000 interior diagram (v3k_plus_017-1.png) — matches (top/front/above-PSU-shelf/floor rad+fan positions).
+- All pages carry `<meta robots noindex>`.
 - SEPARATE related projects (NOT this folder): AC buying guide at https://opheliaclarke.github.io/ac-guide/ · desk research at https://opheliaclarke.github.io/standing-desk-india/
 
 ## Key facts
