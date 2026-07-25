@@ -1,7 +1,9 @@
 # Dual-GPU AI Workstation (pcsetup)
 
 **What it is:** A single self-contained HTML build-plan document (case / cooling / power / desk-clearance) for Dominic's in-house 24×7 dual-GPU AI training workstation.
-**Status:** **Rev 5 — LIVE, FINAL. WINNER = Lian Li V3000 Plus.** (2026-07-14) Ergosphere CONFIRMED a firmware min/max-height lock that can be set as default AND **survives a reset** → the crush problem is solved robustly. Combined with the user's 32" seated working height + a wheeled open-frame pedestal, the 674mm super-tower now fits under the desk. So the ≤560mm cap is REPLACED by the desk-lock approach. V3000 is the pick; EVO XL demoted to "foolproof fallback". Full doc rebuilt around the V3000 (new fan/rad layout, desk-lock section, pedestal, shopping list).
+**Status:** **Rev 6 — V3000 PLUS IS UNAVAILABLE AGAIN (user, 2026-07-25). New recommendation = HOLD the Lian Li O11 Dynamic EVO XL.** Replacement research delivered at `case-replacement.html` (live). index.html now carries a red SUPERSEDED banner at the top of the TL;DR linking to it; the rest of index/layout/simple still describe the V3000 and must be rewritten ONCE the user picks. See "Rev 6" section below.
+
+**(Superseded) Rev 5 — WINNER = Lian Li V3000 Plus.** (2026-07-14) Ergosphere CONFIRMED a firmware min/max-height lock that can be set as default AND **survives a reset** → the crush problem is solved robustly. Combined with the user's 32" seated working height + a wheeled open-frame pedestal, the 674mm super-tower now fits under the desk. So the ≤560mm cap is REPLACED by the desk-lock approach. V3000 is the pick; EVO XL demoted to "foolproof fallback". Full doc rebuilt around the V3000 (new fan/rad layout, desk-lock section, pedestal, shopping list).
 (Rev 4: super-towers eliminated on height + hotbox section + 1.8-ton O General. Rev 3: EVO XL after 5090=Astral LC. Rev 2: reopened after PRO 6000 = double-flow-through.)
 
 ## Live assets
@@ -54,6 +56,34 @@
 - **Phanteks NV7/NV9/Enthoo Pro 2 + Lian Li Lancool III: DEAD on availability** — out of stock at every Indian retailer.
 - Do NOT merge both cards into one ~128GB trainer (no NVLink, mismatched VRAM/clocks). Two independent workers.
 - Do NOT rely on the desk's anti-collision — LOGICDATA trips at ~40kg + desk load downward, and is OFF during reset.
+
+## Rev 6 — V3000 replacement research (2026-07-25)
+
+**Deliverable:** `case-replacement.html` → https://opheliaclarke.github.io/pcsetup/case-replacement.html (noindex, favicon added; index.html also got a favicon + a red SUPERSEDED banner).
+
+**Method:** 16-agent workflow (5 discovery sweeps → 63 unique candidates → 7 spec-verified → adversarial kill) then a 5-agent verification workflow (4 refuters + 1 completeness critic). Heights measured off manufacturer manual drawings at 600 dpi, calibrated on ATX PCIe pitch (20.32mm).
+
+**RANKING — only 3 qualify:**
+1. **HOLD Lian Li O11 Dynamic EVO XL (531.9mm)** — deepest plenum under the flow-through card + height-adjustable mobo tray, 65mm Astral rad goes in the ROOF conventionally, 304mm wide, broadest India stock, already documented for the assembler. ₹24,998 ARGB black IN STOCK at elitehubs (verified live 2026-07-25); ARGB white OOS.
+2. **Antec C8 plain black (476mm, ₹9,599 antecindia.in, verified live)** — 56mm shorter, ₹15k cheaper, mesh top+right panels INCLUDED, 3× simultaneous 360 mounts, 8 slots, 303mm wide, full floor cut-out + pull-out filter. ~₹14,067 all-in (+ Arctic P14 ×5 ₹3,469, Antec I-Shape holder ₹999).
+3. **Antec Performance 1 FT (522mm)** — BEST feed mechanism (3×120 on a perforated PSU shroud blowing straight up into the card = the V3000's two-stage feed), roof takes the 65mm rad offset beside the board, PSU bay 245mm. Killed to #3 by **230mm width** (narrower than the 245mm Flux Pro the user already rejected as too tight). OOS at elitehubs (₹13,595 plain / ₹16,550 ARGB); Computech ₹16,099 reported in stock.
+
+**BIG CORRECTION — do not regress:** the first pass ranked the C8 **#1** on a claimed "~110mm floor plenum". An adversarial verifier measured Antec's own drawings: internal floor → bottom edge of mobo is only **62.8mm**, floor → lowest slot centre **47.0mm**, so the real plenum is **52.5mm** at 4 pitches down (73mm absolute best at 3 pitches). That is what demoted the C8 to #2. The C8 still physically fits everything.
+
+**ALL THREE ARE ≤560mm → the Ergosphere desk firmware lock is NO LONGER LOAD-BEARING.** Gap at the desk's ~605mm minimum underside: C8 129mm bare / 78mm on a 2" pedestal; P1 FT 83/32; EVO XL 73/22. Crush risk gone by geometry alone.
+
+**Rev 6 dead ends (verified, do NOT redo):** Corsair 9000D (re-opened on the new height cap, re-killed on floor feed) · Phanteks NV9/NV9 MkII (not buyable in India — Amazon.in "don't know when or if") · Enthoo Pro 2 (OOS ×9 listings, and it is **580mm** with feet, not 560) · Thermaltake CTE C750/C750 Air (rotated layout stands cards vertically → no underside for the floor to feed; roof caps at 240) · all Jonsbo (only roof+floor rad positions; floor is reserved) · Fractal Meshify 3 XL / Define 7 XL (no floor feed) · HYTE X50 (no roof mount at all) · **4U rackmount category closed** (SilverStone RM44 = front 360 only) · **open-frame category closed** (CM MasterFrame 700 ~702mm, unfiltered, OOS) · **2026 releases checked and empty** (Lancool 4, 207XL, V2000, O11D EVO RGB V2 — announced, not shipping, not in India) · **Indian domestic brands structurally absent** (Ant Esports flagship = 220mm wide, single 120mm bottom mount) · Lian Li O11 Dynamic XL ROG (513mm, 285mm, ₹19,299 — genuine find but Lian Li publishes NO rad thickness limit for it, builders report top+side interference, OOS at elitehubs).
+
+**BLOCKED ON THE USER:** pick one of the three. Then rewrite index.html + layout.html + simple.html around it (Rev 6 proper).
+
+**Rev 6 open items:**
+- **EVO XL mesh side panel = the one thing that could force a switch.** SKU still unconfirmed AND every Lian Li mesh kit at elitehubs was OOS on 2026-07-25 (the ones listed are O11D EVO *front* mesh kits, not the XL side panel). The LT720 cannot breathe behind glass.
+- C8: Antec publishes **two contradictory side-radiator numbers** — a 100mm thickness envelope (55+45 about a rail) and a separate "Clearance for Right Side Radiator Installation: 50mm (Depth max.)", no datum given for either. The 65mm Astral rad depends on which is real → ask Antec India in writing.
+- C8: roof envelope is 70mm vs the Astral's 65mm (5mm) → the fat rad must go SIDE, LT720 in the roof.
+- C8: PSU bay 210mm **excluding cable** vs the 200mm AX1600i → needs a 90°/short cable kit.
+- C8 stock is thin: 2 sellers with plain black (antecindia.in, varietyinfotech.com), 3 already sold out (Computech/TheITDepot/Vishal). Buy early.
+- P1 FT roof clearance is **measured, not published** (~28mm lateral to the board plane) → low-profile RAM.
+- **Retailer access notes:** mdcomputers.in returns HTTP 403 to automated access; computechstore.in's `?s=` search returns the homepage regardless of query (its rows in the doc are agent-reported, not re-verifiable from here); elitehubs + antecindia are readable via headful Chrome (Playwright, channel="chrome").
 
 ## Open / next
 - Confirm the exact Lian Li EVO XL mesh side-panel SKU + India price at purchase (needed for the CPU rad to breathe).

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V3000 Plus is gone — the three replacements</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0c10'/%3E%3Crect x='16' y='10' width='32' height='44' rx='4' fill='none' stroke='%23ff7a2f' stroke-width='4'/%3E%3Cpath d='M22 46h20M22 38h20' stroke='%2319d3c5' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='24' r='6' fill='%2339d98a'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0a0c10; --bg2:#0f131a; --card:#141923; --card2:#1a212d;
+    --line:#222b3a; --ink:#e7ecf3; --mut:#9aa7b8; --dim:#6f7d90;
+    --acc:#ff7a2f; --acc2:#19d3c5; --good:#39d98a; --warn:#ffcc4d; --bad:#ff5d6c;
+    --r:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#16202e 0,transparent 60%),var(--bg);
+    color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  a{color:var(--acc2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+  header{padding:54px 0 30px;border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,rgba(255,93,108,.08),transparent)}
+  .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--acc);font-weight:700}
+  h1{font-size:clamp(26px,4.4vw,42px);line-height:1.1;margin:.35em 0 .25em;letter-spacing:-.025em}
+  .sub{color:var(--mut);font-size:17px;max-width:720px}
+  nav.toc{position:sticky;top:0;z-index:5;background:rgba(10,12,16,.88);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line)}
+  nav.toc .wrap{display:flex;gap:18px;flex-wrap:wrap;padding:13px 20px;font-size:13.5px}
+  nav.toc a{color:var(--mut)}
+  nav.toc a:hover{color:var(--acc);text-decoration:none}
+  section{padding:40px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:24px;letter-spacing:-.015em;margin:0 0 6px;display:flex;align-items:center;gap:10px}
+  h2 .n{font-size:13px;color:var(--acc);border:1px solid var(--acc);border-radius:8px;
+    padding:2px 8px;font-weight:700;flex:none}
+  h3{font-size:17px;margin:26px 0 8px;color:var(--ink)}
+  p{color:#cdd6e2}
+  ul{padding-left:20px}li{margin:6px 0;color:#cdd6e2}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;margin:18px 0}
+  .tldr{background:linear-gradient(135deg,rgba(255,122,47,.12),rgba(25,211,197,.08));border:1px solid #2b3647}
+  .verdict{display:flex;gap:14px;align-items:flex-start;margin:14px 0;padding:14px 16px;border-radius:12px;
+    background:var(--card2);border:1px solid var(--line)}
+  .verdict .ic{font-size:22px;line-height:1.2;flex:none}
+  .verdict b{color:#fff}
+  .verdict.alert{border-color:var(--bad);background:rgba(255,93,108,.08)}
+  .verdict.win{border-color:var(--good);background:rgba(57,217,138,.08)}
+  .verdict.warn{border-color:var(--warn);background:rgba(255,204,77,.07)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:11.5px}
+  td b{color:#fff}
+  tr:last-child td{border-bottom:none}
+  .num{text-align:right;font-variant-numeric:tabular-nums}
+  .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+  .p-good{background:rgba(57,217,138,.15);color:var(--good)}
+  .p-warn{background:rgba(255,204,77,.15);color:var(--warn)}
+  .p-bad{background:rgba(255,93,108,.15);color:var(--bad)}
+  .opt{border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin:16px 0;background:var(--card)}
+  .opt.best{border-color:var(--good);box-shadow:0 0 0 1px rgba(57,217,138,.25) inset}
+  .opt .tag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
+  .opt.best .tag{color:var(--good)}
+  .opt h3{margin:6px 0 4px;font-size:21px;letter-spacing:-.01em}
+  .opt .price{font-size:14px;color:var(--mut);margin:0 0 10px}
+  .pro{color:var(--good);font-weight:700}.con{color:var(--bad);font-weight:700}
+  .opt ul{padding-left:18px}
+  .note{font-size:14px;color:var(--mut)}
+  .twrap{overflow-x:auto}
+  .kpi{display:flex;gap:14px;flex-wrap:wrap;margin:16px 0}
+  .kpi .b{flex:1;min-width:160px;background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .kpi .v{font-size:26px;font-weight:700;color:#fff}
+  .kpi .l{font-size:12.5px;color:var(--mut)}
+  .diagram{font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;line-height:1.6;color:#bcd;
+    background:#0c1017;border:1px solid var(--line);border-radius:12px;padding:18px;overflow-x:auto;white-space:pre}
+  footer{padding:40px 0 70px;color:var(--dim);font-size:13px}
+  .check li{list-style:none;position:relative}
+  .check{padding-left:4px}
+  .check li::before{content:"☐";color:var(--acc);margin-right:9px;font-weight:700}
+  .src{font-size:12.5px;color:var(--dim)}
+  @media(max-width:720px){.kpi .b{min-width:130px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Case decision · Rev 6 · replacement for the V3000 Plus</div>
+    <h1>The V3000 Plus is gone.<br>Here are the three that replace it.</h1>
+    <p class="sub">Deep research pass: 63 chassis swept, 7 spec-verified against the build, 5 adversarial verifiers run on the winner. Every height below is confirmed <em>with feet</em> from the manufacturer's own drawings.</p>
+  </div>
+</header>
+
+<nav class="toc"><div class="wrap">
+  <a href="#verdict">Verdict</a>
+  <a href="#changed">What changed</a>
+  <a href="#one">1 · EVO XL</a>
+  <a href="#two">2 · Antec C8</a>
+  <a href="#three">3 · Performance 1 FT</a>
+  <a href="#h2h">Head-to-head</a>
+  <a href="#buy">Prices &amp; stock</a>
+  <a href="#confirm">Before you buy</a>
+  <a href="#dead">Ruled out</a>
+</div></nav>
+
+<div class="wrap">
+
+<section id="verdict">
+  <div class="card tldr">
+    <h2><span class="n">TL;DR</span> Keep the EVO XL. It was already the fallback, and it won.</h2>
+    <p>Nothing found beats the <b>Lian Li O11 Dynamic EVO XL</b> for this specific build. The two genuine
+    alternatives are both real and both cheaper, but each trades away something that matters more than the money.</p>
+
+    <div class="verdict win"><div class="ic">🏆</div><div><b>#1 Lian Li O11 Dynamic EVO XL — 531.9 mm.</b>
+    Biggest air plenum under the flow-through PRO 6000, the fat 65 mm Astral radiator drops in the <b>roof</b>
+    the conventional way, 304 mm wide, broadest stock in India, and the build is <b>already drawn and written up
+    for your assembler</b>. One open item: the mesh side panel.</div></div>
+
+    <div class="verdict"><div class="ic">🥈</div><div><b>#2 Antec C8 — 476 mm, ₹9,599.</b>
+    56 mm shorter and ₹15k cheaper, mesh panels included. But verification cut its headline advantage in half
+    (see below), the Astral rad has to go in an ambiguously-specced side bay, and only two shops in India have it.</div></div>
+
+    <div class="verdict"><div class="ic">🥉</div><div><b>#3 Antec Performance 1 FT — 522 mm.</b>
+    The <b>best GPU-feeding mechanism of the three</b> — perforated PSU-shroud fans blowing straight up into the
+    card. Killed down to third by width: <b>230 mm</b>, which is narrower than the Flux Pro you already rejected
+    as too tight.</div></div>
+
+    <div class="verdict alert"><div class="ic">🔓</div><div><b>Bonus: you can drop the desk lock entirely.</b>
+    All three are under 560 mm, so all three are <b>shorter than the desk's lowest underside (~605 mm)</b>.
+    The desk physically cannot reach them even if someone drives it to the floor. The Ergosphere firmware lock
+    stops being load-bearing and becomes a nice-to-have — that was the single riskiest part of the V3000 plan.</div></div>
+  </div>
+
+  <h3>Crush clearance — every option is now foolproof</h3>
+  <div class="twrap"><table>
+    <thead><tr><th>Case</th><th class="num">Height (feet on)</th><th class="num">Gap at desk minimum, bare</th><th class="num">Gap on a 2″ pedestal</th><th>Desk lock needed?</th></tr></thead>
+    <tbody>
+      <tr><td><b>Antec C8</b></td><td class="num">476 mm</td><td class="num">129 mm</td><td class="num"><b>78 mm</b></td><td><span class="pill p-good">No</span></td></tr>
+      <tr><td><b>Antec Performance 1 FT</b></td><td class="num">522 mm</td><td class="num">83 mm</td><td class="num">32 mm</td><td><span class="pill p-good">No</span></td></tr>
+      <tr><td><b>Lian Li O11D EVO XL</b></td><td class="num">531.9 mm</td><td class="num">73 mm</td><td class="num">22 mm</td><td><span class="pill p-good">No</span></td></tr>
+      <tr><td>Lian Li V3000 Plus <span class="pill p-bad">unavailable</span></td><td class="num">674 mm</td><td class="num">−69 mm</td><td class="num">−120 mm</td><td><span class="pill p-bad">Yes, mandatory</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Desk minimum underside taken at the conservative end of the measured 605–615 mm range.
+  Negative = the desk lands on the case.</p>
+</section>
+
+<section id="changed">
+  <h2><span class="n">01</span> The one number that changed the ranking</h2>
+  <p>The first research pass ranked the Antec C8 first. An adversarial verifier then measured Antec's own
+  orthographic drawings out of the official manual — calibrated on the PCIe bracket pitch, which self-checks
+  to 20.35 mm against the 20.32 mm ATX spec — and refuted the number the whole recommendation rested on.</p>
+
+  <div class="kpi">
+    <div class="b"><div class="v" style="color:var(--bad)">52 mm</div><div class="l">C8's actual air plenum under the PRO 6000</div></div>
+    <div class="b"><div class="v" style="color:var(--mut)">110 mm</div><div class="l">what the first pass claimed</div></div>
+    <div class="b"><div class="v" style="color:var(--good)">73 mm</div><div class="l">C8 absolute best case (card 3 pitches down)</div></div>
+  </div>
+
+  <p>Measured from the case's internal floor: only <b>62.8 mm</b> to the bottom edge of the motherboard, and
+  <b>47.0 mm</b> to the centre of the lowest expansion slot. Put a 25 mm floor fan in and the breathing space
+  under the card is 52.5 mm at four slot-pitches down — <b>less than half what was claimed</b>. The C8 still
+  physically fits everything; it just doesn't feed the card as well as advertised.</p>
+
+  <div class="verdict"><div class="ic">🫁</div><div>This matters because the PRO 6000 is <b>double-flow-through</b> —
+  it inhales from underneath. The plenum under it <em>is</em> the cooling system. The EVO XL's bottom chamber is
+  far deeper, and its motherboard tray is height-adjustable, so you can raise the board and buy yourself even
+  more. That is why it went back to first.</div></div>
+</section>
+
+<section id="one">
+  <h2><span class="n">02</span> The three options, in order</h2>
+
+  <div class="opt best">
+    <div class="tag">Recommended · hold what you have</div>
+    <h3>1 · Lian Li O11 Dynamic EVO XL</h3>
+    <p class="price"><b>531.9 mm</b> tall · 304 mm wide · 79.9 L · 8 slots ·
+      <b>₹24,998</b> (ARGB black, verified in stock at EliteHubs, 25 Jul 2026)</p>
+    <ul>
+      <li><span class="pro">＋</span> <b>Deepest plenum under the GPU</b> of the three, plus a height-adjustable motherboard tray so you can raise the board and open it up further.</li>
+      <li><span class="pro">＋</span> The 65 mm Astral radiator goes in the <b>roof</b> — the simple, conventional placement, with clearance to spare.</li>
+      <li><span class="pro">＋</span> 3 × 140 mm filtered floor intake, GamersNexus-verified as effective for bottom-ingesting cards.</li>
+      <li><span class="pro">＋</span> <b>Already fully documented</b> — the cutaway diagram and the plain-English assembler sheet both describe this exact case. Zero re-work.</li>
+      <li><span class="pro">＋</span> Widest retail availability of any candidate.</li>
+      <li><span class="con">－</span> <b>The mesh side panel is an unresolved blocker.</b> The CPU radiator cannot breathe behind glass, and every Lian Li mesh kit I could check was out of stock. Settle this before ordering.</li>
+      <li><span class="con">－</span> Most expensive, and the tallest of the three.</li>
+    </ul>
+  </div>
+
+  <div class="opt" id="two">
+    <div class="tag">Cheapest &amp; shortest</div>
+    <h3>2 · Antec C8 (plain, non-ARGB, black)</h3>
+    <p class="price"><b>476 mm</b> tall · 303 mm wide · 66.9 L · 8 slots ·
+      <b>₹9,599</b> (verified in stock at antecindia.in, 25 Jul 2026) · ~<b>₹14,067</b> all-in</p>
+    <ul>
+      <li><span class="pro">＋</span> <b>56 mm shorter</b> than the EVO XL and ₹15k cheaper. 78 mm of clearance even on a 2″ pedestal.</li>
+      <li><span class="pro">＋</span> Top and right panels are <b>full mesh from the factory</b> — no separate mesh kit to hunt for, which is exactly the EVO XL's open problem.</li>
+      <li><span class="pro">＋</span> Three simultaneous 360 mm mounts, full floor cut-out with no shroud in the way, pull-out floor filter you can clean without lifting the machine.</li>
+      <li><span class="pro">＋</span> 303 mm wide — as roomy across as the EVO XL where it counts.</li>
+      <li><span class="con">－</span> <b>Plenum is 52 mm, not 110 mm.</b> The reason it lost first place.</li>
+      <li><span class="con">－</span> Roof envelope is 70 mm vs the Astral rad's 65 mm — only 5 mm — so the fat rad is pushed to the <b>side bay, where Antec publishes two contradictory numbers</b> (a 100 mm thickness envelope and a 50 mm side-radiator depth clearance, with no datum given for either).</li>
+      <li><span class="con">－</span> PSU bay is 210 mm <em>excluding cables</em>; the AX1600i is 200 mm. 10 mm is not enough for the connector face and bend radius — needs a short/90° cable kit.</li>
+      <li><span class="con">－</span> <b>Two sellers in India, and three more have already sold out.</b> That is the exact failure mode that killed the V3000 Plus.</li>
+      <li><span class="con">－</span> Buy the <b>plain</b> C8, not the ARGB — the ARGB's 2 × 160 mm bottom fans can't be repositioned or used with the floor mount.</li>
+    </ul>
+  </div>
+
+  <div class="opt" id="three">
+    <div class="tag">Best airflow mechanism · worst fit for your taste</div>
+    <h3>3 · Antec Performance 1 FT</h3>
+    <p class="price"><b>522 mm</b> tall · <b>230 mm wide</b> · 62.7 L · 8 slots ·
+      ₹13,595–16,550 · <span class="pill p-bad">out of stock at EliteHubs</span></p>
+    <ul>
+      <li><span class="pro">＋</span> <b>The only survivor that reproduces the V3000's two-stage feed:</b> 3 × 120 mm fans mounted on a <b>perforated PSU shroud</b>, drawing through the bottom filter and blowing straight up into the underside of the graphics card. This is the mechanism the whole case choice is about.</li>
+      <li><span class="pro">＋</span> <b>Roof question resolved:</b> the roof mount is offset sideways away from the motherboard (vent 128 mm wide, sitting 74 mm clear of the tray side), so the 65 mm Astral radiator fits by hanging beside the board, not over it. It was excluded from the first draft on a false "unmeasurable" premise.</li>
+      <li><span class="pro">＋</span> PSU bay 245 mm — the AX1600i drops in with 45 mm to spare, the cleanest power fit of the three.</li>
+      <li><span class="pro">＋</span> Front bay takes the 52 mm LT720 comfortably (Antec publishes a 60 mm front cap).</li>
+      <li><span class="con">－</span> <b>230 mm wide.</b> You rejected the 245 mm Flux Pro for feeling small and tight. This is 15 mm narrower than that.</li>
+      <li><span class="con">－</span> Roof clearance is <b>measured, not published</b> — ~28 mm lateral margin from the radiator's inner edge to the board plane. Tall RAM heatspreaders or a tall top-edge VRM heatsink on the X870E Carbon could touch. Use low-profile RAM.</li>
+      <li><span class="con">－</span> KitGuru measured the shroud fans making <em>no</em> temperature difference — though that was with a conventional card, not a bottom-ingesting one, so it may not transfer.</li>
+      <li><span class="con">－</span> Shroud fans not included; no anti-sag bracket in the box.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="h2h">
+  <h2><span class="n">03</span> Head-to-head</h2>
+  <div class="twrap"><table>
+    <thead><tr><th>&nbsp;</th><th>O11D EVO XL</th><th>Antec C8</th><th>Performance 1 FT</th></tr></thead>
+    <tbody>
+      <tr><td>Height, feet on</td><td>531.9 mm</td><td><b>476 mm</b></td><td>522 mm</td></tr>
+      <tr><td>Width</td><td><b>304 mm</b></td><td>303 mm</td><td><span class="pill p-bad">230 mm</span></td></tr>
+      <tr><td>Volume</td><td><b>79.9 L</b></td><td>66.9 L</td><td>62.7 L</td></tr>
+      <tr><td>Plenum under the PRO 6000</td><td><b>Deepest</b> + adjustable tray</td><td>52 mm</td><td>Direct shroud impingement</td></tr>
+      <tr><td>Feed mechanism</td><td>3 × 140 floor, filtered</td><td>Full floor cut-out, 3 × 140</td><td><b>3 × 120 on perforated shroud</b></td></tr>
+      <tr><td>Home for the 65 mm Astral rad</td><td><b>Roof</b>, conventional</td><td>Side bay <span class="pill p-warn">spec conflict</span></td><td>Roof, offset beside board</td></tr>
+      <tr><td>CPU LT720 360</td><td>Side <span class="pill p-warn">needs mesh panel</span></td><td>Roof, 18 mm spare</td><td><b>Front, published fit</b></td></tr>
+      <tr><td>AX1600i (200 mm)</td><td>Fits, never flagged</td><td>210 mm <em>excl. cable</em> <span class="pill p-warn">tight</span></td><td><b>245 mm bay</b></td></tr>
+      <tr><td>Expansion slots</td><td>8</td><td>8</td><td>8</td></tr>
+      <tr><td>Mesh panel</td><td><span class="pill p-bad">Buy separately, OOS</span></td><td><b>Included</b></td><td>Included</td></tr>
+      <tr><td>India stock</td><td><b>Broad</b></td><td><span class="pill p-warn">2 sellers</span></td><td><span class="pill p-bad">OOS where checked</span></td></tr>
+      <tr><td>Chassis price</td><td>₹24,998</td><td><b>₹9,599</b></td><td>₹13,595–16,550</td></tr>
+      <tr><td>Assembler docs exist</td><td><b>Yes, complete</b></td><td>No</td><td>No</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="buy">
+  <h2><span class="n">04</span> Prices &amp; stock</h2>
+  <p class="note">Split by how it was checked. Anything marked <b>verified live</b> I loaded in a real browser
+  on 25 Jul 2026. MD Computers blocks automated access (HTTP 403) and Computech's search returns its homepage
+  regardless of query, so those rows are second-hand and need a human eye.</p>
+  <div class="twrap"><table>
+    <thead><tr><th>Item</th><th>Seller</th><th class="num">Price</th><th>Status</th><th>How checked</th></tr></thead>
+    <tbody>
+      <tr><td><b>Antec C8</b> plain black</td><td>antecindia.in</td><td class="num">₹9,599</td><td><span class="pill p-good">In stock</span></td><td>Verified live</td></tr>
+      <tr><td>Antec C8 plain black</td><td>varietyinfotech.com</td><td class="num">₹8,999</td><td><span class="pill p-good">In stock</span></td><td>Agent-reported</td></tr>
+      <tr><td>Antec C8 plain black</td><td>Computech / TheITDepot / Vishal</td><td class="num">—</td><td><span class="pill p-bad">Sold out ×3</span></td><td>Agent-reported</td></tr>
+      <tr><td>Antec C8 <b>ARGB</b> black (fallback)</td><td>elitehubs.com</td><td class="num">₹10,595</td><td><span class="pill p-good">In stock</span></td><td>Agent-reported</td></tr>
+      <tr><td><b>O11D EVO XL ARGB</b> black</td><td>elitehubs.com</td><td class="num">₹24,998</td><td><span class="pill p-good">In stock</span></td><td>Verified live</td></tr>
+      <tr><td>O11D EVO XL ARGB white</td><td>elitehubs.com</td><td class="num">₹24,998</td><td><span class="pill p-bad">Out of stock</span></td><td>Verified live</td></tr>
+      <tr><td><b>Performance 1 FT</b> plain</td><td>elitehubs.com</td><td class="num">₹13,595</td><td><span class="pill p-bad">Out of stock</span></td><td>Verified live</td></tr>
+      <tr><td>Performance 1 FT ARGB</td><td>elitehubs.com</td><td class="num">₹16,550</td><td><span class="pill p-bad">Out of stock</span></td><td>Verified live</td></tr>
+      <tr><td>Performance 1 FT</td><td>Computech</td><td class="num">₹16,099</td><td><span class="pill p-warn">Reported in stock</span></td><td>Agent-reported</td></tr>
+      <tr><td>Lian Li mesh kits (all)</td><td>elitehubs.com</td><td class="num">—</td><td><span class="pill p-bad">All out of stock</span></td><td>Verified live</td></tr>
+      <tr><td>Antec I-Shape GPU holder</td><td>antecindia.in</td><td class="num">₹999</td><td><span class="pill p-good">In stock</span></td><td>Agent-reported</td></tr>
+      <tr><td>ARCTIC P14 PWM PST 140 mm ×5</td><td>elitehubs.com</td><td class="num">₹3,469</td><td><span class="pill p-good">In stock</span></td><td>Agent-reported</td></tr>
+    </tbody>
+  </table></div>
+  <div class="verdict warn"><div class="ic">⏳</div><div><b>Stock is the real risk, not price.</b>
+  The plain black C8 sits on two sellers today and three others have already run dry. The Performance 1 FT is
+  out at the one shop I could read. Whatever you pick, <b>buy the case now and let the rest of the build catch up</b> —
+  this whole exercise exists because a chosen case became unbuyable.</div></div>
+</section>
+
+<section id="confirm">
+  <h2><span class="n">05</span> Before you buy — the open items</h2>
+
+  <h3>If you keep the EVO XL (recommended)</h3>
+  <ul class="check">
+    <li><b>The mesh side panel.</b> Get the exact SKU and confirm stock in India. Every Lian Li mesh kit I checked was out of stock, and the CPU radiator cannot breathe behind glass. This is the one thing that could force a switch.</li>
+    <li>Confirm whether the black non-ARGB EVO XL is still sold in India, or whether ₹24,998 for the ARGB is now the only route.</li>
+    <li>Confirm what fans ship in the box before ordering 3 × 140 floor + rear.</li>
+  </ul>
+
+  <h3>If you switch to the C8</h3>
+  <ul class="check">
+    <li><b>Settle the side-bay conflict.</b> Antec publishes a 100 mm thickness envelope and a 50 mm side-radiator depth clearance. The 65 mm Astral rad depends on which one is real — ask Antec India in writing before ordering.</li>
+    <li>Measure the gap from the floor-fan tops to the underside of the lower card on arrival. Antec publishes nothing here; 52 mm is derived from their drawings.</li>
+    <li>Plan the AX1600i cable exit — 200 mm PSU in a 210 mm bay measured <em>without</em> cables. Budget a 90° or short-cable kit.</li>
+    <li>Order the <b>plain</b> C8, not the ARGB, and treat the bare floor dust filter as fragile — it is the PRO 6000's only air path. Source a spare early.</li>
+  </ul>
+
+  <h3>If you switch to the Performance 1 FT</h3>
+  <ul class="check">
+    <li>Accept the 230 mm width with your eyes open — it is narrower than the case you already rejected as too tight.</li>
+    <li>Use low-profile RAM. Roof clearance beside the board is ~28 mm, measured rather than published.</li>
+    <li>Budget 3 × 120 mm shroud fans separately; they are not included.</li>
+    <li>Find live stock first — it was out at every shop readable from here.</li>
+  </ul>
+
+  <h3>Applies to all three</h3>
+  <ul class="check">
+    <li>Slot order is unchanged: <b>PRO 6000 in the lower slot</b> (over the floor fans, PCIe 5.0 ×4), <b>Astral 5090 in the top slot</b> (×8). Never flip these — the lower card is the one that breathes from below.</li>
+    <li>Never put a radiator on the floor. The floor is the PRO 6000's air supply.</li>
+    <li>The ROG Astral LC itself is scarce in India — check live stock before committing the rest of the build.</li>
+    <li>Instrument VRM and PCIe retimer temperatures, not just GPU temperatures.</li>
+  </ul>
+</section>
+
+<section id="dead">
+  <h2><span class="n">06</span> What was ruled out, and why</h2>
+  <p>63 unique chassis were swept across five parallel angles — Indian retail, the full Lian Li and Corsair
+  line-ups, Antec/Cooler Master/Thermaltake/DeepCool/NZXT/Montech, the boutique airflow brands, and real
+  multi-GPU AI build logs — then a completeness critic went hunting for what the sweep missed.</p>
+  <div class="twrap"><table>
+    <thead><tr><th>Case</th><th>Killed by</th></tr></thead>
+    <tbody>
+      <tr><td><b>Corsair 9000D</b></td><td>Re-opened (664 mm clears the new cap) then re-killed on the floor-feed question. The old note was right, for the wrong reason.</td></tr>
+      <tr><td><b>Phanteks NV9 / NV9 MkII</b></td><td>Not buyable in India. Amazon.in: <em>"we don't know when or if this item will be back in stock."</em> EliteHubs doesn't list it at all.</td></tr>
+      <tr><td><b>Phanteks Enthoo Pro 2</b></td><td>Out of stock across nine Indian listings — and it is 580 mm with feet, not 560 mm as an earlier sweep claimed, so it would have needed the desk lock anyway.</td></tr>
+      <tr><td><b>Thermaltake CTE C750 / C750 Air</b></td><td>Rotated layout stands the cards vertically — a vertical card has no underside for the floor to feed. Roof also caps at 240 mm.</td></tr>
+      <tr><td><b>Lian Li O11 Dynamic XL ROG</b></td><td>The completeness critic's find, and a fair one: 513 mm, 285 mm wide, ₹19,299. But Lian Li publishes no radiator thickness limit for it and builders report interference running top + side together. Out of stock where checked.</td></tr>
+      <tr><td><b>HYTE X50 / X50 Air</b></td><td>No roof fan or radiator mount at all. 1.2 kW of GPU heat venting up into a sealed ceiling.</td></tr>
+      <tr><td><b>4U rackmount (SilverStone RM44 etc.)</b></td><td>Category closed: built around one front fan wall for blower cards. Front 360 only, no floor bank.</td></tr>
+      <tr><td><b>Open-frame (CM MasterFrame 700)</b></td><td>~702 mm standing, busts the cap, unfiltered, and sold out in India.</td></tr>
+      <tr><td><b>Fractal Meshify 3 XL / Define 7 XL</b></td><td>No floor feed. The one documented multi-card PRO 6000 build in a Define 7 XL — its own builder disowns it.</td></tr>
+      <tr><td><b>2026 releases</b> (Lancool 4, 207XL, V2000, O11D EVO RGB V2)</td><td>Announced, not shipping, not in India. Category checked and empty.</td></tr>
+      <tr><td><b>Indian domestic brands</b></td><td>Structurally absent — Ant Esports' flagship is 220 mm wide with a single 120 mm bottom mount. Nobody local builds a ≥280 mm dual-chamber with floor rad support.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2><span class="n">07</span> The layouts</h2>
+  <div class="diagram">EVO XL  (recommended)          ANTEC C8                      PERFORMANCE 1 FT
+────────────────────────      ────────────────────────      ────────────────────────
+ROOF   Astral 5090 rad        ROOF   LT720 CPU rad          ROOF   Astral 5090 rad
+       65mm · EXHAUST                52mm · EXHAUST                65mm · EXHAUST
+                                                                   (offset beside board)
+SIDE   LT720 CPU rad          SIDE   Astral 5090 rad        FRONT  LT720 CPU rad
+       52mm · INTAKE                 65mm · INTAKE                 52mm · INTAKE
+       needs mesh panel              spec conflict!
+                                                            SHROUD 3x120 · INTAKE
+FLOOR  3x140 · INTAKE         FLOOR  3x140 · INTAKE                straight up into GPU
+       filtered, NO rad              filtered, NO rad
+                                                            FLOOR  filter feeds shroud
+REAR   140 · EXHAUST          REAR   140 · EXHAUST          REAR   120 · EXHAUST
+
+       ── slots, all three cases ──
+       TOP slot    Astral RTX 5090 LC   2.5-slot   PCIe 5.0 x8
+       LOWER slot  RTX PRO 6000 96GB    2-slot     PCIe 5.0 x4   ← sits over the floor fans</div>
+  <p class="note">The lower card is always the PRO 6000. It inhales from underneath, so it gets the floor.
+  Putting it on top would make it eat the 5090's exhaust.</p>
+</section>
+
+<footer><div class="wrap">
+  <p>Rev 6 · 25 July 2026 · replaces the Rev 5 V3000 Plus decision.
+  Main build plan: <a href="./index.html">index</a> ·
+  <a href="./layout.html">cutaway diagram</a> ·
+  <a href="./simple.html">plain-English version</a></p>
+  <p class="src">Method: 16-agent research workflow (5 discovery sweeps → 7 spec verifications → adversarial kill pass → synthesis),
+  then a 5-agent verification workflow (4 refuters + 1 completeness critic) run against the winner.
+  Heights taken from manufacturer drawings in the official manuals, measured at 600 dpi and calibrated on
+  known ATX dimensions. Prices marked "verified live" were loaded in a real browser on 25 Jul 2026.</p>
+</div></footer>
+
+</div>
+</body>
+</html>
