@@ -1,7 +1,7 @@
 # Dual-GPU AI Workstation (pcsetup)
 
 **What it is:** A single self-contained HTML build-plan document (case / cooling / power / desk-clearance) for Dominic's in-house 24×7 dual-GPU AI training workstation.
-**Status:** **Rev 6 — V3000 PLUS IS UNAVAILABLE AGAIN (user, 2026-07-25). New recommendation = HOLD the Lian Li O11 Dynamic EVO XL.** Replacement research delivered at `case-replacement.html` (live). index.html now carries a red SUPERSEDED banner at the top of the TL;DR linking to it; the rest of index/layout/simple still describe the V3000 and must be rewritten ONCE the user picks. See "Rev 6" section below.
+**Status:** **Rev 7 — USER PICKED THE O11 DYNAMIC EVO XL. GO-WITH-CONDITIONS after an 8-agent adversarial pre-purchase recheck (2026-07-25). index.html REBUILT around the EVO XL. Pre-purchase gate lives at `buy-checklist.html`.** Case comparison at `case-replacement.html`. **index.html is DONE (Rev 6/7). `layout.html` + `simple.html` + `build-picture.png` are STILL V3000 drawings and carry the 140mm rear-fan error — they need a from-scratch redraw for the EVO XL and must NOT be handed to a builder until then.**
 
 **(Superseded) Rev 5 — WINNER = Lian Li V3000 Plus.** (2026-07-14) Ergosphere CONFIRMED a firmware min/max-height lock that can be set as default AND **survives a reset** → the crush problem is solved robustly. Combined with the user's 32" seated working height + a wheeled open-frame pedestal, the 674mm super-tower now fits under the desk. So the ≤560mm cap is REPLACED by the desk-lock approach. V3000 is the pick; EVO XL demoted to "foolproof fallback". Full doc rebuilt around the V3000 (new fan/rad layout, desk-lock section, pedestal, shopping list).
 (Rev 4: super-towers eliminated on height + hotbox section + 1.8-ton O General. Rev 3: EVO XL after 5090=Astral LC. Rev 2: reopened after PRO 6000 = double-flow-through.)
@@ -18,11 +18,11 @@
 
 ## Key facts
 - **Rig (locked):** Ryzen 9 9950X3D · MSI X870E Carbon WiFi · 64GB DDR5 · GPU1 RTX PRO 6000 Blackwell 96GB (600W) · GPU2 RTX 5090 (AIO liquid, ~575W) · Corsair AX1600i · DeepCool LT720 360 AIO · ~1.4–1.45 kW peak.
-- **Desk (constraint):** Ergosphere Balanced Desk PRO 340 L-Shape Corner, triple-motor, LOGICDATA/Bosch, **frame-only**. Published "63cm min" is to the DESKTOP TOP; the **underside bottoms out at ~605–615mm**. The PC goes UNDER it. Case must be ≤560mm tall.
+- **Desk (constraint):** Ergosphere Balanced Desk PRO 340 L-Shape Corner, triple-motor, LOGICDATA/Bosch, **frame-only**. Published "63cm min" is to the DESKTOP TOP; the **underside bottoms out at ~605–615mm**. The PC goes UNDER it. **Rev 7 caveat: 605mm is the TABLETOP UNDERSIDE — the control box (~37mm) and crossbar hang BELOW it, and this has never been physically measured. Measure floor → lowest hard point with the bay empty before trusting any clearance number.**
 - **USER'S WORKING DESK HEIGHT = 32 inches (813mm) surface** (chair at lowest, seated). Confirmed 2026-07-13. This is HIGH (std is 29"), which is GREAT for fit: at 32" the underside ≈ 788mm (25mm top) → clears even the 674mm V3000 Plus by ~114mm. So at working height BOTH cases fit easily. The only risk is the desk DROPPING below 32" toward its ~605mm-underside minimum.
 - **CRUSH-SAFETY BY CASE (desk min underside ~605-615mm):** EVO XL (532mm) is SHORTER than the desk's lowest point → 73-83mm gap even at rock-bottom → CANNOT be crushed, needs NO limit (foolproof). V3000 Plus (674mm) is TALLER than the desk minimum → crushed by ~69mm if desk hits its min → REQUIRES a descent-cap (Ergosphere firmware limit at ~29.5-30" surface / ~724mm underside + physical steel hard-stops as backup). V3000 is now VIABLE (not dead) BECAUSE the user sits at 32".
 - **WHEELED PEDESTAL PLAN (user idea, good):** put the V3000 on a 1-2" open-frame caster base so it rolls out for cleaning + lifts the bottom intake off floor dust/carpet. TWO rules: (1) pedestal height STACKS onto the 674mm case → raise the desk lock to match: 1" pedestal → lock ~30.5" surface, 2" → ~31.5" (user works at 32", so headroom exists). (2) Pedestal MUST be an OPEN frame (casters at corners, open middle), NEVER a solid board — a solid plate would seal the bottom intake and choke the flow-through 6000. Locking casters rated >50kg. V3000 has a built-in bottom dust filter already (no extra mesh needed; keep it clean — it's the 6000's air path). Feed = floor fans + "above-PSU" shelf fans (two-stage, straight up into the GPU).
-- **V3000 Plus now AVAILABLE offline at a good price** (user found it) — the earlier India-OOS objection is gone. Height is solvable via the descent-cap. So it's back in play as "the big upgrade IF you lock the descent"; EVO XL remains the foolproof default. index.html still shows V3000 in the ELIMINATED list + EVO XL as sole winner — REBUILD PENDING user's case decision (keep both paths).
+- ~~V3000 Plus available offline~~ **STALE — user reported it unavailable again 2026-07-25 and it is now permanently out. See Rev 6/Rev 7.**
 - **5090 CONFIRMED = ASUS ROG Astral LC** (user-stated). Verified specs: card 288.46×153.7×48mm (2.5-slot), radiator 400×120×**65mm with fans** (38mm bare core — THICKER than typical 5090 AIOs ~27mm), 600mm flexible tubes, 600W, 1×16-pin. India: sold ~₹5.25–7.4 lakh but mostly OOS/scarce at readable retailers. Roof-mount is the RECOMMENDED orientation (pump on card → rad above). The fat 65mm rad is the clearance to watch.
 
 ## THE BIG CORRECTION (Rev 1 was wrong — do not regress)
@@ -57,6 +57,72 @@
 - Do NOT merge both cards into one ~128GB trainer (no NVLink, mismatched VRAM/clocks). Two independent workers.
 - Do NOT rely on the desk's anti-collision — LOGICDATA trips at ~40kg + desk load downward, and is OFF during reset.
 
+
+## Rev 7 — pre-purchase recheck of the EVO XL (2026-07-25). READ THIS BEFORE TOUCHING THE CASE PLAN.
+
+Bob picked the EVO XL and asked for a full recheck before buying. 8-agent adversarial workflow (7 lenses + go/no-go).
+**Verdict: GO WITH CONDITIONS. No showstoppers.** Deliverable: `buy-checklist.html`.
+
+**FOUR THINGS I HAD WRONG — do not regress to any of them:**
+1. **THE "MESH SIDE PANEL BLOCKER" WAS A FALSE PREMISE.** Lian Li makes NO mesh side panel for the EVO XL because it
+   does not need one — **top and right panels are aluminium fine mesh from the factory, 4 dust filters included.**
+   Proof: Lian Li's own side-bracket figures (81mm main chamber / 40mm second chamber, 117.2mm outer) only reconcile
+   if the fans blow across the case WIDTH through the side panel; two agents independently parsed Lian Li's 78MB CATIA
+   STEP model and landed on the same geometry to ~1mm; Lian Li ships 2 side dust filters; GamersNexus benchmarked this
+   case in a side-intake config. **DO NOT BUY any mesh kit** (esp. not the O11D EVO XL *Front* Mesh Kit O11DEXL-4X, and
+   not any O11D EVO / EVO RGB kit — wrong case, widely stocked in India, the most likely money-wasting mistake).
+   Residual unknown: manual p.13 captions two of four bracket styles "fans install toward the front panel" — unexplained,
+   overruled on stronger evidence. Fallback is free (pull the clip-mounted front glass + ₹500–1,500 magnetic filter).
+2. **Roof is 82mm, not 81mm** — and 81mm was the SIDE bracket figure misattributed. Roof and floor share a fixed
+   **172mm budget split by tray position (manual p.28): Middle 82/90 (factory default, USE THIS), Low 118/54, Top 46/126.**
+   The "118mm" seen elsewhere is real but is a mutually exclusive tray mode. Astral 65mm rad → 17mm spare in Middle.
+3. **Rear fan is 120mm, NOT 140mm** — there is no 140mm rear mount ("Rear: up to 2×120mm"). The 2nd rear fan needs Low
+   mode, which costs 36mm of floor plenum → use ONE 120mm.
+4. **"Crush risk eliminated by geometry" is CONDITIONAL.** 605mm is the TABLETOP UNDERSIDE. The **control box hangs below
+   it** (LOGICDATA COMPACT ~37mm deep → 48mm becomes 11mm on a 1" pedestal, COLLISION on 2"), crossbar depth unpublished,
+   and "1 inch pedestal" = frame only; casters run 40–70mm plate-to-floor. **Measure floor → lowest hard point with the
+   bay empty. Never a 2" pedestal.**
+
+**KEY VERIFIED NUMBERS:** floor plenum **99–120mm** (CAD-derived; vs Antec C8's 62.8mm — the EVO XL's advantage is now
+measured, not assumed) · GPU height clearance **169mm published** (PRO 6000 137mm → 32mm spare; Astral 153.7mm → **15.3mm**,
+tightest in the build) · 531.9mm **includes feet** (CAD: pads at Y−39.4, top cover Y+492.0 = 531.4 vs published 531.9) ·
+real depth **537mm** not 522 (PCI brackets 15mm past the published rear plane) → keep ≥100mm off the wall · slot pitch
+20.33mm CAD-measured.
+
+**SKU DISCIPLINE:** buy **O11DEXL-X** / code **G99.O11DEXL-X.IN**, BLACK. There is NO separate "EVO XL ARGB" product (base
+case has the ARGB strip; listings titled ARGB print the standard SKU). **Near-miss to avoid: O11 Dynamic EVO RGB
+(O11DERGBX)** — different MID-TOWER, 478×290×471, 7 slots, ₹17,990. Prices: ₹23,200 vishalperipherals · ₹25,000 MD Computers
+(buy here if warranty path unresolved) · ₹24,990 pcstudio · ₹24,998 elitehubs · tpstech SOLD OUT · **amazon.in does NOT sell
+this case** (old note saying it does is wrong). Box contains **ZERO fans**; GB-003 anti-sag IS included but only fits the
+2nd expansion slot (useless for the PRO 6000 → buy a support stick); 2 seal plates included — FIT THEM or the side intake
+short-circuits. All-in ₹29,400–31,200.
+
+**LAYOUT LOCKED:** tray MIDDLE · ROOF = Astral 65mm rad EXHAUST (17mm spare, route BOTH EPS cables first) · SIDE = LT720
+INTAKE, bracket INNER (29mm spare) · FLOOR = 3×140mm INTAKE pushed fully **REARWARD** (centred, one fan blows past the
+card's nose into empty air) · REAR = 1×120mm exhaust · PRO 6000 lower slot / Astral top slot.
+**Do NOT swap the rads:** only one rad can breathe outside air; making the Astral the intake dumps 600W into the chamber
+the PRO 6000 breathes (600W→1200W case load). Swap is the FALLBACK only if the LT720's tubes don't reach from the side bay.
+
+**THE REAL TOP RISK IS NOT THE CASE — it's the PRO 6000's stock fan firmware:** documented holding ~53% fan at 92°C then
+dropping the card off the PCIe bus; power-limiting to 500W and 450W did NOT prevent it (Tyler Wall, 95k NVML samples;
+corroborated by Ovidiu Dan's dual-PRO-6000 report). Fan daemon is a PREREQUISITE. Curve: ≤40°C→30%, 50→55%, 55→75%,
+60→90%, ≥65→100%. Alarm on **core >85°C while fan <70%**.
+
+**STILL UNKNOWN (flagged, not hidden):** where the Astral's power connector + coolant tubes exit (ASUS publishes nothing;
+15.3mm is the tightest clearance in the build) · whether a 90° 12V-2x6 adapter exists thin enough for 15.3mm · NVIDIA
+publishes NO thermal spec for the PRO 6000 · **nobody has ever documented a PRO 6000 in any O11-family case** (temp
+projection 80–88°C core / 86–95°C memory is stitched, MEDIUM confidence ±5°C; memory is the binding constraint) · Lian Li
+publishes no case weight and no ventilation clearance · Ergosphere's "63–128cm" block is boilerplate, not a spec for this
+desk · Lian Li India after-sales = one phone line, "Abhijeet Singh 7042202227", no address/email/portal.
+
+**DEVIL'S ADVOCATE LANDED ONE HIT:** "already documented for the assembler" was worth ZERO and is struck — layout.html,
+simple.html and build-picture.png were all drawn for the V3000 Plus and carry the 140mm rear-fan error. **DO NOT hand them
+to a builder.** They need a from-scratch redraw for the EVO XL — still outstanding.
+
+**Switch to the Antec C8 only if ALL THREE:** Antec confirms in writing the side bay takes 65mm (100mm figure, not the
+contradictory 50mm), AND confirms GPU height clearance ≥170mm, AND C4 comes back badly. Two of those nobody has ever asked
+Antec. Performance 1 FT is dead on availability.
+
 ## Rev 6 — V3000 replacement research (2026-07-25)
 
 **Deliverable:** `case-replacement.html` → https://opheliaclarke.github.io/pcsetup/case-replacement.html (noindex, favicon added; index.html also got a favicon + a red SUPERSEDED banner).
@@ -77,7 +143,7 @@
 **BLOCKED ON THE USER:** pick one of the three. Then rewrite index.html + layout.html + simple.html around it (Rev 6 proper).
 
 **Rev 6 open items:**
-- **EVO XL mesh side panel = the one thing that could force a switch.** SKU still unconfirmed AND every Lian Li mesh kit at elitehubs was OOS on 2026-07-25 (the ones listed are O11D EVO *front* mesh kits, not the XL side panel). The LT720 cannot breathe behind glass.
+- ~~EVO XL mesh side panel~~ **CLOSED 2026-07-25 — false premise, no such part exists and none is needed. See Rev 7.**
 - C8: Antec publishes **two contradictory side-radiator numbers** — a 100mm thickness envelope (55+45 about a rail) and a separate "Clearance for Right Side Radiator Installation: 50mm (Depth max.)", no datum given for either. The 65mm Astral rad depends on which is real → ask Antec India in writing.
 - C8: roof envelope is 70mm vs the Astral's 65mm (5mm) → the fat rad must go SIDE, LT720 in the roof.
 - C8: PSU bay 210mm **excluding cable** vs the 200mm AX1600i → needs a 90°/short cable kit.
