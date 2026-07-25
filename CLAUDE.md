@@ -1,7 +1,7 @@
 # Dual-GPU AI Workstation (pcsetup)
 
 **What it is:** A single self-contained HTML build-plan document (case / cooling / power / desk-clearance) for Dominic's in-house 24×7 dual-GPU AI training workstation.
-**Status:** **Rev 7 — USER PICKED THE O11 DYNAMIC EVO XL. GO-WITH-CONDITIONS after an 8-agent adversarial pre-purchase recheck (2026-07-25). index.html REBUILT around the EVO XL. Pre-purchase gate lives at `buy-checklist.html`.** Case comparison at `case-replacement.html`. **index.html is DONE (Rev 6/7). `layout.html` + `simple.html` + `build-picture.png` are STILL V3000 drawings and carry the 140mm rear-fan error — they need a from-scratch redraw for the EVO XL and must NOT be handed to a builder until then.**
+**Status:** **Rev 8 — CONFIRMED: BUY THE EVO XL (O11DEXL-X, black), and buy it SOON (EOL signals). 10-agent round-4 sweep incl. Reddit settled the alternatives. `buy-checklist.html` is now THE decision page (downsides + full sourced buy list + alternatives + CAD fitment proof + Reddit digest). Rev 7 — USER PICKED THE O11 DYNAMIC EVO XL. GO-WITH-CONDITIONS after an 8-agent adversarial pre-purchase recheck (2026-07-25). index.html REBUILT around the EVO XL. Pre-purchase gate lives at `buy-checklist.html`.** Case comparison at `case-replacement.html`. **index.html is DONE (Rev 6/7). `layout.html` + `simple.html` + `build-picture.png` are STILL V3000 drawings and carry the 140mm rear-fan error — they need a from-scratch redraw for the EVO XL and must NOT be handed to a builder until then.**
 
 **(Superseded) Rev 5 — WINNER = Lian Li V3000 Plus.** (2026-07-14) Ergosphere CONFIRMED a firmware min/max-height lock that can be set as default AND **survives a reset** → the crush problem is solved robustly. Combined with the user's 32" seated working height + a wheeled open-frame pedestal, the 674mm super-tower now fits under the desk. So the ≤560mm cap is REPLACED by the desk-lock approach. V3000 is the pick; EVO XL demoted to "foolproof fallback". Full doc rebuilt around the V3000 (new fan/rad layout, desk-lock section, pedestal, shopping list).
 (Rev 4: super-towers eliminated on height + hotbox section + 1.8-ton O General. Rev 3: EVO XL after 5090=Astral LC. Rev 2: reopened after PRO 6000 = double-flow-through.)
@@ -57,6 +57,92 @@
 - Do NOT merge both cards into one ~128GB trainer (no NVLink, mismatched VRAM/clocks). Two independent workers.
 - Do NOT rely on the desk's anti-collision — LOGICDATA trips at ~40kg + desk load downward, and is OFF during reset.
 
+
+
+## Rev 8 — round-4 deep research, 2026-07-25 (Bob unconvinced, asked for downsides + accessories + alternatives + Reddit)
+
+**Bob confirmed he will program a new desk minimum → the 560mm cap is GONE, band reopened to 674mm.**
+10-agent workflow (6 investigation angles + 3 fitment + synthesis). **VERDICT UNCHANGED: BUY THE EVO XL. Buy it soon.**
+
+**THREE MORE OF OUR OWN RECORDS WERE WRONG — corrected, do not regress:**
+1. **Enthoo Pro 2 is 560mm TALL, not 580.** Phanteks writes `(W x D x H) = 240 x 580 x 560` — **580 is the DEPTH.**
+   It was never a height problem.
+2. **Corsair 9000D is 698mm, not 664mm** (Corsair's own table) — over the cap — AND verbatim
+   *"Radiator Support - Bottom: None / Fan Support - Bottom: None"*. Dead twice. Worst QC on the shortlist
+   (front I/O **shorting**, not fixed by RMA panels; warped panels twice). **Never reopen.**
+3. **Fractal Define 7 XL DOES have a floor feed** (`Bottom fan: 2x120/140mm`, 240/280 bottom rad). Our kill reason was
+   false. It still loses (240mm wide, solid damped door) — but fix the reason.
+
+**ENTHOO PRO 2 = DEAD, two independent kills** (Bob found it in stock and asked by name):
+(a) **NO FLOOR FEED.** Its bottom fan/rad bracket sits INSIDE the closed drive basement under a **solid steel lid**
+(only opening = a rubber grommet). Measured off Phanteks' own drawing (calibrated on 20.32mm ATX pitch): lid sits
+~11.5mm below the lowest PCI slot → **~31.8mm of SEALED dead air** vs the EVO XL's **92.9mm of actively fed plenum.**
+Owner corroboration: *"the bottom was pushed up against the PSU"*; *"11 drives (12 if you don't want bottom fans)"* —
+the bottom fan positions compete with DRIVE BAYS because they're in the basement. Same failure mode as ROG Hyperion.
+(b) **240mm wide** — 5mm NARROWER than the 245mm Flux Pro Bob rejected as too tight, 64mm narrower than EVO XL, and
+by volume it's the SMALLER case (78.0L vs 84.4L). Also roof caps at **55mm** vs the Astral's 65mm stack, side bay
+32–35mm → the fat rad is forced to the FRONT (the intake face). ⚠️ Server Edition SKUs (PH-ES620PTG_BK02 /
+PH-ES620PC_BK03) have NO bottom fan/rad positions at all.
+
+**THE ONLY CASE THAT WOULD BEAT IT: Phanteks NV9 / NV9 MkII** (575×280×**615mm**) — GPU height clearance **205mm**
+(Astral gets 51.3mm instead of 15.3mm, retiring the tightest unknown in the project), roof ~163mm, roof+floor
+INDEPENDENT, 140mm rear, included GPU bracket that fits a bottom-slot card, 280mm wide, 99L, no basement.
+**BUT:** plenum is worse (~40mm free air vs EVO XL's ~65mm), PSU bay 210mm vs the 200mm AX1600i, and **NOT confirmed
+buyable in India** (Amazon.in no NV9; EliteHubs only NV5; Vedant/TheITDepot nothing; Computech reported ₹18,499 but
+site search broken; PC Studio Cloudflare-blocked). **ACTION: one phone call to Computech + PC Studio for
+PH-NV923TG_DBK02 before paying. If "no" → buy the Lian Li and stop.**
+
+**OEM/WORKSTATION CATEGORY = DEAD END, and it's reassuring:** **Puget Systems builds its RTX PRO 6000-configurable
+Threadripper PRO AI/ML towers in a Fractal Define 7 XL** (240mm wide, solid damped door — narrower AND more closed
+than what we're buying; NASA contract BOM confirms). **Lenovo ThinkStation P8** official: *"up to three PRO 6000
+Max-Q (300W); **or up to ONE** PRO 6000 Workstation Edition (600W)"*. **Dell Precision 7960**: 4x300W only — won't
+take the 600W card at all. **Nobody sells an empty OEM chassis.** Supermicro bare chassis exist in India but have
+redundant server PSUs + ducted fan walls + **zero radiator mounts**. Consumer cases are the correct category.
+
+**LONGEST-STANDING UNKNOWN PARTLY CLOSED:** a Sept-2025 build documents **2x RTX PRO 6000 Blackwell Workstation on an
+X870E board in a Lian Li O11 EVO XL.** Existence proof (temps not retrievable, YouTube blocked).
+
+**MORE CORRECTIONS TO OUR OWN NUMBERS:**
+- Plenum is **92.9mm** (single CAD measurement), NOT the 99–120mm range quoted in Rev 7. Lian Li's published floor
+  budget is 90mm → two methods agree within 2.9mm.
+- **Only 30.5mm between the two cards** (not ~40mm — the Astral is 2.5-slot). A straight 12V-2x6 needs 35mm before
+  its first bend → **an angled connection is MANDATORY.**
+- **GB-003 anti-sag IS useful** — it fits the 2nd expansion slot, which is exactly where the **Astral** goes. Buy ONE
+  stick for the PRO 6000, and one that braces off the fan rail / sits BETWEEN fans (a full-height stick blocks an intake fan).
+- Floor fans must be pushed **rearward in Z AND inboard in X**; pushed outboard they blow past the card's edge.
+
+**⚠️ 12V-2x6 SAFETY — highest-consequence open item.** CableMod's angled 12VHPWR **adapters** were **CPSC-recalled in
+2024** (~25,300 units, 270+ overheating/melting reports, $74.5k damages); CableMod exited the category. **Correct
+product = a cable with the 90° MOULDED INTO the connector** (CableMod C-Series Pro ModFlex 12V-2x6 90° StealthSense
+for Corsair Type-4, US$29.90, **not sold in India**, publishes no height figure). Everything buyable in India
+(EZDIY-FAB ₹4,181–7,263, JOYJOM ₹2,706–3,777) is an ADAPTER = the recalled geometry. **Seat both cards, measure
+connector position + latch direction, THEN order.** Consider Thermal Grizzly 90° WireView Pro ($89.97, per-pin current
+alarm; India availability unconfirmed).
+
+**BUY LIST (live 2026-07-25):** case ₹23,200 vishalperipherals · Arctic P14 PWM PST 5-pack **₹3,399 ADS Store**
+(⚠️ the SAME pack is ₹14,062 on Amazon.in — 4.1x, grey import) · Arctic P12 PST 5-pack ₹2,599 ADS Store (⚠️ the ₹759
+Amazon listing is the Slim 15mm, wrong part) · 2x Corsair Elite Premium **Type-4** 12V-2x6 cables ₹4,773 ea ·
+GPU support stick ₹308 · SPYLOCK open-frame metal trolley ₹499 (NEVER wooden — seals the intake) · MX-6 ₹699 ·
+fan hub ₹882 (optional) · side magnetic filter ₹500–1,500 (side intake is UNFILTERED) · **UPS APC SRV3KL-IN 3kVA
+₹48,490 apc.estorewale.com**. **Case+accessories ₹42,132; with UPS ₹90,622.** Missing from the parts list entirely:
+**2x NVMe** (buy locally — Amazon.in shows import pricing ₹1.03–1.51 lakh).
+
+**EVO XL DOWNSIDES (Bob asked; ranked):** 1) **quietly going EOL** — persistent worldwide OOS, no XL V2, Lian Li
+didn't answer a direct roadmap question, momentum on the Vision line → **buy now, and spares are the risk**;
+2) out of warranty Lian Li **won't sell parts even when offered money**; 3) **tempered glass genuinely shatters**
+(r/lianli 314pts/190 comments, one owner 3x) and Bob's plan hits 3 of the 4 named triggers (rolled on casters,
+vibration, hard floor, frequent panel removal); 4) the floor filter is a **single point of failure** for the ₹7-lakh
+card → scheduled maintenance; 5) practical dust coverage is **1 filter not 4** (side intake unfiltered, DEMCiflex
+sells a kit for this exact case); 6) tray budget is zero-sum, **MIDDLE is forced**; 7) needs the support pillar when
+moved (conflicts with the pedestal plan); 8) zero fans (but only 4 needed, ~₹4k); 9) **front mesh kit discontinued**
+(the cheap −5°C escape hatch is gone); 10) awkward AX1600i cable routing. **The "hotbox" reputation does NOT apply** —
+stale, and earned by front-fed air cards.
+
+**REDDIT'S MOST USEFUL FINDING (again, not about cases):** 4x PRO 6000 owner — *"when I added more fans it seemed to
+make it worse… even at 85C the card's fans were only at ~30%. I wrote a script… removed 3 case fans and now they run
+~70C continuously."* **Good case vs great case = a few degrees. Stock firmware vs fan daemon = 15–19°C measured.**
+Also independently confirms our layout: *"switched to an AIO set as INTAKE and it solved the problem"* (CPU rad as
+intake). And *"the biggest problem is the temp of the 12v 2x6 plugs… so I reduced the cards to 420W."*
 
 ## Rev 7 — pre-purchase recheck of the EVO XL (2026-07-25). READ THIS BEFORE TOUCHING THE CASE PLAN.
 
