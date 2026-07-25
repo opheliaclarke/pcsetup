@@ -108,7 +108,7 @@
 <body>
 <header>
   <div class="wrap">
-    <div class="eyebrow">In-house AI training rig · Build plan · Rev 5 · FINAL</div>
+    <div class="eyebrow">In-house AI training rig · Build plan · Rev 6</div>
     <h1>Running the RTX&nbsp;PRO&nbsp;6000 + RTX&nbsp;5090 in one case</h1>
     <p class="sub">Case, cooling, power and desk plan for a dual-GPU AI workstation. Written to be handed straight to your cabinet vendor, electrician and AC installer.</p>
     <div class="rig">
@@ -119,8 +119,8 @@
       <span class="chip"><b>GPU 2</b> RTX 5090 ROG Astral LC</span>
       <span class="chip"><b>PSU</b> Corsair AX1600i 1600W</span>
       <span class="chip"><b>Cooler</b> DeepCool LT720</span>
-      <span class="chip"><b>Case</b> Lian Li V3000 Plus</span>
-      <span class="chip"><b>Desk</b> Ergosphere PRO 340 L (locked min)</span>
+      <span class="chip"><b>Case</b> Lian Li O11 Dynamic EVO XL</span>
+      <span class="chip"><b>Desk</b> Ergosphere PRO 340 L</span>
     </div>
   </div>
 </header>
@@ -130,7 +130,7 @@
   <a href="#facts">Key Facts</a>
   <a href="#case">The Case</a>
   <a href="#airflow">Fan &amp; Rad Layout</a>
-  <a href="#desk">Desk Lock</a>
+  <a href="#desk">Desk Clearance</a>
   <a href="#mount">Mounting the Cards</a>
   <a href="#power">Power &amp; Heat</a>
   <a href="#room">Room Cooling</a>
@@ -144,14 +144,14 @@
 <section id="tldr">
   <div class="card tldr">
     <h2>The short version</h2>
-    <div class="verdict alert"><div class="ic">🚨</div><div><b>SUPERSEDED — the V3000 Plus is no longer available to buy.</b> Everything below still describes it as the winner. A fresh 63-chassis research pass has picked the replacements: <a href="./case-replacement.html"><b>read the Rev 6 case decision →</b></a> Short answer: <b>keep the Lian Li O11 Dynamic EVO XL</b>, with the Antec C8 and the Antec Performance 1 FT as the two real alternatives. All three are under 560&nbsp;mm, so the desk lock is no longer load-bearing.</div></div>
+    <div class="verdict"><div class="ic">🔁</div><div><b>Rev 6 — the case changed.</b> The V3000 Plus went out of stock permanently. A 63-chassis research pass replaced it with the <b>Lian Li O11 Dynamic EVO XL</b>, and this page has been rebuilt around it. The full comparison against the two runners-up (Antec C8, Antec Performance 1 FT) is on the <a href="./case-replacement.html">case decision page</a>.</div></div>
     <div class="verdict"><div class="ic">📄</div><div><b>Prefer plain, non-technical words?</b> <a href="./simple.html">Read the simple version</a> — the whole build in everyday language, made to read out and explain to whoever assembles it. There's a downloadable picture there too.</div></div>
-    <div class="verdict win"><div class="ic">🏆</div><div><b>The case: Lian Li V3000 Plus.</b> The super-tower you wanted — and, for your exact parts, the best home there is: its filtered <b>floor intake blows fresh air straight up into the flow-through PRO&nbsp;6000</b>, exactly how that card breathes. It holds both radiators without a squeeze, and it's now buyable at a good price offline.</div></div>
-    <div class="verdict win"><div class="ic">🔒</div><div><b>The crush problem is solved.</b> Ergosphere can set a <b>firmware minimum-height lock that survives a reset</b> — the robust guard a soft "container stop" never was. Locked at ~30.5&nbsp;in, the desk physically cannot descend onto the PC. You sit at 32&nbsp;in, so you lose nothing.</div></div>
-    <div class="verdict"><div class="ic">🛞</div><div><b>On a wheeled, open-frame pedestal.</b> It rolls out for cleaning and lifts the floor intake up off the dust. Its height adds to the case, so the desk lock rises to match (1&nbsp;in pedestal → lock ~30.5&nbsp;in; 2&nbsp;in → ~31.5&nbsp;in).</div></div>
-    <div class="verdict"><div class="ic">🌬️</div><div><b>The layout:</b> PRO&nbsp;6000 in the <b>lower slot</b>, fed by <b>floor + above-PSU intake fans</b>; the 5090 Astral&nbsp;LC's radiator on the <b>front</b> (fresh air); the CPU radiator on <b>top as exhaust</b> to carry the 6000's heat out. Two cards in the slots, two radiators on the panels — nothing fights for space.</div></div>
+    <div class="verdict win"><div class="ic">🏆</div><div><b>The case: Lian Li O11 Dynamic EVO XL.</b> 531.9&nbsp;mm tall, 304&nbsp;mm wide, 79.9&nbsp;L, 8 slots. Its filtered <b>floor intake blows fresh air straight up into the flow-through PRO&nbsp;6000</b>, exactly how that card breathes; the roof takes an 81&nbsp;mm radiator stack, so the 5090's fat 65&nbsp;mm rad drops in without a fight. Widest availability in India of anything that qualified.</div></div>
+    <div class="verdict win"><div class="ic">🔓</div><div><b>The crush problem is gone — and you no longer need the desk lock.</b> At 531.9&nbsp;mm the case is <b>shorter than the desk's lowest underside (~605&nbsp;mm)</b>. Even if someone drives the desk to the floor it stops 73&nbsp;mm above the case. This is protection by geometry, not by firmware — strictly better than the V3000 plan.</div></div>
+    <div class="verdict"><div class="ic">🛞</div><div><b>On a wheeled, open-frame pedestal.</b> It rolls out for cleaning and lifts the floor intake up off the dust. <b>1&nbsp;in is the sweet spot</b> — it still leaves 48&nbsp;mm of clearance even at the desk's rock-bottom position, so the no-lock guarantee survives.</div></div>
+    <div class="verdict"><div class="ic">🌬️</div><div><b>The layout:</b> PRO&nbsp;6000 in the <b>lower slot</b>, fed by <b>3× 140&nbsp;mm filtered floor fans</b>; the 5090 Astral&nbsp;LC's fat radiator in the <b>roof as exhaust</b>; the CPU radiator on the <b>side as intake</b>. Two cards in the slots, two radiators on the panels — nothing fights for space.</div></div>
     <div class="verdict"><div class="ic">🌡️</div><div><b>Write a fan-curve script before the first training run.</b> NVIDIA's stock VBIOS idles these cards at ~30% fan while they sit at 85–90°C. Full fan = 66–67°C; stock curve = 85°C. Do it on day one.</div></div>
-    <div class="verdict"><div class="ic">🖼️</div><div><b>Want the picture?</b> <a href="./layout.html">Open the visual build diagram</a> — a labelled cutaway of the V3000 Plus showing where every part goes and how the air flows.</div></div>
+    <div class="verdict alert"><div class="ic">🧩</div><div><b>One thing to settle before you pay: the mesh side panel.</b> In this case the CPU radiator sits on the <b>side</b>, and it cannot breathe behind glass. Every Lian Li mesh kit I could check was out of stock. Confirm the exact SKU and that it is buyable <em>before</em> ordering the case. <a href="./case-replacement.html#confirm">Details →</a></div></div>
   </div>
 </section>
 
@@ -165,12 +165,12 @@
       <tr>
         <td><b>The PRO 6000 is not a blower.</b></td>
         <td><b>Double-flow-through</b> (NVIDIA's datasheet): it draws air in from <em>beneath</em> the card and vents up <em>into the case</em>. AEC Magazine: it <em>"raises internal chassis temperatures."</em> Only the 300&nbsp;W Max-Q is a rear blower.</td>
-        <td>Feed it fresh air <b>from below</b> and evacuate 600&nbsp;W out the top. This is why the V3000's floor intake wins.</td>
+        <td>Feed it fresh air <b>from below</b> and evacuate 600&nbsp;W out the top. This is why the EVO XL's 3× 140&nbsp;mm floor intake is the whole reason it was chosen.</td>
       </tr>
       <tr>
         <td><b>The 5090 is a ROG Astral LC.</b></td>
         <td>A <b>2.5-slot card</b> (288 × 154 × 48&nbsp;mm) plus its own <b>thick 360&nbsp;mm radiator — 400 × 120 × 65&nbsp;mm</b> (ASUS uses an extra-fat 38&nbsp;mm core), on 600&nbsp;mm tubes.</td>
-        <td>The build must swallow a chunky radiator — trivial in a super-tower, tight in anything smaller.</td>
+        <td>The build must swallow a chunky radiator. The EVO XL's roof takes an <b>81&nbsp;mm</b> rad+fan stack — 16&nbsp;mm of margin. Most mid-towers do not.</td>
       </tr>
       <tr>
         <td><b>The 2nd slot is PCIe 5.0 ×4.</b></td>
@@ -185,30 +185,32 @@
 
 <section id="case">
   <h2><span class="n">1</span> The case</h2>
-  <p>You own both GPUs, you sit at a 32&nbsp;in desk, and Ergosphere can lock the desk's minimum height. That combination reopens the one case that's genuinely <em>ideal</em> for these parts.</p>
-  <div class="verdict"><div class="ic">🧩</div><div><b>The thing that was worrying you — settled.</b> You're not cramming <em>three</em> big objects into the GPU area. It's <b>two cards in the PCIe slots</b> plus <b>two flat radiators bolted to the panels</b>. A radiator is a thin panel on hoses, not a third box. In a super-tower like the V3000 there's room to spare.</div></div>
+  <p>The V3000 Plus is gone. 63 chassis were swept for a replacement and only three qualified; this is the one that won. <a href="./case-replacement.html">See the full comparison →</a></p>
+  <div class="verdict"><div class="ic">🧩</div><div><b>The thing that was worrying you — settled.</b> You're not cramming <em>three</em> big objects into the GPU area. It's <b>two cards in the PCIe slots</b> plus <b>two flat radiators bolted to the panels</b>. A radiator is a thin panel on hoses, not a third box. At 304&nbsp;mm wide with a separate PSU chamber, the main chamber is wide open.</div></div>
 
   <div class="opt best">
     <div class="tag">★ The build</div>
-    <h3>Lian Li V3000 Plus — super-tower</h3>
-    <p class="note">678.5 (D) × 279 (W) × <b>674&nbsp;mm (H)</b> · 8 PCIe slots · mesh front/top/floor · built-in bottom dust filter · rated for up to 3× 480&nbsp;mm rads + a 360 &amp; 16 fans</p>
+    <h3>Lian Li O11 Dynamic EVO XL</h3>
+    <p class="note">~494 (D) × 304 (W) × <b>531.9&nbsp;mm (H)</b> · 79.9&nbsp;L · 8 PCIe slots · separate PSU chamber · filtered floor intake · 81&nbsp;mm roof rad stack · height-adjustable motherboard tray · <b>₹24,998</b> (ARGB black, in stock at EliteHubs, verified 25 Jul 2026)</p>
     <ul>
-      <li><span class="pro">＋</span> <b>The best possible feed for your flow-through 6000.</b> A filtered <b>floor intake</b> plus a fan bank on the <b>above-PSU shelf</b> push fresh air <em>straight up into the underside of the card</em> — a two-stage feed that's essentially purpose-built for a bottom-breathing GPU. Nothing else does this as directly.</li>
-      <li><span class="pro">＋</span> <b>Both radiators fit with room to spare.</b> The Astral LC's fat 65&nbsp;mm rad goes on the <b>front</b> (the case is 678&nbsp;mm deep — thickness is a non-issue there); the LT720 goes on <b>top</b>. Rated for far more radiator than you'll use.</li>
-      <li><span class="pro">＋</span> <b>The room you wanted.</b> 589&nbsp;mm GPU clearance, 8 slots, 220&nbsp;mm PSU bay (the AX1600i drops in), a built-in 2-way anti-sag GPU holder, and a separate rear cable chamber. The build will never feel cramped.</li>
-      <li><span class="pro">＋</span> <b>It fits under the desk</b> — because you sit at 32&nbsp;in and the desk locks its minimum above the case (see <a href="#desk">Desk Lock</a>). Height stopped being the blocker the moment Ergosphere confirmed the lock survives a reset.</li>
-      <li><span class="con">－</span> <b>Ships with zero fans.</b> Budget a full set (~7–8× 140&nbsp;mm case fans on top of the fans that come on your two radiators). Factor that into the price.</li>
-      <li><span class="con">－</span> <b>It's a heavy beast</b> — well over 20&nbsp;kg empty, a lot more built. Hence the wheeled pedestal. And its only dust filter is the floor one, so keep that clean.</li>
+      <li><span class="pro">＋</span> <b>The deepest air plenum under the flow-through 6000</b> of anything that qualified — and the <b>motherboard tray is height-adjustable</b>, so you can raise the board and open it up further. That space under the card <em>is</em> the cooling system for a bottom-breathing GPU.</li>
+      <li><span class="pro">＋</span> <b>The fat radiator has an easy home.</b> The roof takes an <b>81&nbsp;mm</b> rad+fan stack, so the Astral LC's 65&nbsp;mm rad goes in the conventional roof position with 16&nbsp;mm to spare — no threading it through a tight side bay.</li>
+      <li><span class="pro">＋</span> <b>The room you wanted.</b> 304&nbsp;mm wide, 79.9&nbsp;L, 8 slots, separate PSU chamber, AX1600i drops in. It is the roomiest of the three finalists by 13&nbsp;L.</li>
+      <li><span class="pro">＋</span> <b>Crush-proof without any desk firmware.</b> At 531.9&nbsp;mm it is shorter than the desk's lowest underside — see <a href="#desk">Desk clearance</a>.</li>
+      <li><span class="pro">＋</span> <b>Broadest stock in India.</b> The reason this exercise happened at all was a case becoming unbuyable; this one is carried by the most retailers.</li>
+      <li><span class="con">－</span> <b>Needs a mesh side panel, and that is an open item.</b> The CPU radiator sits on the side and cannot breathe behind glass. SKU unconfirmed and every Lian Li mesh kit checked was out of stock. <b>Settle this before you pay.</b></li>
+      <li><span class="con">－</span> <b>Most expensive of the three finalists</b> (₹24,998 vs ₹9,599 for the Antec C8) and the tallest — though still 142&nbsp;mm under the cap.</li>
+      <li><span class="con">－</span> Confirm what fans ship in the box before ordering the floor and rear fans, and budget a GPU support stick.</li>
     </ul>
-    <p class="note">No independent lab has thermal-tested this exact case, but the design is unambiguous: mesh intakes on three faces and a direct under-GPU feed. For a bottom-breathing 600&nbsp;W card, that's the right architecture.</p>
+    <p class="note">GamersNexus has verified floor intake as effective for bottom-ingesting cards. The "O11 is a hotbox" reputation applies to conventional front-fed air cards starved behind the glass front — a card that inhales from the floor sidesteps it entirely. Do not re-litigate this.</p>
   </div>
 
   <div class="opt">
-    <div class="tag">Fallback · if you ever skip the desk lock</div>
-    <h3>Lian Li O11 Dynamic EVO XL — ₹22,995</h3>
+    <div class="tag">Runner-up · cheapest and shortest</div>
+    <h3>Antec C8 — 476 mm, ₹9,599</h3>
     <ul>
-      <li><span class="pro">＋</span> <b>Foolproof.</b> At 531.9&nbsp;mm it's <em>shorter than the desk's lowest point</em>, so it can never be crushed — no lock, no hard-stops needed. It also feeds the flow-through 6000 from the floor and is plenty roomy.</li>
-      <li><span class="con">－</span> Smaller than the V3000, and needs a mesh side panel for the CPU rad. It's the safe choice only if you'd rather not depend on the desk lock at all.</li>
+      <li><span class="pro">＋</span> 56&nbsp;mm shorter and ₹15k cheaper, mesh panels included from the factory, three simultaneous 360&nbsp;mm mounts, 303&nbsp;mm wide.</li>
+      <li><span class="con">－</span> Its air plenum under the GPU is <b>52&nbsp;mm, not the 110&nbsp;mm first claimed</b> (measured off Antec's own drawings), the fat rad gets pushed into a side bay Antec specs two contradictory ways, and only two shops in India stock it. <a href="./case-replacement.html#two">Full write-up →</a></li>
     </ul>
   </div>
 
@@ -216,9 +218,11 @@
     <div class="tag">✗ Ruled out</div>
     <h3>Why not the others</h3>
     <ul>
-      <li><b>ASUS ROG Hyperion GR701</b> ("the 701") — the other super-tower you looked at. Ruled out on architecture, not size: it has <b>no floor fan mount</b> (a solid PSU cover sits under the card), so it can't feed the flow-through 6000 from below. Wrong shape for this GPU.</li>
-      <li><b>Corsair 9000D</b> — a good case, but same story: no floor feed, and no reason to pick it over the V3000 now that the desk lock solves height.</li>
-      <li><b>Antec Flux Pro / Corsair 6500D</b> — both fit and both are fine, but they're the <em>smaller</em> answers. You chose room, and the V3000 feeds the 6000 more directly.</li>
+      <li><b>Lian Li V3000 Plus</b> — the Rev 5 winner. <b>No longer available to buy.</b> That is the only reason it lost; architecturally it was ideal.</li>
+      <li><b>Antec Performance 1 FT</b> — has the <em>best</em> feed mechanism of all (perforated PSU-shroud fans blowing straight up into the card) but is only <b>230&nbsp;mm wide</b>, narrower than the Flux Pro you already rejected as too tight. Third place. <a href="./case-replacement.html#three">Details →</a></li>
+      <li><b>ASUS ROG Hyperion GR701</b> — <b>no floor fan mount</b> (a solid PSU cover sits under the card), so it can't feed the flow-through 6000 from below. Wrong shape for this GPU.</li>
+      <li><b>Corsair 9000D</b> — re-opened once the height cap changed, then re-killed on the same floor-feed question.</li>
+      <li><b>Phanteks NV9 / Enthoo Pro 2, Thermaltake CTE C750, Fractal Meshify 3 XL, HYTE X50, all 4U rackmount and open-frame chassis</b> — each fails on floor feed, radiator positions or India availability. <a href="./case-replacement.html#dead">The full kill list →</a></li>
     </ul>
   </div>
 </section>
@@ -227,35 +231,35 @@
   <h2><span class="n">2</span> Fan &amp; radiator layout — where the performance is</h2>
   <p>The PRO 6000 is a 600&nbsp;W air-cooled card sharing a box with ~755&nbsp;W of radiator. Where those radiators go decides whether it throttles. The rule is simple: <b>fresh air below the 6000, radiators everywhere else.</b></p>
 
-  <div class="verdict win"><div class="ic">🖼️</div><div><b>Visual build diagram →</b> <a href="./layout.html">Open the full cutaway of the V3000 Plus</a> — every card, radiator and fan bank in place, with the airflow drawn in. Best way to hand the build to your assembler.</div></div>
+  <div class="verdict warn" style="border-color:var(--warn);background:rgba(255,204,77,.07)"><div class="ic">🖼️</div><div><b>The cutaway diagram still shows the V3000 Plus.</b> <a href="./layout.html">layout.html</a> and <a href="./simple.html">simple.html</a> were drawn for the old case and have not been redrawn yet. The <em>principles</em> in them still hold (floor feed, lower slot for the 6000, no rad under the card); the panel positions do not. Use the table below for the EVO XL.</div></div>
 
-  <div class="diagram">   ══ TOP: DeepCool LT720 CPU rad  →  EXHAUST (carries the 6000's heat out) ══
+  <div class="diagram">   ══ ROOF: RTX 5090 Astral LC 360 rad (65mm) →  EXHAUST ══
    ┌──────────────────────────────────────────────────────────┐
-   │    ▓▓  RTX 5090 Astral LC card ...... TOP slot (PCI_E1)   │
-   │                                                          │
-   │    ▓▓▓ RTX PRO 6000 (600W) .......... LOWER slot (PCI_E2) │
-   │           ▲    ▲    ▲    ← breathes from directly below   │
-   │    ══════╧════╧════╧══════  above-PSU shelf: intake fans  │
-   │    ════════════════════════  floor: intake fans + filter  │
-   │               ▲  fresh air pulled up through the floor    │
+   │    ▓▓  RTX 5090 Astral LC card ...... TOP slot (PCI_E1)   │  S
+   │                                                          │  I  LT720
+   │    ▓▓▓ RTX PRO 6000 (600W) .......... LOWER slot (PCI_E2) │  D  360 CPU
+   │           ▲    ▲    ▲    ← breathes from directly below   │  E  rad
+   │                                                          │  ▲  INTAKE
+   │    ════════════════════════  floor: 3x 140mm + filter     │  │  (needs the
+   │               ▲  fresh air pulled up through the floor    │  │  MESH PANEL)
    └──────────────────────────────────────────────────────────┘
-     FRONT panel = RTX 5090 Astral LC's thick 360 rad (intake)
-     Two intake banks feed the 6000 from below — never a rad there.</div>
+     FRONT panel = glass, no mount. Irrelevant — the 6000 feeds from the floor.
+     The floor bank is fresh-air only — NEVER a radiator there.</div>
 
   <div class="twrap"><table>
     <thead><tr><th>Position</th><th>What goes there</th><th>Direction</th><th>Why</th></tr></thead>
     <tbody>
-      <tr><td><b>Floor</b></td><td>3–4× 140 mm fans + the built-in filter — <b>no radiator</b></td><td><span class="pill p-good">Intake</span></td><td>The base of the feed. Filtered fresh air pressurises the bottom of the case, right under the GPU.</td></tr>
-      <tr><td><b>Above-PSU shelf</b></td><td>3× 140 mm fans — <b>no radiator</b></td><td><span class="pill p-good">Intake</span></td><td>The direct lift — blows straight up into the PRO 6000's underside. This is why the <b>6000 must be the lower card</b>.</td></tr>
-      <tr><td><b>Front</b></td><td>RTX 5090 Astral LC's 360 mm rad (fat 65 mm)</td><td><span class="pill p-good">Intake</span></td><td>The 678 mm-deep body swallows the thick rad easily, and the 5090's coolant gets <b>fresh outside air</b> — its best-case temps. Doesn't touch the 6000's floor feed.</td></tr>
-      <tr><td><b>Top</b></td><td>DeepCool LT720 360 mm CPU rad</td><td><span class="pill p-good">Exhaust</span></td><td>Sits above the 6000 and pulls its rising exhaust straight out. The CPU is only ~180 W, so warm case air through this rad is a non-issue.</td></tr>
-      <tr><td><b>Rear</b></td><td>1× 140 mm fan</td><td><span class="pill p-good">Exhaust</span></td><td>Clears the pocket behind the cards.</td></tr>
+      <tr><td><b>Floor</b></td><td>3× 140 mm fans + the built-in filter — <b>no radiator</b></td><td><span class="pill p-good">Intake</span></td><td>The whole feed. Filtered fresh air pressurises the bottom of the case, right under the PRO 6000. This is why the <b>6000 must be the lower card</b>.</td></tr>
+      <tr><td><b>Roof</b></td><td>RTX 5090 Astral LC's 360 mm rad (fat 65 mm)</td><td><span class="pill p-good">Exhaust</span></td><td>The roof is rated for an <b>81 mm</b> stack, so the fat rad fits with 16 mm spare — and sitting above the card keeps the pump (on the GPU) below the radiator, which is what a 24×7 loop wants.</td></tr>
+      <tr><td><b>Side</b></td><td>DeepCool LT720 360 mm CPU rad</td><td><span class="pill p-good">Intake</span></td><td><b>Requires the mesh side panel</b> — behind glass it recirculates hot case air and you get the hotbox everyone warned you about. The CPU is only ~200 W, so this rad barely loads the case.</td></tr>
+      <tr><td><b>Front</b></td><td>Glass — nothing mounts here</td><td>—</td><td>Irrelevant to this build. The card that needs air takes it from the floor, not the front.</td></tr>
+      <tr><td><b>Rear</b></td><td>1× 140 mm fan</td><td><span class="pill p-good">Exhaust</span></td><td>Clears the pocket behind the cards, and it is the only active airflow over the VRM area.</td></tr>
     </tbody>
   </table></div>
 
-  <div class="verdict alert"><div class="ic">⛔</div><div><b>Never put a radiator on the floor or the above-PSU shelf under the 6000</b> — those two banks are fresh-air fans only. GamersNexus measured a radiator in an air-cooled GPU's intake path costing <b>7–9°C</b>. A builder with two PRO 6000s on Reddit did exactly that and called it <em>"a disaster."</em></div></div>
+  <div class="verdict alert"><div class="ic">⛔</div><div><b>Never put a radiator on the floor.</b> That bank is fresh-air fans only. GamersNexus measured a radiator in an air-cooled GPU's intake path costing <b>7–9°C</b>. A builder with two PRO 6000s on Reddit did exactly that and called it <em>"a disaster."</em></div></div>
 
-  <p class="note"><b>The nice part of this layout:</b> the <em>bigger</em> heat source (the 5090, ~575&nbsp;W) gets fresh front air for its coolant, and the <em>small</em> one (the CPU, ~180&nbsp;W) takes the warmed top air. You're spending the thermal penalty exactly where it's cheapest.</p>
+  <p class="note"><b>The one judgement call in this layout:</b> as drawn, the small heat source (the CPU, ~200&nbsp;W) gets the fresh side air and the big one (the 5090's coolant, ~600&nbsp;W) takes warm case air out the roof. Swapping them — Astral rad on the side as intake, LT720 in the roof as exhaust — would be thermally better, <em>if</em> the side mount clears the fat 65&nbsp;mm stack. Lian Li publishes a roof figure (81&nbsp;mm) but not a side one. <b>Measure the side bay on arrival; if it takes 65&nbsp;mm, swap them.</b> Either way the 5090 is liquid-cooled with a full 360 and has headroom.</p>
 
   <h3>The fan curve is not optional</h3>
   <p>The single most consistent finding from owners running these cards hard: <b>NVIDIA's stock VBIOS leaves the card at ~30% fan while it sits at 85–90°C</b>, and it throttles around there. Measured on a 450 W-limited PRO 6000 under sustained LLM load:</p>
@@ -268,36 +272,36 @@
 </section>
 
 <section id="desk">
-  <h2><span class="n">3</span> Desk lock — the crush problem, solved</h2>
-  <p>The desk is an <b>Ergosphere Balanced Desk PRO 340 L-Shape Corner</b> (triple-motor, LOGICDATA/Bosch). Its danger was simple: driven to its lowest, the underside bottoms at ~605&nbsp;mm — well below the 674&nbsp;mm V3000, so a mis-pressed button could crush it. That danger is now removed.</p>
+  <h2><span class="n">3</span> Desk clearance — no lock needed</h2>
+  <p>The desk is an <b>Ergosphere Balanced Desk PRO 340 L-Shape Corner</b> (triple-motor, LOGICDATA/Bosch). Driven to its lowest, the underside bottoms at ~605&nbsp;mm. The old 674&nbsp;mm super-tower was taller than that, which is why the whole Rev 5 plan hung on a firmware lock. <b>The EVO XL is 531.9&nbsp;mm — shorter than the desk can ever go.</b> The problem disappears.</p>
 
   <div class="kpi">
-    <div class="b"><div class="v">674 mm</div><div class="l">V3000 Plus height (26.5", feet on)</div></div>
-    <div class="b"><div class="v">32 in</div><div class="l">your seated working height (813 mm surface)</div></div>
-    <div class="b"><div class="v">≥ 50 mm</div><div class="l">guaranteed air gap at the locked minimum</div></div>
+    <div class="b"><div class="v">531.9 mm</div><div class="l">EVO XL height, feet on</div></div>
+    <div class="b"><div class="v">~605 mm</div><div class="l">desk underside at its absolute lowest</div></div>
+    <div class="b"><div class="v" style="color:var(--good)">73 mm</div><div class="l">clearance even then — bare case</div></div>
   </div>
 
-  <div class="verdict win"><div class="ic">🔒</div><div><b>Ergosphere confirmed it: the minimum height can be set as a default, and it survives a reset.</b> That's the key — a soft handset "container stop" gets wiped when the desk resets (which drives it all the way down). A firmware minimum that persists through a reset is a real, reliable guard. This is now your primary protection.</div></div>
+  <div class="verdict win"><div class="ic">🔓</div><div><b>You can skip the firmware lock entirely.</b> It was the single riskiest dependency in the old plan — it had to be set correctly, survive a reset, and never be overridden. With a case shorter than the desk's minimum, none of that matters. Set the lock anyway if you like belt-and-braces, but nothing depends on it now.</div></div>
 
-  <h3>Set the lock to match your final stack height</h3>
-  <p>The lock has to sit above <b>case + pedestal + a 50&nbsp;mm air gap</b>. Because the pedestal adds height, the exact number depends on how tall you build it. With a 25&nbsp;mm tabletop:</p>
+  <h3>Clearance with the pedestal stacked on</h3>
+  <p>The pedestal adds to the case height, so it eats into the guarantee. With a 25&nbsp;mm tabletop, measuring to the desk's <em>lowest possible</em> underside (~605&nbsp;mm):</p>
   <div class="twrap"><table>
-    <thead><tr><th>Pedestal height</th><th>Case + pedestal</th><th class="num">Set the desk minimum to</th><th class="num">Gap at your 32" working height</th></tr></thead>
+    <thead><tr><th>Pedestal height</th><th>Case + pedestal</th><th class="num">Gap at the desk's rock bottom</th><th class="num">Gap at your 32" working height</th></tr></thead>
     <tbody>
-      <tr><td>None</td><td>674 mm</td><td class="num">29.5 in</td><td class="num">~114 mm</td></tr>
-      <tr><td><b>1 in (25 mm)</b> <span class="note">recommended</span></td><td>699 mm</td><td class="num"><b>30.5 in</b></td><td class="num">~89 mm</td></tr>
-      <tr><td>2 in (50 mm)</td><td>724 mm</td><td class="num">31.5 in</td><td class="num">~63 mm</td></tr>
+      <tr><td>None</td><td>531.9 mm</td><td class="num">73 mm</td><td class="num">~256 mm</td></tr>
+      <tr><td><b>1 in (25 mm)</b> <span class="note">recommended</span></td><td>557 mm</td><td class="num"><b>48 mm</b></td><td class="num">~231 mm</td></tr>
+      <tr><td>2 in (51 mm)</td><td>583 mm</td><td class="num">22 mm</td><td class="num">~205 mm</td></tr>
     </tbody>
   </table></div>
-  <p class="note">Simplest foolproof method: assemble the case on its pedestal, measure the true top-of-case height with a tape, add ~50&nbsp;mm, add your tabletop thickness — and set the lock there. Don't trust the handset's on-screen number; measure the physical height.</p>
+  <p class="note">Every row is positive — the desk cannot reach the case in any of them. <b>Stay at 1&nbsp;in</b>: it keeps a comfortable 48&nbsp;mm margin at rock bottom while still lifting the floor filter clear of dust. A 2&nbsp;in pedestal works but leaves only 22&nbsp;mm, which is thin enough that a thick carpet or an uneven floor could eat it.</p>
 
-  <h3>Two backups (cheap insurance)</h3>
+  <h3>Still worth doing</h3>
   <ul>
-    <li><b>Physical steel hard-stops</b> under the frame, cut to the same lock height. The firmware lock is now solid, so these are belt-and-suspenders — but on a rig this expensive, a steel post that no glitch can push past is worth the small cost. Rigid steel or hardwood, one under each leg-end, never foam.</li>
-    <li><b>Still pull the PC out before any deliberate reset/recalibration.</b> The lock survives a reset, but anti-collision is off during one, so give it clearance whenever you service the desk.</li>
+    <li><b>Measure the assembled stack with a tape</b> before you trust any of these numbers — case, pedestal and floor covering all vary by a few millimetres.</li>
+    <li><b>Pull the PC out before any deliberate desk reset or recalibration.</b> Not for crush risk any more, but a reset drives the desk to its true floor with anti-collision disabled, and you want cable clearance when it does.</li>
   </ul>
 
-  <div class="verdict"><div class="ic">📐</div><div><b>What you end up with:</b> at your 32&nbsp;in working height there's a big gap over the case (~90&nbsp;mm with a 1&nbsp;in pedestal); at the locked minimum, ~50&nbsp;mm; and the desk physically cannot go lower than that. Your standing range above is untouched. Crush risk: gone.</div></div>
+  <div class="verdict"><div class="ic">📐</div><div><b>What you end up with:</b> ~231&nbsp;mm of open air above the case at your normal 32&nbsp;in working height, and a guaranteed 48&nbsp;mm even at the desk's lowest possible position. No firmware, no steel posts, nothing to configure or verify. <b>Crush risk: eliminated by geometry.</b></div></div>
 </section>
 
 <section id="mount">
@@ -306,10 +310,10 @@
 
   <div class="twrap"><table>
     <tbody>
-      <tr><td><b>Slot order <span class="pill p-good">do this</span></b></td><td><b>PRO 6000 in the LOWER slot (PCI_E2); 5090 Astral LC in the TOP slot (PCI_E1).</b> The lower slot sits right over the floor + above-PSU intake fans, so the flow-through 6000 gets the fresh-air feed. The liquid 5090 doesn't need it. <span class="note">Opposite of the "big card up top" habit — and correct here, because feeding the flow-through card is the whole game.</span></td></tr>
+      <tr><td><b>Slot order <span class="pill p-good">do this</span></b></td><td><b>PRO 6000 in the LOWER slot (PCI_E2); 5090 Astral LC in the TOP slot (PCI_E1).</b> The lower slot sits right over the 3× 140 mm floor intake fans, so the flow-through 6000 gets the fresh-air feed. The liquid 5090 doesn't need it. <span class="note">Opposite of the "big card up top" habit — and correct here, because feeding the flow-through card is the whole game.</span></td></tr>
       <tr><td><b>Link speeds</b></td><td>PRO 6000 → <b>PCIe 5.0 ×4</b>, 5090 → <b>PCIe 5.0 ×8</b>. Both CPU-attached; no M.2 or SATA lost. <span class="note">The ×4 barely matters for a 96 GB card that keeps its job in VRAM, and it buys the better air feed. Only reconsider if the 6000 constantly streams from system RAM / NVMe offload.</span></td></tr>
       <tr><td><b>Slot spacing</b></td><td>The two slots sit <b>4 pitches apart</b> (~81 mm centre-to-centre) — ~two empty positions of clear air between the cards. Better separation than most riser setups.</td></tr>
-      <tr><td><b>Sag</b></td><td>Use the V3000's <b>built-in 2-way anti-sag GPU holder</b>. At 2 slots the cards aren't heavy, so this is plenty — no aftermarket bracket needed.</td></tr>
+      <tr><td><b>Sag</b></td><td>Budget a <b>GPU support stick</b>. The PRO 6000 is a 2-slot card but extended-height (137 mm) and heavy at 600 W. Confirm what anti-sag hardware ships in the EVO XL box; if none, a plain support bracket is enough — no vertical kit, no riser.</td></tr>
       <tr><td><b>Power cable</b></td><td>The 6000's 12V-2×6 connector is on the <b>top middle edge</b>. Budget an <b>angled 12V-2×6 adapter</b> so it clears the side panel.</td></tr>
       <tr><td><b>BIOS</b></td><td>Enable <b>Above 4G Decoding</b> (mandatory for the 96 GB card's BAR) and <b>Resizable BAR</b>. Connect the board's <b>PCIE_PWR1</b> supplemental 8-pin when running two GPUs.</td></tr>
     </tbody>
@@ -412,31 +416,37 @@ nvidia-smi -q -d TEMPERATURE
   <h2><span class="n">8</span> Shopping list</h2>
   <div class="code">
     <div class="bar"><span class="ttl">give this to your vendor</span><button class="copy" onclick="cp(this)">Copy</button></div>
-<pre>CASE       1x Lian Li V3000 Plus  (offline, good price -- keep the feet on)
-PEDESTAL   1x wheeled OPEN-FRAME caster base, 1-2" tall
+<pre>CASE       1x Lian Li O11 Dynamic EVO XL   (~Rs 24,998 ARGB black, EliteHubs)
+MESH PANEL 1x Lian Li MESH SIDE PANEL for the EVO XL   *** CONFIRM FIRST ***
+           the CPU rad cannot breathe behind glass. SKU unconfirmed and
+           mesh kits were OUT OF STOCK -- do not buy the case until this
+           is sourced, or move the CPU rad plan.
+
+PEDESTAL   1x wheeled OPEN-FRAME caster base, 1" tall (not 2")
            locking casters rated >50kg  (never a solid board -- blocks intake)
 
 GPUs       PRO 6000        -> LOWER slot (PCI_E2), over the floor intake fans
            5090 Astral LC  -> TOP slot (PCI_E1)
 
-RADS       reuse RTX 5090 Astral LC's 360 rad -> FRONT, as INTAKE (thick 65mm)
-           reuse DeepCool LT720 360           -> TOP,   as EXHAUST
-           NEVER a radiator on the floor / above-PSU shelf under the 6000
+RADS       reuse RTX 5090 Astral LC's 360 rad -> ROOF, as EXHAUST (thick 65mm,
+                                                  roof is rated 81mm)
+           reuse DeepCool LT720 360           -> SIDE, as INTAKE (needs mesh)
+           NEVER a radiator on the floor -- that is the 6000's air supply
+           (on arrival: if the SIDE bay clears 65mm, swap these two -- the
+            600W loop deserves the fresh air more than the 200W CPU does)
 
-FANS       case ships with NONE -- buy ~7-8x 140mm:
-             floor        3-4x  intake (through the dust filter)
-             above-PSU    3x    intake (straight up into the 6000)
-             rear         1x    exhaust
+FANS       confirm what ships in the box, then buy the gap:
+             floor        3x   140mm  intake (through the dust filter)
+             rear         1x   140mm  exhaust
            (the two radiators bring their own fans)
 
-PSU        reuse Corsair AX1600i (200mm) -> drops into the 220mm bay
+PSU        reuse Corsair AX1600i (200mm) -> separate PSU chamber, fits
 
 CABLE      1x ANGLED 12V-2x6 adapter for the RTX PRO 6000
-SUPPORT    use the case's built-in anti-sag GPU holder. NO vertical kit, NO riser.
+SUPPORT    1x GPU support stick.  NO vertical kit, NO riser.
 
-DESK       Ergosphere: set the firmware MINIMUM-height lock as default
-           at ~30.5" (for a 1" pedestal) -- confirmed to survive a reset
-           + 2x steel hard-stop posts at the same height (cheap backup)
+DESK       NOTHING TO DO. The case is shorter than the desk's lowest point,
+           so no firmware lock and no steel hard-stops are required.
 
 POWER      1x dedicated 16A wall circuit from the DB
 UPS        1x online double-conversion UPS, ~3 kVA
@@ -448,11 +458,11 @@ SOFTWARE   fan-curve daemon (LACT) + power-limit script on startup</pre>
 <section id="steps">
   <h2><span class="n">9</span> Order of operations</h2>
   <ul class="check">
-    <li>Buy the V3000 Plus. Build (or buy) the open-frame wheeled pedestal, 1–2" tall, locking casters.</li>
-    <li>Have Ergosphere set the firmware minimum-height lock — measure the assembled case-on-pedestal, add ~50 mm + tabletop thickness, lock there (~30.5" for a 1" pedestal). Confirm it holds through a reset.</li>
-    <li>Fit the steel hard-stops at the same height as backup. Test by holding the down button.</li>
+    <li><b>Source the mesh side panel first</b> — confirm the SKU and that it is actually in stock. If it cannot be bought, stop and re-open the case decision before spending anything.</li>
+    <li>Buy the EVO XL. Build (or buy) the open-frame wheeled pedestal, 1" tall, locking casters.</li>
+    <li>Measure the assembled case-on-pedestal with a tape and confirm it is under ~605 mm. No desk lock or hard-stops needed — this is the step that used to be the risky one.</li>
     <li>Get the dedicated 16A circuit + 1.8-ton O General inverter AC installed.</li>
-    <li>Build: <b>PRO 6000 in the LOWER slot (PCI_E2)</b> over the floor + above-PSU intake fans, <b>5090 Astral LC in the top slot (PCI_E1)</b>. 5090 rad on the front (intake), LT720 on top (exhaust), rear fan exhaust.</li>
+    <li>Build: <b>PRO 6000 in the LOWER slot (PCI_E2)</b> over the 3× 140 mm floor intake fans, <b>5090 Astral LC in the top slot (PCI_E1)</b>. 5090 rad in the roof (exhaust), LT720 on the side (intake, behind the mesh panel), rear fan exhaust. Measure the side bay — if it clears 65 mm, swap the two rads.</li>
     <li>BIOS: Above 4G Decoding on, Resizable BAR on, PCIE_PWR1 connected.</li>
     <li>Verify link widths with GPU-Z — expect <b>×4 on the PRO 6000</b> (lower slot) and <b>×8 on the 5090</b> (top slot).</li>
     <li>Install the fan-curve daemon and the power-limit script <em>before</em> the first sustained load.</li>
@@ -462,7 +472,7 @@ SOFTWARE   fan-curve daemon (LACT) + power-limit script on startup</pre>
 </section>
 
 </div>
-<footer><div class="wrap">Rev 5 (FINAL) · Case locked to the Lian Li V3000 Plus after the Ergosphere firmware min-height lock (survives reset) + 32" working height + wheeled pedestal made the super-tower fit under the desk · Parts owned, layout finalised · Specs verified 11–14 Jul 2026 — confirm final prices at checkout.</div></footer>
+<footer><div class="wrap">Rev 6 · 25 Jul 2026 · The V3000 Plus became unbuyable; 63 chassis were swept and the <b>Lian Li O11 Dynamic EVO XL</b> won. At 531.9 mm it is shorter than the desk's lowest point, so the firmware lock is no longer needed. <b>Open item: the mesh side panel.</b> · Full comparison: <a href="./case-replacement.html">case decision page</a> · layout.html and simple.html still show the old case and need redrawing · Confirm final prices at checkout.</div></footer>
 
 <script>
 function cp(btn){
