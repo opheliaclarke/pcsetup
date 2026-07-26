@@ -164,114 +164,93 @@
   there to stop <em>objects</em>, not dust — the case's own filter does the dust.</div>
 
   <h3>What it actually looks like</h3>
-  <svg viewBox="0 0 900 560" role="img" aria-label="Realistic 3D view of the pedestal frame with mesh and castors">
+  <svg viewBox="0 0 900 600" role="img" aria-label="Isometric view of the hardwood pedestal with mesh and castors">
     <defs>
-      <linearGradient id="topG" x1="0" y1="0" x2="0.6" y2="1">
-        <stop offset="0" stop-color="#5c6b82"/><stop offset="0.5" stop-color="#47566c"/><stop offset="1" stop-color="#3a4757"/>
-      </linearGradient>
-      <linearGradient id="frontG" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#2b3542"/><stop offset="1" stop-color="#1b232e"/>
-      </linearGradient>
-      <linearGradient id="rightG" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#222b37"/><stop offset="1" stop-color="#141b24"/>
-      </linearGradient>
-      <radialGradient id="wheel" cx="0.35" cy="0.3" r="0.8">
-        <stop offset="0" stop-color="#3c4757"/><stop offset="1" stop-color="#161d27"/>
-      </radialGradient>
+      <linearGradient id="topG" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stop-color="#a8794e"/><stop offset="0.5" stop-color="#8a6140"/><stop offset="1" stop-color="#6d4c33"/></linearGradient>
+      <linearGradient id="frontG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b4a31"/><stop offset="1" stop-color="#452f1f"/></linearGradient>
+      <linearGradient id="rightG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#54392561"/><stop offset="0" stop-color="#543925"/><stop offset="1" stop-color="#35241800"/><stop offset="1" stop-color="#352418"/></linearGradient>
+      <radialGradient id="wheel" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#3c4757"/><stop offset="1" stop-color="#141a23"/></radialGradient>
       <marker id="up" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#39d98a"/></marker>
-      <filter id="sh" x="-30%" y="-30%" width="170%" height="180%">
-        <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000" flood-opacity="0.55"/>
-      </filter>
+      <filter id="sh" x="-30%" y="-30%" width="170%" height="190%"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity="0.55"/></filter>
     </defs>
     <style>
       .lb{font-family:system-ui,sans-serif;font-size:14px;fill:#9aa7b8}
       .lbb{font-family:system-ui,sans-serif;font-size:15px;font-weight:700}
       .sm{font-family:system-ui,sans-serif;font-size:12.5px;fill:#6f7d90}
     </style>
-  
-    <ellipse cx="330" cy="452" rx="290" ry="34" fill="#000" opacity="0.35"/>
-  
-    <path d="M389.0,94.0 L411.0,94.0 L409.0,105.0 L391.0,105.0 Z" fill="#151b26" stroke="#3d4c66" stroke-width="1.4"/><ellipse cx="400.0" cy="113.0" rx="14" ry="8.5" fill="url(#wheel)" stroke="#48576f" stroke-width="1.5"/><ellipse cx="400.0" cy="113.0" rx="4.5" ry="2.8" fill="#0d1219"/>
-    <path d="M572.6,200.0 L594.6,200.0 L592.6,211.0 L574.6,211.0 Z" fill="#151b26" stroke="#3d4c66" stroke-width="1.4"/><ellipse cx="583.6" cy="219.0" rx="14" ry="8.5" fill="url(#wheel)" stroke="#48576f" stroke-width="1.5"/><ellipse cx="583.6" cy="219.0" rx="4.5" ry="2.8" fill="#0d1219"/>
-  
+    <ellipse cx="330" cy="470" rx="300" ry="36" fill="#000" opacity="0.35"/>
+    <path d="M387.0,112.0 L413.0,112.0 L411.0,127.0 L389.0,127.0 Z" fill="#151b26" stroke="#3d4c66" stroke-width="1.5"/><ellipse cx="400.0" cy="139.0" rx="17" ry="11" fill="url(#wheel)" stroke="#4d5c74" stroke-width="1.6"/><ellipse cx="400.0" cy="139.0" rx="5.5" ry="3.5" fill="#0d1219"/><path d="M567.1,216.0 L593.1,216.0 L591.1,231.0 L569.1,231.0 Z" fill="#151b26" stroke="#3d4c66" stroke-width="1.5"/><ellipse cx="580.1" cy="243.0" rx="17" ry="11" fill="url(#wheel)" stroke="#4d5c74" stroke-width="1.6"/><ellipse cx="580.1" cy="243.0" rx="5.5" ry="3.5" fill="#0d1219"/>
     <g filter="url(#sh)">
-      <polygon points="625.2,185.0 244.1,405.0 244.1,420.0 625.2,200.0" fill="url(#rightG)" stroke="#2e3a4a" stroke-width="1.4"/>
-      <polygon points="244.1,405.0 19.0,275.0 19.0,290.0 244.1,420.0" fill="url(#frontG)" stroke="#2e3a4a" stroke-width="1.4"/>
-      <path d="M400.0,55.0 L625.2,185.0 L244.1,405.0 L19.0,275.0 Z
-               M400.0,85.0 L573.2,185.0 L244.1,375.0 L70.9,275.0 Z"
-            fill="url(#topG)" fill-rule="evenodd" stroke="#6d7d94" stroke-width="1.6"/>
+      <polygon points="625.2,186.0 244.1,406.0 244.1,436.0 625.2,216.0" fill="url(#rightG)" stroke="#2e2018" stroke-width="1.5"/>
+      <polygon points="244.1,406.0 19.0,276.0 19.0,306.0 244.1,436.0" fill="url(#frontG)" stroke="#2e2018" stroke-width="1.5"/>
+      <path d="M400.0,56.0 L625.2,186.0 L244.1,406.0 L19.0,276.0 Z
+               M400.0,86.0 L573.2,186.0 L244.1,376.0 L70.9,276.0 Z"
+            fill="url(#topG)" fill-rule="evenodd" stroke="#b98d5f" stroke-width="1.7"/>
     </g>
-  
-    <polygon points="400.0,90.6 573.2,190.6 244.1,380.6 70.9,280.6" fill="#0b0f15" opacity="0.9"/>
-    <g stroke="#39d98a" stroke-width="1" opacity="0.55">
-        <line x1="400.0" y1="90.6" x2="573.2" y2="190.6"/>
-        <line x1="382.7" y1="100.6" x2="555.9" y2="200.6"/>
-        <line x1="365.4" y1="110.6" x2="538.6" y2="210.6"/>
-        <line x1="348.0" y1="120.6" x2="521.2" y2="220.6"/>
-        <line x1="330.7" y1="130.6" x2="503.9" y2="230.6"/>
-        <line x1="313.4" y1="140.6" x2="486.6" y2="240.6"/>
-        <line x1="296.1" y1="150.6" x2="469.3" y2="250.6"/>
-        <line x1="278.8" y1="160.6" x2="452.0" y2="260.6"/>
-        <line x1="261.4" y1="170.6" x2="434.6" y2="270.6"/>
-        <line x1="244.1" y1="180.6" x2="417.3" y2="280.6"/>
-        <line x1="226.8" y1="190.6" x2="400.0" y2="290.6"/>
-        <line x1="209.5" y1="200.6" x2="382.7" y2="300.6"/>
-        <line x1="192.2" y1="210.6" x2="365.4" y2="310.6"/>
-        <line x1="174.8" y1="220.6" x2="348.0" y2="320.6"/>
-        <line x1="157.5" y1="230.6" x2="330.7" y2="330.6"/>
-        <line x1="140.2" y1="240.6" x2="313.4" y2="340.6"/>
-        <line x1="122.9" y1="250.6" x2="296.1" y2="350.6"/>
-        <line x1="105.6" y1="260.6" x2="278.8" y2="360.6"/>
-        <line x1="88.2" y1="270.6" x2="261.4" y2="370.6"/>
-        <line x1="70.9" y1="280.6" x2="244.1" y2="380.6"/>
-        <line x1="400.0" y1="90.6" x2="70.9" y2="280.6"/>
-        <line x1="417.3" y1="100.6" x2="88.2" y2="290.6"/>
-        <line x1="434.6" y1="110.6" x2="105.6" y2="300.6"/>
-        <line x1="452.0" y1="120.6" x2="122.9" y2="310.6"/>
-        <line x1="469.3" y1="130.6" x2="140.2" y2="320.6"/>
-        <line x1="486.6" y1="140.6" x2="157.5" y2="330.6"/>
-        <line x1="503.9" y1="150.6" x2="174.8" y2="340.6"/>
-        <line x1="521.2" y1="160.6" x2="192.2" y2="350.6"/>
-        <line x1="538.6" y1="170.6" x2="209.5" y2="360.6"/>
-        <line x1="555.9" y1="180.6" x2="226.8" y2="370.6"/>
-        <line x1="573.2" y1="190.6" x2="244.1" y2="380.6"/>
+    <polygon points="400.0,92.0 573.2,192.0 244.1,382.0 70.9,282.0" fill="#080b10" opacity="0.94"/>
+    <g stroke="#39d98a" stroke-width="0.9" opacity="0.5">
+        <line x1="400.0" y1="92.0" x2="573.2" y2="192.0"/>
+        <line x1="384.4" y1="101.0" x2="557.6" y2="201.0"/>
+        <line x1="368.8" y1="110.0" x2="542.0" y2="210.0"/>
+        <line x1="353.2" y1="119.0" x2="526.4" y2="219.0"/>
+        <line x1="337.6" y1="128.0" x2="510.8" y2="228.0"/>
+        <line x1="322.1" y1="137.0" x2="495.3" y2="237.0"/>
+        <line x1="306.5" y1="146.0" x2="479.7" y2="246.0"/>
+        <line x1="290.9" y1="155.0" x2="464.1" y2="255.0"/>
+        <line x1="275.3" y1="164.0" x2="448.5" y2="264.0"/>
+        <line x1="259.7" y1="173.0" x2="432.9" y2="273.0"/>
+        <line x1="244.1" y1="182.0" x2="417.3" y2="282.0"/>
+        <line x1="228.5" y1="191.0" x2="401.7" y2="291.0"/>
+        <line x1="212.9" y1="200.0" x2="386.1" y2="300.0"/>
+        <line x1="197.4" y1="209.0" x2="370.6" y2="309.0"/>
+        <line x1="181.8" y1="218.0" x2="355.0" y2="318.0"/>
+        <line x1="166.2" y1="227.0" x2="339.4" y2="327.0"/>
+        <line x1="150.6" y1="236.0" x2="323.8" y2="336.0"/>
+        <line x1="135.0" y1="245.0" x2="308.2" y2="345.0"/>
+        <line x1="119.4" y1="254.0" x2="292.6" y2="354.0"/>
+        <line x1="103.8" y1="263.0" x2="277.0" y2="363.0"/>
+        <line x1="88.2" y1="272.0" x2="261.4" y2="372.0"/>
+        <line x1="72.7" y1="281.0" x2="245.9" y2="381.0"/>
+        <line x1="400.0" y1="92.0" x2="70.9" y2="282.0"/>
+        <line x1="415.6" y1="101.0" x2="86.5" y2="291.0"/>
+        <line x1="431.2" y1="110.0" x2="102.1" y2="300.0"/>
+        <line x1="446.8" y1="119.0" x2="117.7" y2="309.0"/>
+        <line x1="462.4" y1="128.0" x2="133.3" y2="318.0"/>
+        <line x1="477.9" y1="137.0" x2="148.9" y2="327.0"/>
+        <line x1="493.5" y1="146.0" x2="164.4" y2="336.0"/>
+        <line x1="509.1" y1="155.0" x2="180.0" y2="345.0"/>
+        <line x1="524.7" y1="164.0" x2="195.6" y2="354.0"/>
+        <line x1="540.3" y1="173.0" x2="211.2" y2="363.0"/>
+        <line x1="555.9" y1="182.0" x2="226.8" y2="372.0"/>
+        <line x1="571.5" y1="191.0" x2="242.4" y2="381.0"/>
     </g>
-    <polygon points="400.0,90.6 573.2,190.6 244.1,380.6 70.9,280.6" fill="none" stroke="#39d98a" stroke-width="2"/>
-  
-    <path d="M49.5,290.0 L71.5,290.0 L69.5,301.0 L51.5,301.0 Z" fill="#232c3b" stroke="#3d4c66" stroke-width="1.4"/><ellipse cx="60.5" cy="309.0" rx="14" ry="8.5" fill="url(#wheel)" stroke="#48576f" stroke-width="1.5"/><ellipse cx="60.5" cy="309.0" rx="4.5" ry="2.8" fill="#0d1219"/>
-    <path d="M233.1,396.0 L255.1,396.0 L253.1,407.0 L235.1,407.0 Z" fill="#232c3b" stroke="#3d4c66" stroke-width="1.4"/><ellipse cx="244.1" cy="415.0" rx="14" ry="8.5" fill="url(#wheel)" stroke="#48576f" stroke-width="1.5"/><ellipse cx="244.1" cy="415.0" rx="4.5" ry="2.8" fill="#0d1219"/>
-  
-    <line x1="300" y1="330" x2="300" y2="278" stroke="#39d98a" stroke-width="3" marker-end="url(#up)"/>
-    <line x1="380" y1="292" x2="380" y2="240" stroke="#39d98a" stroke-width="3" marker-end="url(#up)"/>
-    <line x1="460" y1="254" x2="460" y2="202" stroke="#39d98a" stroke-width="3" marker-end="url(#up)"/>
-  
-    <text x="628" y="122" class="lbb" fill="#8fa0b8">HARDWOOD FRAME</text>
-    <text x="628" y="143" class="lb">hardwood is fine</text>
-    <text x="628" y="162" class="lb">1.5 in wide rails</text>
-    <line x1="622" y1="116" x2="560" y2="152" stroke="#6d7d94" stroke-width="1.3"/>
-  
-    <text x="640" y="238" class="lbb" fill="#39d98a">COARSE MESH</text>
-    <text x="640" y="259" class="lb">stretched across the</text>
-    <text x="640" y="278" class="lb">open middle. Air goes</text>
-    <text x="640" y="297" class="lb">through, objects don&#39;t.</text>
-    <line x1="634" y1="232" x2="500" y2="258" stroke="#39d98a" stroke-width="1.3"/>
-  
-    <text x="26" y="148" class="lbb" fill="#39d98a">THE WHOLE MIDDLE</text>
-    <text x="26" y="169" class="lbb" fill="#39d98a">IS OPEN</text>
-    <text x="26" y="191" class="lb">no board, no panel,</text>
-    <text x="26" y="210" class="lb">nothing solid</text>
-    <line x1="166" y1="184" x2="248" y2="232" stroke="#39d98a" stroke-width="1.3"/>
-  
-    <text x="26" y="368" class="lbb" fill="#ff7a2f">4 LOCKING CASTORS</text>
-    <text x="26" y="389" class="lb">one under each corner</text>
-    <line x1="120" y1="360" x2="66" y2="316" stroke="#ff7a2f" stroke-width="1.3"/>
-  
-    <text x="628" y="392" class="lbb" fill="#19d3c5">AIR IS PULLED UP</text>
-    <text x="628" y="413" class="lb">straight into the floor</text>
-    <text x="628" y="432" class="lb">of the case above</text>
-    <line x1="622" y1="386" x2="486" y2="330" stroke="#19d3c5" stroke-width="1.3"/>
-  
-    <text x="30" y="520" class="sm">Isometric view &#183; 22 in deep &#215; 12.5&#8211;13 in wide &#215; 3&#8211;4 in tall including castors</text>
+    <polygon points="400.0,92.0 573.2,192.0 244.1,382.0 70.9,282.0" fill="none" stroke="#39d98a" stroke-width="2"/>
+    <path d="M51.0,306.0 L77.0,306.0 L75.0,321.0 L53.0,321.0 Z" fill="#242e3d" stroke="#3d4c66" stroke-width="1.5"/><ellipse cx="64.0" cy="308.0" rx="13" ry="6" fill="none" stroke="#ff7a2f" stroke-width="1.8"/><ellipse cx="64.0" cy="333.0" rx="17" ry="11" fill="url(#wheel)" stroke="#4d5c74" stroke-width="1.6"/><ellipse cx="64.0" cy="333.0" rx="5.5" ry="3.5" fill="#0d1219"/><path d="M231.1,410.0 L257.1,410.0 L255.1,425.0 L233.1,425.0 Z" fill="#242e3d" stroke="#3d4c66" stroke-width="1.5"/><ellipse cx="244.1" cy="412.0" rx="13" ry="6" fill="none" stroke="#ff7a2f" stroke-width="1.8"/><ellipse cx="244.1" cy="437.0" rx="17" ry="11" fill="url(#wheel)" stroke="#4d5c74" stroke-width="1.6"/><ellipse cx="244.1" cy="437.0" rx="5.5" ry="3.5" fill="#0d1219"/>
+    <line x1="252" y1="318" x2="252" y2="266" stroke="#39d98a" stroke-width="3.2" marker-end="url(#up)"/>
+    <line x1="324" y1="276" x2="324" y2="224" stroke="#39d98a" stroke-width="3.2" marker-end="url(#up)"/>
+    <line x1="396" y1="234" x2="396" y2="182" stroke="#39d98a" stroke-width="3.2" marker-end="url(#up)"/>
+    <text x="646" y="120" class="lbb" fill="#c79a68">HARDWOOD FRAME</text>
+    <text x="646" y="141" class="lb">1.5 &#215; 1.5 in section</text>
+    <text x="646" y="160" class="lb">teak / sheesham / sal</text>
+    <line x1="640" y1="114" x2="576" y2="152" stroke="#b98d5f" stroke-width="1.3"/>
+    <text x="656" y="236" class="lbb" fill="#39d98a">COARSE MESH</text>
+    <text x="656" y="257" class="lb">&#188; in (6 mm) welded wire.</text>
+    <text x="656" y="276" class="lb">Air straight through,</text>
+    <text x="656" y="295" class="lb">objects stopped.</text>
+    <line x1="650" y1="230" x2="500" y2="252" stroke="#39d98a" stroke-width="1.3"/>
+    <text x="24" y="150" class="lbb" fill="#39d98a">MIDDLE IS FULLY OPEN</text>
+    <text x="24" y="172" class="lb">no board, no panel,</text>
+    <text x="24" y="191" class="lb">no cross-piece</text>
+    <line x1="180" y1="184" x2="250" y2="230" stroke="#39d98a" stroke-width="1.3"/>
+    <text x="24" y="392" class="lbb" fill="#ff7a2f">FRONT &#215; 2 &#8212; SWIVEL</text>
+    <text x="24" y="412" class="lb">with brakes &#183; orange ring</text>
+    <line x1="150" y1="386" x2="70" y2="330" stroke="#ff7a2f" stroke-width="1.3"/>
+    <line x1="150" y1="398" x2="228" y2="420" stroke="#ff7a2f" stroke-width="1.3"/>
+    <text x="600" y="452" class="lbb" fill="#8fa0b8">BACK &#215; 2 &#8212; FIXED</text>
+    <text x="600" y="472" class="lb">roll straight only, so it tracks</text>
+    <text x="600" y="491" class="lb">true when you pull it out</text>
+    <line x1="594" y1="442" x2="588" y2="228" stroke="#8fa0b8" stroke-width="1.3"/>
+    <text x="24" y="556" class="sm">Isometric &#183; 22 in deep &#215; 12.5&#8211;13 in wide &#215; 3&#8211;4 in tall including castors &#183; 60 kg rated</text>
   </svg>
 
   <h3>Why it has to be open — the whole stack, side on</h3>

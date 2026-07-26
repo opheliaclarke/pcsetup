@@ -109,6 +109,19 @@ screws pull out, it sags); plywood OK at 18 mm+ but harder to join well. Steel b
 - **NEVER AC-filter material or fly-screen here** — that's a fine filter, and stacking it under the case's own fine
   filter doubles restriction on the flow-through card's only air path.
 
+**Rev 12d — Bob asked about mosquito net / car air filter, and whether the DRAWINGS were updated (they weren't).**
+- **Isometric SVG REGENERATED at the corrected proportions** (FH 0.75→**1.5 in** rail, bigger castors, ~3.4 in total),
+  re-coloured as **hardwood** not steel, and castor types drawn correctly: **back 2 fixed, front 2 swivel (orange
+  ring = swivel)**. Generator `gen2.py`. Lesson: when a spec number changes, **regenerate the drawing** — updating
+  only the caption is exactly the kind of thing Bob catches.
+- **CAR AIR FILTER = NO, not a close call.** Designed for an engine's suction; a case fan makes ~**2.4 mm H2O**.
+  It would choke the intake and cook the card.
+- **MOSQUITO NET = works but pointless.** It duplicates the case's own filter 1.5 in above it → no extra protection,
+  a second pressure drop, and now two things to clean. GN measured **3 °C** GPU penalty from ONE bottom dust filter
+  on a clean case; a second fine layer roughly doubles it, on the card that can least afford it.
+- **Compromise offered:** build the pull-out tray with a **swappable/re-stringable** mesh panel. Start coarse, run a
+  month, inspect the case filter, and only go finer if real-world dust justifies paying the thermal cost.
+
 **Mesh guidance (Bob's own idea, refined):** yes to mesh across the open middle, but it must be **COARSE
   (expanded metal / grille, ~5–10 mm holes)**, NOT a fine dust mesh. The case already has its own fine dust filter
   directly above; a second fine mesh under it doubles restriction on the card's only air path. Pedestal mesh stops
