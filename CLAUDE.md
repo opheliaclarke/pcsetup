@@ -1,7 +1,7 @@
 # Dual-GPU AI Workstation (pcsetup)
 
 **What it is:** A single self-contained HTML build-plan document (case / cooling / power / desk-clearance) for Dominic's in-house 24×7 dual-GPU AI training workstation.
-**Status:** **Rev 10 — SLOT FITMENT SETTLED FROM PRIMARY SOURCES: 5090 above / PRO 6000 below = YES. Lian Li's own CAD proves the 8 expansion slots are children of the motherboard-tray assembly (they move WITH the tray), so tray position is irrelevant to card mounting; MSI's own manual proves PCI_E1/PCI_E2 are exactly 4 pitches apart at ATX positions 2 and 6. Cards land on case slots 2+3 and 6+7, ~33 mm clear air between, slot 8 free. One of our own reasons was wrong (the top-edge 12V-2x6 faces the SIDE PANEL, not the card above) — angled connector still mandatory. See Rev 10.** Rev 9 — `buy-checklist.html` is now a SHORT ranked 1-2-3-4 page (Bob found the long docs unusable). Rev 8 — CONFIRMED: BUY THE EVO XL (O11DEXL-X, black), and buy it SOON (EOL signals). 10-agent round-4 sweep incl. Reddit settled the alternatives. `buy-checklist.html` is now THE decision page (downsides + full sourced buy list + alternatives + CAD fitment proof + Reddit digest). Rev 7 — USER PICKED THE O11 DYNAMIC EVO XL. GO-WITH-CONDITIONS after an 8-agent adversarial pre-purchase recheck (2026-07-25). index.html REBUILT around the EVO XL. Pre-purchase gate lives at `buy-checklist.html`.** Case comparison at `case-replacement.html`. **index.html is DONE (Rev 6/7). `layout.html` + `simple.html` + `build-picture.png` are STILL V3000 drawings and carry the 140mm rear-fan error — they need a from-scratch redraw for the EVO XL and must NOT be handed to a builder until then.**
+**Status:** **Rev 11 — `build-guide.html` LIVE (standalone, no interlinking): parts+links, carpenter pedestal drawings in inches, labelled cabinet layout, 26-step install manual. Rev 10 — SLOT FITMENT SETTLED FROM PRIMARY SOURCES: 5090 above / PRO 6000 below = YES. Lian Li's own CAD proves the 8 expansion slots are children of the motherboard-tray assembly (they move WITH the tray), so tray position is irrelevant to card mounting; MSI's own manual proves PCI_E1/PCI_E2 are exactly 4 pitches apart at ATX positions 2 and 6. Cards land on case slots 2+3 and 6+7, ~33 mm clear air between, slot 8 free. One of our own reasons was wrong (the top-edge 12V-2x6 faces the SIDE PANEL, not the card above) — angled connector still mandatory. See Rev 10.** Rev 9 — `buy-checklist.html` is now a SHORT ranked 1-2-3-4 page (Bob found the long docs unusable). Rev 8 — CONFIRMED: BUY THE EVO XL (O11DEXL-X, black), and buy it SOON (EOL signals). 10-agent round-4 sweep incl. Reddit settled the alternatives. `buy-checklist.html` is now THE decision page (downsides + full sourced buy list + alternatives + CAD fitment proof + Reddit digest). Rev 7 — USER PICKED THE O11 DYNAMIC EVO XL. GO-WITH-CONDITIONS after an 8-agent adversarial pre-purchase recheck (2026-07-25). index.html REBUILT around the EVO XL. Pre-purchase gate lives at `buy-checklist.html`.** Case comparison at `case-replacement.html`. **index.html is DONE (Rev 6/7). `layout.html` + `simple.html` + `build-picture.png` are STILL V3000 drawings and carry the 140mm rear-fan error — they need a from-scratch redraw for the EVO XL and must NOT be handed to a builder until then.**
 
 **(Superseded) Rev 5 — WINNER = Lian Li V3000 Plus.** (2026-07-14) Ergosphere CONFIRMED a firmware min/max-height lock that can be set as default AND **survives a reset** → the crush problem is solved robustly. Combined with the user's 32" seated working height + a wheeled open-frame pedestal, the 674mm super-tower now fits under the desk. So the ≤560mm cap is REPLACED by the desk-lock approach. V3000 is the pick; EVO XL demoted to "foolproof fallback". Full doc rebuilt around the V3000 (new fan/rad layout, desk-lock section, pedestal, shopping list).
 (Rev 4: super-towers eliminated on height + hotbox section + 1.8-ton O General. Rev 3: EVO XL after 5090=Astral LC. Rev 2: reopened after PRO 6000 = double-flow-through.)
@@ -60,6 +60,39 @@
 
 
 
+
+
+## Rev 11 — 2026-07-26. `build-guide.html` — the standalone hand-to-the-builder page.
+
+Bob: *"make another webpage with NO INTERLINKING"* + parts & links + accessory list matched exactly to requirement
++ **pedestal design from all sides with dimensions IN INCHES** + **exact labelled cabinet layout ("must be top
+notch, even a noob can understand what to place where")** + **a from-scratch install manual** (he is stripping the
+TAG Supernova and moving everything into the Lian Li).
+
+**`/root/workspace/pcsetup/build-guide.html` — LIVE, ZERO internal links (verified: 0 relative hrefs).** 5 sections:
+what he already owns · what to buy (8 lines w/ live India links) · pedestal drawings · cabinet layout · 26-step manual.
+
+**Pedestal spec (inches, for his carpenter):** outer **22 in deep × 13 in wide**, rails **1.5 in** wide, open middle
+**min 19 × 11 in**, total height **1.5 in incl. castors** (never >2 in), **130 lb / 60 kg** rated, 4 locking castors.
+Hard rules: **NOTHING crossing the middle** (a solid deck suffocates the flow-through GPU) and **front edge kept
+clear** so the dust filter slides out without lifting 40 kg. One-line brief for the carpenter is on the page.
+
+**Diagrams are hand-authored SVG** (per the no-Canva/no-image-gen constraint). Rendered with headless Chrome +
+Read-the-PNG to check overlaps — the FIRST attempt had label collisions; fixed by switching the main layout to
+**numbered badges 1-6 + a legend table below** instead of inline labels. Reuse that pattern: inline text labels on a
+dense diagram WILL collide; badges + table never do.
+
+**Layout drawn:** roof = 5090 rad OUT ① · side = CPU rad IN ② · 5090 top slot ③ · PRO 6000 lower slot ④ ·
+3× 140 floor fans IN ⑤ · 120 mm rear OUT ⑥ · plus a second "cable room" diagram (PSU ⑦, SSD trays ⑧, routing ⑨).
+
+**Manual highlights (order matters, don't reorder):** photograph the Supernova before unplugging → **look at the
+existing PRO 6000 cable while it's in your hand** (Type 4? 90° or straight? — decides the ₹2,499 purchase) → pull
+mobo WITH cooler attached, never unseat the CPU → **tray to MIDDLE first** → floor fans rearward+inboard → PSU +
+pre-plug cables → mobo → **EPS cables BEFORE the roof rad** → roof rad → side rad + seal plates → rear fan →
+**PRO 6000 FIRST into the lower slot**, then the 5090 → support stick between two floor fans → power (each GPU on
+its own cable, click check) → tidy, GPU cables not bundled → side filter → panels, don't over-tighten glass →
+pedestal → BIOS (Above 4G + ReBAR) → `nvidia-smi` shows 96 GB → **fan daemon BEFORE any real load** → 2 h burn-in →
+monthly filter-clean reminder.
 
 ## Rev 10 — 2026-07-26. 14-retailer sweep + slot verification + owned-fan audit.
 
