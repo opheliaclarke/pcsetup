@@ -1,7 +1,7 @@
 # Dual-GPU AI Workstation (pcsetup)
 
 **What it is:** A single self-contained HTML build-plan document (case / cooling / power / desk-clearance) for Dominic's in-house 24×7 dual-GPU AI training workstation.
-**Status:** **Rev 11 — `build-guide.html` LIVE (standalone, no interlinking): parts+links, carpenter pedestal drawings in inches, labelled cabinet layout, 26-step install manual. Rev 10 — SLOT FITMENT SETTLED FROM PRIMARY SOURCES: 5090 above / PRO 6000 below = YES. Lian Li's own CAD proves the 8 expansion slots are children of the motherboard-tray assembly (they move WITH the tray), so tray position is irrelevant to card mounting; MSI's own manual proves PCI_E1/PCI_E2 are exactly 4 pitches apart at ATX positions 2 and 6. Cards land on case slots 2+3 and 6+7, ~33 mm clear air between, slot 8 free. One of our own reasons was wrong (the top-edge 12V-2x6 faces the SIDE PANEL, not the card above) — angled connector still mandatory. See Rev 10.** Rev 9 — `buy-checklist.html` is now a SHORT ranked 1-2-3-4 page (Bob found the long docs unusable). Rev 8 — CONFIRMED: BUY THE EVO XL (O11DEXL-X, black), and buy it SOON (EOL signals). 10-agent round-4 sweep incl. Reddit settled the alternatives. `buy-checklist.html` is now THE decision page (downsides + full sourced buy list + alternatives + CAD fitment proof + Reddit digest). Rev 7 — USER PICKED THE O11 DYNAMIC EVO XL. GO-WITH-CONDITIONS after an 8-agent adversarial pre-purchase recheck (2026-07-25). index.html REBUILT around the EVO XL. Pre-purchase gate lives at `buy-checklist.html`.** Case comparison at `case-replacement.html`. **index.html is DONE (Rev 6/7). `layout.html` + `simple.html` + `build-picture.png` are STILL V3000 drawings and carry the 140mm rear-fan error — they need a from-scratch redraw for the EVO XL and must NOT be handed to a builder until then.**
+**Status:** **Rev 12 — pedestal now has isometric + side-cutaway 3D views; ready-made trolley link retracted (solid deck), pedestal is build-only; mesh must be COARSE. Rev 11 — `build-guide.html` LIVE (standalone, no interlinking): parts+links, carpenter pedestal drawings in inches, labelled cabinet layout, 26-step install manual. Rev 10 — SLOT FITMENT SETTLED FROM PRIMARY SOURCES: 5090 above / PRO 6000 below = YES. Lian Li's own CAD proves the 8 expansion slots are children of the motherboard-tray assembly (they move WITH the tray), so tray position is irrelevant to card mounting; MSI's own manual proves PCI_E1/PCI_E2 are exactly 4 pitches apart at ATX positions 2 and 6. Cards land on case slots 2+3 and 6+7, ~33 mm clear air between, slot 8 free. One of our own reasons was wrong (the top-edge 12V-2x6 faces the SIDE PANEL, not the card above) — angled connector still mandatory. See Rev 10.** Rev 9 — `buy-checklist.html` is now a SHORT ranked 1-2-3-4 page (Bob found the long docs unusable). Rev 8 — CONFIRMED: BUY THE EVO XL (O11DEXL-X, black), and buy it SOON (EOL signals). 10-agent round-4 sweep incl. Reddit settled the alternatives. `buy-checklist.html` is now THE decision page (downsides + full sourced buy list + alternatives + CAD fitment proof + Reddit digest). Rev 7 — USER PICKED THE O11 DYNAMIC EVO XL. GO-WITH-CONDITIONS after an 8-agent adversarial pre-purchase recheck (2026-07-25). index.html REBUILT around the EVO XL. Pre-purchase gate lives at `buy-checklist.html`.** Case comparison at `case-replacement.html`. **index.html is DONE (Rev 6/7). `layout.html` + `simple.html` + `build-picture.png` are STILL V3000 drawings and carry the 140mm rear-fan error — they need a from-scratch redraw for the EVO XL and must NOT be handed to a builder until then.**
 
 **(Superseded) Rev 5 — WINNER = Lian Li V3000 Plus.** (2026-07-14) Ergosphere CONFIRMED a firmware min/max-height lock that can be set as default AND **survives a reset** → the crush problem is solved robustly. Combined with the user's 32" seated working height + a wheeled open-frame pedestal, the 674mm super-tower now fits under the desk. So the ≤560mm cap is REPLACED by the desk-lock approach. V3000 is the pick; EVO XL demoted to "foolproof fallback". Full doc rebuilt around the V3000 (new fan/rad layout, desk-lock section, pedestal, shopping list).
 (Rev 4: super-towers eliminated on height + hotbox section + 1.8-ton O General. Rev 3: EVO XL after 5090=Astral LC. Rev 2: reopened after PRO 6000 = double-flow-through.)
@@ -61,6 +61,33 @@
 
 
 
+
+
+## Rev 12 — 2026-07-26. Pedestal: realistic 3D views (Bob couldn't read the flat drawing).
+
+Bob: *"I want a realistic design layout of the pedestal... I don't understand this 1d or pencil design... i need PHOTO :D"*
+**No image-gen tool available** (standing constraint) → built a proper **hand-authored isometric SVG "product render"**
+instead: true axonometric projection generated in Python (scale 20 px/in, 0.866/0.5 iso basis), gradient-shaded
+top/front/right faces, drop shadow, contact shadow, coarse mesh drawn as projected grid lines, 4 castors with
+bracket + wheel + hub drawn in correct painter order (back castors → frame → front castors), callout leaders.
+Generator: `/tmp/.../scratchpad/gen_ped.py` — **keep this approach for any future 3D-ish diagram.**
+
+**Three views now in section 3 of `build-guide.html`:** (1) isometric "what it actually looks like",
+(2) **side cutaway of the whole stack** floor→castors→frame+mesh→case feet→case filter→floor fans→PRO 6000→5090→
+roof rad, with airflow, (3) the original dimensioned workshop drawing kept for the actual cutting.
+**First attempt at view 2 was an isometric and FAILED** (case ran off the top of the viewBox, castors drew on top of
+the frame due to z-order) — replaced with a 2D side elevation, which reads better anyway. Lesson: isometric is good
+for a single low object, bad for a tall object stacked on a short one.
+
+**TWO CORRECTIONS SHIPPED:**
+- **The Amazon "SPYLOCK metal CPU trolley" link I gave was WRONG — it has a SOLID DECK**, which is exactly the thing
+  that suffocates the flow-through GPU. Bob spotted it. Link removed from the page; pedestal is now
+  **build-only (carpenter/fabricator, ~₹800–1,500)**. Do not re-suggest a ready-made trolley — every one found has a
+  solid base.
+- **Mesh guidance (Bob's own idea, refined):** yes to mesh across the open middle, but it must be **COARSE
+  (expanded metal / grille, ~5–10 mm holes)**, NOT a fine dust mesh. The case already has its own fine dust filter
+  directly above; a second fine mesh under it doubles restriction on the card's only air path. Pedestal mesh stops
+  **objects**, the case filter stops **dust**.
 
 ## Rev 11 — 2026-07-26. `build-guide.html` — the standalone hand-to-the-builder page.
 

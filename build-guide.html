@@ -128,9 +128,9 @@
       </tr>
       <tr>
         <td>7</td><td><b>Pedestal</b> <span class="tag t-buy">buy or build</span></td>
-        <td><b>Your carpenter builds it</b> — drawings in section 3.<br><span class="note">Or ready-made: an <b>open-frame metal</b> CPU trolley, 50 kg rated, locking castors. <b>Never a wooden one with a solid base.</b></span></td>
-        <td>Carpenter, or <a href="https://www.amazon.in/dp/B0BQJKJJSR">Amazon.in metal trolley</a></td>
-        <td class="num">499 – 1,500</td>
+        <td><b>Your carpenter builds it</b> — drawings in section 3.<br><span class="note"><b>Get it built — do not buy a ready-made trolley.</b> Every one I could find, including the Amazon link I gave you earlier, has a <b>solid deck</b>, which blocks the air. That link was wrong and is removed.</span></td>
+        <td>Your carpenter / fabricator</td>
+        <td class="num">~800 – 1,500</td>
       </tr>
       <tr>
         <td>8</td><td><b>NVMe drives ×2</b> <span class="tag t-buy">buy</span></td>
@@ -156,7 +156,213 @@
   <div class="box bad"><b>The one rule that cannot be broken:</b> no board, no panel, no cross-piece anywhere in the
   middle. Four rails around the edge and nothing else. If your carpenter puts a solid top on it, the ₹7-lakh
   graphics card cannot breathe.</div>
+  <div class="box good"><b>About the mesh — you had the right idea, with one adjustment.</b> Stretch mesh across the
+  open middle so nothing can fall through and no foot or paw can go in. But make it <b>coarse</b> — expanded metal
+  or a grille with roughly <b>5–10 mm holes</b>, the sort of thing you would see on a speaker grille. <b>Do not use a
+  fine dust mesh.</b> The case already has its own fine dust filter directly above, and stacking a second fine mesh
+  under it just doubles the resistance on the one air path your most expensive component has. The pedestal mesh is
+  there to stop <em>objects</em>, not dust — the case's own filter does the dust.</div>
 
+  <h3>What it actually looks like</h3>
+  <svg viewBox="0 0 900 560" role="img" aria-label="Realistic 3D view of the pedestal frame with mesh and castors">
+    <defs>
+      <linearGradient id="topG" x1="0" y1="0" x2="0.6" y2="1">
+        <stop offset="0" stop-color="#5c6b82"/><stop offset="0.5" stop-color="#47566c"/><stop offset="1" stop-color="#3a4757"/>
+      </linearGradient>
+      <linearGradient id="frontG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#2b3542"/><stop offset="1" stop-color="#1b232e"/>
+      </linearGradient>
+      <linearGradient id="rightG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#222b37"/><stop offset="1" stop-color="#141b24"/>
+      </linearGradient>
+      <radialGradient id="wheel" cx="0.35" cy="0.3" r="0.8">
+        <stop offset="0" stop-color="#3c4757"/><stop offset="1" stop-color="#161d27"/>
+      </radialGradient>
+      <marker id="up" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#39d98a"/></marker>
+      <filter id="sh" x="-30%" y="-30%" width="170%" height="180%">
+        <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000" flood-opacity="0.55"/>
+      </filter>
+    </defs>
+    <style>
+      .lb{font-family:system-ui,sans-serif;font-size:14px;fill:#9aa7b8}
+      .lbb{font-family:system-ui,sans-serif;font-size:15px;font-weight:700}
+      .sm{font-family:system-ui,sans-serif;font-size:12.5px;fill:#6f7d90}
+    </style>
+  
+    <ellipse cx="330" cy="452" rx="290" ry="34" fill="#000" opacity="0.35"/>
+  
+    <path d="M389.0,94.0 L411.0,94.0 L409.0,105.0 L391.0,105.0 Z" fill="#151b26" stroke="#3d4c66" stroke-width="1.4"/><ellipse cx="400.0" cy="113.0" rx="14" ry="8.5" fill="url(#wheel)" stroke="#48576f" stroke-width="1.5"/><ellipse cx="400.0" cy="113.0" rx="4.5" ry="2.8" fill="#0d1219"/>
+    <path d="M572.6,200.0 L594.6,200.0 L592.6,211.0 L574.6,211.0 Z" fill="#151b26" stroke="#3d4c66" stroke-width="1.4"/><ellipse cx="583.6" cy="219.0" rx="14" ry="8.5" fill="url(#wheel)" stroke="#48576f" stroke-width="1.5"/><ellipse cx="583.6" cy="219.0" rx="4.5" ry="2.8" fill="#0d1219"/>
+  
+    <g filter="url(#sh)">
+      <polygon points="625.2,185.0 244.1,405.0 244.1,420.0 625.2,200.0" fill="url(#rightG)" stroke="#2e3a4a" stroke-width="1.4"/>
+      <polygon points="244.1,405.0 19.0,275.0 19.0,290.0 244.1,420.0" fill="url(#frontG)" stroke="#2e3a4a" stroke-width="1.4"/>
+      <path d="M400.0,55.0 L625.2,185.0 L244.1,405.0 L19.0,275.0 Z
+               M400.0,85.0 L573.2,185.0 L244.1,375.0 L70.9,275.0 Z"
+            fill="url(#topG)" fill-rule="evenodd" stroke="#6d7d94" stroke-width="1.6"/>
+    </g>
+  
+    <polygon points="400.0,90.6 573.2,190.6 244.1,380.6 70.9,280.6" fill="#0b0f15" opacity="0.9"/>
+    <g stroke="#39d98a" stroke-width="1" opacity="0.55">
+        <line x1="400.0" y1="90.6" x2="573.2" y2="190.6"/>
+        <line x1="382.7" y1="100.6" x2="555.9" y2="200.6"/>
+        <line x1="365.4" y1="110.6" x2="538.6" y2="210.6"/>
+        <line x1="348.0" y1="120.6" x2="521.2" y2="220.6"/>
+        <line x1="330.7" y1="130.6" x2="503.9" y2="230.6"/>
+        <line x1="313.4" y1="140.6" x2="486.6" y2="240.6"/>
+        <line x1="296.1" y1="150.6" x2="469.3" y2="250.6"/>
+        <line x1="278.8" y1="160.6" x2="452.0" y2="260.6"/>
+        <line x1="261.4" y1="170.6" x2="434.6" y2="270.6"/>
+        <line x1="244.1" y1="180.6" x2="417.3" y2="280.6"/>
+        <line x1="226.8" y1="190.6" x2="400.0" y2="290.6"/>
+        <line x1="209.5" y1="200.6" x2="382.7" y2="300.6"/>
+        <line x1="192.2" y1="210.6" x2="365.4" y2="310.6"/>
+        <line x1="174.8" y1="220.6" x2="348.0" y2="320.6"/>
+        <line x1="157.5" y1="230.6" x2="330.7" y2="330.6"/>
+        <line x1="140.2" y1="240.6" x2="313.4" y2="340.6"/>
+        <line x1="122.9" y1="250.6" x2="296.1" y2="350.6"/>
+        <line x1="105.6" y1="260.6" x2="278.8" y2="360.6"/>
+        <line x1="88.2" y1="270.6" x2="261.4" y2="370.6"/>
+        <line x1="70.9" y1="280.6" x2="244.1" y2="380.6"/>
+        <line x1="400.0" y1="90.6" x2="70.9" y2="280.6"/>
+        <line x1="417.3" y1="100.6" x2="88.2" y2="290.6"/>
+        <line x1="434.6" y1="110.6" x2="105.6" y2="300.6"/>
+        <line x1="452.0" y1="120.6" x2="122.9" y2="310.6"/>
+        <line x1="469.3" y1="130.6" x2="140.2" y2="320.6"/>
+        <line x1="486.6" y1="140.6" x2="157.5" y2="330.6"/>
+        <line x1="503.9" y1="150.6" x2="174.8" y2="340.6"/>
+        <line x1="521.2" y1="160.6" x2="192.2" y2="350.6"/>
+        <line x1="538.6" y1="170.6" x2="209.5" y2="360.6"/>
+        <line x1="555.9" y1="180.6" x2="226.8" y2="370.6"/>
+        <line x1="573.2" y1="190.6" x2="244.1" y2="380.6"/>
+    </g>
+    <polygon points="400.0,90.6 573.2,190.6 244.1,380.6 70.9,280.6" fill="none" stroke="#39d98a" stroke-width="2"/>
+  
+    <path d="M49.5,290.0 L71.5,290.0 L69.5,301.0 L51.5,301.0 Z" fill="#232c3b" stroke="#3d4c66" stroke-width="1.4"/><ellipse cx="60.5" cy="309.0" rx="14" ry="8.5" fill="url(#wheel)" stroke="#48576f" stroke-width="1.5"/><ellipse cx="60.5" cy="309.0" rx="4.5" ry="2.8" fill="#0d1219"/>
+    <path d="M233.1,396.0 L255.1,396.0 L253.1,407.0 L235.1,407.0 Z" fill="#232c3b" stroke="#3d4c66" stroke-width="1.4"/><ellipse cx="244.1" cy="415.0" rx="14" ry="8.5" fill="url(#wheel)" stroke="#48576f" stroke-width="1.5"/><ellipse cx="244.1" cy="415.0" rx="4.5" ry="2.8" fill="#0d1219"/>
+  
+    <line x1="300" y1="330" x2="300" y2="278" stroke="#39d98a" stroke-width="3" marker-end="url(#up)"/>
+    <line x1="380" y1="292" x2="380" y2="240" stroke="#39d98a" stroke-width="3" marker-end="url(#up)"/>
+    <line x1="460" y1="254" x2="460" y2="202" stroke="#39d98a" stroke-width="3" marker-end="url(#up)"/>
+  
+    <text x="628" y="122" class="lbb" fill="#8fa0b8">STEEL FRAME</text>
+    <text x="628" y="143" class="lb">1.5 in wide rails</text>
+    <text x="628" y="162" class="lb">all the way round</text>
+    <line x1="622" y1="116" x2="560" y2="152" stroke="#6d7d94" stroke-width="1.3"/>
+  
+    <text x="640" y="238" class="lbb" fill="#39d98a">COARSE MESH</text>
+    <text x="640" y="259" class="lb">stretched across the</text>
+    <text x="640" y="278" class="lb">open middle. Air goes</text>
+    <text x="640" y="297" class="lb">through, objects don&#39;t.</text>
+    <line x1="634" y1="232" x2="500" y2="258" stroke="#39d98a" stroke-width="1.3"/>
+  
+    <text x="26" y="148" class="lbb" fill="#39d98a">THE WHOLE MIDDLE</text>
+    <text x="26" y="169" class="lbb" fill="#39d98a">IS OPEN</text>
+    <text x="26" y="191" class="lb">no board, no panel,</text>
+    <text x="26" y="210" class="lb">nothing solid</text>
+    <line x1="166" y1="184" x2="248" y2="232" stroke="#39d98a" stroke-width="1.3"/>
+  
+    <text x="26" y="368" class="lbb" fill="#ff7a2f">4 LOCKING CASTORS</text>
+    <text x="26" y="389" class="lb">one under each corner</text>
+    <line x1="120" y1="360" x2="66" y2="316" stroke="#ff7a2f" stroke-width="1.3"/>
+  
+    <text x="628" y="392" class="lbb" fill="#19d3c5">AIR IS PULLED UP</text>
+    <text x="628" y="413" class="lb">straight into the floor</text>
+    <text x="628" y="432" class="lb">of the case above</text>
+    <line x1="622" y1="386" x2="486" y2="330" stroke="#19d3c5" stroke-width="1.3"/>
+  
+    <text x="30" y="520" class="sm">Isometric view &#183; 22 in deep &#215; 13 in wide &#215; 1.5 in tall including castors</text>
+  </svg>
+
+  <h3>Why it has to be open — the whole stack, side on</h3>
+  <svg viewBox="0 0 900 570" role="img" aria-label="Side cutaway showing the case standing on the pedestal and how air flows">
+    <defs>
+      <linearGradient id="cs" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#212b39"/><stop offset="0.5" stop-color="#182029"/><stop offset="1" stop-color="#0f151d"/></linearGradient>
+      <linearGradient id="rl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5c6b82"/><stop offset="1" stop-color="#333e4d"/></linearGradient>
+      <radialGradient id="wh2" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#3c4757"/><stop offset="1" stop-color="#161d27"/></radialGradient>
+      <marker id="gu" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#39d98a"/></marker>
+      <marker id="ru" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#ff5d6c"/></marker>
+    </defs>
+    <style>
+      .lb{font-family:system-ui,sans-serif;font-size:14px;fill:#9aa7b8}
+      .lbb{font-family:system-ui,sans-serif;font-size:15px;font-weight:700}
+      .sm{font-family:system-ui,sans-serif;font-size:12.5px;fill:#6f7d90}
+    </style>
+  
+    <text x="60" y="26" class="sm">SIDE CUTAWAY &#183; the whole stack, floor upwards</text>
+  
+    <!-- CASE -->
+    <rect x="250" y="52" width="360" height="368" rx="9" fill="url(#cs)" stroke="#4a5a78" stroke-width="2.6"/>
+    <!-- roof rad -->
+    <rect x="266" y="64" width="328" height="36" rx="5" fill="rgba(25,211,197,.14)" stroke="#19d3c5" stroke-width="2"/>
+    <text x="430" y="88" class="lb" fill="#19d3c5" text-anchor="middle" font-weight="700">5090 radiator &#183; blows out</text>
+    <line x1="330" y1="46" x2="330" y2="10" stroke="#ff5d6c" stroke-width="3" marker-end="url(#ru)"/>
+    <line x1="430" y1="46" x2="430" y2="10" stroke="#ff5d6c" stroke-width="3" marker-end="url(#ru)"/>
+    <line x1="530" y1="46" x2="530" y2="10" stroke="#ff5d6c" stroke-width="3" marker-end="url(#ru)"/>
+    <text x="626" y="26" class="lbb" fill="#ff5d6c">hot air out</text>
+  
+    <!-- 5090 -->
+    <rect x="266" y="150" width="270" height="26" rx="4" fill="rgba(255,204,77,.16)" stroke="#ffcc4d" stroke-width="2"/>
+    <text x="401" y="168" class="lb" fill="#ffcc4d" text-anchor="middle" font-weight="700">RTX 5090</text>
+    <!-- PRO 6000 -->
+    <rect x="266" y="222" width="270" height="26" rx="4" fill="rgba(255,204,77,.16)" stroke="#ffcc4d" stroke-width="2"/>
+    <text x="401" y="240" class="lb" fill="#ffcc4d" text-anchor="middle" font-weight="700">RTX PRO 6000</text>
+    <line x1="310" y1="290" x2="310" y2="254" stroke="#39d98a" stroke-width="3" marker-end="url(#gu)"/>
+    <line x1="401" y1="290" x2="401" y2="254" stroke="#39d98a" stroke-width="3" marker-end="url(#gu)"/>
+    <line x1="492" y1="290" x2="492" y2="254" stroke="#39d98a" stroke-width="3" marker-end="url(#gu)"/>
+    <text x="626" y="238" class="lbb" fill="#ffcc4d">this card breathes</text>
+    <text x="626" y="258" class="lbb" fill="#ffcc4d">from underneath</text>
+  
+    <!-- floor fans -->
+    <rect x="266" y="300" width="270" height="42" rx="5" fill="rgba(57,217,138,.12)" stroke="#39d98a" stroke-width="2"/>
+    <circle cx="310" cy="321" r="16" fill="none" stroke="#39d98a" stroke-width="1.5"/>
+    <circle cx="401" cy="321" r="16" fill="none" stroke="#39d98a" stroke-width="1.5"/>
+    <circle cx="492" cy="321" r="16" fill="none" stroke="#39d98a" stroke-width="1.5"/>
+    <text x="626" y="318" class="lbb" fill="#39d98a">3 &#215; 140 mm fans</text>
+    <text x="626" y="338" class="lb">inside the case floor</text>
+  
+    <!-- case dust filter -->
+    <rect x="266" y="384" width="270" height="16" rx="3" fill="#0b0f15" stroke="#8fa0b8" stroke-width="1.6" stroke-dasharray="4 3"/>
+    <text x="626" y="396" class="lbb" fill="#8fa0b8">the case&#39;s own dust filter</text>
+    <text x="626" y="415" class="lb">slides out towards you</text>
+    <line x1="620" y1="392" x2="546" y2="392" stroke="#8fa0b8" stroke-width="1.2"/>
+    <line x1="310" y1="378" x2="310" y2="352" stroke="#39d98a" stroke-width="3" marker-end="url(#gu)"/>
+    <line x1="401" y1="378" x2="401" y2="352" stroke="#39d98a" stroke-width="3" marker-end="url(#gu)"/>
+    <line x1="492" y1="378" x2="492" y2="352" stroke="#39d98a" stroke-width="3" marker-end="url(#gu)"/>
+  
+    <!-- case feet -->
+    <rect x="272" y="420" width="34" height="12" rx="3" fill="#232c3b" stroke="#3d4c66" stroke-width="1.3"/>
+    <rect x="554" y="420" width="34" height="12" rx="3" fill="#232c3b" stroke="#3d4c66" stroke-width="1.3"/>
+    <text x="150" y="430" class="sm">the case&#39;s own</text>
+    <text x="150" y="446" class="sm">rubber feet</text>
+    <line x1="230" y1="428" x2="268" y2="426" stroke="#6f7d90" stroke-width="1.2"/>
+  
+    <!-- PEDESTAL -->
+    <rect x="250" y="434" width="60" height="24" rx="4" fill="url(#rl)" stroke="#6d7d94" stroke-width="1.8"/>
+    <rect x="550" y="434" width="60" height="24" rx="4" fill="url(#rl)" stroke="#6d7d94" stroke-width="1.8"/>
+    <line x1="310" y1="446" x2="550" y2="446" stroke="#39d98a" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="430" y="440" class="sm" text-anchor="middle" fill="#39d98a">mesh only &#8212; no solid panel</text>
+  
+    <circle cx="280" cy="474" r="15" fill="url(#wh2)" stroke="#48576f" stroke-width="1.6"/>
+    <circle cx="280" cy="474" r="4.5" fill="#0d1219"/>
+    <circle cx="580" cy="474" r="15" fill="url(#wh2)" stroke="#48576f" stroke-width="1.6"/>
+    <circle cx="580" cy="474" r="4.5" fill="#0d1219"/>
+    <text x="140" y="452" class="lbb" fill="#ff7a2f">PEDESTAL</text>
+    <text x="140" y="471" class="lb">1.5 in tall, open middle</text>
+    <line x1="238" y1="446" x2="252" y2="446" stroke="#ff7a2f" stroke-width="1.2"/>
+  
+    <line x1="120" y1="512" x2="880" y2="512" stroke="#33405a" stroke-width="3"/>
+    <text x="870" y="532" class="sm" text-anchor="end">floor</text>
+  
+    <line x1="360" y1="506" x2="360" y2="474" stroke="#39d98a" stroke-width="3" marker-end="url(#gu)"/>
+    <line x1="430" y1="506" x2="430" y2="474" stroke="#39d98a" stroke-width="3" marker-end="url(#gu)"/>
+    <line x1="500" y1="506" x2="500" y2="474" stroke="#39d98a" stroke-width="3" marker-end="url(#gu)"/>
+    <text x="626" y="500" class="lbb" fill="#39d98a">cool room air enters here</text>
+    <text x="626" y="520" class="lb">this gap is why the pedestal exists</text>
+  </svg>
+  
+
+  <h3>Workshop drawing — the numbers to cut to</h3>
   <svg viewBox="0 0 960 470" role="img" aria-label="Pedestal top view and side view with dimensions in inches">
     <defs>
       <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#19d3c5"/></marker>
