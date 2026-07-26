@@ -3,474 +3,258 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Should you buy it? — downsides, what else to buy, and the alternatives</title>
+<title>Which case to buy — ranked 1 to 4</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0c10'/%3E%3Crect x='16' y='10' width='32' height='44' rx='4' fill='none' stroke='%23ff7a2f' stroke-width='4'/%3E%3Cpath d='M22 46h20M22 38h20' stroke='%2319d3c5' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='24' r='6' fill='%2339d98a'/%3E%3C/svg%3E">
 <style>
   :root{--bg:#0a0c10;--card:#141923;--card2:#1a212d;--line:#222b3a;--ink:#e7ecf3;--mut:#9aa7b8;--dim:#6f7d90;
-    --acc:#ff7a2f;--acc2:#19d3c5;--good:#39d98a;--warn:#ffcc4d;--bad:#ff5d6c;--r:14px}
+    --acc:#ff7a2f;--acc2:#19d3c5;--good:#39d98a;--warn:#ffcc4d;--bad:#ff5d6c}
   *{box-sizing:border-box}html{scroll-behavior:smooth}
-  body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#16202e 0,transparent 60%),var(--bg);
-    color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--acc2);text-decoration:none}a:hover{text-decoration:underline}
-  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
-  header{padding:54px 0 30px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(57,217,138,.08),transparent)}
-  .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--acc);font-weight:700}
-  h1{font-size:clamp(26px,4.4vw,42px);line-height:1.1;margin:.35em 0 .25em;letter-spacing:-.025em}
-  .sub{color:var(--mut);font-size:17px;max-width:760px}
-  nav.toc{position:sticky;top:0;z-index:5;background:rgba(10,12,16,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  nav.toc .wrap{display:flex;gap:18px;flex-wrap:wrap;padding:13px 20px;font-size:13.5px}
-  nav.toc a{color:var(--mut)}nav.toc a:hover{color:var(--acc);text-decoration:none}
-  section{padding:40px 0;border-bottom:1px solid var(--line)}
-  h2{font-size:24px;letter-spacing:-.015em;margin:0 0 6px;display:flex;align-items:center;gap:10px}
-  h2 .n{font-size:13px;color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:2px 8px;font-weight:700;flex:none}
-  h3{font-size:17px;margin:26px 0 8px}
-  p{color:#cdd6e2}ul{padding-left:20px}li{margin:6px 0;color:#cdd6e2}
-  blockquote{margin:10px 0;padding:8px 0 8px 16px;border-left:3px solid var(--line);color:var(--mut);font-size:14.5px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;margin:18px 0}
-  .tldr{background:linear-gradient(135deg,rgba(57,217,138,.14),rgba(25,211,197,.07));border:1px solid #2b4a3c}
-  .verdict{display:flex;gap:14px;align-items:flex-start;margin:14px 0;padding:14px 16px;border-radius:12px;background:var(--card2);border:1px solid var(--line)}
-  .verdict .ic{font-size:22px;line-height:1.2;flex:none}.verdict b{color:#fff}
-  .verdict.alert{border-color:var(--bad);background:rgba(255,93,108,.08)}
-  .verdict.win{border-color:var(--good);background:rgba(57,217,138,.08)}
-  .verdict.warn{border-color:var(--warn);background:rgba(255,204,77,.07)}
-  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
-  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16.5px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--acc2)}
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px}
+  header{padding:46px 0 26px;border-bottom:1px solid var(--line)}
+  .eyebrow{letter-spacing:.16em;text-transform:uppercase;font-size:11.5px;color:var(--acc);font-weight:700}
+  h1{font-size:clamp(26px,4.4vw,38px);line-height:1.1;margin:.3em 0 .2em;letter-spacing:-.025em}
+  .sub{color:var(--mut);font-size:16px}
+  .rank{border:1px solid var(--line);border-radius:16px;margin:26px 0;overflow:hidden;background:var(--card)}
+  .rank .top{display:flex;gap:16px;align-items:baseline;padding:20px 24px 14px;border-bottom:1px solid var(--line)}
+  .rank .no{font-size:38px;font-weight:800;line-height:1;color:var(--dim);flex:none;letter-spacing:-.04em}
+  .rank.win{border-color:var(--good)}
+  .rank.win .no{color:var(--good)}
+  .rank.dead .no{color:var(--bad)}
+  .rank h2{margin:0;font-size:22px;letter-spacing:-.02em}
+  .rank .price{color:var(--mut);font-size:14.5px;margin-top:3px}
+  .rank .body{padding:6px 24px 22px}
+  .rank h3{font-size:14px;text-transform:uppercase;letter-spacing:.07em;color:var(--acc);margin:22px 0 8px}
+  .rank.dead h3{color:var(--dim)}
+  ul{padding-left:20px;margin:8px 0}li{margin:7px 0;color:#cdd6e2}
+  p{color:#cdd6e2;margin:9px 0}
+  .tag{display:inline-block;padding:3px 11px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.03em}
+  .t-buy{background:rgba(57,217,138,.16);color:var(--good)}
+  .t-call{background:rgba(255,204,77,.16);color:var(--warn)}
+  .t-no{background:rgba(255,93,108,.16);color:var(--bad)}
+  .box{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0}
+  .box.warn{border-color:var(--warn);background:rgba(255,204,77,.06)}
+  .box.bad{border-color:var(--bad);background:rgba(255,93,108,.06)}
+  .box.good{border-color:var(--good);background:rgba(57,217,138,.06)}
+  .box b{color:#fff}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
   th{color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:11px}
   td b{color:#fff}tr:last-child td{border-bottom:none}
-  .num{text-align:right;font-variant-numeric:tabular-nums}
-  .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
-  .p-good{background:rgba(57,217,138,.15);color:var(--good)}
-  .p-warn{background:rgba(255,204,77,.15);color:var(--warn)}
-  .p-bad{background:rgba(255,93,108,.15);color:var(--bad)}
-  .down{border:1px solid var(--line);border-left:3px solid var(--bad);border-radius:10px;padding:14px 18px;margin:12px 0;background:var(--card)}
-  .down .rk{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--bad)}
-  .down h4{margin:4px 0 6px;font-size:16.5px;color:#fff}
-  .down.mild{border-left-color:var(--warn)}.down.mild .rk{color:var(--warn)}
-  .down.ok{border-left-color:var(--good)}.down.ok .rk{color:var(--good)}
-  .note{font-size:14px;color:var(--mut)}.twrap{overflow-x:auto}
-  .kpi{display:flex;gap:14px;flex-wrap:wrap;margin:16px 0}
-  .kpi .b{flex:1;min-width:165px;background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-  .kpi .v{font-size:25px;font-weight:700;color:#fff}.kpi .l{font-size:12.5px;color:var(--mut)}
-  footer{padding:40px 0 70px;color:var(--dim);font-size:13px}
-  @media(max-width:720px){.kpi .b{min-width:140px}}
+  .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .twrap{overflow-x:auto}
+  .note{font-size:14px;color:var(--mut)}
+  footer{padding:36px 0 70px;color:var(--dim);font-size:13px;border-top:1px solid var(--line);margin-top:30px}
+  .steps{counter-reset:s;list-style:none;padding-left:0}
+  .steps li{counter-increment:s;position:relative;padding-left:34px;margin:11px 0}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:23px;height:23px;border-radius:7px;
+    background:var(--card2);border:1px solid var(--line);color:var(--acc);font-weight:700;font-size:12px;
+    display:flex;align-items:center;justify-content:center}
 </style>
 </head>
 <body>
 <header><div class="wrap">
-  <div class="eyebrow">Round 4 · 10-agent deep research · Reddit included</div>
-  <h1>Should you actually buy it?</h1>
-  <p class="sub">Your four questions, answered: the honest downsides, everything else you need to buy with live
-  Indian sources, whether something better exists — including the Enthoo Pro 2 you found — and a part-by-part
-  fitment proof measured off Lian Li's own CAD model.</p>
+  <div class="eyebrow">Case decision · short version</div>
+  <h1>Which case to buy</h1>
+  <p class="sub">Four options, ranked. Everything else is on the <a href="./index.html">build plan</a> and the
+  <a href="./case-replacement.html">full comparison</a>.</p>
 </div></header>
-
-<nav class="toc"><div class="wrap">
-  <a href="#verdict">Verdict</a>
-  <a href="#wrong">Corrections</a>
-  <a href="#downsides">1 · Downsides</a>
-  <a href="#buy">2 · What else to buy</a>
-  <a href="#alt">3 · Better alternative?</a>
-  <a href="#fit">4 · Fitment proof</a>
-  <a href="#reddit">5 · Reddit says</a>
-  <a href="#unknown">6 · Unknown</a>
-</div></nav>
 
 <div class="wrap">
 
-<section id="verdict">
-  <div class="card tldr">
-    <h2>Buy the EVO XL. Don't switch. And buy it soon.</h2>
-    <p>The <b>Phanteks Enthoo Pro 2 you found is a step down</b>, and not because of height — it has a solid steel
-    lid exactly where the PRO 6000's air is supposed to come from. Unlocking the desk to 674 mm re-opened
-    <b>exactly one</b> case that would genuinely beat the EVO XL, and it probably isn't buyable in India.</p>
-
-    <div class="verdict alert"><div class="ic">📞</div><div><b>There is one phone call worth making before you pay.</b>
-    Ask <b>Computech</b> and <b>PC Studio</b> for the <b>Phanteks NV9 MkII — SKU PH-NV923TG_DBK02</b>. It gives the
-    Astral <b>51 mm</b> of clearance instead of 15.3 mm, which retires the tightest unknown in this whole build.
-    Their sites can't be read reliably from here. <b>If the answer is "no", buy the Lian Li and stop looking.</b></div></div>
-
-    <div class="verdict warn"><div class="ic">⏳</div><div><b>Buy it now, not in a month.</b> The EVO XL is showing
-    every EOL signal the V3000 Plus showed before you lost it — persistent worldwide OOS, no XL V2 announced,
-    Lian Li's momentum on the Vision line. From r/lianli: <em>"I'm not sure that it will come back in stock. I had
-    a similar situation with the V3000+. I just waited too long to pull the trigger."</em></div></div>
-
-    <div class="verdict win"><div class="ic">🔬</div><div><b>The longest-standing unknown just closed.</b> A
-    September 2025 build documents <b>2× RTX PRO 6000 Blackwell Workstation on an X870E board in a Lian Li O11
-    EVO XL.</b> Somebody has done exactly this, with two of them. <span class="note">(Temperatures couldn't be
-    retrieved — treat it as an existence proof, not thermal validation.)</span></div></div>
+<div class="rank win">
+  <div class="top">
+    <div class="no">1</div>
+    <div>
+      <h2>Lian Li O11 Dynamic EVO XL</h2>
+      <div class="price">Model <b>O11DEXL-X</b>, black · <b>₹23,200</b> (vishalperipherals) to ₹25,000 (MD Computers) · <span class="tag t-buy">Buy this</span></div>
+    </div>
   </div>
+  <div class="body">
 
-  <div class="kpi">
-    <div class="b"><div class="v" style="color:var(--good)">92.9 mm</div><div class="l">plenum under the PRO 6000 <span class="note">(CAD-measured; Lian Li publishes 90)</span></div></div>
-    <div class="b"><div class="v" style="color:var(--bad)">31.8 mm</div><div class="l">the Enthoo Pro 2's equivalent — and it's <b>sealed</b></div></div>
-    <div class="b"><div class="v" style="color:var(--warn)">30.5 mm</div><div class="l">gap between your two cards</div></div>
-    <div class="b"><div class="v" style="color:var(--warn)">15.3 mm</div><div class="l">above the Astral to the glass</div></div>
+    <h3>Why it's best</h3>
+    <ul>
+      <li><b>92.9 mm of open air under the graphics card.</b> Your PRO 6000 breathes from underneath — this number is the whole decision. No other buyable case comes close (the Antec C8 has 62.8 mm, the Enthoo Pro 2 has 31.8 mm and it's <em>sealed</em>).</li>
+      <li><b>Everything fits with room to spare</b>, verified against Lian Li's own CAD model, not marketing claims. The fat 65 mm radiator drops into the roof with 17 mm clear.</li>
+      <li><b>304 mm wide</b> with a separate PSU chamber — the roomiest of everything that qualified, and the PSU's heat never touches the air your GPU breathes.</li>
+      <li><b>You can actually buy it in India</b>, from four shops. That's not a small thing — it's the reason the V3000 Plus is gone.</li>
+    </ul>
+
+    <h3>How to get full output from it</h3>
+    <ol class="steps">
+      <li><b>Motherboard tray in the MIDDLE position.</b> Not high, not low. Middle gives 82 mm roof / 90 mm floor. High kills your radiator, low starves your GPU. Tell the builder in writing.</li>
+      <li><b>Astral 5090's radiator in the ROOF, blowing out.</b> Route both EPS power cables <em>before</em> you screw the radiator in — you can't reach afterwards.</li>
+      <li><b>CPU radiator on the SIDE, blowing in.</b> Fresh room air. Fit the two supplied seal plates or the intake short-circuits.</li>
+      <li><b>Three 140 mm fans on the floor, blowing in. Never a radiator there.</b> Push them as far back and as far inboard as they go, or one of them blows past the card into empty space.</li>
+      <li><b>One 120 mm fan at the rear, blowing out.</b> There is no 140 mm rear mount.</li>
+      <li><b>PRO 6000 in the lower slot, 5090 in the top slot.</b> The lower card is the one that breathes from below. Never swap them.</li>
+      <li><b>Install the fan daemon before the first real workload.</b> This is worth more than the case choice: stock firmware sits at ~30% fan while the card hits 85–92 °C. Manual control is <b>15–19 °C</b>, measured by multiple owners.</li>
+    </ol>
+
+    <h3>What to buy with it</h3>
+    <div class="twrap"><table>
+      <thead><tr><th>Item</th><th>What exactly</th><th>Where</th><th class="num">Price</th></tr></thead>
+      <tbody>
+        <tr><td><b>Case</b></td><td>O11 Dynamic EVO XL, black, SKU O11DEXL-X</td><td><a href="https://vishalperipherals.com">vishalperipherals</a></td><td class="num">₹23,200</td></tr>
+        <tr><td><b>Floor fans</b></td><td>ARCTIC P14 PWM PST, 5-pack (you need 3)</td><td><a href="https://adsstore.in/product/arctic-p14-pwm-pst-140mm-cabinet-fan-5-pack-bk/">ADS Store</a></td><td class="num">₹3,399</td></tr>
+        <tr><td><b>Rear fan</b></td><td>ARCTIC P12 PWM PST, 5-pack (you need 1)</td><td><a href="https://adsstore.in/product/arctic-p12-pwm-pst-120mm-cabinet-fan-5-pack-bk/">ADS Store</a></td><td class="num">₹2,599</td></tr>
+        <tr><td><b>GPU cables ×2</b></td><td>Corsair Elite Premium <b>Type-4</b> 12V-2x6, 600 W</td><td><a href="https://www.amazon.in/dp/B0G453F3JQ">Amazon.in</a></td><td class="num">₹9,546</td></tr>
+        <tr><td><b>GPU support</b></td><td>Adjustable stick, magnetic base — for the lower card</td><td><a href="https://www.amazon.in/dp/B0FLQ2FMWZ">Amazon.in</a></td><td class="num">₹308</td></tr>
+        <tr><td><b>Side dust filter</b></td><td>Cut-to-size magnetic mesh — the side intake is unfiltered</td><td>Amazon.in</td><td class="num">~₹800</td></tr>
+        <tr><td><b>Thermal paste</b></td><td>ARCTIC MX-6, 4 g</td><td><a href="https://www.amazon.in/dp/B09VDL3CW6">Amazon.in</a></td><td class="num">₹699</td></tr>
+        <tr><td><b>UPS</b></td><td>APC Easy UPS On-Line SRV3KL-IN, 3 kVA</td><td><a href="https://apc.estorewale.com/product/apc-easy-ups-srv3kl-in/">estorewale</a></td><td class="num">₹48,490</td></tr>
+        <tr><td colspan="3"><b>Case + accessories</b></td><td class="num"><b>₹40,341</b></td></tr>
+        <tr><td colspan="3"><b>With the UPS</b></td><td class="num"><b>₹88,831</b></td></tr>
+      </tbody>
+    </table></div>
+    <p class="note"><b>Pedestal:</b> your carpenter builds it — spec below. <b>Also still missing from your parts
+    list: 2× NVMe drives.</b> Buy those locally, not on Amazon (it shows import pricing).</p>
+
+    <div class="box bad">
+      <b>⚠️ The one item to buy LAST, after the cards are seated.</b><br>
+      There is only <b>30.5 mm between your two cards</b>. A straight power cable needs 35 mm before it can bend —
+      so an <b>angled</b> connector is mandatory, not optional. But CableMod's angled 12VHPWR <b>adapters were
+      recalled in the US in 2024</b> after 270+ melting reports. You want a <b>cable with the 90° built into the
+      connector</b>, never an adapter stacked onto a straight one. Everything currently sold in India is the
+      recalled type. <b>Seat both cards, see which way each connector faces, then order.</b>
+    </div>
+
+    <h3>Its real downsides</h3>
+    <ul>
+      <li><b>The glass can shatter.</b> Not a rumour — a 314-point thread, one owner three times. Triggers are vibration, hard floors, over-tightened screws and frequent panel removal. Your rolled-pedestal plan hits three of four. <b>Handle it by the steel, not the glass, and don't over-tighten the panel screws.</b></li>
+      <li><b>The floor filter is the only fresh-air path to your ₹7-lakh card.</b> Fixable by design — see the pedestal spec below — but cleaning it becomes scheduled maintenance, not housekeeping.</li>
+      <li><b>Ships with zero fans</b> (you only need 4, ~₹6,000) and the side intake is unfiltered.</li>
+      <li><b>After-sales is poor</b> — Lian Li won't sell parts out of warranty, and Lian Li India is one phone number. You've said you don't care; noted, and it doesn't affect how the machine runs.</li>
+      <li><b>Possibly heading for EOL</b> — persistently out of stock worldwide, no successor announced, and Lian Li didn't answer when an owner asked directly. That's a signal, not an announcement. Buying sooner costs nothing.</li>
+    </ul>
+
+    <div class="box good">
+      <b>🪚 Pedestal spec — hand this to your carpenter</b>
+      <ul>
+        <li><b>Open frame only.</b> Rails under the four feet, <b>nothing crossing the middle.</b> A solid deck seals the floor intake and suffocates the GPU. This is the one rule that cannot be broken.</li>
+        <li><b>Clear opening at least 480 × 280 mm</b> in the middle, so the whole floor filter area breathes.</li>
+        <li><b>Leave the filter's slide-out path completely clear</b> — no rail, no lip, no caster in the way. This is the big win: you clean the filter without lifting a 40 kg machine.</li>
+        <li><b>Total height 25–50 mm including the castors.</b> Whatever you choose, the finished stack has to sit below the new desk minimum you're programming — measure the assembled thing before setting that limit.</li>
+        <li><b>Rated for 60 kg+</b>, four locking castors, steel or hardwood. Never foam or particle board.</li>
+        <li><b>Case footprint is 537 × 304 mm</b> — that 537 includes the rear brackets that stick out past the published depth. Build to that, not to 522.</li>
+      </ul>
+    </div>
   </div>
-</section>
+</div>
 
-<section id="wrong">
-  <h2><span class="n">00</span> Three things earlier rounds got wrong</h2>
-  <p>Stated before anything else, because you're right to be sceptical — each round has found an error in the last one.</p>
-  <div class="twrap"><table>
-    <thead><tr><th>Was recorded as</th><th>Actually</th></tr></thead>
-    <tbody>
-      <tr><td>"Enthoo Pro 2 is <b>580 mm tall</b>" — killed partly on height</td><td><b>It's 560 mm tall. 580 is the DEPTH.</b> Phanteks writes it (W × D × H) = 240 × 580 × 560 and I mis-read their own spec line. It was never a height problem — it fails for a much worse reason.</td></tr>
-      <tr><td>"Corsair 9000D is <b>664 mm</b>" — reopened as a candidate</td><td><b>Corsair's own table says 698 mm</b> — 24 mm over your cap. And verbatim: <em>"Radiator Support – Bottom: None / Fan Support – Bottom: None."</em> Dead twice over, and I'd only ever cited one reason, incorrectly.</td></tr>
-      <tr><td>"Fractal Define 7 XL — no floor feed"</td><td><b>False.</b> Fractal lists <em>"Bottom fan: 2 × 120/140 mm"</em> and a 240/280 bottom radiator. It still loses (240 mm wide, solid damped door) but the recorded reason was wrong.</td></tr>
-    </tbody>
-  </table></div>
-  <p class="note">Also corrected since the last round: the plenum is <b>92.9 mm</b> (a single CAD measurement),
-  not the 99–120 mm range I quoted. The gap between your two cards is <b>30.5 mm, not ~40 mm</b> — the Astral is
-  2.5-slot. And the bundled GB-003 anti-sag bracket <em>is</em> useful after all: it fits the 2nd expansion slot,
-  which is exactly where the Astral goes.</p>
-</section>
-
-<section id="downsides">
-  <h2><span class="n">01</span> The downsides of the EVO XL</h2>
-  <p>Ranked by how much they should actually bother <em>you</em>. Owner reports, not reviews.</p>
-
-  <div class="down">
-    <div class="rk">Worst · the one I'd lose sleep over</div>
-    <h4>It is quietly going EOL — the V3000 Plus story repeating</h4>
-    <p>Persistent worldwide out-of-stock through 2026. An owner asked Lian Li directly whether an XL V2 was planned;
-    <b>Lian Li didn't answer</b>. No successor announced, momentum is on the O11 Vision and EVO RGB V2, and owners
-    are being redirected to the HAVN HS420. <b>The consequence is spares</b> — glass panels, top panel, power
-    button, ARGB controller — for a machine you'll run for years.</p>
+<div class="rank">
+  <div class="top">
+    <div class="no">2</div>
+    <div>
+      <h2>Phanteks NV9 MkII</h2>
+      <div class="price">SKU <b>PH-NV923TG_DBK02</b> · ~₹18,499 if you can find it · <span class="tag t-call">Worth one phone call</span></div>
+    </div>
   </div>
+  <div class="body">
+    <h3>Why it's #2 and not #1</h3>
+    <p><b>Only because you probably can't buy it.</b> On paper it beats the EVO XL at the one thing that still
+    worries me. Amazon.in doesn't have it, EliteHubs only lists the smaller NV5, Vedant and TheITDepot have nothing.
+    Computech and PC Studio might — their websites can't be read reliably from here.</p>
 
-  <div class="down">
-    <div class="rk">Serious · compounds the above</div>
-    <h4>Out of warranty, Lian Li won't sell you a part even when you offer to pay</h4>
-    <blockquote>"Your O11 Dynamic has exceeded the warranty period, so our after-sales staff do not have the authority to provide services." — Lian Li, r/lianli, on a known-defective ARGB controller</blockquote>
-    <p>Broken top-panel clips out of warranty: <em>"can't find them to buy."</em> A defective power button in May 2026
-    got two weeks of silence against a promised 72-hour turnaround. And Lian Li India is <b>one phone line, no
-    address, no email, no portal</b>.</p>
+    <div class="box warn">
+      <b>📞 This is the only call worth making before you pay.</b> Ring <b>Computech</b> and <b>PC Studio</b> and ask
+      for <b>PH-NV923TG_DBK02</b> by that code. If it's a no — buy the Lian Li and stop looking.
+    </div>
+
+    <h3>What it does better</h3>
+    <ul>
+      <li><b>205 mm of GPU height clearance</b> versus 169 mm. Your Astral 5090 would get <b>51 mm</b> of space above it instead of <b>15.3 mm</b> — that single number retires the tightest, most nervous clearance in your entire build.</li>
+      <li><b>163 mm of roof space</b> instead of 82 mm, and roof and floor are independent — no zero-sum tray decision to get wrong.</li>
+      <li>140 mm rear fan, GPU support bracket included that actually fits a bottom-slot card, 280 mm wide, 99 L, no drive basement in the way.</li>
+      <li>Owners run this exact case with your exact CPU and a ROG 5090, with three floor fans as standard practice.</li>
+    </ul>
+
+    <h3>What's worse about it</h3>
+    <ul>
+      <li><b>Less air under the GPU</b> — about 40 mm free versus the EVO XL's 65 mm. It wins on clearance and loses on the thing you bought a case for.</li>
+      <li>PSU bay is 210 mm against your 200 mm power supply; owners already call that bay the tight spot.</li>
+      <li>615 mm tall, so it leans on the desk limit you're programming.</li>
+    </ul>
   </div>
+</div>
 
-  <div class="down">
-    <div class="rk">Serious · and it lands on your exact use case</div>
-    <h4>The tempered glass genuinely shatters — and your machine gets rolled</h4>
-    <p>r/lianli, <em>"O11 Dynamic EVO XL – Tempered Glass Explosion"</em>, 314 points / 190 comments. One owner has
-    had it happen <b>three times</b>:</p>
-    <blockquote>"It's a freaking nightmare to clean up. The glass continues to splinter, pop and spread. I can't imagine having this happen on carpet… I had to move EVERYTHING out of the room, shop vac all the pieces, then wet mop all of the tiniest shards."</blockquote>
-    <p>Named triggers: opening the door wrong, over-tightened panel screws, vibration, hard floors. Your case will be
-    <b>rolled on casters, vibrating from ~10 fans and two pumps, on a hard floor, with panels coming off regularly
-    for filter cleaning.</b> That's three of the four.</p>
+<div class="rank">
+  <div class="top">
+    <div class="no">3</div>
+    <div>
+      <h2>Antec C8</h2>
+      <div class="price">Plain black, non-ARGB · <b>₹9,599</b> (antecindia.in) · <span class="tag t-no">Only if budget forces it</span></div>
+    </div>
   </div>
+  <div class="body">
+    <h3>Why it's #3</h3>
+    <p>It's ₹14,000 cheaper and 56 mm shorter, and everything physically fits. But it gives your GPU
+    <b>62.8 mm</b> of air instead of 92.9 mm, and it publishes <b>no GPU height clearance at all</b> — so you'd be
+    gambling your 137 mm and 153.7 mm cards on a number Antec doesn't print.</p>
 
-  <div class="down">
-    <div class="rk">Serious · structural to your layout</div>
-    <h4>The floor filter is a single point of failure for a ₹7-lakh card</h4>
-    <p>Roof = exhaust. Rear = exhaust. Side = intake but it feeds the CPU radiator. <b>The floor is the only
-    unheated air inlet in the case</b>, and it is the sole supply for the 600 W card that breathes from underneath.
-    At floor level, 24×7. A loaded filter starves your most expensive component directly. Not a reason to reject
-    the case — the 92.9 mm plenum is <em>why</em> you picked it — but filter cleaning becomes <b>scheduled
-    maintenance, not housekeeping</b>.</p>
+    <h3>How you'd improve it</h3>
+    <ul>
+      <li>Ask Antec India <b>in writing</b> whether the side bay takes a 65 mm radiator. They publish two contradictory numbers (100 mm and 50 mm) and if 50 mm is the real one, <b>your second radiator has nowhere to go at all.</b></li>
+      <li>Budget a short or 90° PSU cable kit — the bay is 210 mm <em>excluding</em> cables against your 200 mm PSU.</li>
+      <li>Buy the <b>plain</b> version, never the ARGB — its 160 mm bottom fans can't be moved or replaced.</li>
+    </ul>
+
+    <h3>Downsides</h3>
+    <ul>
+      <li>Only two shops in India stock it and three others have already sold out — the exact way you lost the V3000.</li>
+      <li>Its bare floor dust filter is fragile, and it's the only air path to your GPU.</li>
+      <li>Nothing about this build has been validated in it.</li>
+    </ul>
   </div>
+</div>
 
-  <div class="down mild">
-    <div class="rk">Real · budget for it</div>
-    <h4>Dust coverage is thinner than the spec sheet claims</h4>
-    <p>Marketing says three filters, the spec table says four, owners report the practical answer is <b>one</b>:
-    <em>"Dust filter on bottom only."</em> Confirmed unfiltered: the rear opening, behind the drive cages, and
-    <b>your CPU radiator's side intake</b>. DEMCiflex sells a full aftermarket kit for this exact case — that's the
-    market's verdict on stock filtration. Budget a cut magnetic sheet for the side.</p>
+<div class="rank dead">
+  <div class="top">
+    <div class="no">4</div>
+    <div>
+      <h2>Phanteks Enthoo Pro 2</h2>
+      <div class="price">The one you found in stock · <span class="tag t-no">Don't buy it</span></div>
+    </div>
   </div>
+  <div class="body">
+    <h3>Why not — in one paragraph</h3>
+    <p>Its bottom fan mount <b>sits inside the closed drive basement, under a solid steel lid.</b> The only hole in
+    that lid is a rubber cable grommet. So those bottom fans cool the power supply and the hard drives — <b>they
+    have no path to your graphics card at all.</b> Your PRO 6000 would get about <b>31.8 mm of sealed dead air</b>
+    underneath it, against 92.9 mm of actively fed air in the Lian Li. Owners describe it themselves: <em>"11
+    drives, 12 if you don't want bottom fans"</em> — the fan positions compete with drive bays because they're in
+    the same basement.</p>
+    <p>Second problem: it's <b>240 mm wide</b>. That's 5 mm <em>narrower</em> than the Antec Flux Pro you already
+    turned down for feeling cramped, and 64 mm narrower than the Lian Li. By volume it's the <b>smaller</b> case —
+    78 L against 84 L. Its "full tower" reputation comes from depth and height, not width.</p>
 
-  <div class="down mild">
-    <div class="rk">Real · a one-shot decision</div>
-    <h4>The height-adjustable tray is zero-sum, and Middle is forced</h4>
-    <p>Roof and floor share a fixed <b>172 mm</b> budget: Middle 82/90, Low 118/54, Top 46/126. People assume the
-    roof's 118 mm is always available — it isn't, it costs 36 mm of the PRO 6000's air supply. <b>Top mode kills
-    the Astral's radiator. Low mode strangles the PRO 6000. Only Middle satisfies both.</b> Put it in writing for
-    your builder and don't let anyone "adjust" it.</p>
+    <div class="box">
+      <b>About the vertical radiator thing you read:</b> I haven't seen that thread, so I won't guess at what
+      people were mocking — <b>send me the link and I'll tell you exactly.</b> But it doesn't change the answer.
+      This case is out because of where its bottom fans sit, and no radiator arrangement fixes that.
+    </div>
+
+    <p class="note"><b>To be fair to it:</b> it's ~₹10,000 cheaper, genuinely well built, has a five-year warranty,
+    a sealed filtered PSU chamber, and a steel-panel version with <em>no glass at all</em> — which is a real answer
+    to the Lian Li's worst fault. It's an excellent case. It's just an excellent case <b>for storage</b> — every
+    thread praising it is people fitting 20+ hard drives. It would be the right pick if your GPU were a blower card.
+    It isn't.</p>
   </div>
+</div>
 
-  <div class="down mild">
-    <div class="rk">Real · conflicts with the pedestal plan</div>
-    <h4>It needs the support pillar fitted whenever it's moved</h4>
-    <p>Lian Li advises fitting the pillar before transporting; yours will be 35–40 kg loaded, and reviewers
-    independently flagged panel flex. The pillar sits behind the front glass — so the transport-safe configuration
-    and the panel-removal routine fight each other.</p>
-  </div>
-
-  <div class="down mild">
-    <div class="rk">Real · but smaller than the complaint suggests</div>
-    <h4>Ships with zero fans</h4>
-    <p>Owners run 11–15 fans and complain about the cost. <b>You need four</b> — 3× 140 floor, 1× 120 rear — because
-    both AIOs bring their own. That's ~₹4,000, not ₹15,000. The real point is that <b>the case has no thermal
-    performance of its own</b>; it's exactly as good as the intakes you buy. Don't cheap out on the three floor fans.</p>
-  </div>
-
-  <div class="down mild">
-    <div class="rk">Real · closes an escape hatch</div>
-    <h4>The front mesh kit is discontinued</h4>
-    <p>O11DEXL-4X. <em>"It is discontinued for the evo xl."</em> Scalped at $250 on Newegg. An owner who waited a year
-    for one measured <b>−5 °C on both CPU and GPU</b>. Your plan doesn't need it — you feed from the floor — but if
-    the build runs hot, the cheap fix is largely unavailable.</p>
-  </div>
-
-  <div class="down mild">
-    <div class="rk">Minor · plan for it</div>
-    <h4>Cable routing is awkward for the AX1600i</h4>
-    <p>TechPowerUp's cons: <em>"large bend radius at the right edge of the motherboard", "no external cable
-    management."</em> Your bulky harness plus two 12V-2x6 runs and two EPS cables all turn that corner. Expect to
-    remove a drive cage.</p>
-  </div>
-
-  <div class="down ok">
-    <div class="rk">Does NOT apply to you</div>
-    <h4>The "O11 is a hotbox" reputation</h4>
-    <p>It's stale, and owners say so. It was earned by conventional front-fed air cards starved behind the glass
-    front. Your card inhales from the floor, so the glass front is irrelevant. The clearest evidence is from people
-    escaping the opposite architecture — an owner leaving a Fractal Define 7: <em>"I'm fed up with the cramped
-    space… and <b>the bottom fan blows all the air underneath that shroud</b>."</em> That's your requirement #2,
-    described by someone burned by its absence.</p>
-  </div>
-</section>
-
-<section id="buy">
-  <h2><span class="n">02</span> Everything else you need to buy</h2>
-  <p class="note">Beyond the parts you already own. Prices verified live 25 Jul 2026 unless marked UNCONFIRMED.</p>
-  <div class="twrap"><table>
-    <thead><tr><th>#</th><th>Item</th><th>Product</th><th>Where</th><th class="num">Price</th><th>Notes / Amazon fallback</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td><b>The case</b></td><td>O11 Dynamic EVO XL <b>BLACK</b>, SKU <b>O11DEXL-X</b></td><td>vishalperipherals.com</td><td class="num"><b>₹23,200</b></td><td><b>Amazon.in does not sell this case.</b> Alternates: elitehubs ₹24,998 · MD Computers ₹25,000 · pcstudio ₹24,990</td></tr>
-      <tr><td>2</td><td><b>Floor intake 3× 140 mm</b></td><td>ARCTIC P14 PWM PST, 5-pack (ACFAN00138A). PST daisy-chains — no hub needed</td><td>ADS Store</td><td class="num"><b>₹3,399</b></td><td><span class="pill p-bad">Do NOT use Amazon</span> same 5-pack is <b>₹14,062</b> there — 4.1× Indian retail, grey import</td></tr>
-      <tr><td>3</td><td><b>Rear exhaust 1× 120 mm</b></td><td>ARCTIC P12 PWM PST, 5-pack (singles OOS everywhere)</td><td>ADS Store</td><td class="num"><b>₹2,599</b></td><td>Amazon Value Pack ₹3,369. <b>Trap:</b> the ₹759 listing is the Slim 15 mm — wrong part</td></tr>
-      <tr><td>4</td><td><b>GPU power cables ×2</b></td><td>Corsair Elite Premium <b>Type-4</b> sleeved, 2× 8-pin → 12V-2x6, 600 W — Corsair's native cable, replaces the bundled dongles</td><td>Amazon.in</td><td class="num">₹4,773 × 2<br><b>= ₹9,546</b></td><td>Thsion Type-4 equivalent ₹3,786</td></tr>
-      <tr><td>5</td><td><b>GPU support stick</b></td><td>Adjustable 74–120 mm, magnetic base — for the <b>PRO 6000</b> in the lower slot</td><td>Amazon.in</td><td class="num">₹308</td><td>Pick one that braces off the fan rail or sits <em>between</em> two fans — a full-height stick blocks an intake fan</td></tr>
-      <tr><td>6</td><td><b>Wheeled pedestal</b></td><td>SPYLOCK metal CPU trolley — <b>open frame</b>, 50 kg, adjustable, locking castors</td><td>Amazon.in</td><td class="num">₹499</td><td><span class="pill p-bad">Avoid all wooden ones</span> a solid deck seals the floor intake</td></tr>
-      <tr><td>7</td><td>Thermal paste</td><td>ARCTIC MX-6 4 g (LT720 ships pre-applied; this is for a re-seat)</td><td>Amazon.in</td><td class="num">₹699</td><td>8 g ₹759</td></tr>
-      <tr><td>8</td><td>PWM fan hub <span class="note">optional</span></td><td>10-port SATA-powered</td><td>Amazon.in</td><td class="num">₹882</td><td>Not needed with PST fans — the board has 7 headers</td></tr>
-      <tr><td>9</td><td><b>Side-panel dust filter</b></td><td>Cut-to-size magnetic mesh — the side intake is <b>unfiltered</b></td><td>Amazon.in</td><td class="num">~₹500–1,500</td><td><span class="pill p-warn">Unconfirmed</span> DEMCiflex do a full kit for this case</td></tr>
-      <tr><td>10</td><td><b>UPS</b></td><td>APC Easy UPS On-Line <b>SRV3KL-IN</b>, 3 kVA / 2400 W, double-conversion</td><td>apc.estorewale.com</td><td class="num"><b>₹48,490</b></td><td>Moglix ₹51,949 · APC SRV3KI ₹39,500–42,000 on IndiaMART (asking price, unconfirmed)</td></tr>
-      <tr><td>—</td><td><b>Angled 12V-2x6 ×2</b></td><td colspan="2"><b>DO NOT BUY YET</b> — see the warning below</td><td class="num">defer</td><td>~₹7,500 est</td></tr>
-      <tr><td>—</td><td>NVMe storage ×2</td><td colspan="2">Missing from your parts list entirely — buy locally, not on Amazon</td><td class="num">?</td><td>Amazon.in returned import-priced 4 TB drives at ₹1.03–1.51 lakh. That is not the real Indian price</td></tr>
-      <tr><td>—</td><td>Screws, zip ties, riser/vertical kit, SATA cables, <b>any mesh panel kit</b></td><td colspan="2"><b>Buy nothing</b> — included, or actively harmful</td><td class="num">₹0</td><td>—</td></tr>
-    </tbody>
-  </table></div>
-
-  <div class="twrap"><table>
-    <thead><tr><th>Totals</th><th class="num"></th></tr></thead>
-    <tbody>
-      <tr><td>Case</td><td class="num">₹23,200</td></tr>
-      <tr><td>Accessories (items 2–9)</td><td class="num">₹18,932</td></tr>
-      <tr><td><b>Case + accessories</b></td><td class="num"><b>₹42,132</b></td></tr>
-      <tr><td>+ UPS</td><td class="num">₹48,490</td></tr>
-      <tr><td><b>Grand total as specced</b></td><td class="num"><b>₹90,622</b></td></tr>
-      <tr><td class="note">Still unpriced: 2× angled 12V-2x6 (~₹7,500), 2× NVMe, the dedicated 16 A circuit</td><td class="num"></td></tr>
-    </tbody>
-  </table></div>
-
-  <div class="verdict alert"><div class="ic">🔥</div><div><b>The one line you must not buy blind — the angled 12V-2x6.</b>
-  There is <b>30.5 mm</b> above the PRO 6000's top-edge connector, not the ~40 mm the old notes assumed. A straight
-  12V-2x6 needs <b>35 mm of unbent cable before the first bend</b> per CableMod's own guidance — <b>so a straight
-  cable does not fit and an angled connection is mandatory</b>.
-  <br><br>
-  And this category has a safety history: <b>CableMod's angled 12VHPWR adapters were recalled by the US CPSC in
-  2024</b> — ~25,300 units, 270+ reports of overheating and melting into GPUs. CableMod exited the category and
-  never released a redesign. <b>The correct product is a cable with the 90° moulded into the connector, not an
-  adapter stacked on a straight one.</b> Every angled product buyable in India today (EZDIY-FAB, JOYJOM) is an
-  adapter — the exact geometry that failed. <b>Seat both cards, measure where each connector sits and which way
-  its latch faces, then order.</b> This is the only item where a wrong guess costs a melted GPU instead of a
-  return.</div></div>
-</section>
-
-<section id="alt">
-  <h2><span class="n">03</span> Is there a better alternative?</h2>
-  <p><b>No. Hold the EVO XL.</b> Here is every candidate and exactly why it loses.</p>
-
-  <h3>The Phanteks Enthoo Pro 2 — the one you found</h3>
-  <div class="verdict alert"><div class="ic">⛔</div><div><b>It fails your single most important requirement, and it is
-  smaller than the case you already rejected.</b> Two independent kills.</div></div>
-  <p><b>Kill 1 — there is no floor feed. This is the ROG Hyperion failure mode.</b> On paper it looks perfect:
-  bottom mount for 3× 120 mm fans or a 360 rad, removable bracket, dedicated dust filter. But <b>that mount sits
-  inside the closed storage basement, under a solid steel lid</b> — unbroken sheet metal, the only opening a rubber
-  cable grommet. Measured off Phanteks' own scale drawing (calibrated on the 20.32 mm ATX slot pitch), the basement
-  lid sits ~11.5 mm below the lowest PCI slot: <b>~31.8 mm of sealed dead air under a bottom-slot card, against
-  92.9 mm of actively fed open plenum in the EVO XL.</b> The bottom fans in an Enthoo Pro 2 cool your PSU and your
-  hard drives — they have no path to the GPU. Owners say so themselves:</p>
-  <blockquote>"originally I had two of these but only the middle one would fit, <b>the bottom was pushed up against the PSU</b>." — r/pcmasterrace, 3-GPU Enthoo Pro 2 build, 1,297 pts</blockquote>
-  <blockquote>"you can actually fit 11 drives (<b>12 if you don't want bottom fans</b>)." — r/homelab. The bottom fan positions compete with drive bays <em>because they are in the drive basement</em>.</blockquote>
-  <p><b>Kill 2 — it is 240 mm wide.</b> You rejected the 245 mm Antec Flux Pro for feeling small and tight. This is
-  5 mm narrower than that, and 64 mm narrower than the EVO XL. No separate PSU chamber. And by volume it is
-  <b>the smaller case</b> — 78.0 L vs the EVO XL's 84.4 L. The "bigger tower" intuition is simply wrong; it gets
-  its full-tower reputation from depth and height. It's also 43 mm deeper, which matters on a pedestal.</p>
-  <p><b>And your fat radiator has nowhere good to go.</b> Phanteks' top figure is <b>55 mm</b>; your Astral stack is
-  65 mm. An owner: <em>"I built the case, it definitely cannot fit a 70mm thick rad + fan at the top."</em> The side
-  bay is capped at 32–35 mm — useless for both your radiators. So the 65 mm rad is forced into the <b>front</b>,
-  which is that case's primary intake face: run it as intake and 600 W preheats every breath the PRO 6000 takes;
-  run it as exhaust and the case has almost no intake left.</p>
-  <p class="note"><b>What it genuinely wins:</b> ~₹10,000 cheaper, a sealed filtered fan-fed PSU chamber, a
-  <b>steel-panel variant with no tempered glass at all</b> (a real answer to the EVO XL's worst fault on a case you
-  roll daily), five-year warranty, and Tom's Hardware once called it the quietest case they'd tested. It is a very
-  good case — <b>for storage</b>. Every praise thread is r/DataHoarder people taking a hacksaw to it for more drive
-  bays. Nobody praises it for GPU intake, because it doesn't have any.</p>
-  <div class="verdict warn"><div class="ic">⚠️</div><div>If you still want it, check the SKU: the <b>Server Edition</b>
-  (PH-ES620PTG_BK02 / PH-ES620PC_BK03) is worse still — Phanteks lists <b>no bottom fan or radiator positions at
-  all</b>. You'd want PH-ES620PTG_DBK01 or PH-ES620PC_BK01. Send me the listing URL and I'll check it.</div></div>
-
-  <h3>The 560–674 mm band your desk lock opened</h3>
-  <p><b>One genuinely better case — the Phanteks NV9 / NV9 MkII</b> (575 × 280 × <b>615 mm</b>). The closest thing on
-  the market to the V3000 Plus you lost, and the only case in the sweep that beats the EVO XL where it counts:</p>
-  <ul>
-    <li><b>GPU height clearance 205 mm</b> vs 169 mm — the Astral gets <b>51.3 mm</b> above it instead of 15.3 mm. That single number retires the tightest clearance and the longest-standing unknown in this project.</li>
-    <li>Roof space ~163 mm vs 82 mm, and <b>roof and floor are independent</b> — no zero-sum tray budget.</li>
-    <li>Rear takes 140 mm. GPU support bracket included <em>and it fits a bottom-slot card</em>. 280 mm wide, 99 L, no basement, no shroud — the floor is structurally free because the PSU lives top-rear.</li>
-    <li>Owner precedent is excellent: someone runs an NV9 MkII with <b>your exact CPU</b> + ROG 5090 + 3× 140 mm reverse-airflow fans on the floor as standard practice.</li>
-  </ul>
-  <p><b>Why it still isn't the recommendation:</b> it actually <em>loses</em> on plenum — Phanteks publishes 65 mm of
-  bottom space, measured at 58–78 mm, so minus a 25 mm fan it's <b>~40 mm of free air versus the EVO XL's ~65 mm</b>.
-  Its PSU bay is 210 mm against your 200 mm PSU, and owners already flag that bay as the tight spot. And it is
-  <b>not confirmed buyable in India</b> — Amazon.in has no NV9, EliteHubs returns only the NV5, Vedant and
-  TheITDepot have nothing. Only Computech (reported ₹18,499, site search broken) and PC Studio (Cloudflare-blocked)
-  might have it.</p>
-  <p><b>The honest position:</b> if an NV9 MkII were on a shelf in India at a sane price I would switch — because
-  15.3 mm above the Astral is a connector you may physically be unable to plug in, while 25 mm of plenum is a few
-  degrees on a card you're power-limiting anyway. It isn't on a shelf. <b>That's the one phone call.</b></p>
-
-  <div class="twrap"><table>
-    <thead><tr><th>Everything else in the band</th><th>Verdict</th></tr></thead>
-    <tbody>
-      <tr><td><b>Corsair 9000D</b></td><td><b>Dead twice.</b> 698 mm (over cap) <em>and</em> "Radiator Support – Bottom: None". Also the worst QC on the shortlist — front I/O <b>shorting</b> on multiple units, not fixed by RMA panels; warped front panels twice including the replacement.</td></tr>
-      <tr><td><b>Cooler Master HAF 700 EVO</b></td><td>Legitimate (291 mm wide, real floor feed, 8 slots) but PSU clearance is <b>exactly 200 mm</b> = zero margin with your harness, its rad numbers are scoped to "regular 30 mm thick radiators", 666 mm deep, ~₹44,700, and verified out of stock.</td></tr>
-      <tr><td><b>Corsair 7000D</b> · <b>be quiet! Dark Base Pro 901</b></td><td>248 mm and 250 mm wide — the same "too tight" class you already rejected.</td></tr>
-      <tr><td><b>Cosmos C700M</b> · <b>Enthoo 719 / Luxe 2</b> · <b>ROG Hyperion</b></td><td>Bottom rad caps at 240 mm / same 240 mm-wide family / solid PSU cover under the card. All stay dead.</td></tr>
-      <tr><td><b>Lian Li</b></td><td>Nothing new shipping in the band. V3000 Plus has no successor; V2000, Lancool 4 and 207XL are announced-not-shipping and not in India.</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>Should you be buying a workstation chassis instead? No — and the evidence is unusually clean</h3>
-  <ul>
-    <li><b>Puget Systems</b> — the most respected professional workstation integrator in the US — builds its Threadripper PRO AI/ML towers, <b>configurable with the RTX PRO 6000 Blackwell 96 GB</b>, in a <b>Fractal Design Define 7 XL</b>. That case is <b>240 mm wide with a sound-damped solid front door</b> — narrower than the Flux Pro you rejected, and closed where the EVO XL is mesh. A NASA federal contract award lists the exact BOM.</li>
-    <li><b>Lenovo ThinkStation P8</b>, official spec, verbatim: <em>"Supports up to three RTX PRO 6000 Blackwell Max-Q (300W); <b>or up to one</b> RTX PRO 6000 Blackwell Workstation Edition (600W)."</em> Their flagship permits exactly one of your card.</li>
-    <li><b>Dell Precision 7960</b>: <em>"AMD or NVIDIA (4× 300W) graphics."</em> Dell won't put the 600 W card in its flagship tower at all.</li>
-    <li><b>Nobody sells an empty OEM chassis</b> — not Dell, HP, Lenovo, BOXX or Puget, in any market. Supermicro does sell bare chassis and they're in India, but they fail on architecture: redundant server PSUs (your AX1600i has nowhere to go), ducted 80/90 mm fan walls, and <b>not a single radiator mount in the entire product line</b>.</li>
-  </ul>
-  <p><b>Consumer cases are the correct category. Stop looking.</b> You are buying the same class of chassis the
-  professionals buy, with a better floor feed and 64 mm more width than the one Puget ships to NASA.</p>
-</section>
-
-<section id="fit">
-  <h2><span class="n">04</span> Fitment proof — every part, measured</h2>
-  <p class="note">Not a claim. Lian Li's official manual rendered at 600 dpi, plus their <b>official 78 MB CATIA STEP
-  model parsed from scratch</b> — 1.26 M entities, 313 assembly transforms resolved, 123 solid bodies placed into one
-  frame. Frame check: foot pads at Y −39.2, top cover at Y +492.0 → <b>531.2 mm</b> against Lian Li's published
-  531.9 (0.7 mm error). The 8 slot covers sit at <b>20.32 mm spacing to two decimals</b> — exact ATX pitch. The
-  parse is sound.</p>
-  <div class="twrap"><table>
-    <thead><tr><th>Part</th><th>Position</th><th>Clearance</th><th class="num">Margin</th><th></th></tr></thead>
-    <tbody>
-      <tr><td><b>MSI X870E Carbon</b> (ATX)</td><td>Tray, <b>MIDDLE</b></td><td>Tray envelope 358 × 292.5 mm vs 305 × 244 board</td><td class="num">53 / 48.5 mm</td><td>✅</td></tr>
-      <tr><td><b>RTX PRO 6000</b> 305 × 137, 2-slot</td><td>PCI_E2 = case slot 6 (Gen5 ×4)</td><td>Length 304.8 vs 460 published</td><td class="num">+155 mm</td><td>✅</td></tr>
-      <tr><td>″</td><td>″</td><td>Height 137.16 vs 169 published</td><td class="num">+31.8 mm</td><td>✅</td></tr>
-      <tr><td>″</td><td>″</td><td><b>Plenum underneath = 92.9 mm</b> (CAD) vs Lian Li's published 90 mm floor budget — two methods, 2.9 mm apart</td><td class="num"><b>the whole reason for the case</b></td><td>✅</td></tr>
-      <tr><td>″</td><td>″</td><td>Open air column above the fan tops</td><td class="num">60.9 mm</td><td>✅ <span class="note">the Antec C8's <em>entire</em> plenum is 62.8 mm</span></td></tr>
-      <tr><td><b>Astral 5090 LC</b> card, 2.5-slot</td><td>PCI_E1 = case slot 2 (Gen5 ×8)</td><td>Length 288.46 vs 460</td><td class="num">+171.5 mm</td><td>✅</td></tr>
-      <tr><td>″</td><td>″</td><td><b>Height 153.7 vs 169 → to side glass</b></td><td class="num"><b>15.3 mm</b></td><td><span class="pill p-warn">tightest thing in the machine</span></td></tr>
-      <tr><td><b>Astral radiator</b> 400 × 120 × 65</td><td><b>Roof</b>, exhaust</td><td>Length 400 in a 479 mm bracket</td><td class="num">+79 mm</td><td>✅</td></tr>
-      <tr><td>″</td><td>″</td><td>Thickness 65 vs 82 mm roof budget (Middle)</td><td class="num">+17 mm</td><td>✅</td></tr>
-      <tr><td>″</td><td>″</td><td>Rad underside vs board top + EPS connectors</td><td class="num">~22 mm</td><td><span class="pill p-warn">route EPS first</span></td></tr>
-      <tr><td><b>DeepCool LT720</b> 52 mm stack</td><td><b>Side bay</b>, intake, inner bracket</td><td>Length 402 in a 455.8 mm bay</td><td class="num">+53.8 mm</td><td>✅</td></tr>
-      <tr><td>″</td><td>″</td><td>Thickness 52 vs 81 published; CAD says the stack stops 10.4 mm short of the tray face</td><td class="num">+29 mm</td><td>✅</td></tr>
-      <tr><td><b>Corsair AX1600i</b> 200 mm</td><td>Second chamber, fan to the mesh side panel</td><td>200 vs "ATX under 220 mm"</td><td class="num">+20 mm</td><td>✅ <span class="note">expect to remove a drive cage for the harness</span></td></tr>
-      <tr><td>″</td><td>″</td><td>Chamber width 94 mm (CAD) vs PSU 86 mm</td><td class="num">+8 mm</td><td>✅ <span class="note">1600 W of PSU losses never enter the air the PRO 6000 breathes</span></td></tr>
-      <tr><td><b>3× 140 mm floor fans</b></td><td>Floor, intake, filtered</td><td>420 mm in a 479 mm bracket</td><td class="num">+59 mm</td><td>✅</td></tr>
-      <tr><td><b>1× 120 mm rear fan</b></td><td>Rear, exhaust</td><td>Rear mount is 120 mm only</td><td class="num">—</td><td>✅ <span class="note">a 140 does not fit, even modded</span></td></tr>
-    </tbody>
-  </table></div>
-
-  <div class="verdict win"><div class="ic">📐</div><div><b>Does the floor bank actually sit under the card? Measured.</b>
-  Bottom fan bracket spans X −43.5 → +137.0 and Z −235 → +244. The PRO 6000 occupies X −38 → +99 and Z −64 → +241.
-  <b>The fan bank covers the card's entire footprint in both axes</b>, with 38 mm of X to spare and 171 mm of Z.
-  <b>Build instruction: push the fans rearward in Z AND inboard in X</b> (toward the motherboard) — pushed outboard,
-  they blow past the card's edge into empty air.</div></div>
-
-  <h3>Every conflict, named</h3>
-  <div class="twrap"><table>
-    <tbody>
-      <tr><td><b>a</b></td><td><b>Tray position is forced.</b> Top = 46 mm roof, kills the Astral rad. Low = 54 mm floor, drops the plenum from 92.9 to ~57 mm. <b>MIDDLE only. Put it in writing.</b></td></tr>
-      <tr><td><b>b</b></td><td>The PRO 6000's second slot eats case slot 7 = PCI_E3. Unusable, not needed.</td></tr>
-      <tr><td><b>c</b></td><td><b>Anti-sag — correction in both directions.</b> The bundled GB-003 fits only the 2nd expansion slot, which is exactly where the <b>Astral</b> goes — an owner with an Astral 5080 in an EVO XL: <em>"the one included works like a charm."</em> So it's useful. Buy <b>one</b> stick for the PRO 6000, and pick one that braces off the fan rail or sits <em>between</em> two fans — a full-height floor stick blocks an intake fan.</td></tr>
-      <tr><td><b>d</b></td><td><b>One unheated inlet.</b> 6 intake vs 4 exhaust = positive pressure ✅. But the floor filter is the PRO 6000's only air path.</td></tr>
-      <tr><td><b>e</b></td><td><b>30.5 mm between the two cards</b>, not the ~40 mm in the old notes. An angled 12V-2x6 is <b>mandatory</b> — a straight one needs 35 mm.</td></tr>
-      <tr><td><b>f</b></td><td><b>15.3 mm above the Astral, and its coolant tubes exit that same edge.</b> Resolved by precedent, not geometry: an r/ASUSROG owner runs this exact card in this exact case. His complaint is cosmetic — <em>"the GPU tubes still look bulky and messy, looping out in front of the case."</em> <b>Expect ugly, not broken.</b></td></tr>
-      <tr><td><b>g</b></td><td>Roof rad vs EPS connectors, ~22 mm. <b>Cable first, radiator second</b> — no hand access afterwards.</td></tr>
-      <tr><td><b>h</b></td><td><b>The rad-swap fallback is conditional, not free.</b> CAD says a 65 mm Astral stack on the side bracket's inner flange reaches 2.6 mm <em>past</em> the tray face. The swap only works in the outer position, and it's thermally wrong anyway.</td></tr>
-    </tbody>
-  </table></div>
-  <p class="note"><b>Proof that three thick radiators coexist in this chassis:</b> an r/watercooling build in this exact
-  case on a 9950X3D runs <em>"Top: 420×58 exhaust / Bottom: 420×44 intake / Side: 420×44 push-pull intake."</em>
-  Another owner fitted two 420 × 60 mm rads in push/pull against Lian Li's own written advice. <b>Your 65 mm roof
-  rad is not remotely at the limit.</b></p>
-  <div class="verdict win"><div class="ic">✅</div><div><b>Every part fits, and they fit simultaneously. No showstopper.</b>
-  Comfortable margins: GPU length 155/171 mm, PSU 20 mm, floor fans 59 mm, side rad 54/29 mm, roof rad 79 mm, PRO 6000
-  height 32 mm. Tight but proven: roof thickness 17 mm, roof-to-EPS 22 mm. <b>The two knife-edges are the Astral's
-  15.3 mm to the glass and the 30.5 mm between the cards.</b></div></div>
-</section>
-
-<section id="reddit">
-  <h2><span class="n">05</span> Reddit says</h2>
-  <p><b>Lian Li O11 Dynamic EVO XL</b> — loved as an object, weak on Lian Li as a company. Praise for the reversible
-  layout, the sliding bottom filter tray, the three-position tray, and rigidity once assembled. Two real gripes:
-  <b>glass shattering</b> and <b>chassis flex when moved</b> — both land squarely on your rolled-pedestal plan.
-  Nobody who owns one and populates it says it cools badly. The clearest argument <em>for</em> it comes from people
-  escaping the alternative: <em>"my present build makes CPU eat all the hot air from 4090. And looks like EVO XL is
-  the only case that lets me put GFX away from rest of components."</em> Also confirmed by owners: zero fans in the
-  box, rear is 120 mm only, and <b>do not vertical-mount</b> — <em>"the GPU is hotter in vertical position since
-  instead of fans blowing at it, it's a window with a 1″ gap."</em></p>
-  <p><b>Phanteks Enthoo Pro 2</b> — the r/DataHoarder darling, and the praise is <em>always</em> about drives.
-  <em>"22 HDDs in Phanteks Enthoo Pro 2"</em> (1,157 pts). <em>"With a few snips here and there you can get 26 drives
-  in one of these."</em> Build quality genuinely admired, and Tom's Hardware once called it the quietest case tested —
-  a real plus for a 24×7 box. <b>But the recurring structural complaint lands exactly where your radiator has to
-  go:</b> <em>"I'd like a bigger gap between the top of the motherboard and top of the case."</em> GamersNexus, head to
-  head against the O11 XL, called that cramped roof clearance a <em>"jarring limitation"</em> given the case's size.</p>
-  <p><b>Corsair 9000D</b> — the most negative sentiment of any case here, and it's QC not thermals. Front I/O
-  shorting on multiple independent units and not fixed by RMA'd panels: <em>"I thought my CPU died, turned out to be
-  the front IO. I just leave it unplugged now."</em> Plus the line that settles it: <em>"Unfortunately, it's mostly a
-  solid panel."</em></p>
-  <p><b>Phanteks NV9 MkII</b> — the best owner evidence of any case in the sweep, and the right kind: people building
-  <em>your class of parts</em> in it with the floor bank populated as standard practice. The only weak spot owners
-  raise is the PSU bay, which matches the 210 mm cap against your 200 mm AX1600i.</p>
-  <div class="verdict warn"><div class="ic">🌡️</div><div><b>The single most useful thing Reddit produced — and it isn't
-  about cases.</b> Three independent owners, three different chassis, one conclusion: <b>the binding constraint is the
-  card's stock fan firmware.</b> From a 4× PRO 6000 build in a Corsair 7000D: <em>"I was having cooling issues, and
-  when I added more fans, <b>it seemed to make it worse</b>… I noticed that even at 85C the card's fans were only at
-  like 30%. I wrote a script to manually control it… I was able to <b>remove 3 of the case fans</b> and now the cards
-  run at ~70C under full load continuously."</em> Level1Techs on the same card: 85 °C stock → 75–79 °C at 80% fan →
-  66–67 °C at 100%. <b>The delta between a good case and a great case is a handful of degrees. The delta between
-  stock firmware and a fan daemon is 15–19 °C, measured, by multiple people.</b></div></div>
-  <p class="note">Two more transferable warnings from real dual-PRO-6000 owners. <b>Make the CPU radiator an
-  intake</b> — <em>"Your gpus are dumping 1200w of heat in front of that cooler's intake. I tried that… it was a
-  disaster in terms of cpu temps. I switched to an AIO set as intake and it solved the problem."</em> Your locked
-  layout already does exactly this; Reddit arrived at it independently. And <b>the 12V-2x6 connector temperature is
-  the real constraint at these wattages</b> — an owner running 2× PRO 6000: <em>"The biggest problem is the temp of
-  the 12v 2x6 plugs… So I reduced the cards to 420W."</em></p>
-</section>
-
-<section id="unknown">
-  <h2><span class="n">06</span> What is still unknown</h2>
-  <div class="twrap"><table>
-    <tbody>
-      <tr><td><b>Where the Astral's power connector and coolant tubes exit.</b></td><td>You have 15.3 mm. Partially resolved by owner precedent (someone runs this card in this case) — expect ugly, not broken. Still <b>measure before ordering cables</b>.</td></tr>
-      <tr><td><b>Whether a compliant angled 12V-2x6 exists that fits.</b></td><td>The only correct product (90° moulded into the connector, Corsair Type-4) is US-only and publishes no height figure. Everything buyable in India is the recalled adapter geometry. <b>This is the highest-consequence open item.</b></td></tr>
-      <tr><td><b>NVIDIA publishes no thermal spec for the RTX PRO 6000.</b></td><td>No max operating temp, no max inlet temp, no minimum airflow. Every figure in circulation is community-attributed.</td></tr>
-      <tr><td><b>NV9 MkII India stock.</b></td><td>Computech and PC Studio can't be read reliably. <b>One phone call settles it.</b></td></tr>
-      <tr><td><b>Enthoo Pro 2 live India stock and variant.</b></td><td>I couldn't verify any listing today — elitehubs shows both variants OOS, Amazon.in doesn't carry it, MD/PC Studio/PrimeABGB bot-block. <b>Send me your listing URL.</b></td></tr>
-      <tr><td><b>Lian Li publishes no case weight, and no ventilation clearance requirement.</b></td><td>You can't check a pedestal's caster rating against a manufacturer figure.</td></tr>
-      <tr><td class="note" colspan="2"><b>Read failures, labelled honestly:</b> MD Computers, PC Studio and PrimeABGB hard-block automated reads, and Computech's site search returns the same page for every query. Several "not found" results in this sweep are read failures, not stock verdicts.</td></tr>
-    </tbody>
-  </table></div>
-</section>
+<div class="box good" style="margin:30px 0">
+  <b>✅ One thing that should settle your nerves</b><br>
+  <b>Puget Systems</b> — who build RTX PRO 6000 workstations and sell them to NASA — put that exact card in a
+  <b>Fractal Define 7 XL</b>: 240 mm wide with a solid, sound-damped front door. Narrower and more closed than what
+  you're buying. And someone has already documented <b>two RTX PRO 6000s running in a Lian Li O11 EVO XL.</b>
+  You're not doing anything exotic here.
+</div>
 
 <footer><div class="wrap">
-  <p>25 July 2026 · <a href="./index.html">Main build plan</a> · <a href="./case-replacement.html">How the case was chosen</a></p>
-  <p class="note">Method: 10-agent workflow — 6 parallel investigation angles (Enthoo Pro 2, the reopened 560–674 mm
-  band, EVO XL downsides, a Reddit sentiment sweep, accessory sourcing, and the workstation/OEM category), 3
-  part-by-part fitment agents, and a synthesis. Fitment numbers marked CAD are measured off Lian Li's own 78 MB
-  STEP model, not published. Reddit quotes are from named threads.</p>
+  <p>26 July 2026 · <a href="./index.html">Full build plan</a> · <a href="./case-replacement.html">How the case was chosen</a></p>
 </div></footer>
 
 </div>

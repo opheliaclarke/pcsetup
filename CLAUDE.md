@@ -1,7 +1,7 @@
 # Dual-GPU AI Workstation (pcsetup)
 
 **What it is:** A single self-contained HTML build-plan document (case / cooling / power / desk-clearance) for Dominic's in-house 24×7 dual-GPU AI training workstation.
-**Status:** **Rev 8 — CONFIRMED: BUY THE EVO XL (O11DEXL-X, black), and buy it SOON (EOL signals). 10-agent round-4 sweep incl. Reddit settled the alternatives. `buy-checklist.html` is now THE decision page (downsides + full sourced buy list + alternatives + CAD fitment proof + Reddit digest). Rev 7 — USER PICKED THE O11 DYNAMIC EVO XL. GO-WITH-CONDITIONS after an 8-agent adversarial pre-purchase recheck (2026-07-25). index.html REBUILT around the EVO XL. Pre-purchase gate lives at `buy-checklist.html`.** Case comparison at `case-replacement.html`. **index.html is DONE (Rev 6/7). `layout.html` + `simple.html` + `build-picture.png` are STILL V3000 drawings and carry the 140mm rear-fan error — they need a from-scratch redraw for the EVO XL and must NOT be handed to a builder until then.**
+**Status:** **Rev 9 — `buy-checklist.html` is now a SHORT ranked 1-2-3-4 page (Bob found the long docs unusable). Rev 8 — CONFIRMED: BUY THE EVO XL (O11DEXL-X, black), and buy it SOON (EOL signals). 10-agent round-4 sweep incl. Reddit settled the alternatives. `buy-checklist.html` is now THE decision page (downsides + full sourced buy list + alternatives + CAD fitment proof + Reddit digest). Rev 7 — USER PICKED THE O11 DYNAMIC EVO XL. GO-WITH-CONDITIONS after an 8-agent adversarial pre-purchase recheck (2026-07-25). index.html REBUILT around the EVO XL. Pre-purchase gate lives at `buy-checklist.html`.** Case comparison at `case-replacement.html`. **index.html is DONE (Rev 6/7). `layout.html` + `simple.html` + `build-picture.png` are STILL V3000 drawings and carry the 140mm rear-fan error — they need a from-scratch redraw for the EVO XL and must NOT be handed to a builder until then.**
 
 **(Superseded) Rev 5 — WINNER = Lian Li V3000 Plus.** (2026-07-14) Ergosphere CONFIRMED a firmware min/max-height lock that can be set as default AND **survives a reset** → the crush problem is solved robustly. Combined with the user's 32" seated working height + a wheeled open-frame pedestal, the 674mm super-tower now fits under the desk. So the ≤560mm cap is REPLACED by the desk-lock approach. V3000 is the pick; EVO XL demoted to "foolproof fallback". Full doc rebuilt around the V3000 (new fan/rad layout, desk-lock section, pedestal, shopping list).
 (Rev 4: super-towers eliminated on height + hotbox section + 1.8-ton O General. Rev 3: EVO XL after 5090=Astral LC. Rev 2: reopened after PRO 6000 = double-flow-through.)
@@ -58,6 +58,31 @@
 - Do NOT rely on the desk's anti-collision — LOGICDATA trips at ~40kg + desk load downward, and is OFF during reset.
 
 
+
+
+## Rev 9 — 2026-07-26. FORMAT + Bob's decisions.
+
+**BOB SAID THE DOCS WERE TOO LONG AND HE COULDN'T UNDERSTAND THEM.** ("you gave me such a big fucjin document to
+study, that I'm just confused now"). **`buy-checklist.html` REWRITTEN into a simple ranked format he specified:**
+Preference 1/2/3/4, each with *why it's best · how to get full output · what accessories + links · downsides*.
+**KEEP DELIVERABLES IN THAT SHAPE. Do not dump research into the page again** — detail goes in CLAUDE.md, the page
+stays action-only. See [[minimal-webpages]].
+
+**Bob's own calls this round (accepted, do not re-argue):**
+- **After-sales/RMA/EOL downsides: he does not care.** Stop leading with them. (Honest caveat given: glass shattering
+  and the floor filter are NOT after-sales issues.)
+- **Pedestal: he has carpenters and will have one built.** A carpenter spec is now ON the page — open frame, rails
+  under the 4 feet only, **nothing crossing the middle**, ≥480×280mm clear opening, **filter slide-out path kept
+  clear** (so the filter is cleanable without lifting 40kg), 25–50mm total incl. castors, 60kg+, build to the real
+  **537×304mm** footprint.
+- **He thinks EVO XL is top-of-line and won't be discontinued.** Tempered honestly: EOL evidence was persistent OOS
+  + Lian Li not answering a roadmap question = a signal, not an announcement. Correction given: the EVO XL is NOT
+  Lian Li's newest — current development is the Vision line.
+- **He read a Reddit thread about Phanteks vertical radiators being mocked.** I did NOT guess at it — asked him for
+  the link. Moot anyway: Enthoo Pro 2 is out on the sealed-basement floor-feed issue, not radiator orientation.
+
+**Buy-list total on the page is now ₹40,341 case+accessories / ₹88,831 with UPS** (fan hub dropped as optional,
+side filter rounded to ~₹800).
 
 ## Rev 8 — round-4 deep research, 2026-07-25 (Bob unconvinced, asked for downsides + accessories + alternatives + Reddit)
 
