@@ -195,8 +195,16 @@
 </div>
 
 <h2 class="sec">Powering the bare PRO 6000</h2>
+<div class="box good">
+  <b>Check this before buying anything: you've been running the PRO 6000 for a year, so a working 12V-2x6 cable
+  already exists.</b> A 600 W card cannot run without one. Pull it out and look at two things — <b>(a)</b> is the
+  PSU end stamped <b>Type 4</b> (it must be, to work with the AX1600i), and <b>(b)</b> is the GPU end
+  <b>straight or 90°</b>? If it's a Type-4 90° cable, you already own the part below and this line drops to ₹0.
+  If it's straight, or a 4-to-1 adapter dongle, you need the angled cable — you'll have 32 mm to the side panel and
+  a straight plug needs ~55 mm.
+</div>
 <div class="box bad">
-  <b>Buy: Corsair Type-4 90° 12V-2x6 cable, SKU CP-8920348 — Style B.</b> 650 mm, 16 AWG, 2× Type-4 8-pin → one
+  <b>If you do need it — Corsair Type-4 90° 12V-2x6 cable, SKU CP-8920348, Style B.</b> 650 mm, 16 AWG, 2× Type-4 8-pin → one
   moulded 12V-2x6. <b>Style B exits DOWN along the card's face; Style A loops UP over the top and needs headroom
   you don't have.</b> (Confirmed: the AX1600i is a Type-4 platform — Corsair's compatibility table has an
   "AXi&nbsp;/&nbsp;1600 Only" column for exactly this reason.)
@@ -225,10 +233,9 @@
   <b>Check per-socket OCP in iCUE before the first 600 W run</b> — the AX1600i has configurable over-current
   protection on each socket and 25 A can nuisance-trip a default setting.
 </div>
-<div class="box warn">
-  <b>On first boot, run <code>nvidia-smi</code>.</b> If it reports <b>84 GB</b>, your imported card is the
-  China-market <b>RTX 6000D</b> — cut-down cores, no NVLink — not the 96 GB global RTX PRO 6000 Blackwell.
-  Same connector and same 600 W either way, but it's a different product and worth knowing which you have.
+<div class="box good">
+  <b>Card confirmed genuine 96 GB.</b> You've run models needing 94 GB of VRAM on it — that wouldn't load on the
+  China-market 84 GB RTX 6000D. Nothing further to check here.
 </div>
 
 <h2 class="sec">What to buy</h2>
@@ -238,12 +245,12 @@
     <tr><td><b>Lian Li O11 Dynamic EVO XL</b>, black, O11DEXL-X</td><td>the pick · Green Apple ₹22,499 / Vishal ₹23,200</td><td class="num">22,499</td></tr>
     <tr><td><b>3× Arctic P14 Pro 140 mm</b></td><td>floor intake under the PRO 6000</td><td class="num">3,327</td></tr>
     <tr><td>Rear 120 mm exhaust</td><td><b>harvested from the Supernova</b></td><td class="num">0</td></tr>
-    <tr><td><b>Corsair CP-8920348 Type-4 90° 12V-2x6</b></td><td>mandatory — the card came bare</td><td class="num">2,499*</td></tr>
+    <tr><td><b>Corsair CP-8920348 Type-4 90° 12V-2x6</b></td><td><b>check first</b> — you've powered this card for a year, so you may already own a working cable. Only buy if yours is straight or an adapter.</td><td class="num">0–2,499*</td></tr>
     <tr><td>GPU support stick</td><td>for the PRO 6000; the Astral uses the case's bundled GB-003</td><td class="num">308</td></tr>
     <tr><td>Side magnetic dust filter</td><td>the side intake is unfiltered</td><td class="num">~800</td></tr>
     <tr><td>Open-frame metal trolley</td><td>or your carpenter builds it — never wooden</td><td class="num">499</td></tr>
     <tr><td>MX-6 thermal paste</td><td></td><td class="num">699</td></tr>
-    <tr><td colspan="2"><b>Total</b> <span class="note">*if the cable is bought at MRP; ₹41,913 if you pay grey-market today</span></td><td class="num"><b>₹30,631</b></td></tr>
+    <tr><td colspan="2"><b>Total</b> <span class="note">*₹28,132 if your existing cable is a Type-4 90°; ₹30,631 at cable MRP; ₹41,913 only if you're forced to buy grey</span></td><td class="num"><b>₹28,132–30,631</b></td></tr>
   </tbody>
 </table></div>
 <p class="note"><b>Still missing from your parts list entirely: 2× NVMe drives.</b> Buy locally — Amazon.in shows
@@ -256,7 +263,7 @@ import pricing. <b>Optional:</b> a second Corsair Type-4 straight cable for the 
   <tbody>
     <tr><td>1</td><td><b>Astral 5090:</b> where the 16-pin and the coolant tubes exit, and how tall they stand above the card's top edge</td><td><b>Over 15.3 mm.</b> The tightest clearance in the build and ASUS publishes nothing. <b>Do this one first.</b></td></tr>
     <tr><td>2</td><td><b>PRO 6000:</b> is the 12V-2x6 socket recessed into the shroud or proud of it? Height above the top edge</td><td>Under ~23 mm of usable space — a 90° plug is ~22.6 mm and you have 32 mm to the panel</td></tr>
-    <tr><td>3</td><td><b>PRO 6000:</b> which way the cable must exit — up over the card, or down its face</td><td>Ordering Style A instead of Style B. A two-minute look that avoids a ₹13,000 mistake.</td></tr>
+    <tr><td>3</td><td><b>The cable you already use on the PRO 6000</b> — is the PSU end stamped Type 4, and is the GPU end straight or 90°?</td><td>Straight, or a 4-to-1 dongle → you need the angled cable. Type 4 90° → you already own it, buy nothing.</td></tr>
     <tr><td>4</td><td>Astral radiator + fan stack thickness</td><td>Over 82 mm — you'd have to drop the tray to Low, which strangles the floor to 54 mm</td></tr>
     <tr><td>5</td><td>Astral's slot thickness at the bracket</td><td>Over 50.8 mm — it would foul case slot 4</td></tr>
     <tr><td>6</td><td>One Supernova fan's cable end</td><td>A single wide keyed plug means hub-locked — skip the harvest, buy the rear fan</td></tr>

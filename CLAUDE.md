@@ -91,8 +91,8 @@ version** (sold on Amazon.in at a similar price, will NOT work — plugs are sta
 own quick-start for this card specifies **4** separate 8-pin runs into a quad adapter (12.5A/socket — better 24×7).
 Socket budget: 2 EPS + 4 + 4 = all 10 used unless the Astral's bundled 1-to-4 is replaced by a 2nd native cable.
 **Check per-socket OCP in iCUE before the first 600W run.**
-**⚠️ On first boot run `nvidia-smi`: if it reports 84GB it's the China-market RTX 6000D (cut-down, no NVLink), not
-the 96GB global PRO 6000 Blackwell WS.**
+**✅ CLOSED 2026-07-26: the card is the GENUINE 96GB part** — Bob has run it for a year and loaded T2V/ComfyUI models needing 94GB VRAM, which cannot fit the China-market 84GB RTX 6000D. Do not re-raise.
+**⚠️ AND THE COROLLARY: Bob has been RUNNING this card for a year, so a working 12V-2x6 cable ALREADY EXISTS.** A 600W card cannot run without one. So the CP-8920348 is NOT automatically a mandatory purchase — he must first check (a) is the PSU end stamped **Type 4**, (b) is the GPU end **straight or 90°**. Type-4 90° = he already owns it, buy nothing.
 
 **BOB ALREADY OWNS a TAG Gamerz Supernova mid-tower with 7 fans — ALL 120mm, no 140s** (3 side, 3 floor, 1 rear,
 ARGB+PWM on a hub). **DO NOT use them for the floor bank** — TAG's own copy says "low-impedance applications"
