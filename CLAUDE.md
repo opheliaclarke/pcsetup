@@ -122,6 +122,18 @@ screws pull out, it sags); plywood OK at 18 mm+ but harder to join well. Steel b
 - **Compromise offered:** build the pull-out tray with a **swappable/re-stringable** mesh panel. Start coarse, run a
   month, inspect the case filter, and only go finer if real-world dust justifies paying the thermal cost.
 
+**Rev 12e — Bob: "SHOW ME EXAMPLE OF WIRED MESH... I need a proper image in my head."**
+Added a **7× magnification comparison SVG** of three mesh grades drawn to scale (wire thickness included) with a
+**10 mm scale bar** under each: **¼ in / 6 mm welded = USE THIS** · mosquito net ~1.4 mm = too fine · chicken mesh
+~13 mm = too coarse. **Best mental reference given: "a 6 mm hole is about the width of a drinking straw — if a straw
+fits through, it's the right mesh."** Everyday equivalents: desert-cooler guard, exhaust-fan grille, barbecue grill.
+**Indian shop wording: "GI welded mesh jali, quarter inch"** — sold by the foot, needs only ~19×11 in (<2 sq ft), so
+**~₹100–200 locally** vs ₹749–1,626 online.
+**Verified live Amazon.in options:** `B0FKH7LDL6` Mann Mart SS welded, **6–18 mm square holes**, ₹1,626 (closest
+match, stainless) · `B0H2YKPG85` BuildingShop GI welded roll 4×5 ft, ₹749, in stock (confirm hole size — these rolls
+vary 6–25 mm). **Explicitly warned OFF the "SS 20 mesh / 0.4–1 mm hole" sheets that dominate the search results** —
+those are rat/mosquito screens, i.e. exactly the fine stuff that must not go here.
+
 **Mesh guidance (Bob's own idea, refined):** yes to mesh across the open middle, but it must be **COARSE
   (expanded metal / grille, ~5–10 mm holes)**, NOT a fine dust mesh. The case already has its own fine dust filter
   directly above; a second fine mesh under it doubles restriction on the card's only air path. Pedestal mesh stops
