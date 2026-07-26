@@ -91,6 +91,24 @@ the render was misleading — fixed.** Spec is now **hardwood (teak/sheesham/sal
 half-lap/mortise or butt + steel corner brackets, castor plates on solid timber. **NOT MDF/particle board** (castor
 screws pull out, it sags); plywood OK at 18 mm+ but harder to join well. Steel buys nothing here at 40 kg.
 
+**Rev 12c — castors + mesh + a HEIGHT ERROR I made.**
+- **HEIGHT WAS WRONG:** I specced "1.5 in total including castors" AND a "1.5 × 1.5 in rail" — physically impossible.
+  **Corrected to 3–4 in total** (1.5 in rail + 1.5–2.5 in castor). Acceptable now only because Bob is programming the
+  desk minimum himself. **He must measure the finished pedestal + case before setting that limit.**
+- **CASTORS: 2 FIXED at the back + 2 BRAKED SWIVEL at the front** (trolley pattern). Fixed rears make it track
+  straight when pulled out from under the desk; all-swivel wanders. **60–75 mm wheels, rubber/PU tread, not hard
+  nylon** (hard small wheels catch on floor joints, mark floors, and transmit pump/fan vibration). All-four-swivel-
+  with-brakes is the alternative if the floor is uneven. **Unbraked castors are not acceptable** — 40 kg rolling on a
+  nudge will eventually pull a cable.
+- **MESH: ¼ in (6 mm) welded galvanised wire mesh** or expanded aluminium, ~80% open area, stapled/screwed into a
+  shallow rebate on the frame underside so the top face stays flat.
+- **Bob wants an AC-style pull-out cleanable mesh tray.** Fine to build (groove down both long rails + sliding
+  sub-frame) BUT redirect the expectation: **the pedestal mesh is an OBJECT GUARD and will not clog** — dust passes
+  straight through 6 mm openings. **The filter that needs weekly cleaning is the CASE's own filter directly above.**
+  So the real design goal stays: keep the front rail flush/clear so the case filter slides out without lifting 40 kg.
+- **NEVER AC-filter material or fly-screen here** — that's a fine filter, and stacking it under the case's own fine
+  filter doubles restriction on the flow-through card's only air path.
+
 **Mesh guidance (Bob's own idea, refined):** yes to mesh across the open middle, but it must be **COARSE
   (expanded metal / grille, ~5–10 mm holes)**, NOT a fine dust mesh. The case already has its own fine dust filter
   directly above; a second fine mesh under it doubles restriction on the card's only air path. Pedestal mesh stops
