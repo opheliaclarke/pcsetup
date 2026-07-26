@@ -84,7 +84,14 @@ for a single low object, bad for a tall object stacked on a short one.
   that suffocates the flow-through GPU. Bob spotted it. Link removed from the page; pedestal is now
   **build-only (carpenter/fabricator, ~₹800–1,500)**. Do not re-suggest a ready-made trolley — every one found has a
   solid base.
-- **Mesh guidance (Bob's own idea, refined):** yes to mesh across the open middle, but it must be **COARSE
+- **Bob pushed back on 13 in wide + "steel frame" (Rev 12b):** 13 in is NOT padding — **the EVO XL is 304 mm = 11.97 in
+wide**, so the pedestal is case width + a small margin. Range relaxed to **12.5–13 in**; **never below 12 in** (a 40 kg
+tower on a base narrower than itself tips). Depth relaxed to 21.5–22 in. **WOOD IS FINE and the "STEEL FRAME" label on
+the render was misleading — fixed.** Spec is now **hardwood (teak/sheesham/sal), 1.5 × 1.5 in section**, corners
+half-lap/mortise or butt + steel corner brackets, castor plates on solid timber. **NOT MDF/particle board** (castor
+screws pull out, it sags); plywood OK at 18 mm+ but harder to join well. Steel buys nothing here at 40 kg.
+
+**Mesh guidance (Bob's own idea, refined):** yes to mesh across the open middle, but it must be **COARSE
   (expanded metal / grille, ~5–10 mm holes)**, NOT a fine dust mesh. The case already has its own fine dust filter
   directly above; a second fine mesh under it doubles restriction on the card's only air path. Pedestal mesh stops
   **objects**, the case filter stops **dust**.
