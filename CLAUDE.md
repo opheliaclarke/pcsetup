@@ -1,7 +1,7 @@
 # Dual-GPU AI Workstation (pcsetup)
 
 **What it is:** A single self-contained HTML build-plan document (case / cooling / power / desk-clearance) for Dominic's in-house 24×7 dual-GPU AI training workstation.
-**Status:** **Rev 9 — `buy-checklist.html` is now a SHORT ranked 1-2-3-4 page (Bob found the long docs unusable). Rev 8 — CONFIRMED: BUY THE EVO XL (O11DEXL-X, black), and buy it SOON (EOL signals). 10-agent round-4 sweep incl. Reddit settled the alternatives. `buy-checklist.html` is now THE decision page (downsides + full sourced buy list + alternatives + CAD fitment proof + Reddit digest). Rev 7 — USER PICKED THE O11 DYNAMIC EVO XL. GO-WITH-CONDITIONS after an 8-agent adversarial pre-purchase recheck (2026-07-25). index.html REBUILT around the EVO XL. Pre-purchase gate lives at `buy-checklist.html`.** Case comparison at `case-replacement.html`. **index.html is DONE (Rev 6/7). `layout.html` + `simple.html` + `build-picture.png` are STILL V3000 drawings and carry the 140mm rear-fan error — they need a from-scratch redraw for the EVO XL and must NOT be handed to a builder until then.**
+**Status:** **Rev 10 — SLOT FITMENT SETTLED FROM PRIMARY SOURCES: 5090 above / PRO 6000 below = YES. Lian Li's own CAD proves the 8 expansion slots are children of the motherboard-tray assembly (they move WITH the tray), so tray position is irrelevant to card mounting; MSI's own manual proves PCI_E1/PCI_E2 are exactly 4 pitches apart at ATX positions 2 and 6. Cards land on case slots 2+3 and 6+7, ~33 mm clear air between, slot 8 free. One of our own reasons was wrong (the top-edge 12V-2x6 faces the SIDE PANEL, not the card above) — angled connector still mandatory. See Rev 10.** Rev 9 — `buy-checklist.html` is now a SHORT ranked 1-2-3-4 page (Bob found the long docs unusable). Rev 8 — CONFIRMED: BUY THE EVO XL (O11DEXL-X, black), and buy it SOON (EOL signals). 10-agent round-4 sweep incl. Reddit settled the alternatives. `buy-checklist.html` is now THE decision page (downsides + full sourced buy list + alternatives + CAD fitment proof + Reddit digest). Rev 7 — USER PICKED THE O11 DYNAMIC EVO XL. GO-WITH-CONDITIONS after an 8-agent adversarial pre-purchase recheck (2026-07-25). index.html REBUILT around the EVO XL. Pre-purchase gate lives at `buy-checklist.html`.** Case comparison at `case-replacement.html`. **index.html is DONE (Rev 6/7). `layout.html` + `simple.html` + `build-picture.png` are STILL V3000 drawings and carry the 140mm rear-fan error — they need a from-scratch redraw for the EVO XL and must NOT be handed to a builder until then.**
 
 **(Superseded) Rev 5 — WINNER = Lian Li V3000 Plus.** (2026-07-14) Ergosphere CONFIRMED a firmware min/max-height lock that can be set as default AND **survives a reset** → the crush problem is solved robustly. Combined with the user's 32" seated working height + a wheeled open-frame pedestal, the 674mm super-tower now fits under the desk. So the ≤560mm cap is REPLACED by the desk-lock approach. V3000 is the pick; EVO XL demoted to "foolproof fallback". Full doc rebuilt around the V3000 (new fan/rad layout, desk-lock section, pedestal, shopping list).
 (Rev 4: super-towers eliminated on height + hotbox section + 1.8-ton O General. Rev 3: EVO XL after 5090=Astral LC. Rev 2: reopened after PRO 6000 = double-flow-through.)
@@ -39,7 +39,7 @@
 - **SLOT ORDER (important, corrected — was backwards in first draft):** **PRO 6000 in the LOWER slot PCI_E2** (sits over the shroud fans → fresh-air feed for the flow-through card) = **Gen5 ×4**; **5090 in the TOP slot PCI_E1** = **Gen5 ×8**. The ×4 is negligible for a 96GB card that keeps its job in VRAM; feeding the 600W air-cooled card 24/7 beats the bandwidth. This is the OPPOSITE of the "big card up top" habit, and it's correct here because the shroud fan bank is the whole reason for this case. Only keep the PRO 6000 up top (×8) if its jobs stream heavily from system RAM / NVMe offload — then feed it with a side intake fan instead. Both slots are CPU-direct.
 - **DROP the vertical GPU kit AND the riser.** Cards seat natively 4 pitches apart (~40mm clear air). Vertical-mounting the PRO 6000 would face its intake into glass and choke it. (Lian Li VG4-4 V2 also isn't buyable in India — grey import at ~2.3× MSRP.) Saves ~₹15k and cools better. A plain GPU support stick is enough for a 2-slot card.
 - **Fan-curve daemon is MANDATORY.** Stock NVIDIA VBIOS sits at ~30% fan at 85–90°C. Power-limited PRO 6000 under sustained LLM load: **85°C stock / 75–79°C at 80% / 66–67°C at 100%.** Use LACT or a pynvml daemon.
-- **Angled 12V-2×6 adapter required** — the PRO 6000's connector is on the top middle edge.
+- **Angled 12V-2×6 native CABLE required — NEVER an angled ADAPTER** (CableMod angled adapters were CPSC-recalled 2024, 25,300 units / 272 incidents). The PRO 6000's connector is on the top middle edge; ~32 mm to the side panel vs the ~55 mm a straight plug + 35 mm bend radius needs. Target SKU: **Corsair Type-4 90° 12V-2x6, CP-8920348 (Style B, exits DOWN)**.
 - **DESK:** container stop at **700mm** (LOGICDATA: hold **"S" 10 s**, two clicks) + **2× steel hard-stop posts rated >2500N**. Gives 155mm air above the 545mm case; desk surface still 725mm. **Never reset the desk with the PC underneath** — reset drives BELOW the programmed limit and DISABLES anti-collision.
 - Power-limit both GPUs ~80% on day one. Dedicated 16A circuit. ~3kVA online UPS.
 - **AC = 1.8-ton O General inverter (user's chosen unit, GOOD pick).** Load math: room ~1.5 ton + PC ~0.4 ton = ~1.9 ton at full tilt (a hair over the unit's ~1.83-ton rating); the day-one ~80% power-limit drops total to ~1.83 ton = right at capacity. So 1.8-ton is adequate BECAUSE we power-limit (which we do anyway). O General = excellent 24×7/tropical-compressor brand. (Was 2-ton generic; now matched to their unit.)
@@ -59,6 +59,78 @@
 
 
 
+
+
+## Rev 10 — 2026-07-26. 14-retailer sweep + slot verification + owned-fan audit.
+
+**NOTHING BEAT THE EVO XL.** 357 listings / ~50 distinct chassis across 14 Indian retailers Bob supplied.
+
+**SLOT QUESTION ANSWERED — YES, and in ALL THREE tray positions.** Lian Li's CATIA STEP shows the 8 expansion
+slots are children of `ASM-MB-EVO-XL_ASM` (the tray assembly) → they move WITH the tray, so tray height cannot
+change which case slot a board slot lands on. Measured (MSI manual p.30 @300dpi, worst error 0.24mm + Lian Li CAD):
+**Astral 5090 (2.5-slot) in PCI_E1 → case slots 2+3; PRO 6000 (2-slot) in PCI_E2 → case slots 6+7.**
+PCI_E1→PCI_E2 = **81.0mm = exactly 4 pitches**. **33.3mm clear air between cards**, slot 8 free, both brackets on
+real screwable positions. Still use MIDDLE — for COOLING (82 roof / 90 floor), not fitment.
+**Practical: seat the PRO 6000 FIRST** — MSI's EZ PCIe Release is on PCI_E1 only; PCI_E2's latch is reached under
+the Astral, so removing the 6000 later means pulling the 5090 first.
+
+**CORRECTION to Rev 8's cable reasoning:** "30.5mm between the cards → straight cable needs 35mm" was the WRONG
+REASON — a card's top edge faces the SIDE PANEL, not the card above. Governing number = **169mm clearance − 137mm
+card = 32mm to the panel** (a 90° plug is ~22.6mm; a straight one needs ~55mm). Angled cable still mandatory,
+right conclusion. Same logic re-flags the Astral's **15.3mm** as the real tightest item.
+
+**PRO 6000 CAME BARE** (Bob imported it from China via import/export contacts — no adapter, no accessories).
+**BUY: Corsair Type-4 90° 12V-2x6 cable, SKU `CP-8920348`, STYLE B** (Style B exits DOWN the card face; Style A
+loops UP over the top and needs headroom he doesn't have). **AX1600i CONFIRMED Type-4** (Corsair's compat table has
+an "AXi / 1600 Only" column — every other AXi is Type 3). Stock: Vishal ₹2,220 SOLD OUT · Computech ₹2,499 SOLD OUT
+· Corsair US $19.99 OOS (global supply gap) · **Amazon.in grey ₹13,080 (~7× MRP, ASIN B0DM649HBM)**. Set restock
+alerts. **AVOID angled ADAPTERS** — CPSC recall 24-112 covered CableMod's angled *adapters* (25,300 units, 272
+melting reports), NOT angled *cables*; also rules out Corsair's own ₹5,512 GPU Power Bridge. **AVOID the Type 5
+version** (sold on Amazon.in at a similar price, will NOT work — plugs are stamped Type 4/Type 5).
+**Wiring:** 600W = 50A. Corsair sanctions 2×8-pin @25A/socket into **separate** sockets, never a pigtail; NVIDIA's
+own quick-start for this card specifies **4** separate 8-pin runs into a quad adapter (12.5A/socket — better 24×7).
+Socket budget: 2 EPS + 4 + 4 = all 10 used unless the Astral's bundled 1-to-4 is replaced by a 2nd native cable.
+**Check per-socket OCP in iCUE before the first 600W run.**
+**⚠️ On first boot run `nvidia-smi`: if it reports 84GB it's the China-market RTX 6000D (cut-down, no NVLink), not
+the 96GB global PRO 6000 Blackwell WS.**
+
+**BOB ALREADY OWNS a TAG Gamerz Supernova mid-tower with 7 fans — ALL 120mm, no 140s** (3 side, 3 floor, 1 rear,
+ARGB+PWM on a hub). **DO NOT use them for the floor bank** — TAG's own copy says "low-impedance applications"
+(= low static pressure) and publishes NO CFM/SP/RPM/dBA/bearing data anywhere; harvesting also forfeits the 3×140
+option (420mm coverage under a 305mm card vs 360mm, lower RPM). **DO reuse exactly ONE as the rear exhaust**
+(EVO XL rear is 120mm anyway). Keep 6 as free spares. Check the cable end first: 4-pin PWM + separate 3-pin ARGB =
+reusable; one wide keyed plug = hub-locked, just buy the fan. Total saving is only ~₹1,100.
+
+**Cases Bob named:** **Corsair Obsidian 1000D DEAD ×3** (697mm over cap · **zero bottom fan mounts** — floor is the
+dual-PSU basement · discontinued/OOS everywhere). **Corsair 7000D DEAD — and our old width kill was the WRONG
+REASON**: Corsair's own "12×120 OR 7×140" cap reconciles exactly to front+top+side+rear with **zero fans left for a
+floor**, and Corsair sells no bottom fan tray (only solid shroud covers); 600mm height actually passes; ₹24,879
+Amazon (white, 1 unit). **ANTEC BRANCH CLOSED** — pulled all 133 live products: **the C8's 62.8mm plenum is Antec's
+ceiling** and all six C8 variants are one identical 464×303×476 chassis. Antec splits into a *shroud-bank* family
+(Flux Pro / Perf 1 FT / Antec 900, all 230–250mm wide **because** the narrow body is what puts the shroud under the
+slots) and a *floor-plenum* family (C8/C7/C5) — **there is no wide shroud-bank Antec**. New **Antec 900 "Edge AI
+Workstation" ₹36,995 DEAD**: no floor fan mount, rads capped at 52mm vs the 65mm stack, 250mm wide, 160mm GPU
+clearance (tighter than 169). Also: **Antec Performance 1 FT has NO bottom fan mount either** (shroud 3×120 only) —
+we killed it on 230mm width, right by accident.
+
+**NEW FIND — `Corsair FRAME 5000D WORKSTATION` (CC-9011330-WW, launched ~22 Jul 2026), ₹19,379 Amazon.in IN STOCK.**
+542×250×556, 8+3 slots, SSI-EEB, spec reads *"Fan Support Bottom: 4×120 / Radiator Bottom: **None**"* — a fan-only
+floor is exactly right for a flow-through card; roof 420 + front 360 with the floor free. **The only Corsair that
+passes the floor-feed test.** Rejected on 250mm width + no removable top panel + zero owner data. **Keep as the
+cheap fallback if the EVO XL becomes unbuyable.**
+
+**Best challenger: Cooler Master HAF 700 ~₹24,200** (626×291×666, 8 slots, roof alone takes 2×360 @100mm, PSU in a
+rear chamber so the whole floor is open, 5 fans included) — lost on **626mm height re-opening the desk-crush
+problem**, **666mm depth** vs a pedestal spec'd 537×304, 19.6kg, and 166mm published side clearance (< 169).
+Also killed: NZXT H9 Flow ₹20,599 + Corsair AIR 5400 ₹18,199 (**7 slots** — PRO 6000 lands on 6+7 with nothing
+below) · TT View 51 ₹15,490 (floor 120mm only, roof thickness unpublished) · Cosmos C700M/C700P · TT AX700 ·
+DeepCool CH780 (vertical-GPU-only, 3 slots, 180mm PSU) · ProArt PA602 ("supports **one** 420mm radiator") ·
+Arctic Xtender VG · Prolab AI888 / TAG APEX-AI / Zebronics / darkFlash (no published dimensions anywhere).
+"META PCS Night Reaper ₹1.25L" is a **prebuilt PC, not a case**.
+
+**Revised buy list: ₹30,631** (case ₹22,499 Green Apple · 3× Arctic P14 Pro ₹3,327 · cable ₹2,499 at MRP ·
+support stick ₹308 · side filter ~₹800 · trolley ₹499 · MX-6 ₹699 · rear fan ₹0 harvested). ₹41,913 if the cable
+is bought grey today. **UPS dropped — Bob owns a Microtek online UPS and closed the topic.**
 
 ## Rev 9 — 2026-07-26. FORMAT + Bob's decisions.
 
@@ -83,6 +155,75 @@ stays action-only. See [[minimal-webpages]].
 
 **Buy-list total on the page is now ₹40,341 case+accessories / ₹88,831 with UPS** (fan hub dropped as optional,
 side filter rounded to ~₹800).
+
+## Rev 10 — 2026-07-26. SLOT-FITMENT PROVEN FROM PRIMARY CAD + MSI MANUAL. Answer = **YES**.
+
+**Question: "tray in MIDDLE, can the 5090 go ABOVE and the PRO 6000 BELOW?" → YES, structurally and practically.
+Works in ALL THREE tray positions (slot alignment is independent of tray position — see below). MIDDLE is still
+the one to use, but for radiator/plenum reasons only, never for card fitment.**
+
+**PRIMARY SOURCES USED (both now on disk, re-usable):**
+- MSI's own English manual `MPGX870ECARBONWIFI_English.pdf` (46pp, dated 2026-03-17), from
+  `download.msi.com/archive/mnu_exe/mb/`. msi.com 403s plain curl; Playwright channel="chrome" on the
+  `/support#manual` page yields the direct PDF links. Page 30 = to-scale "Overview of Components" drawing.
+- Lian Li's own CATIA STEP `evoxlman/LIAN LI_O11D EVO XL.stp` (78 MB).
+
+**(a) BOARD — measured off MSI p.30 at 300 dpi, calibrated on the board outline (1084 px = 305 mm, 864.5 px =
+244 mm; aspect 1.2539 vs spec 1.2500 = 0.31% error):**
+- **3× physically-x16 slots.** PCI_E1 = Gen5 x16 (CPU) · PCI_E2 = Gen5 x4 (CPU) · PCI_E3 = Gen4 x4 (chipset).
+  Both CPU slots populated on a 9000-series → **x8 / x4** (MSI verbatim: "PCIe 5.0 x16/x0 or x8/x4"). Matches Rev 1.
+- **PCI_E1 → PCI_E2 = 288.0 px = 81.0 mm = EXACTLY 4 slot pitches** (4 × 20.32 = 81.28). ✅ our "4 pitches / ~81 mm"
+  note was right. **PCI_E2 → PCI_E3 = 73.0 px = 20.5 mm = exactly 1 pitch.**
+- **The board's slots sit at ATX positions 2, 6 and 7 — position 1 is EMPTY** (M2_1 heatsink lives there; M2_2/3/4
+  fill positions 3/4/5). Proof: measured from the board's top edge PCI_E1 = 182.6 mm / PCI_E2 = 263.6 mm /
+  PCI_E3 = 284.2 mm, vs ATX-predicted 182.56 / 263.84 / 284.16 mm. Worst error 0.24 mm.
+- **PCI_E1 is the ONLY slot with MSI's EZ PCIe Release button** (manual p.35). PCI_E2/E3 = conventional latches.
+- Board also has **PCIE_PWR1, an 8-pin supplementary PCIe-slot 12V feed** (bottom edge). Populate it for 2×600 W.
+
+**(b) CASE — from Lian Li's own STEP file. THE KEY STRUCTURAL FINDING:**
+- Assembly `ASM-MB-EVO-XL_ASM` (the motherboard tray) has as **DIRECT CHILDREN**: `MB-PANEL-T-EVO-XL`,
+  `ASM-PCI-EVO-XL`, `ASM-PCI-EVO-XL_-21ASM` and **8 × `GD04401-46A00-011-ROG_56`** (the slot covers).
+  → **The expansion-slot column is PART OF the motherboard tray and MOVES WITH IT.** Manual p.28's three-position
+  figure + the rear-view figure corroborate: the whole rear block (I/O aperture + all 8 slots) translates, and
+  removable mesh filler strips take up the slack above/below.
+  **⇒ Tray position CANNOT change which case slot a board slot lands on. Low / Middle / Top are identical for
+  card mounting.** Tray position only trades the fixed 172 mm roof-vs-floor budget (Middle 82/90, Low 118/54,
+  Top 46/126).
+- The 8 covers sit at Z = **−7.50, 12.82, 33.14, 53.46, 73.78, 94.10, 114.42, 134.74 mm** — **seven gaps of
+  EXACTLY 20.32 mm**, no anomalies. (Supersedes the "20.33 mm CAD-measured" estimate — it is exactly ATX pitch.)
+- **MAP (identical in all 3 tray positions):** case slot 1 = free · **slot 2 = PCI_E1** · slots 3-5 = no board slot ·
+  **slot 6 = PCI_E2** · slot 7 = PCI_E3 · slot 8 = free. (Consistent with the Rev 8 note that the bundled GB-003
+  "fits the 2nd expansion slot, which is exactly where the Astral goes".)
+
+**(c)/(d) FITMENT — all arithmetic in case-slot Z (mm):**
+- **Astral 5090 LC** (48 mm) in PCI_E1: Z 12.82 → 60.82. Bracket screws into **case slots 2 + 3**; body overhangs
+  ~7 mm into slot 4's band. **Real, screwable.**
+- **PRO 6000** (2-slot = 40.64 mm) in PCI_E2: Z 94.10 → 134.74. Bracket screws into **case slots 6 + 7**, ending
+  *exactly* level with slot 8. **Real, screwable. NOTHING hangs below the last slot.**
+- **No collision.** Clear air between the cards = 94.10 − 60.82 = **33.3 mm** on ASUS's published 48 mm thickness
+  (**30.5 mm** if you budget the Astral as a full nominal 2.5 slots — keep 30.5 as the planning number).
+- **PCI_E3 is consumed** by the PRO 6000's second slot. Expected, nothing was planned there. **Case slot 8 stays free.**
+
+**⚠️ CORRECTION TO OUR OWN RECORD (Rev 8 reasoning was geometrically wrong, conclusion still right):** we wrote
+"only 30.5 mm between the two cards → a straight 12V-2x6 needs 35 mm → angled MANDATORY". **The PRO 6000's top-edge
+connector does NOT point at the card above it** — a GPU's "top edge" in a tower faces the **SIDE PANEL**, so the
+5090 does not obstruct it at all. The governing dimension is **169 mm case GPU clearance − 137 mm card =
+32 mm to the side panel**. Still under the ~35 mm a straight plug needs → **90° connector still MANDATORY**, and it
+must be a cable with the bend **moulded in** (CableMod *adapters* were CPSC-recalled 2024), Corsair **Type-4** for
+the AX1600i. **The PRO 6000 was imported bare from China — no cable came with it, and the AX1600i (2018,
+ATX12V v2.31) has no native 12V-2x6 — so this cable MUST be bought, it is not optional.**
+**Same logic re-flags the real tightest item: the Astral has only 169 − 153.7 = 15.3 mm of side clearance for ITS
+connector + coolant tubes, and ASUS publishes nothing about where they exit. That is the open risk, not the slot gap.**
+
+**(e) PRACTICAL:** 33 mm between cards is enough for fingers, but **PCI_E2 has no EZ-release → seat the PRO 6000
+FIRST, the Astral second**; to ever unseat the PRO 6000 you must pull the Astral. 5090-on-top is also *better* for
+the Astral's tubes (short run up to the roof rad, instead of routing past the PRO 6000). Sag: bundled GB-003 serves
+the Astral (slot 2); the PRO 6000 needs its own stick braced off the floor-fan rail / between fans, ~68 mm above
+25 mm-thick floor fans — never a full-height stick that blocks an intake fan.
+
+**MIDDLE is still forced, for cooling not fitment:** Middle 82 mm roof clears the Astral's 65 mm rad stack and
+leaves 90 mm floor (≈65 mm plenum after 25 mm fans). Low = 54 mm floor → strangles the flow-through card's intake.
+Top = 46 mm roof → won't take the 65 mm rad.
 
 ## Rev 8 — round-4 deep research, 2026-07-25 (Bob unconvinced, asked for downsides + accessories + alternatives + Reddit)
 
@@ -267,3 +408,115 @@ Antec. Performance 1 FT is dead on availability.
 - ROG Astral LC is scarce/OOS in India — check live stock before committing the rest of the build.
 - Read the label on the desk control box: **LOGICDATA or JieCang** — the container-stop procedure differs.
 - Monitor motherboard VRM/PCIe temps, not just GPU temps. Documented failure mode: PCIe retimers hit 90°C and crash the fabric while the GPUs read "fine".
+
+## Rev 11 — 2026-07-26. RETAILER-SWEEP CANDIDATE PASS (~150 listings, ~50 distinct chassis). Answer = **NOTHING BEATS THE EVO XL.**
+
+**Method:** manufacturer spec sheets + official manuals (Playwright channel="chrome"; WebSearch budget was exhausted,
+WebFetch/curl used for the rest). Cooler Master manuals live behind egnyte — direct-download trick that works:
+`curl -L "https://coolermaster.egnyte.com/dd/<ID>/?forceDownload=true"` (the `/dl/` link is a JS viewer, `/dd/` is the file).
+
+**FOUR NEW SURVIVORS (clear 6 of 7 outright; req 4 = GPU HEIGHT clearance is UNPUBLISHED on all four):**
+| case | H×W×D mm | slots | floor feed | 2×360 + free floor | PSU | India ₹ |
+|---|---|---|---|---|---|---|
+| **CM HAF 700** (non-EVO) | 626×291×666 | 8 | 3×120/140 + 420 rad, **PSU is in a separate REAR chamber so the whole floor is open**; bracket tilts 0–30° | roof alone takes **2×360 @ up to 100 mm thick** | 200 mm | ~24,200–27,999 |
+| **NZXT H9 Flow (2025)** | 506×**315**×481 | **7** | 3×120/140 + 360 rad, dual-chamber | top 420 (**80 mm thick budget**) + front-right 420 | 200 mm | 20,599–23,545 |
+| **TT View 51 TG ARGB** | 550×**315**×525 | 8 | 3×**120 only** + 360 rad, PSU in right chamber | front 360 + top 360 (thickness UNPUBLISHED) | 200 mm | 15,490–18,200 |
+| **Corsair AIR 5400 RS-R** | 467×**340**×470 | **7** | 3×120 reverse fans **preinstalled**, + 360 rad, triple-chamber | front 360 (own CPU chamber) + top 360 | 200 mm | 18,199–19,200 |
+
+**WHY NONE OF THEM WINS:** the EVO XL's two decisive numbers are **VERIFIED** (169 mm GPU clearance; 92.9 mm floor
+plenum off Lian Li's own CAD). **Not one of the four publishes a GPU height/thickness clearance or a plenum depth.**
+The project's single tightest open risk is the Astral's 15.3 mm of side clearance for its connector + coolant tubes —
+swapping to a chassis where that number is unknowable makes the risk worse, not better. Specifically:
+- **HAF 700** is the strongest and is genuinely better on *radiator freedom* (roof takes both 360s at up to 100 mm,
+  floor 100% free; separate rear PSU chamber; mesh front; **5 fans included** vs the EVO XL's zero) at the same price
+  — but **626 mm tall re-opens the desk-crush problem the EVO XL uniquely eliminates** (desk underside bottoms out
+  ~605–615 mm), it is **666 mm DEEP** (the carpenter's pedestal is already spec'd to 537×304), 19.6 kg, PSU limit is
+  *exactly* 200 mm, and its only published side clearance is **166 mm CPU-cooler** — i.e. ≤ the EVO XL's 169 mm.
+- **H9 Flow / AIR 5400** are **7-slot**: the PRO 6000 in PCI_E2 lands on case slots 6+7 with **nothing below it**
+  (Rev 10 deliberately kept slot 8 free). H9 also ships **one dust filter** (bottom only) — bad for 24×7 India.
+- **View 51** floor bank is **120 mm fans only** (vs 3×140) and roof rad thickness is unpublished — the 65 mm Astral stack is a coin-flip.
+
+**KILLS WORTH REMEMBERING (don't re-litigate):**
+- **Corsair 7000D — RE-VERIFIED DEAD as Bob asked by name.** Corsair's own tech-spec table has **no bottom fan and no
+  bottom radiator field at all** (only Front/Top/Side; its "three simultaneous 360s" are those three). The only PSU-shroud
+  accessories Corsair sells are **solid covers**. Plus 248 mm wide. Same kill applies to **iCUE 7000X** (shared chassis/accessories).
+- **Antec 900 "Edge AI"** (the sweep's "best new find") — **DEAD on req 3.** It does have the 2×120 reverse-flow shroud bank,
+  8 slots, 622 mm, PSU 230 mm, and it is the ONLY new candidate that publishes a **GPU thickness: 160 mm** — but radiator
+  support is only **Front 420 / Top 360 and BOTH are capped "<52 mm thickness"**; the Astral's 65 mm rad+fan stack has
+  nowhere to go. Also 250 mm wide (5 mm more than the Flux Pro Bob already called too tight) at ₹36,995, and 160 mm GPU
+  clearance is TIGHTER than the EVO XL's 169 mm. Note it has **no bottom fan mount at all** — fewer cooling positions than
+  the cheaper Flux Pro.
+- **DeepCool CH780** — "dual chamber layout **limits GPU mounting to the vertical position**", **3 expansion slots**, PSU 180 mm. Dead ×3.
+- **Cosmos C700M/C700P** — 306 mm wide and 651 mm tall (both pass) but bottom is **2×120/140 "(Bracket Needed)"** with bottom rad capped at 240 mm, inside the PSU-midplate basement. Dead on floor feed.
+- **TT AX700 super tower** — 645×324.6×685 so height PASSES, but bottom = 2×120/140 with **no bottom radiator**, and PSU length is quoted "220 mm *with two bottom fans*" → they share the PSU basement. Dead on floor feed.
+- **Corsair Obsidian 1000D** 697 mm (over 674) · **TT Core W100/W200** cube super tower · **Prolab AI888/AI858** (no published external dims anywhere, 380 mm GPU limit) · **TAG APEX-AI**, **Dawg**, **Zebronics Phantom Pro**, **Ant Esports Crystal X8**, **darkFlash ₹61,768** = unverifiable no-name · **META PCS Night Reaper ₹1.25 L is a PREBUILT PC, not a case**.
+- **ASUS ProArt PA602** — ASUS's own copy: "supports **ONE** 420 mm radiator". Dead on req 3 (also 220 mm wide).
+- **SilverStone RM42-502/RM44/RM400** = 4U rackmount (no floor bank under a horizontal card) · **RV05B** = 2014 Raven, no 360 rad support anywhere.
+- **Fractal Meshify 2 XL** 240 mm wide + bottom capped at 2 fans / 240-280 rad in the storage basement · **Phanteks Enthoo 719 / Evolv X** 240 mm + closed basement (same as Enthoo Pro 2) · **Phanteks NV7 confirmed OOS**.
+- **TT CTE E660 MX** — same rotated-board / riser "three-way GPU installation" family as the CTE C750 already rejected.
+- **Arctic Xtender VG** built around a VERTICAL GPU mount → the flow-through PRO 6000 would inhale into a panel.
+- **CM MasterFrame 600** 261 mm wide open frame, no bottom rad, no dust control for 24×7 India.
+- **Lian Li PC-O11 Dynamic XL (₹19,299)** = the EVO XL's *predecessor* (fixed tray, no 3-position roof/floor split, shallower plenum). Strictly dominated for ₹4k more.
+- **CM HAF 700 EVO** = the SAME 666×291×626 chassis as the HAF 700 and would survive identically, but ₹45,376–51,709 ≈ 2× for a front rad mount + ARGB Gen2. Dominated by the non-EVO.
+
+**UNRESOLVED (pages 404'd / Cloudflare-blocked — only worth reopening if the EVO XL falls through):** CM Cosmos 2025
+(8 slots, PSU 240 mm, GPU 400 mm, ₹33,999 — CM's spec page would not render), ASUS ROG Strix Helios II GX601S
+(ASUS spec URL 404s; the GX601 it descends from is a 250 mm solid-shroud showcase tower), Gigabyte AORUS C601 / AC700G,
+Thermalright TR A70 / A70 Vision, DeepCool Morpheus, Cougar Cratus.
+
+**STOCK CAVEAT:** independently re-rendered only **HAF 700 EVO at ModxComputers (₹45,376, Add To Cart, SKU H700E-IGNN-S00)**.
+The cheaper **non-EVO HAF 700 at ~₹24,200** is reported by the sweep at 5 retailers but **pchubshop/ADS/Green Apple are
+Cloudflare- or JS-blocked to us — phone-confirm before quoting that price to Bob.**
+
+## Rev 12 — 2026-07-26. FINAL ANSWER PASS (14-retailer sweep + 4 deep dives). EVO XL STANDS.
+
+**1. SLOT QUESTION = YES, in all three tray positions.** Lian Li's own CATIA STEP proves the 8 slot covers are children
+of `ASM-MB-EVO-XL_ASM` (the mobo tray) at Z = −7.50 … 134.74 mm (7 gaps of exactly 20.32 mm), so tray height CANNOT
+change the board→case slot mapping. MSI's manual p.30 measured at 300 dpi: PCI_E1/PCI_E2 = 81.0 mm = exactly 4 pitches,
+ATX positions 2 and 6 (worst error 0.24 mm). Astral (2.5-slot, 48 mm) in PCI_E1 → case slots 2+3, body ends Z 60.82.
+PRO 6000 (2-slot) in PCI_E2 → case slots 6+7, body ends Z 134.74 = level with slot 8. **Clear air between cards 33.3 mm;
+slot 8 free; nothing overhangs.** Use MIDDLE tray for COOLING only (82 mm roof clears the 65 mm Astral rad, 90 mm floor).
+Assembly order: **seat the PRO 6000 FIRST** — MSI's EZ PCIe Release button is on PCI_E1 only.
+
+**2. NOTHING BEATS THE EVO XL.** Corsair 1000D = DEAD ×3 (697 mm; **zero bottom fan mounts**, floor is the dual-PSU
+basement; discontinued/OOS everywhere). Corsair 7000D = DEAD — **fix our own kill reason: it is no-bottom-fan-mount, not
+width.** Corsair's 12×120/7×140 cap reconciles EXACTLY to front+top+side+rear (HEXUS enumerates every position), and the
+only floor accessories Corsair sells are solid shroud covers. 248 mm is the secondary problem. Antec branch CLOSED: pulled
+the whole live catalog (`antecindia.in/products.json?limit=250` via Playwright — curl gets 429; 133 products). **The C8's
+62.8 mm plenum IS Antec's ceiling** and all six C8 variants are one identical 464×303×476 chassis. Antec splits into a
+SHROUD-BANK family (Flux Pro / Perf 1 FT / Antec 900 — all 230–250 mm wide *because* the narrow body puts the shroud under
+the slots) and a FLOOR-PLENUM family (C8/C7/C5); **there is no wide shroud-bank Antec.** Correction: **Perf 1 FT has NO
+bottom fan mount at all** (shroud 3×120 only, no shroud rad) — we killed it on 230 mm width, which was right by accident.
+Antec publishes GPU *height* for exactly one case in the range (Antec 900, ≤160 mm) and radiator *thickness* for exactly
+one (Antec 900, 52 mm) — so the C8's ability to swallow the 65 mm Astral stack is UNVERIFIED.
+**ONE new find worth a line: CORSAIR FRAME 5000D WORKSTATION (CC-9011330-WW, launched ~22 Jul 2026)** — 542×250×556, 8+3
+slots, SSI-EEB, "Fan Support Bottom: 4×120 / Radiator Bottom: **None**" (fan-only floor = ideal, no rad upstream of the
+card), roof 420 + front 360 with floor free, **₹19,379 Amazon.in in stock**. Only Corsair that passes floor-feed. Rejected
+on 250 mm width + no removable top panel (fiddly 65 mm rad install), but it is the cheap fallback if the EVO XL falls through.
+
+**3. TAG GAMERZ SUPERNOVA DONOR FANS = 7 × 120 mm ARGB PWM, hub-driven** (3 side + 3 floor + 1 rear; some retailer copy
+says 6 — Bob should count). **NOT for the floor bank:** TAG's own A+ copy calls them optimised for "**low-impedance
+applications**", zero published CFM/SP/RPM/dBA/MTBF, no manufacturer site, ~₹150–250/fan implied, and using them forfeits
+the EVO XL's 3×**140** floor option (420 mm of coverage vs 360). **Reuse exactly ONE as the rear exhaust; keep the rest as
+spares; BUY 3× 140 mm static-pressure for the floor.** ⚠️ First check one fan's tail: standard 4-pin PWM + 3-pin 5V ARGB =
+reusable; single wide keyed plug = hub-locked, don't drag a SATA ARGB hub into a 24×7 headless box.
+
+**4. POWER CABLE — CONFIRMED AX1600i IS TYPE 4** (Corsair's compatibility table has an "AXi / **1600 Only**" column;
+all other AXi are Type 3). **Buy Corsair CP-8920348 (Type-4 90° 12V-2x6, Style B = exits DOWN along the card; Style A
+loops UP over the top and needs headroom we don't have), 650 mm, 16 AWG.** India MRP ₹2,220–2,499 (Vishal / Computech)
+— **both CONFIRMED SOLD OUT**, Corsair US store also OOS → global supply gap. Grey on Amazon.in ₹13,080 (ASIN
+B0DM649HBM, 28-Aug delivery) = ~7× MRP. **Don't pay it unless blocked.** H+ vs H++ is a red herring — Corsair: "There is
+no difference when it comes to the cable." **⚠️ Type 5 will NOT fit the AX1600i** (Amazon.in sells the Type-5 Elite
+Premium at a nearly identical price — read the stamp on the 8-pin). 600 W = 50 A; Corsair sanctions 2×8-pin (25 A/socket)
+but **NVIDIA's own RTX PRO Blackwell QSG mandates FOUR separate 8-pin runs into the included quad adapter** (12.5 A/socket)
+— that adapter is a straight plug and is one of the things missing from the bare China import. Also: **check per-socket OCP
+in iCUE before first 600 W load** (AX1600i has configurable OCP on each of its 10 sockets; 25 A can nuisance-trip a default).
+Socket budget: 2 EPS + 4 (PRO 6000 quad route) + 4 (Astral's included 1-to-4 adapter) = **all 10 used**.
+
+**5. VERIFY THE CARD:** run `nvidia-smi` on first boot. **84 GB = it's a China-market RTX 6000D** (cut-down cores, no
+NVLink), not the 96 GB global RTX PRO 6000 Blackwell WS. Same 1×16-pin / 600 W either way.
+
+**Tooling for next round:** `antecindia.in/products.json?limit=250` gives live price+availability for the whole catalog in
+one Playwright call (cleanly separates "confirmed OOS" from "could not read"). CM manuals: `curl -L
+"https://coolermaster.egnyte.com/dd/<ID>/?forceDownload=true"`. Blocked to us: mdcomputers/pcstudio (Cloudflare, even via
+Gonzo IN residential), primeabgb (geo-block), elitehubs (429), theitdepot search (404). WebSearch budget exhausted 200/200.
